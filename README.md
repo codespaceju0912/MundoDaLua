@@ -1,6 +1,6 @@
 <html>
 <head>
-  
+  <title></title>
 </head>
   <body>
     <h1>Projeto integrador - sistema para gerir grafica </h1>
