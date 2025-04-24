@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+}
+.fonte{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 0.9rem;
+}
+header{
+    background-color: #7259d9;
+
+}
+#logo{
+    max-width: 10%;
+    max-height: 10%;
+}
+a{
+    color: black;
+}
