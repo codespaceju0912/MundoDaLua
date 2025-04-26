@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+}
+.fonte{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 0.9rem;
+}
+header{
+    background-color: #7259d9;
+
+}
+aside{
+    max-width: 50%;
+    max-height: 100%;
+}
+#logo{
+    float: right;
+    max-width: 100%;
+    max-height: 100%;
+}
+article{
+    max-width: 50%;
+    max-height: 100%;
+}
+article img{
+    float: left;
+    max-width: 50%;
+    max-height: 50%;
+}
+a{
+    color: black;
+}
