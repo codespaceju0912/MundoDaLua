@@ -3,6 +3,6 @@
     font-family: minhafonte;
     src: url(/fontes/Montserrat-VariableFont_wght.ttf);
 }
-h1, p{
+.montserrat{
     font-family: minhafonte;
 }

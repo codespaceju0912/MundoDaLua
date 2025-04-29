@@ -1,31 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 *{
     box-sizing: border-box;
 }
-.fonte{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 0.9rem;
+@font-face{
+    font-family: fredoka;
+    src: url(/fontes/Fredoka-VariableFont_wdth\,wght.ttf);
 }
-header{
-    background-color: #7259d9;
-
+.fonte{
+    font-family: fredoka;
+    font-weight: 700;
+    font-size: 1.6rem;
 }
 aside{
+    margin: 0.2rem 0.2rem 0.2rem 0.2rem;
+    float: right;
     max-width: 50%;
     max-height: 100%;
 }
-#logo{
-    float: right;
+.container{
+    margin: auto;
     max-width: 100%;
     max-height: 100%;
 }
-article{
+#logo{
+    max-width: 100%;
+    max-height: 50%;
+}
+.pagamento{
+    margin: 0.2rem 0.2rem 0.2rem 0.2rem;
     max-width: 50%;
     max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-article img{
-    float: left;
-    max-width: 50%;
-    max-height: 50%;
+.pagamento img{    
+    max-width: 30%;
+    max-height: 30%;
+}
+h2{
+    margin: 0.3rem;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    text-align: left;
+}
+.atencao{
+    border: 0.1rem solid red;
+    padding: 0.1rem;
+    margin: 0.1rem;
+    color: red;
+    border-radius: 0.1rem;
 }
 a{
     color: black;
