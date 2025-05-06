@@ -1,50 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 *{
     box-sizing: border-box;
-}
-@font-face{
-    font-family: fredoka;
-    src: url(/fontes/Fredoka-VariableFont_wdth\,wght.ttf);
-}
-aside{
-    margin: 0.2rem 0.2rem 0.2rem 0.2rem;
-    margin-top: 0rem;
-    float: right;
-    max-width: 50%;
-    max-height: 100%;
 }
 .container{
     margin: auto;
     max-width: 100%;
     max-height: 100%;
 }
-#logo{
-    max-width: 100%;
-    height: 100%;
-}
-.pagamento{
+aside{
     margin: 0.2rem 0.2rem 0.2rem 0.2rem;
+    padding: auto;
+    float: right;
     max-width: 50%;
     max-height: 100%;
+}
+#logo{
+    padding-right: 1%;
+    /* max-width: 100%; */
+    width: 43vw;
+    height: 98vh;
+    /* max-height: 100%; */
+}
+.pagamento{
+    margin-top: 5rem;
+    padding-top: 3rem;
+    max-width: 50%;
+    max-height: 100%;
+    font-size: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .pagamento img{    
-    max-width: 30%;
-    max-height: 30%;
+    max-width: 35%;
+    max-height: 35%;
 }
 h2{
     margin: 0.3rem;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     text-decoration: underline;
     text-align: left;
 }
 h3{
     font-weight: 600;
     color: blueviolet;
+    font-size: 1.7rem;
 }
 .texto{
     border: 0.1rem hidden;

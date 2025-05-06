@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+
 @font-face{
-    font-family: minhafonte;
-    src: url(/fontes/Montserrat-VariableFont_wght.ttf);
+    font-family: montserrat;
+    src: url(/fontes/Montserrat.ttf);
+    font-family: fredoka;
+    src: url(/fontes/Fredoka.ttf);
 }
 .montserrat{
-    font-family: minhafonte;
+    font-family: montserrat;
 }
 .fonte{
     font-family: fredoka;
