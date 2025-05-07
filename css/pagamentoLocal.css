@@ -1,7 +1,14 @@
-aside{
-    margin: 0.2rem 0.2rem 0.2rem 0.2rem;
-    margin-top: 0rem;
-    float: right;
-    max-width: 50%;
-    max-height: 100%;
+*{
+    box-sizing: border-box;
+}
+.pagamento{
+    margin-top: 10rem;
+    padding-top: 10rem;
+}
+
+h3{
+    font-size: 1.7rem;
+    text-align: center;
+    margin-left: 1.5rem;
+    color: blueviolet;
 }
