@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
     <head>
         <meta charset="UTF-8">
@@ -7,24 +7,43 @@
         <title>Tela de login</title>
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet" href="/css/cadastro.css">
+        <link rel="stylesheet" href="/css/login.css">
     </head>
 
-    </body>
+</body>
 
-    </html>
-        <form action="/action_page.php" method="get" class="montserrat">
-            <h1>Login</h1>
-            <p><label for="idEmail"></label></p>
-            <input type="text" name="email" id="email" placeholder="Digite seu e-mail"><br>
+</html>
+    <div id="divprincipal" >
+        <div class="bordadiv">
+            <form action="/action_page.php" method="get" class="montserrat" >
+                
+            <div class="inputForm" c>
+                    <h1>Login</h1>
+                <p><label for="idEmail"></label></p>
+                <input type="text" name="email" id="email" placeholder="Digite seu e-mail" class="mb"><br>
+            </div>
+            <div class= "inputForm">
 
-            <label for="idSenha"></label>
-            <input type="text" name="senha" id="senha" placeholder="Digite sua senha"><br>
+                <label for="idSenha"></label>
+                <input type="text" name="senha" id="senha" placeholder="Digite sua senha" class="mb"><br>
 
-            <button type="button">Entrar</button>
+                <div class="mb">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Visualizar minha senha</label>
 
+                </div>
+                <button type="button">Entrar</button>
+            </div>
+                
             <p>Não tem uma conta? <a href="/paginas/cadastro.html">Cadastre-se</a></p>
 
-        </form>
-    </body>
+            </form>
+        </div>
+        <div class="bordadiv">
+        <img src="/img/logoMundoDaLua.jpeg" alt="">
+        </div>
+    </div>
+
+</body>
 
 </html>
