@@ -1,6 +1,13 @@
 *{
     box-sizing: border-box;
 }
+
+.container{
+    margin: auto;
+    width: 90%;
+    height: auto;
+    flex-direction: column;
+}
 h1{
     text-align: center;
     color: blueviolet;
@@ -12,15 +19,10 @@ p{
 .inputForm{
     text-align: center;
     border-radius: 5px;
+    margin-top: 0.5rem; 
    
 }
-aside{
-    margin: 0.2rem 0.2rem 0.2rem 0.2rem;
-    padding: auto;
-    float: right;
-    max-width: 50%;
-    max-height: 100%;
-}
+
 .mb{
     margin-bottom: 0.5rem;
 }
@@ -34,12 +36,13 @@ img{
 
 #divprincipal{
     display: flex;
+    box-sizing: border-box;
 
 }
 .bordadiv{
-    max-width: 50%;
-    max-height: 100%;
+    width: 50vw;
     padding: 0;
+    box-sizing: border-box;
 
 }
 body{
