@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
 </head>
 <body>
     <h1>Projeto integrador - sistema para gerir grafica </h1>
     
-    <h4>Desenvolvimento</h4>
+    <h2>Desenvolvimento</h2>
     <ol>
         <li>integrantes: Geisi, Julia Lannay e Murilo</li>
         <li>Curso: Técnico em Informática</li>
