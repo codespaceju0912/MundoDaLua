@@ -1,6 +1,5 @@
 ## Projeto integrador - sistema para gerir grafica
 
-<! --
     ## Desenvolvimento
     
         integrantes: Geisi, Julia Lannay e Murilo
@@ -24,4 +23,3 @@
         VSCode - Desenvolvimento do código
         GitHub - Colaboração entre os integrantes e atualização segura do projeto
 
--->
