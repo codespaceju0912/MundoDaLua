@@ -1,4 +1,4 @@
-## Projeto integrador - sistema para gerir grafica
+## Projeto integrador - Sistema para gerir grafica
 
 ### Desenvolvimento
     
