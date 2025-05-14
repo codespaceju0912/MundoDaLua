@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+}
+.playball-regular {
+    font-family: "Playball", cursive;
+    font-weight: 400;
+    font-style: normal;
+    
+  }
+header{
+    background-color: blueviolet;
+    color: white;
+    text-align: center;
+}
+
+  
