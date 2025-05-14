@@ -5,6 +5,7 @@
     font-family: "Playball", cursive;
     font-weight: 400;
     font-style: normal;
+    text-align: center;
     
   }
 header{
@@ -12,5 +13,42 @@ header{
     color: white;
     text-align: center;
 }
+
+.mb{
+    margin-bottom: 0.5rem;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 0.5rem; 
+    padding: 3px;
+    
+}
+.search-form {
+    display: flex; /* Usa flexbox para alinhar elementos */
+    align-items: center; /* Alinha verticalmente */
+    /* Estilos adicionais, como background, bordas, etc. */
+  }
+  
+  .search-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Para cantos arredondados */
+    /* Estilos adicionais para a caixa de texto */
+  }
+  
+  .search-button {
+    padding: 10px 20px;
+    background-color: #5307b7; /* Cor de fundo do botão */
+    color: white;
+    border: none;
+    border-radius: 4px; /* Para cantos arredondados */
+    cursor: pointer; /* Mudar cursor para mão ao passar por cima */
+    /* Estilos adicionais para o botão */
+  }
+  
+  .search-input:focus {
+    outline: none; /* Remove a borda padrão ao focar */
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra ao focar */
+  }
+
 
   
