@@ -49,19 +49,28 @@ header button{
     float: left;
     font-size: 1.2rem;
 }
-header img{
-    width: 4.5%;
-    height: 4%;
-    float: right;
-}
-header h1{
-    margin-left: 20rem;
-    margin-right: 20rem;
-    padding: auto;
-    align-items: center;
-    transform: translate(0%, 45%);
-    font-family: fredoka;
+#grafica{
+    font-family: playball;
     font-size: 2rem;
+    font-weight: 400;
+    margin: 0;
+    color: #ffffff;
+    text-align: center;
+   
+}
+#mundodalua{
+    font-family: montserrat;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    color: #ffffff;
+}
+#bloco_nome{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    float: right;   
 }
 button:hover{
     background-color: #a34cf5;
@@ -73,10 +82,12 @@ button:hover{
     border-radius: 2rem;
     overflow: hidden;
     display: flex;
-    gap: 20px;
-    padding: 20px;
+    gap: 1.25rem;
+    padding: 1.25rem;
 }
-
+.personaliza{
+    background-color: #c7c5c53b;
+}
 .box{
     margin: 0.1rem;
     justify-content: center;
@@ -140,7 +151,7 @@ textarea{
 
 .submit-btn {
     font-size: 1.125rem;
-    margin-top: 2.2rem;
+    margin-top: 3rem;
     width: 50%;
     background-color: #0fa40f;
     border: 0;
@@ -151,7 +162,7 @@ textarea{
     cursor: pointer;
 }
 .quanti{
-    margin-top: 1.2rem;
+    margin-top: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -172,5 +183,5 @@ textarea{
     margin-bottom: 0.5rem;
 }
 #espaco{
-    margin-top: 1.8rem;
+    margin-top: 1.6rem;
 }
