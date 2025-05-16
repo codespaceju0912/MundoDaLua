@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
 
 @font-face{
     font-family: montserrat;
     src: url(/fontes/Montserrat.ttf);
     font-family: fredoka;
     src: url(/fontes/Fredoka.ttf);
+    font-family: Playball;
+    src: url(/fontes/Playball-Regular.ttf);
 }
 .montserrat{
     font-family: montserrat;
@@ -13,4 +16,7 @@
 .fonte{
     font-family: fredoka;
     font-size: 1.6rem;
+}
+.playball{
+    font-family: Playbal;
 }

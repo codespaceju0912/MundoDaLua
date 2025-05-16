@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    font-size: 1px;
+}
+body{
+    margin: 0;
+}
+header{
+    width: 100vw;
+    height: 120rem;
+    background-color: #8a2be2;
+    padding-left: 200rem;
+    padding-right: 200rem;
+}
+#grafica{
+    font-family: playball;
+    font-size: 20rem;
+    font-weight: 400;
+    margin: 0;
+    color: #ffffff;
+
+}
+#mundodalua{
+    font-family: montserrat;
+    font-size: 20rem;
+    font-weight: 700;
+    margin: 0;
+    color: #ffffff;
+
+
+}
