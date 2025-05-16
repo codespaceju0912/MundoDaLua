@@ -93,6 +93,7 @@ button:hover{
     justify-content: center;
     text-align: center;
     display: inline-block;
+    border: 0.1rem solid black;
     width: 50%;
     height: 100%;
     padding: 0.5rem;
@@ -162,7 +163,7 @@ textarea{
     cursor: pointer;
 }
 .quanti{
-    margin-top: 1.5rem;
+    margin-top: 1.6rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -183,5 +184,5 @@ textarea{
     margin-bottom: 0.5rem;
 }
 #espaco{
-    margin-top: 1.6rem;
+    margin-top: 1.5rem;
 }
