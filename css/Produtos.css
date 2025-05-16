@@ -13,21 +13,32 @@ header{
     background-color: #8a2be2;
     padding-left: 200rem;
     padding-right: 200rem;
+    display: flex;
+    align-items: center;
+    
 }
 #grafica{
     font-family: playball;
-    font-size: 20rem;
+    font-size: 23rem;
     font-weight: 400;
     margin: 0;
     color: #ffffff;
-
+    text-align: center;
+   
 }
 #mundodalua{
     font-family: montserrat;
-    font-size: 20rem;
+    font-size: 25rem;
     font-weight: 700;
     margin: 0;
     color: #ffffff;
 
 
+}
+#bloco_nome{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+   
 }
