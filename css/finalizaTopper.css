@@ -34,9 +34,10 @@ article img{
 }
 header button{
     margin-top: 1rem;
-    font-size: 1.125rem;
+    font-size: 1.15rem;
     padding: 1rem;
     width: 15%;
+    height: 15%;
     background-color: #8a2be2;
     border: 0;
     padding: 0.625rem;
@@ -70,7 +71,6 @@ button:hover{
     max-width: 1200px;
     background-color: #fff;
     border-radius: 2rem;
-    box-shadow: 0rem 0.3rem 0.5rem rgba(6, 6, 6, 0.1);
     overflow: hidden;
     display: flex;
     gap: 20px;
@@ -110,9 +110,6 @@ textarea{
 .form-check{
     text-align: justify;
 }
-.personaliza{
-    background-color: #a4a0a01f;
-}
 .payment-methods {
     margin-top: 0.5rem;
     display: flex;
@@ -137,14 +134,13 @@ textarea{
 
 }
 .justify-content-around p{
-    margin-top: 0.8rem;
-}
-#p{
+    margin-left: -5rem;
     margin-top: 0.6rem;
 }
+
 .submit-btn {
     font-size: 1.125rem;
-    margin-top: 1.8rem;
+    margin-top: 2.2rem;
     width: 50%;
     background-color: #0fa40f;
     border: 0;
@@ -176,5 +172,5 @@ textarea{
     margin-bottom: 0.5rem;
 }
 #espaco{
-    margin-top: 2rem;
+    margin-top: 1.8rem;
 }
