@@ -4,41 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finalizar pedido do Topper de bolo</title>
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/finalizaTopper.css">
 </head>
 <body>
-    <header></header> 
+    <header>
+        <button>Voltar</button>
+        <img src="/img/logo.png">
+        <h1>Gráfica Mundo da Lua</h1>
+    </header> 
     <article class="container">   
         <article class="box">
             <h2>Topper de bolo</h2>
             <img src="/img/topper.png" alt="Topper de bolo">
             <h4>R$20,00</h4>
             <h3>Descrição</h3>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <p class="description">
+                O topper de bolo é uma otima pedida para decorar seu bolo de forma criativa, com a nossa gráfica podemos ajuda-los a deixar esse momento mais especial, eles são totalmente personalizados.    
+            </p>
+            <p id="espaco"></p>
         </article>
-        <article class="box">
+        <article class="box personaliza">
             <h2>Personalização</h2>
-            <textarea name="" id="" placeholder="Quero que o topper de bolo seja da personagem do filme moana..."></textarea>
+            <textarea name="" id="" placeholder="Ex: Quero que o topper de bolo seja da personagem do filme moana..."></textarea>
             <h3>Pagamento:</h3>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1">
-                <label class="form-check-label" for="radioDefault1">
-                  Pagamento no Pix
-                </label>
-            </div>
-            <div class="form-check">
-            <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault2" checked>
-            <label class="form-check-label" for="radioDefault2">
-                Pagamento no Local
-            </label>
-            </div>          
+            <section class="payment-methods">
+                <label><input type="radio" name="payment" value="pix"> Pagar pelo pix</label> 
+            </section>
+            <section class="payment-methods">
+                <label><input type="radio" name="payment" value="local"> Pagar no local</label>
+            </section>
+            <section class="quanti">
+                <label>Quantidade:</label>
+                <input type="number" min="1" value="1">
+            </section>  
+            <button class="submit-btn">Finalizar Compra</button>     
         </article>
         
     </article>
     <footer>
-        <img src="/img/logoWhat.png">
-        <p>27 99201-0821</p>
-        <img src="" alt="">
+        <section class="justify-content-around">
+            <img src="/img/logoWhat.png" id="logoW">
+            <p>27 99201-0821</p>
+        </section>
+        <section class="justify-content-around">
+            <img src="/img/logoInst.png" id="logoI">
+            <p>@omundodaluaservicosdigitais</p>
+        </section>
+        <section class="justify-content-around">
+            <img src="/img/logoLocaliza.png" id="logoL">
+            <p id="p">R. Tuffi Salomão Borges, 91 - José de Anchieta II, Serra - ES, 29162-502</p>
+        </section>
     </footer>  
 </body>
 </html>
