@@ -24,6 +24,7 @@ header{
     margin: 0;
     color: #ffffff;
     text-align: center;
+    text-shadow: -4rem 5rem 6rem #1379bd ;
    
 }
 #mundodalua{
@@ -32,6 +33,7 @@ header{
     font-weight: 700;
     margin: 0;
     color: #ffffff;
+    text-shadow: -4rem 5rem 6rem #1379bd ;
 
 
 }
@@ -40,5 +42,6 @@ header{
     display: flex;
     flex-direction: column;
     width: fit-content;
+    
    
 }
