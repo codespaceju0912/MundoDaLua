@@ -15,6 +15,9 @@ header{
     padding-right: 200rem;
     display: flex;
     align-items: center;
+    flex-direction: row;
+    gap: 20rem;
+
     
 }
 #grafica{
@@ -24,7 +27,7 @@ header{
     margin: 0;
     color: #ffffff;
     text-align: center;
-    text-shadow: -4rem 5rem 6rem #1379bd ;
+    text-shadow: -4rem 5rem 10rem #1379bd ;
     -webkit-text-stroke: 0.3rem #1379bd;
    
 }
@@ -34,7 +37,7 @@ header{
     font-weight: 700;
     margin: 0;
     color: #ffffff;
-    text-shadow: -4rem 5rem 6rem #1379bd ;
+    text-shadow: -3rem 5rem 10rem #1379bd ;
     -webkit-text-stroke: 0.3rem #1379bd;
 
 
@@ -45,5 +48,21 @@ header{
     flex-direction: column;
     width: fit-content;
     
-   
+}
+#bloco_pesquisa{
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    
+}
+#barradepesquisa{
+    width: 400rem;
+    height: 30rem;
+    display: inline-block;
+
+}
+#botao{
+    width: 40rem;
+    height: 35rem;
 }

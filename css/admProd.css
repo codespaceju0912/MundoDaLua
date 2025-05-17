@@ -1,0 +1,97 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: montserrat;
+}
+header, footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #8a2be2;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+article img{
+    height: 15rem;
+    border-radius: 1rem;
+    box-shadow: 0.5rem 0.5rem 0.5rem #888888;
+    
+}
+header button{
+    margin-top: 1rem;
+    font-size: 1.15rem;
+    padding: 1rem;
+    width: 15%;
+    height: 15%;
+    background-color: #8a2be2;
+    border: 0;
+    padding: 0.625rem;
+    border-radius: 0.5rem;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    align-items: center;
+    float: left;
+    font-size: 1.2rem;
+}
+#grafica{
+    font-family: playball;
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 0;
+    color: #ffffff;
+    text-align: center;
+   
+}
+#mundodalua{
+    font-family: montserrat;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    color: #ffffff;
+}
+#bloco_nome{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    float: right;   
+}
+button:hover{
+    background-color: #a34cf5;
+}
+
+#logoL{
+    width: 5%;
+    height:5%;
+}
+#logoW{
+    width: 14%;
+    height: 10%;
+}
+#logoI{
+    width: 10%;
+    height: 4%;
+}
+
+.justify-content-around{
+    display:inline-flex;
+    justify-content:space-around;
+
+}
+.justify-content-around p{
+    margin-left: -5rem;
+    margin-top: 0.6rem;
+}
+
+
+input[type=text]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
