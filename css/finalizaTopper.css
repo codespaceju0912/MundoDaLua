@@ -114,6 +114,7 @@ textarea{
     height: 15rem;
     box-shadow: 0.5rem 0.5rem 0.5rem #888888;
     font-family: montserrat;
+    resize: none;
 }
 ::placeholder{
     font-family: montserrat;
