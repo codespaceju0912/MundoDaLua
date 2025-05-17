@@ -100,6 +100,9 @@ header {
     margin-top: -0.5rem;
     font-size: 1.2rem;
 }
+.carrinho img{
+    width: 3.5rem;
+}
 a:active{
     color: #de2cdc;
 }
