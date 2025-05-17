@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('btVoltaPVisaoGTopper').addEventListener('click', function () {
         window.location.href = "visaoGTopper.html";
     });
-
     document.querySelector('.submit-btn').addEventListener('click', function () {
         const paymentMethods = document.getElementsByName('payment');
         let selectedPayment = '';
