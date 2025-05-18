@@ -22,15 +22,8 @@ body {
     font-family: monteserrat;
     margin: 0;
     padding: 0;
-    display: flex;
     flex-direction: column;
     align-items: center;
-}
-article img{
-    height: 15rem;
-    border-radius: 1rem;
-    box-shadow: 0.5rem 0.5rem 0.5rem #888888;
-    
 }
 header button{
     margin-top: 1rem;
@@ -75,53 +68,39 @@ header button{
 button:hover{
     background-color: #a34cf5;
 }
-.container{
+.container {
     width: 100%;
-    max-width: 1200px;
-    background-color: #fff;
-    border-radius: 2rem;
-    overflow: hidden;
     display: flex;
-    gap: 1.25rem;
-    padding: 1.25rem;
+    justify-content: center;
+    align-items: center; 
+    background-color: #fff;
 }
+
 .personaliza{
     background-color: #c7c5c53b;
 }
-.box{
-    margin: 0.1rem;
-    justify-content: center;
-    text-align: center;
-    display: inline-block;
-    border: 0.1rem solid black;
-    width: 50%;
-    height: 100%;
-    padding: 0.5rem;
+.box {
+    width: 80%;
+    max-width: 40rem; 
+    background-color: #c7c5c53b;
+    padding: 1rem;
     box-shadow: 0.5rem 0.5rem 0.5rem #727171;
     border-radius: 1.5rem;
-    font-size: 1.5rem;
+    border: 0.1rem solid black;
+    text-align: center;
 }
 h3, p{
     margin-top: 0.5rem;
     text-align: justify;
 }
-textarea{
-    padding: 0.5rem;
-    place-content: justify;
-    border-radius: 1rem;
-    border: 0.1rem solid #888888;
-    width: 80%;
-    height: 15rem;
-    box-shadow: 0.5rem 0.5rem 0.5rem #888888;
-    font-family: montserrat;
-    resize: none;
-}
 ::placeholder{
     font-family: montserrat;
     font-size: 1.1rem;
 }
-.form-check{
-    text-align: justify;
+.payment-methods {
+    margin-top: 0.5rem;
+    display: flex;
+    margin-bottom: 1rem;
 }
 #logoL{
     width: 5%;
@@ -148,7 +127,7 @@ textarea{
 
 .submit-btn {
     font-size: 1.125rem;
-    margin-top: 3.2rem;
+    margin-top: 3rem;
     width: 50%;
     background-color: #0fa40f;
     border: 0;
@@ -158,28 +137,8 @@ textarea{
     font-size: 1.2rem;
     cursor: pointer;
 }
-.quanti{
-    margin-top: 1.6rem;
+.payment-methods {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 0.938rem;
-}
-.quanti input{
-    width: 3.75rem;
-    padding: 0.2rem;
-    border: 0.1rem solid #ccc;
-    border-radius: 0.5rem;
-}
-.description{
-    margin-top: 0.5rem;
-}
-.escolha-montag {
-    margin-top: 0.5rem;
-    display: flex;
-    margin-bottom: 1rem;
     gap: 1rem;
-}
-#espaco{
-    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
 }
