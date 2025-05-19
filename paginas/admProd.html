@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,34 +8,92 @@
 </head>
 <body>
     <header>
-        <button>Voltar</button>
-        <img src="/img/logo.png">
-        <h1>Gráfica Mundo da Lua</h1>
-    </header> 
+        <section id="bloco_nome">
+            <h1 id="grafica">Gráfica</h1>
+            <h1 id="mundodalua">MUNDO DA LUA</h1>
+        </section>
+        <section class="search-bar">
+            <input type="text" placeholder="Encontre aqui o melhor produto para você">
+            <button>
+                <img src="/img/search.png" alt="Buscar">
+            </button>
+        </section>
+        <section class="usuario">
+            <img src="/img/usuario.png">
+            <p>Faça o <a href="/paginas/login.html">LOGIN</a> ou <a href="/paginas/cadastro.html">CADASTRE-SE</a></p>
+        </section>
+        <section class="carrinho">
+            <a href="/paginas/carrinho.html"><img src="/img/carrinho.png"></a>
+            <p><a href="/paginas/carrinho.html">Carrinho</a></p>
+        </section>
+ </header>
 
     <article>
-        <h3>Produtos</h3>
-        <form>
-            <fieldset>
+        <div class="container">
+            <h3> Painel do Administrador - Produtos</h3>
+            
+            <form id="form-prod">
                 <label for="nomeProd">Nome:</label>
-                <input type="text" id="nomeProd" name="nomeProd"><br><br>
-                <label for="categProd">Categoria:</label>
-                <input type="text" id="categProd" name="categProd"><br><br>
+                <input type="text" id="nomeProd" placeholder="Nome do Produto" required><br><br>
                 <label for="precProd">Preço:</label>
-                <input type="text" id="precProd" name="precProd"><br><br>
+                <input type="number" name="precoProd" placeholder="Preço (R$)" step="0.01" required><br><br>
                 <label for="dscProd">Descrição:</label>
-                <input type="text" id="dscProd" name="dscProd"><br><br>
-                <label for="qtdEstq">Quantidade em Estoque:</label>
-                <input type="text" id="qtdEstq" name="qtdEstq"><br><br>
+                <input type="text" id="dscProd" placeholder="Descrição do Produto" required><br><br>
                 <label for="imgProd">Imagem:</label>
-                <input type="text" id="imgProd" name="imgProd"><br><br>
-            </fieldset>
-
+                <input type="file" id="imgProd"><br><br>
+                <label for="qtdEstq">Quantidade em Estoque:</label>
+                <input type="number" min="1" value="1"><br><br>
+                <select name="categoria" required>
+                    <option value="">Selecione a Categoria</option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                </select>
+            </form>
             <input type="button" name="botCad" value="Cadastrar" size="20">
             <input type="button" name="botAltr" value="Alterar" size="20">
             <input type="button" name="botExc" value="Excluir" size="20">
-        </form>
+        
+        </div>
+        
+        <div class="prod-lista">
+            <h3>Produtos Cadastrados</h3>
 
+            <div class="prod-item">
+                <img src="/img/marcaPg.png" alt="marca pagina">
+                <div class="prod-info">
+                    <h4>Marca Páginas Magnéticos</h4>
+                    <p>Marca páginas personalizados do seu jeito para marcar suas páginas sem amassar ou rasgar páginas, ou deixar marcas ou com risco de cair do livro por causa dos ímas nas pontas.</p>
+                    <p><strong>R$ 1,50 - R$ 3,00</strong></p>
+                </div>
+
+                <img src="/img/foto.jpeg">
+                <div>
+                    <h4>Edição e impressão de fotos </h4>
+                    <p>Uma boa opção, para dar de presentes, guardar e eternizar memórias, podendo ser em vários tamanhos. 10x15: R$4,00; 13x18: R$4,50; 15x21: R$6,00; 18x24 e 20x29: R$10,80; acima de 100 unidades: R$1,75.</p>
+                    <p><strong>$1,75 - R$10,80</strong></p>
+                </div>
+                    
+                <img src="/img/mdf.jpeg">
+                <div>
+                    <h4>Quadro MDF com foto ou frase</h4>
+                    <p>Opção para guardar e eternizar suas fotos, impressas e molduradas em tamanho A4.</p>
+                    <p><strong>R$60,00</strong></p>
+                </div> 
+
+                <img src="/img/caixa.jpg">
+                <div>
+                    <h4>Caixinhas Personalizadas</h4>
+                    <p>Uma boa opção para presentear alguém que você ama, seja com fotos, com doces ou até mesmo outra coisa, a caixinha é personalizada e pensada para você. Valor personalizável.</p>
+                    <p><strong>R$ 15,00 -</strong></p>
+                </div>
+
+                <div class="prod-acoes">
+                    <button class="edit">Editar</button>
+                    <button class="exc">Excluir</button>
+                </div>
+            </div>
+        </div>  
     </article>
 
     <footer>
