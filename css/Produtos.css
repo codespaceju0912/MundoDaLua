@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    
 }
 html{
     font-size: 62.5%;
@@ -7,6 +8,7 @@ html{
 body{
     margin: 0;
     overflow-x: hidden;
+    
 }
 figure{
     margin: 0;
@@ -23,6 +25,7 @@ header{
     flex-direction: row;
     gap: 14.0rem;
     justify-content: center;
+    
 
     
 }
@@ -137,7 +140,7 @@ nav{
     flex-direction: row;
     justify-content: center;
     gap: 50.0rem;
-    border-bottom: 1.8px solid #8a2be2  ;
+    border-bottom: 1.8px solid #8a2be2;
     
 }
 #corCategoria{
