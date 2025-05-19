@@ -6,6 +6,11 @@ html{
 }
 body{
     margin: 0;
+    overflow-x: hidden;
+}
+figure{
+    margin: 0;
+    padding: 0;
 }
 header{
     width: 100vw;
@@ -161,3 +166,56 @@ nav{
     font-family: montserrat;
 
 }
+main{
+    padding-left: 200rem;
+    padding-right: 200rem;
+    padding-top: 40rem;
+    padding-bottom: 40rem;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+main article{
+    height: 430rem;
+    width: 480rem;
+    padding-top: 20rem;
+    border-radius: 30rem;
+    box-shadow: 5rem 10rem 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    margin-bottom: 30rem;
+    
+}
+main article p{
+    text-align: center;
+    font-family: montserrat;
+    font-weight: 550;
+    font-size: 20rem;
+    padding: 0;
+    margin-top: 20rem;
+    margin-bottom: 20rem;
+}
+main article img{
+    width: 200rem;
+    height: 200rem;
+}
+main article button{
+    width: 160rem;
+    height: 55rem;
+    border-radius: 15rem;
+    border: 1px solid black;
+    margin-top: 30rem;
+    background-color: #BFFF00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main article button p{
+    font-size: 18rem;
+    font-family: montserrat;
+    font-weight: 500;
+}
+
