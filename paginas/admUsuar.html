@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Usuários</title>
+    <link rel="stylesheet" href="/css/admUsuar.css">
+</head>
+<body>
+    <header>
+        <section id="bloco_nome">
+            <h1 id="grafica">Gráfica</h1>
+            <h1 id="mundodalua">MUNDO DA LUA</h1>
+        </section>
+        <section class="search-bar">
+            <input type="text" placeholder="Encontre aqui o melhor produto para você">
+            <button>
+                <img src="/img/search.png" alt="Buscar">
+            </button>
+        </section>
+        <section class="usuario">
+            <img src="/img/usuario.png">
+            <p>Faça o <a href="/paginas/login.html">LOGIN</a> ou <a href="/paginas/cadastro.html">CADASTRE-SE</a></p>
+        </section>
+        <section class="carrinho">
+            <a href="/paginas/carrinho.html"><img src="/img/carrinho.png"></a>
+            <p><a href="/paginas/carrinho.html">Carrinho</a></p>
+        </section>
+    </header>
+
+    <main>
+        <section class="form-usu">
+            <h2>Cadastrar Usuário</h2>
+            <form id="form-cadUsu">
+                <label for="nomeUsu">Nome do Usuário: </label>
+                <input type="text" id="nomeUsu" name="nomeUsu" required>
+
+                <label for="emailUsu">Email do Usuário:</label>
+                <input type="email" id="emailUsu" name="emailUsu" required>
+
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required />
+
+                <button class="cad">Cadastrar</button>
+                <button class="exc">Excluir</button>
+
+            </form>
+        </section>
+
+        <section class="list-Usu">
+            <h2>Usuários Cadastrados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>nomeUsu</th>
+                        <th>emailUsu</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaUsu">
+                    <!--Os usuários vão aparecer aqui-->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    
+</body>
+</html>
