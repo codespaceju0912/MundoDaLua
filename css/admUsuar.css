@@ -1,0 +1,244 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.playball-regular {
+    font-family: "Playball", cursive;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2vw 5vw;
+    background-color: #8a2be2;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff; 
+    border-radius: 1.875rem;
+    padding: 0.313rem 0.625rem;
+    padding-top: 0.5rem;
+    width: 28rem;
+    height: 3rem;
+}
+
+.search-bar input {
+    flex: 1;
+    border: none;
+    background-color: transparent;
+    padding: 0.625rem;
+    color: #999;
+    font-size: 0.5rem;
+    outline: none;
+}
+
+.search-bar button {
+    margin-bottom: 1.2rem;
+    height: 2rem;
+    width: 2rem;
+    background-color: #7B1FA2;
+    border: none;
+    padding: 0.625rem;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-bar button img {
+    width: 1rem;
+    height: 1rem;
+    filter: invert(1); /* Para deixar o ícone branco */
+}
+
+#grafica{
+    font-family: playball;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin: 0;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: -0.3rem 0.3125rem 0.625rem #1379bd;
+    -webkit-text-stroke: 0.02rem #1379bd;
+    
+}
+#mundodalua{
+    font-family: montserrat;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: #ffffff;
+    text-shadow: -0.2rem 0.3125rem 0.625rem #1379bd;
+    -webkit-text-stroke: 0.02rem #1379bd;
+
+}
+#bloco_nome{
+    max-width: 20%;
+    max-height: 10%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    float: left;   
+}
+.usuario img{
+    margin-top: rem;
+    width: 5.5rem;
+    filter: invert(1);
+    float: left;
+}
+.usuario p{
+    text-align: justify;
+}
+.usuario a{
+    color: #de2cdc;
+    text-decoration: none;
+}
+.carrinho a{
+    color: #de2cdc;
+    text-decoration: none;
+}
+.carrinho p{
+    margin-top: -0.5rem;
+    font-size: 1.2rem;
+}
+.carrinho img{
+    width: 3.5rem;
+}
+a:active{
+    color: #de2cdc;
+}
+.carrinho{
+    align-items: center;
+    text-align: center;
+}
+.usuario{
+    display: inline-block;
+}
+nav{
+  gap: 800px;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #8a2be2;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.justify-content-around{
+    display:inline-flex;
+    justify-content:space-around;
+
+}
+
+.justify-content-around p{
+    margin-left: -5rem;
+    margin-top: 0.6rem;
+}
+
+body{
+    background-color: #ffffff; 
+    color: #333;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+main{
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h2{
+    color: #8a2be2;
+    margin-bottom: 15px;
+}
+
+.form-usu{
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.form-usu form{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-usu label{
+    margin: 10px 0 5px;
+}
+
+.form-usu input{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.form-usu button{
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #8a2be2;
+    border: none;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-usu button:hover{
+    background-color: #6c1fb8;
+}
+
+.list-Usu{
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table thead{
+    background-color: #6c1fb8;
+    color:#fff;
+}
+
+table th, table td{
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+table button{
+    background-color: #8a2be2;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+table button:hover{
+    background-color: #8a2be2;
+}
