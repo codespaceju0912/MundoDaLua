@@ -1,10 +1,134 @@
 *{
     box-sizing: border-box;
-    padding: 0;
     margin: 0;
-    font-family: montserrat;
+    padding: 0;
 }
-header, footer {
+
+.playball-regular {
+    font-family: "Playball", cursive;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2vw 5vw;
+    background-color: #8a2be2;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff; 
+    border-radius: 1.875rem;
+    padding: 0.313rem 0.625rem;
+    padding-top: 0.5rem;
+    width: 28rem;
+    height: 3rem;
+}
+
+.search-bar input {
+    flex: 1;
+    border: none;
+    background-color: transparent;
+    padding: 0.625rem;
+    color: #999;
+    font-size: 0.5rem;
+    outline: none;
+}
+
+.search-bar button {
+    margin-bottom: 1.2rem;
+    height: 2rem;
+    width: 2rem;
+    background-color: #7B1FA2;
+    border: none;
+    padding: 0.625rem;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-bar button img {
+    width: 1rem;
+    height: 1rem;
+    filter: invert(1); /* Para deixar o ícone branco */
+}
+
+#grafica{
+    font-family: playball;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin: 0;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: -0.3rem 0.3125rem 0.625rem #1379bd;
+    -webkit-text-stroke: 0.02rem #1379bd;
+    
+}
+#mundodalua{
+    font-family: montserrat;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: #ffffff;
+    text-shadow: -0.2rem 0.3125rem 0.625rem #1379bd;
+    -webkit-text-stroke: 0.02rem #1379bd;
+
+}
+#bloco_nome{
+    max-width: 20%;
+    max-height: 10%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    float: left;   
+}
+.usuario img{
+    margin-top: rem;
+    width: 5.5rem;
+    filter: invert(1);
+    float: left;
+}
+.usuario p{
+    text-align: justify;
+}
+.usuario a{
+    color: #de2cdc;
+    text-decoration: none;
+}
+.carrinho a{
+    color: #de2cdc;
+    text-decoration: none;
+}
+.carrinho p{
+    margin-top: -0.5rem;
+    font-size: 1.2rem;
+}
+.carrinho img{
+    width: 3.5rem;
+}
+a:active{
+    color: #de2cdc;
+}
+.carrinho{
+    align-items: center;
+    text-align: center;
+}
+.usuario{
+    display: inline-block;
+}
+nav{
+  gap: 800px;
+}
+
+footer {
     position: relative;
     bottom: 0;
     width: 100%;
@@ -15,83 +139,166 @@ header, footer {
     font-weight: 700;
 }
 
-article img{
-    height: 15rem;
-    border-radius: 1rem;
-    box-shadow: 0.5rem 0.5rem 0.5rem #888888;
-    
-}
-header button{
-    margin-top: 1rem;
-    font-size: 1.15rem;
-    padding: 1rem;
-    width: 15%;
-    height: 15%;
-    background-color: #8a2be2;
-    border: 0;
-    padding: 0.625rem;
-    border-radius: 0.5rem;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-    align-items: center;
-    float: left;
-    font-size: 1.2rem;
-}
-#grafica{
-    font-family: playball;
-    font-size: 2rem;
-    font-weight: 400;
-    margin: 0;
-    color: #ffffff;
-    text-align: center;
-   
-}
-#mundodalua{
-    font-family: montserrat;
-    font-size: 2rem;
-    font-weight: 700;
-    margin: 0;
-    color: #ffffff;
-}
-#bloco_nome{
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    float: right;   
-}
-button:hover{
-    background-color: #a34cf5;
-}
-
-#logoL{
-    width: 5%;
-    height:5%;
-}
-#logoW{
-    width: 14%;
-    height: 10%;
-}
-#logoI{
-    width: 10%;
-    height: 4%;
-}
-
 .justify-content-around{
     display:inline-flex;
     justify-content:space-around;
 
 }
+
 .justify-content-around p{
     margin-left: -5rem;
     margin-top: 0.6rem;
 }
 
+/* Estilização do article */
 
-input[type=text]{
+body{
+    background-color: #ffffff; 
+    color: #333;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container{
+    max-width: 900px;
+    margin: 0 auto;
+    background-color:#ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+}
+
+h3{
+    color: #8a2be2;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+input:focus,
+select:focus{
+    outline: none;
+    border-color:#8a2be2;
+}
+
+input[type="button"]{
+    background-color: #8a2be2;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-items: center;
+}
+
+input[type="button"]:hover{
+    background-color: #8a2be2;
+}
+
+.prod-lista{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.prod-item{
+    width: 280px;
+    background-color: #fefefe;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    transition: box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.prod-item img{
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.prod-item:hover{
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.01);
+}
+
+.prod-info h4{
+    color: #8a2be2;
+    margin-bottom: 5px;
+}
+
+.prod-info p{
+    margin-bottom: 5px;
+}
+
+.prod-acoes{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.prod-acoes button{
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.edit{
+    background-color: #8a2be2;
+    color: #ffffff;
+}
+
+.edit:hover{
+    background-color: #6c1fb8;
+}
+
+.exc{
+    background-color: #8a2be2;
+    color: #ffffff;
+}
+
+.exc:hover{
+    background-color: #6c1fb8;
+}
+
+
+
+@media (max-width: 768px){
+    .prod-item{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .prod-acoes{
+        flex-direction: row;
+        margin-top: 10px;
+    }
 }
