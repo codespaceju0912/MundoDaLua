@@ -71,6 +71,7 @@ header{
     border: 0cap;
     padding-left: 15rem;
     font-size: 15rem;
+    box-shadow: 4rem 4rem 10rem #6F1ABD;
 
 }
 #botaoPesquisar{
@@ -117,7 +118,7 @@ header{
     height: 70rem;
     display: block;
     margin: 0;
-
+    
 }
 
   
@@ -174,6 +175,7 @@ main{
     display: flex;
     flex-wrap: wrap;
     
+    
 }
 main article{
     height: 430rem;
@@ -201,6 +203,7 @@ main article p{
 main article img{
     width: 200rem;
     height: 200rem;
+    box-shadow: 4rem 4rem 20rem #000000;
 }
 main article button{
     width: 160rem;
@@ -219,3 +222,60 @@ main article button p{
     font-weight: 500;
 }
 
+#cnpj{
+    height: 45rem;
+    width: 100vw;
+    background-color: #A45AE8;
+    
+}
+#rodape{
+    width: 100vw;
+    height: 220rem;
+    background-color: #8a2be2;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 200rem;
+    padding-right: 200rem;
+    gap: 80rem;
+    justify-content: center;
+    align-items: center;
+}
+footer div h3 {
+    font-family: fredoka;
+    font-size: 25rem;
+    color: #ffffff;
+    margin: 0;
+
+}
+footer div p{
+    font-family: montserrat;
+    font-size: 20rem;
+    color: #ffffff;
+    font-weight: 400;
+    margin: 8rem;
+}
+footer div a{
+    font-family: montserrat;
+    font-size: 20rem;
+    color: #ffffff;
+    font-weight: 400;
+    text-decoration: none;
+    
+
+}
+.redessociais{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    padding: 0;
+    margin-bottom: 10rem;
+
+}
+.redessociais img{
+    width: 30rem;
+    height: 30rem;
+    margin: 0;
+    padding: 0;
+}
