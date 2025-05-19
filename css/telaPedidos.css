@@ -1,19 +1,23 @@
-*{
+* {
     box-sizing: border-box;
 }
-html{
+
+html {
     font-size: 62.5%;
+    height: 100vh;
 }
-body{
+
+body {
     margin: 0;
     overflow-x: hidden;
-    
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
 }
-figure{
-    margin: 0;
-    padding: 0;
-}
-header{
+
+
+header {
     width: 100vw;
     height: 12.0rem;
     background-color: #8a2be2;
@@ -24,49 +28,53 @@ header{
     flex-direction: row;
     gap: 14.0rem;
     justify-content: center;
-    
 
-    
+
+
 }
 
-#grafica{
+#grafica {
     font-family: playball;
     font-size: 2.5rem;
     font-weight: 400;
     margin: 0;
     color: #ffffff;
     text-align: center;
-    text-shadow: -0.4rem 0.5rem 1.0rem #1379bd ;
+    text-shadow: -0.4rem 0.5rem 1.0rem #1379bd;
     -webkit-text-stroke: 0.03rem #1379bd;
-   
+
 }
-#mundodalua{
+
+#mundodalua {
     font-family: montserrat;
     font-size: 2.7rem;
     font-weight: 700;
     margin: 0;
     color: #ffffff;
-    text-shadow: -0.3rem 0.5rem 1.0rem #1379bd ;
+    text-shadow: -0.3rem 0.5rem 1.0rem #1379bd;
     -webkit-text-stroke: 0.03rem #1379bd;
 
 
 }
-#bloco_mundoDaLua{
+
+#bloco_mundoDaLua {
     width: auto;
     display: flex;
     flex-direction: column;
     width: fit-content;
-    
+
 }
-#bloco_pesquisa{
+
+#bloco_pesquisa {
     display: flex;
     width: fit-content;
     height: fit-content;
     align-items: center;
-    
-    
+
+
 }
-#barradepesquisa{
+
+#barradepesquisa {
     width: 42.0rem;
     height: 3.9rem;
     display: inline-block;
@@ -77,18 +85,21 @@ header{
     box-shadow: 0.4rem 0.4rem 1.0rem #6F1ABD;
 
 }
-#botaoPesquisar{
+
+#botaoPesquisar {
     width: 5.2rem;
     height: 3.9rem;
     border-radius: 0.0rem 6.0rem 6.0rem 0.0rem;
     border: 0cap;
     background-color: #6F1ABD;
 }
-#imagemLupa{
+
+#imagemLupa {
     width: 2.8rem;
     height: 2.7rem;
 }
-#bloco_perfil{
+
+#bloco_perfil {
     height: fit-content;
     width: fit-content;
     font-size: 1.5rem;
@@ -98,15 +109,18 @@ header{
     color: #ffffff;
     align-items: center;
 }
-#imgperfil{
+
+#imgperfil {
     width: 7.0rem;
     height: 7.0rem;
-    
+
 }
-#avisoPerfil{
+
+#avisoPerfil {
     color: #E22BDE;
 }
-#bloco_carrinho{
+
+#bloco_carrinho {
     height: fit-content;
     width: fit-content;
     font-size: 2.0rem;
@@ -114,23 +128,24 @@ header{
     color: #E22BDE;
     align-items: center;
 
-    
+
 }
-#imgcarrinho{
+
+#imgcarrinho {
     width: 7.0rem;
     height: 7.0rem;
     display: block;
     margin: 0;
-    
+
 }
 
-  
+
 #bloco_carrinho h3 {
     margin: 0;
-  
+
 }
- 
-nav{
+
+nav {
     height: 4.5vh;
     width: 100vw;
     padding-left: 20.0rem;
@@ -141,9 +156,10 @@ nav{
     justify-content: center;
     gap: 50.0rem;
     border-bottom: 1.8px solid #8a2be2;
-    
+
 }
-#corCategoria{
+
+#corCategoria {
     color: #E28A2B;
     font-family: montserrat;
     font-size: 1.5rem;
@@ -151,50 +167,58 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
-#corCategoria img{
+
+#corCategoria img {
     height: 2.5rem;
     padding: 0;
     margin: 0;
-    
+
 }
-#corCategoria p{
+
+#corCategoria p {
     padding: 0;
     margin: 0;
 }
-.palavrasNav{
+
+.palavrasNav {
     font-weight: 550;
     font-size: 1.7rem;
     color: #8a2be2;
     font-family: montserrat;
 
 }
-main{
+
+main {
     padding-left: 20.0rem;
     padding-right: 20.0rem;
     padding-top: 4.0rem;
     padding-bottom: 4.0rem;
     display: flex;
-    flex-wrap: wrap;
-    
-    
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+
+
 }
-main article{
-    height: 43.0rem;
-    width: 48.0rem;
-    padding-top: 2.0rem;
+
+main article {
+    height: 35.0rem;
+    width: 100.0rem;
+    padding: 2.0rem;
     border-radius: 3.0rem;
     box-shadow: 0.5rem 1.0rem 2.0rem;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 1.0rem;
-    margin-right: 1.0rem;
+    flex-wrap: wrap;
+    gap: 14rem;
+    justify-content: center;
     margin-bottom: 3.0rem;
-    
+
+
 }
-main article p{
+
+main article p {
     text-align: center;
     font-family: montserrat;
     font-weight: 550;
@@ -203,12 +227,30 @@ main article p{
     margin-top: 2.0rem;
     margin-bottom: 2.0rem;
 }
-main article img{
-    width: 20.0rem;
-    height: 20.0rem;
-    box-shadow: 0.4rem 0.4rem 2.0rem #000000;
+
+main article h4 {
+    text-align: center;
+    font-family: fredoka;
+    font-weight: 550;
+    font-size: 2.5rem;
+    padding: 0;
+    margin-top: 2.0rem;
+    margin-bottom: 4.0rem;
+    color: #A45AE8;
 }
-main article button{
+
+main article h3 {
+    text-align: center;
+    font-family: fredoka;
+    font-weight: 550;
+    font-size: 2.5rem;
+    padding: 0;
+    margin-top: 2.0rem;
+    margin-bottom: 4.0rem;
+
+}
+
+main article button {
     width: 16.0rem;
     height: 5.5rem;
     border-radius: 1.5rem;
@@ -219,19 +261,66 @@ main article button{
     justify-content: center;
     align-items: center;
 }
-main article button p{
-    font-size: 1.8rem;
-    font-family: montserrat;
-    font-weight: 500;
+
+#statusAguardandoPagamento {
+    color: red;
+
 }
 
-#cnpj{
+#avisoAguardando {
+    border: 0.1rem solid red;
+    border-radius: 1.5rem;
+    padding: 1.0rem;
+
+}
+
+#statusProducao {
+    color: #D37B1D;
+
+}
+
+#avisoProducao {
+    border: 0.1rem solid #D37B1D;
+    border-radius: 1.5rem;
+    padding: 1.0rem;
+
+}
+
+
+#statusPronto {
+    color: green;
+
+}
+
+#avisoPronto {
+    border: 0.1rem solid green;
+    border-radius: 1.5rem;
+    padding: 1.0rem;
+
+}
+
+#statusFinalizado {
+    color: #708090;
+
+}
+
+#avisoFinalizado {
+    border: 0.1rem solid #708090;
+    border-radius: 1.5rem;
+    padding: 1.0rem;
+
+}
+
+#cnpj {
     height: 4.5rem;
     width: 100vw;
     background-color: #A45AE8;
-    
+    padding: 0;
+    margin: 0;
+
 }
-#rodape{
+
+#rodape {
     width: 100vw;
     height: 22.0rem;
     background-color: #8a2be2;
@@ -243,6 +332,7 @@ main article button p{
     justify-content: center;
     align-items: center;
 }
+
 footer div h3 {
     font-family: fredoka;
     font-size: 2.5rem;
@@ -250,23 +340,26 @@ footer div h3 {
     margin: 0;
 
 }
-footer div p{
+
+footer div p {
     font-family: montserrat;
     font-size: 2.0rem;
     color: #ffffff;
     font-weight: 400;
     margin: 0.8rem;
 }
-footer div a{
+
+footer div a {
     font-family: montserrat;
     font-size: 2.0rem;
     color: #ffffff;
     font-weight: 400;
     text-decoration: none;
-    
+
 
 }
-.redessociais{
+
+.redessociais {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -276,7 +369,8 @@ footer div a{
     margin-bottom: 1.0rem;
 
 }
-.redessociais img{
+
+.redessociais img {
     width: 3.0rem;
     height: 3.0rem;
     margin: 0;
