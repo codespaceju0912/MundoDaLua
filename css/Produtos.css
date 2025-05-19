@@ -17,6 +17,7 @@ header{
     align-items: center;
     flex-direction: row;
     gap: 140rem;
+    justify-content: center;
 
     
 }
@@ -42,7 +43,7 @@ header{
 
 
 }
-#bloco_nome{
+#bloco_mundoDaLua{
     width: auto;
     display: flex;
     flex-direction: column;
@@ -55,6 +56,7 @@ header{
     height: fit-content;
     align-items: center;
     
+    
 }
 #barradepesquisa{
     width: 420rem;
@@ -62,9 +64,11 @@ header{
     display: inline-block;
     border-radius: 60rem 0rem 0rem 60rem;
     border: 0cap;
+    padding-left: 15rem;
+    font-size: 15rem;
 
 }
-#botao{
+#botaoPesquisar{
     width: 52rem;
     height: 39rem;
     border-radius: 0rem 60rem 60rem 0rem;
@@ -72,8 +76,8 @@ header{
     background-color: #6F1ABD;
 }
 #imagemLupa{
-    width: 30rem;
-    height: 30rem;
+    width: 28rem;
+    height: 27rem;
 }
 #bloco_perfil{
     height: fit-content;
@@ -114,5 +118,46 @@ header{
   
 #bloco_carrinho h3 {
     margin: 0;
-  }
   
+}
+ 
+nav{
+    height: 4.5vh;
+    width: 100vw;
+    padding-left: 200rem;
+    padding-right: 200rem;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 500rem;
+    border-bottom: 1.8px solid #8a2be2  ;
+    
+}
+#corCategoria{
+    color: #E28A2B;
+    font-family: montserrat;
+    font-size: 15rem;
+    font-weight: 550;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#corCategoria img{
+    height: 25rem;
+    padding: 0;
+    margin: 0;
+    
+}
+#corCategoria p{
+    padding: 0;
+    margin: 0;
+}
+.palavrasNav{
+    font-weight: 550;
+    font-size: 17rem;
+    color: #8a2be2;
+    font-family: montserrat;
+
+}
