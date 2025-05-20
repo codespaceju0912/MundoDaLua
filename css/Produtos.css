@@ -241,8 +241,8 @@ main article button p{
     background-color: #8a2be2;
     display: flex;
     flex-wrap: wrap;
-    padding-left: 20.0rem;
-    padding-right: 20.0rem;
+    padding-left: 10.0rem;
+    padding-right: 10.0rem;
     gap: 2.0rem;
     justify-content: center;
     align-items: center;
