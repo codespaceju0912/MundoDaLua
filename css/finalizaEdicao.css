@@ -1,3 +1,28 @@
 #espaco{
-    margin-top: 1.5rem;
+    margin-top: 10rem;
+}
+.quanti{
+    margin-top: 0rem;
+    display: inline-block;
+    font-size: 1.4rem;
+}
+.quanti input{
+    margin-left: -3rem;
+    height: 65%;
+    width: 35%;
+    font-size: 1rem;
+}
+.col{
+    gap: 0.5rem;
+}
+h3{
+    margin-top: 3rem;
+}
+.description{
+    margin-top: 2rem;
+}
+.preco-btn{
+    text-align: center;
+    margin: 0 auto;
+    display: block;
 }

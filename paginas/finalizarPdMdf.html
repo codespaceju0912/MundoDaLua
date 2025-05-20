@@ -7,17 +7,18 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/finalizaTopper.css">
     <link rel="stylesheet" href="/css/finalizaMdf.css">
-    <script src="/js/finaliza.js"></script>
+    <script src="/js/base.js" defer></script>
+    <script src="/js/finalizaM.js" defer></script>
 </head>
 <body>
     <header>
-        <button id="btVoltaPVisaoGMdf">Voltar</button>
+        <button onclick="goBack()">Voltar</button>
         <section id="bloco_nome">
             <h1 id="grafica">Gráfica</h1>
             <h1 id="mundodalua">MUNDO DA LUA</h1>
         </section>
     </header> 
-    <article class="container">   
+    <article class="main">   
         <article class="box">
             <h2>Quadro MDF com foto ou frase</h2>
             <img src="/img/mdf.jpeg">
@@ -29,34 +30,39 @@
         <article class="box personaliza">
             <h2>Personalização</h2>
             <textarea name="" id="" placeholder="Ex: Quero que no quadro tenha a imagem..."></textarea>
-            <h3>Pagamento:</h3>
-            <section class="payment-methods">
-                <label><input type="radio" name="payment" value="pix"> Pagar pelo pix</label> 
-            </section>
-            <section class="payment-methods">
-                <label><input type="radio" name="payment" value="local"> Pagar no local</label>
-            </section>
             <section class="quanti">
                 <label>Quantidade:</label>
-                <input type="number" min="1" value="1">
+                <input type="number" id="meuInput" min="1" value="1">
+                <button class="preco-btn">preço</button>
             </section>  
-            <button class="submit-btn">Finalizar Compra</button>     
+            <p id="preco">Preço: <spam id="textvalor"></spam></p>  
+            <button class="submit-btn" onclick="goTelaPg()">Finalizar Compra</button>     
         </article>
         
     </article>
-    <footer>
-        <section class="justify-content-around">
-            <img src="/img/logoWhat.png" id="logoW">
-            <p>27 99201-0821</p>
+    <footer style="position: relative;">
+        <section id="preRodape">
         </section>
-        <section class="justify-content-around">
-            <img src="/img/logoInst.png" id="logoI">
-            <p>@omundodaluaservicosdigitais</p>
+        <section id="rodape">
+            <section>
+                <h3>Fale conosco</h3>
+                <p>Tell: (27) 99201-0821</p>
+                <p>E-mail: omundodaluaservicosdigitais@gmail.com</p>
+            </section>
+            <section>
+                <h3>Redes sociais</h3>
+                <section class="redessociais">
+                    <img src="/img/instagram.png" alt="">
+                    <p>@omundodaluaservicosdigitais</p>
+                </section>
+            </section>
+            <section>
+                <h3>Área do Cliente</h3>
+                <a href="/paginas/login.html">Login</a><br>
+                <a href="/paginas/cadastro.html">Cadastra-se</a><br>
+                <a href="/paginas/telaPedidos.html">Meus pedidos</a>
+            </section>
         </section>
-        <section class="justify-content-around">
-            <img src="/img/logoLocaliza.png" id="logoL">
-            <p>R. Tuffi Salomão Borges, 91 - José de Anchieta II, Serra - ES, 29162-502</p>
-        </section>
-    </footer>  
+    </footer>
 </body>
 </html>

@@ -8,45 +8,34 @@ header {
     padding: 2vw 5vw;
     background-color: #8a2be2;
 }
-.search-bar {
+#bloco_pesquisa{
     display: flex;
-    align-items: center;
-    background-color: #ffffff; 
-    border-radius: 1.875rem;
-    padding: 0.313rem 0.625rem;
-    padding-top: 0.5rem;
+    width: fit-content;
+    height: fit-content;
+    align-items: center; 
+}
+#barradepesquisa{
     width: 28rem;
-    height: 3rem;
-}
+    height: 2.5rem;
+    display: inline-block;
+    border-radius: 6.0rem 0.0rem 0.0rem 6.0rem;
+    border: 0cap;
+    padding-left: 1.5rem;
+    font-size: 1.2rem;
+    box-shadow: 0.4rem 0.4rem 1.0rem #6F1ABD;
 
-.search-bar input {
-    flex: 1;
-    border: none;
-    background-color: transparent;
-    padding: 0.625rem;
-    color: #999;
-    font-size: 0.5rem;
-    outline: none;
 }
-
-.search-bar button {
-    margin-bottom: 1.2rem;
-    height: 2rem;
-    width: 2rem;
-    background-color: #7B1FA2;
-    border: none;
-    padding: 0.625rem;
-    cursor: pointer;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#botaoPesquisar{
+    width: 3.2rem;
+    height: 2.5rem;
+    padding-top: -2rem;
+    border-radius: 0.0rem 6.0rem 6.0rem 0.0rem;
+    border: 0cap;
+    background-color: #6F1ABD;
 }
-
-.search-bar button img {
-    width: 1rem;
-    height: 1rem;
-    filter: invert(1); /* Para deixar o ícone branco */
+#imagemLupa{
+    width: 1.6rem;
+    height: 1.5rem;
 }
 
 #grafica{
@@ -112,4 +101,53 @@ a:active{
 }
 .usuario{
     display: inline-block;
+}
+.compra-btn{
+    width: 35%;
+    display: block;
+    margin: 0 auto;
+}
+nav{
+    height: 5vh;
+    width: 100vw;
+    padding-left: 10.0rem;
+    padding-right: 10.0rem;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 32.0rem;
+    border-bottom: 1.8px solid #8a2be2;
+    font-family: 1rem;
+    font-weight: 550;
+}
+#corCategoria{
+    color: #E28A2B;
+    font-family: montserrat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#corCategoria img{
+    height: 2rem;
+    padding: 0;
+    margin: 0;
+    
+}
+#corCategoria p{
+    padding: 0;
+    margin: 0;
+}
+.palavrasNav{
+    color: #8a2be2;
+    font-family: montserrat;
+}
+.quanti{
+    padding-top: 2rem;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+}
+.submit-btn{
+    margin-top: 1rem;
 }

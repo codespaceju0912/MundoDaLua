@@ -14,3 +14,12 @@ h3{
 h5{
     font-size: 1.3rem;
 }
+#voltar{
+    padding-top: 0.8rem;
+    padding-left: 0.8rem;
+    font-weight: 400;
+}
+#map{
+    align-items: center;
+    padding-left: 2.5rem;
+}

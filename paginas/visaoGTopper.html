@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/finalizaTopper.css">
     <link rel="stylesheet" href="/css/visaoGTopper.css">
+    <script src="/js/base.js" defer></script>
 </head>
 <body>
     <header>
@@ -14,22 +15,32 @@
             <h1 id="grafica">Gráfica</h1>
             <h1 id="mundodalua">MUNDO DA LUA</h1>
         </section>
-        <section class="search-bar">
-            <input type="text" placeholder="Encontre aqui o melhor produto para você">
-            <button>
-                <img src="/img/search.png" alt="Buscar">
-            </button>
+        <section id="bloco_pesquisa">
+            <input  id="barradepesquisa" class="montserrat" type="text" placeholder="Encontre aqui o melhor produto para você">
+            <button id="botaoPesquisar"><img src="/img/lupaBranca.png" alt="" id="imagemLupa"></button>
         </section>
         <section class="usuario">
             <img src="/img/usuario.png">
             <p>Faça o <a href="/paginas/login.html">LOGIN</a> ou <a href="/paginas/cadastro.html">CADASTRE-SE</a></p>
         </section>
         <section class="carrinho">
-            <a href="/paginas/carrinho.html"><img src="/img/carrinho.png"></a>
-            <p><a href="/paginas/carrinho.html">Carrinho</a></p>
+            <a href="/paginas/telaCarrinho.html"><img src="/img/carrinho.png"></a>
+            <p><a href="/paginas/telaCarrinho.html">Carrinho</a></p>
         </section>
     </header> 
-    <article class="container">   
+    <nav>
+        <section id="corCategoria">
+            <p>Categorias</p>
+            <img src="/img/setaMenu.png" alt="">
+        </section>
+        <section class="palavrasNav">
+            <p>Produtos</p>
+        </section>
+        <section class="palavrasNav">
+            <p>Acompanhar Pedidos</p>
+        </section>
+    </nav>
+    <article class="main">   
         <article class="box">
             <h2>Topper de bolo</h2>
             <img src="/img/topper.png" alt="Topper de bolo">
@@ -37,7 +48,6 @@
             <h3>Descrição</h3>
             <p class="description">
                 Topper de bolo : 15,00 sem a montagem e 25,00 com a montagem. Um lindo e criativo topo de bolo, personalizável do jeito que você quiser para decorar seu bolo e trazer lembranças bonitas para um momento especial.           </p>
-            <p id="espaco"></p>
         </article>
         <article class="box personaliza">
             <h2>Personalização</h2>
@@ -46,23 +56,34 @@
                 <label>Quantidade:</label>
                 <input type="number" min="1" value="1">
             </section>  
-            <button class="submit-btn">Finalizar Compra</button>     
+            <button class="submit-btn compra-btn">Compra</button>     
+            <button class="submit-btn carrinho-btn">Adicionar ao carrinho</button>    
         </article>
         
     </article>
-    <footer>
-        <section class="justify-content-around">
-            <img src="/img/logoWhat.png" id="logoW">
-            <p>27 99201-0821</p>
+    <footer style="position: relative;">
+        <section id="preRodape">
         </section>
-        <section class="justify-content-around">
-            <img src="/img/logoInst.png" id="logoI">
-            <p>@omundodaluaservicosdigitais</p>
+        <section id="rodape">
+            <section>
+                <h3>Fale conosco</h3>
+                <p>Tell: (27) 99201-0821</p>
+                <p>E-mail: omundodaluaservicosdigitais@gmail.com</p>
+            </section>
+            <section>
+                <h3>Redes sociais</h3>
+                <section class="redessociais">
+                    <img src="/img/instagram.png" alt="">
+                    <p>@omundodaluaservicosdigitais</p>
+                </section>
+            </section>
+            <section>
+                <h3>Área do Cliente</h3>
+                <a href="/paginas/login.html">Login</a><br>
+                <a href="/paginas/cadastro.html">Cadastra-se</a><br>
+                <a href="/paginas/telaPedidos.html">Meus pedidos</a>
+            </section>
         </section>
-        <section class="justify-content-around">
-            <img src="/img/logoLocaliza.png" id="logoL">
-            <p>R. Tuffi Salomão Borges, 91 - José de Anchieta II, Serra - ES, 29162-502</p>
-        </section>
-    </footer>  
+    </footer> 
 </body>
 </html>
