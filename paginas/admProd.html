@@ -68,134 +68,134 @@
                 <input type="button" name="botCad" value="Cadastrar" size="20">
                 <input type="button" name="botAltr" value="Alterar" size="20">
                 <input type="button" name="botExc" value="Excluir" size="20">
-            </section>
+            </section>-->
             
-            <section id="prod-lista">
-                <h3>Produtos Cadastrados</h3>
-                <section class="prod-item" id="listaProdutos">-->
-
-                    <div id="container">
-                        <h1>Painel de Produtos</h1>
+            <div id="container">
+                <h1>Painel de Produtos</h1>
                         
-                        <form id="formProduto">
-                            <h2>Cadastrar Novo Produto</h2>
+                <form id="formProduto">
+                    <h2>Cadastrar Novo Produto</h2>
                             
-                            <label for="nomeProd">Nome do Produto:</label>
-                            <input type="text" id="nomeProd" required>
+                        <label for="nomeProd">Nome do Produto:</label>
+                        <input type="text" id="nomeProd" required>
                             
-                            <label for="precoProd">Preço (R$):</label>
-                            <input type="number" id="precoProd" step="0.01" required>
+                        <label for="precoProd">Preço (R$):</label>
+                        <input type="number" id="precoProd" step="0.01" required>
                             
-                            <label for="descricaoProd">Descrição:</label>
-                            <input type="text" id="descricaoProd" required>
+                        <label for="descricaoProd">Descrição:</label>
+                        <input type="text" id="descricaoProd" required>
                             
-                            <label for="categoriaProd">Categoria:</label>
-                            <select id="categoriaProd" required>
-                                <option value="">Selecione...</option>
-                                <option value="Fotos">Fotos</option>
-                                <option value="Papelaria">Papelaria</option>
-                                <option value="Personalizados">Personalizados</option>
-                            </select>
+                        <label for="categoriaProd">Categoria:</label>
+                        <select id="categoriaProd" required>
+                            <option value="">Selecione...</option>
+                            <option value="Fotos">Fotos</option>
+                            <option value="Papelaria">Papelaria</option>
+                            <option value="Personalizados">Personalizados</option>
+                        </select>
                             
-                            <label for="estoqueProd">Quantidade em Estoque:</label>
-                            <input type="number" id="estoqueProd" min="0" value="1" required>
+                        <label for="estoqueProd">Quantidade em Estoque:</label>
+                        <input type="number" id="estoqueProd" min="0" value="1" required>
                             
-                            <label for="imagemProd">Imagem do Produto:</label>
-                            <input type="file" id="imagemProd" accept="image/*">
+                        <label for="imagemProd">Imagem do Produto:</label>
+                        <input type="file" id="imagemProd" accept="image/*">
                             
-                            <div class="btn-group">
-                                <button type="button" id="btnCadastrar">Cadastrar</button>
-                                <button type="button" id="btnAlterar">Alterar</button>
-                                <button type="button" id="btnExcluir">Excluir</button>
-                            </div>
-                        </form>
+                        <div class="btn-group">
+                            <button type="button" id="btnCadastrar">Cadastrar</button>
+                            <button type="button" id="btnAlterar">Alterar</button>
+                            <button type="button" id="btnExcluir">Excluir</button>
+                        </div>
+                    </form>
                         
-                        <section id="listaProdutos">
-                            <h2>Produtos Cadastrados</h2>
-                            <div id="produtosContainer">
-                                <!-- Produtos serão exibidos aqui -->
-                            </div>
+                    <section id="listaProdutos">
+                        <h2>Produtos Cadastrados</h2>
+                        <div id="produtosContainer">
+                            <!-- Produtos serão exibidos aqui -->
+                        </div>
 
-                            <div>
-                                <img src="/img/marcaPg.png" alt="marca pagina">
-                                <div class="prod-info">
-                                    <h4>Marca Páginas Magnéticos</h4>
-                                    <p>Marca páginas personalizados do seu jeito para marcar suas páginas sem amassar ou rasgar páginas, ou deixar marcas ou com risco de cair do livro por causa dos ímas nas pontas.</p>
-                                    <p><strong>R$ 1,50 - R$ 3,00</strong></p>
-                                </div>
-                                </div>
+                        <div>
+                            <img src="/img/marcaPg.png" alt="marca pagina">
+                            <div class="prod-info">
+                                <h4>Marca Páginas Magnéticos</h4>
+                                <p>Marca páginas personalizados do seu jeito para marcar suas páginas sem amassar ou rasgar páginas, ou deixar marcas ou com risco de cair do livro por causa dos ímas nas pontas.</p>
+                                <p><strong>R$ 1,50 - R$ 3,00</strong></p>
+                            </div>
+                            </div>
             
-                                <div>
-                                <img src="/img/foto.jpeg">
-                                <div class="prod-info">
-                                    <h4>Edição e impressão de fotos </h4>
-                                    <p>Uma boa opção, para dar de presentes, guardar e eternizar memórias, podendo ser em vários tamanhos. 10x15: R$4,00; 13x18: R$4,50; 15x21: R$6,00; 18x24 e 20x29: R$10,80; acima de 100 unidades: R$1,75.</p>
-                                    <p><strong>$1,75 - R$10,80</strong></p>
-                                </div>
-                                </div>
+                        <div>
+                            <img src="/img/foto.jpeg">
+                            <div class="prod-info">
+                                <h4>Edição e impressão de fotos </h4>
+                                <p>Uma boa opção, para dar de presentes, guardar e eternizar memórias, podendo ser em vários tamanhos. 10x15: R$4,00; 13x18: R$4,50; 15x21: R$6,00; 18x24 e 20x29: R$10,80; acima de 100 unidades: R$1,75.</p>
+                                <p><strong>$1,75 - R$10,80</strong></p>
+                            </div>
+                        </div>
                                 
-                                <div>
-                                    <img src="/img/mdf.jpeg">
-                                    <div class="prod-info">
-                                        <h4>Quadro MDF com foto ou frase</h4>
-                                        <p>Opção para guardar e eternizar suas fotos, impressas e molduradas em tamanho A4.</p>
-                                        <p><strong>R$60,00</strong></p>
-                                    </div>
-                                </div>
+                        <div>
+                            <img src="/img/mdf.jpeg">
+                            <div class="prod-info">
+                                <h4>Quadro MDF com foto ou frase</h4>
+                                    <p>Opção para guardar e eternizar suas fotos, impressas e molduradas em tamanho A4.</p>
+                                    <p><strong>R$60,00</strong></p>
+                                /div>
+                        </div>
             
-                                <div>
-                                    <img src="/img/caixa.jpg">
-                                    <div class="prod-info">
-                                        <h4>Caixinhas Personalizadas</h4>
-                                        <p>Uma boa opção para presentear alguém que você ama, seja com fotos, com doces ou até mesmo outra coisa, a caixinha é personalizada e pensada para você. Valor personalizável.</p>
-                                        <p><strong>R$ 15,00 -</strong></p>
-                                    </div>
-                                </div>
+                        <div>
+                            <img src="/img/caixa.jpg">
+                            <div class="prod-info">
+                                <h4>Caixinhas Personalizadas</h4>
+                                <p>Uma boa opção para presentear alguém que você ama, seja com fotos, com doces ou até mesmo outra coisa, a caixinha é personalizada e pensada para você. Valor personalizável.</p>
+                                <p><strong>R$ 15,00 -</strong></p>
+                            </div>
+                        </div>
                         </section>
                     </div>
 
-                    <!--<div>
-                    <img src="/img/marcaPg.png" alt="marca pagina">
-                    <div class="prod-info">
-                        <h4>Marca Páginas Magnéticos</h4>
-                        <p>Marca páginas personalizados do seu jeito para marcar suas páginas sem amassar ou rasgar páginas, ou deixar marcas ou com risco de cair do livro por causa dos ímas nas pontas.</p>
-                        <p><strong>R$ 1,50 - R$ 3,00</strong></p>
-                    </div>
-                    </div>
+                    <section id="prod-lista">
+                        <h3>Produtos Cadastrados</h3>
+                        <section class="prod-item" id="listaProdutos">
 
-                    <div>
-                    <img src="/img/foto.jpeg">
-                    <div class="prod-info">
-                        <h4>Edição e impressão de fotos </h4>
-                        <p>Uma boa opção, para dar de presentes, guardar e eternizar memórias, podendo ser em vários tamanhos. 10x15: R$4,00; 13x18: R$4,50; 15x21: R$6,00; 18x24 e 20x29: R$10,80; acima de 100 unidades: R$1,75.</p>
-                        <p><strong>$1,75 - R$10,80</strong></p>
-                    </div>
-                    </div>
-                    
-                    <div>
-                        <img src="/img/mdf.jpeg">
+                        <div>
+                        <img src="/img/marcaPg.png" alt="marca pagina">
                         <div class="prod-info">
-                            <h4>Quadro MDF com foto ou frase</h4>
-                            <p>Opção para guardar e eternizar suas fotos, impressas e molduradas em tamanho A4.</p>
-                            <p><strong>R$60,00</strong></p>
+                            <h4>Marca Páginas Magnéticos</h4>
+                            <p>Marca páginas personalizados do seu jeito para marcar suas páginas sem amassar ou rasgar páginas, ou deixar marcas ou com risco de cair do livro por causa dos ímas nas pontas.</p>
+                            <p><strong>R$ 1,50 - R$ 3,00</strong></p>
                         </div>
-                    </div>
+                        </div>
 
-                    <div>
-                        <img src="/img/caixa.jpg">
+                        <div>
+                        <img src="/img/foto.jpeg">
                         <div class="prod-info">
-                            <h4>Caixinhas Personalizadas</h4>
-                            <p>Uma boa opção para presentear alguém que você ama, seja com fotos, com doces ou até mesmo outra coisa, a caixinha é personalizada e pensada para você. Valor personalizável.</p>
-                            <p><strong>R$ 15,00 -</strong></p>
+                            <h4>Edição e impressão de fotos </h4>
+                            <p>Uma boa opção, para dar de presentes, guardar e eternizar memórias, podendo ser em vários tamanhos. 10x15: R$4,00; 13x18: R$4,50; 15x21: R$6,00; 18x24 e 20x29: R$10,80; acima de 100 unidades: R$1,75.</p>
+                            <p><strong>$1,75 - R$10,80</strong></p>
                         </div>
-                    </div>
-                </section>
+                        </div>
+                        
+                        <div>
+                            <img src="/img/mdf.jpeg">
+                            <div class="prod-info">
+                                <h4>Quadro MDF com foto ou frase</h4>
+                                <p>Opção para guardar e eternizar suas fotos, impressas e molduradas em tamanho A4.</p>
+                                <p><strong>R$60,00</strong></p>
+                            </div>
+                        </div>
 
-                <div class="prod-acoes">
-                    <button class="edit">Editar</button>
-                    <button class="exc">Excluir</button>
-                </div>
-            </section>  
+                        <div>
+                            <img src="/img/caixa.jpg">
+                            <div class="prod-info">
+                                <h4>Caixinhas Personalizadas</h4>
+                                <p>Uma boa opção para presentear alguém que você ama, seja com fotos, com doces ou até mesmo outra coisa, a caixinha é personalizada e pensada para você. Valor personalizável.</p>
+                                <p><strong>R$ 15,00 -</strong></p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="prod-acoes">
+                        <button class="edit">Editar</button>
+                        <button class="exc">Excluir</button>
+                    </div>
+                </section>  
     </main>-->
 
     <footer>
