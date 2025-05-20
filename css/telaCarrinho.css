@@ -13,7 +13,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    
+
 
 }
 
@@ -135,7 +135,6 @@ header {
 #imgcarrinho {
     width: 7.0rem;
     height: 7.0rem;
-    display: block;
     margin: 0;
 
 }
@@ -200,7 +199,7 @@ main {
     flex-direction: column;
     align-items: center;
     flex: 1;
-    
+
 
 
 }
@@ -249,7 +248,13 @@ main article h3 {
     padding: 0;
     margin-top: 2.0rem;
     margin-bottom: 4.0rem;
+    color: green;
 
+}
+
+main article img {
+    width: 24.0rem;
+    height: 24.0rem;
 }
 
 main article button {
@@ -262,58 +267,22 @@ main article button {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: montserrat;
 }
 
-#statusAguardandoPagamento {
-    color: red;
-
+#carrinhoMain{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    font-family: fredoka;
+    color: #E28A2B;
+    font-size: 2.0rem;
 }
 
-#avisoAguardando {
-    border: 0.1rem solid red;
-    border-radius: 1.5rem;
-    padding: 1.0rem;
-
-}
-
-#statusProducao {
-    color: #D37B1D;
-
-}
-
-#avisoProducao {
-    border: 0.1rem solid #D37B1D;
-    border-radius: 1.5rem;
-    padding: 1.0rem;
-
-}
-
-
-#statusPronto {
-    color: green;
-
-}
-
-#avisoPronto {
-    border: 0.1rem solid green;
-    border-radius: 1.5rem;
-    padding: 1.0rem;
-
-}
-
-#statusFinalizado {
-    color: #708090;
-
-}
-
-#avisoFinalizado {
-    border: 0.1rem solid #708090;
-    border-radius: 1.5rem;
-    padding: 1.0rem;
-
-}
-
-#cnpj {
+#prerodape {
     height: 4.5rem;
     width: 100vw;
     background-color: #A45AE8;
