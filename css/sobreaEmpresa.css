@@ -44,13 +44,215 @@ header {
     margin-top: 10px;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
+#cnpj{
+    height: 4.5rem;
+    width: 100vw;
+    background-color: #A45AE8;
+    
+}
+#rodape{
+    width: 100vw;
+    height: 13rem;
     background-color: #8a2be2;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 5.0rem;
+    padding-right: 5.0rem;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+footer section h3 {
+    font-family: fredoka;
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin: 0;
+
+}
+footer section p{
+    font-family: montserrat;
+    font-size: 1.2rem;
+    color: #ffffff;
+    font-weight: 400;
+    margin: 0.8rem;
+}
+footer section a{
+    font-family: montserrat;
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: 400;
+    text-decoration: none;
+
+}
+.redessociais{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0;
+    margin-bottom: 0.5rem;
+
+}
+.redessociais img{
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0;
+    padding: 0;
+}
+footer{
+    justify-content: center;
+    align-items: center;
+}
+#rodape a{
     color: white;
-    margin-top: 40px;
+    text-decoration: none;
+}
+#rodape a:visited {
+    color: white; /* Cor do link após ser visitado */
 }
 #mundodalua {
     font-family: Playball;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2vw 5vw;
+    background-color: #8a2be2;
+}
+#bloco_pesquisa{
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    align-items: center; 
+}
+#barradepesquisa{
+    width: 28rem;
+    height: 2.5rem;
+    display: inline-block;
+    border-radius: 6.0rem 0.0rem 0.0rem 6.0rem;
+    border: 0cap;
+    padding-left: 1.5rem;
+    font-size: 1.2rem;
+    box-shadow: 0.4rem 0.4rem 1.0rem #6F1ABD;
+
+}
+#botaoPesquisar{
+    width: 3.2rem;
+    height: 2.5rem;
+    padding-top: -2rem;
+    border-radius: 0.0rem 6.0rem 6.0rem 0.0rem;
+    border: 0cap;
+    background-color: #6F1ABD;
+}
+#imagemLupa{
+    width: 1.6rem;
+    height: 1.5rem;
+}
+
+#grafica{
+    font-family: playball;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin: 0;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: -0.3rem 0.3125rem 0.625rem #1379bd;
+    -webkit-text-stroke: 0.02rem #1379bd;
+    
+}
+#mundodalua{
+    font-family: montserrat;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: #ffffff;
+    text-shadow: -0.2rem 0.3125rem 0.625rem #1379bd;
+    -webkit-text-stroke: 0.02rem #1379bd;
+
+}
+#bloco_nome{
+    max-width: 20%;
+    max-height: 10%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    float: left;   
+}
+.usuario img{
+    margin-top: rem;
+    width: 5.5rem;
+    filter: invert(1);
+    float: left;
+}
+.usuario p{
+    text-align: justify;
+}
+.usuario a{
+    color: #de2cdc;
+    text-decoration: none;
+}
+.carrinho a{
+    color: #de2cdc;
+    text-decoration: none;
+}
+.carrinho p{
+    margin-top: -0.5rem;
+    font-size: 1.2rem;
+}
+.carrinho img{
+    width: 3.5rem;
+}
+a:active{
+    color: #de2cdc;
+}
+.carrinho{
+    align-items: center;
+    text-align: center;
+}
+.usuario{
+    display: inline-block;
+}
+.compra-btn{
+    width: 35%;
+    display: block;
+    margin: 0 auto;
+}
+nav{
+    height: 5vh;
+    width: 100vw;
+    padding-left: 10.0rem;
+    padding-right: 10.0rem;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 32.0rem;
+    border-bottom: 1.8px solid #8a2be2;
+    font-family: 1rem;
+    font-weight: 550;
+}
+#corCategoria{
+    color: #E28A2B;
+    font-family: montserrat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#corCategoria img{
+    height: 2rem;
+    padding: 0;
+    margin: 0;
+    
+}
+#corCategoria p{
+    padding: 0;
+    margin: 0;
+}
+.palavrasNav{
+    color: #8a2be2;
+    font-family: montserrat;
 }
