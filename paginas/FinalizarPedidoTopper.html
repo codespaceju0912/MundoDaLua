@@ -6,8 +6,8 @@
     <title>Finalizar pedido do Topper de bolo</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/finalizaTopper.css">
-    <script src="/js/base.js"></script>
-    <script src="/js/finaliza.js"></script>
+    <script src="/js/base.js" defer></script>
+    <script src="/js/finalizaT.js" defer></script>
 </head>
 <body>
     <header>
@@ -30,33 +30,45 @@
             <h2>Personalização</h2>
             <textarea name="" id="" placeholder="Ex: Quero que o topper de bolo seja da personagem do filme moana..."></textarea>
             <section class="escolha-montag">
-                <label><input type="radio" name="escolha" value="sMontagem"> Sem montagem</label> 
+                <label><input type="radio" name="escolha" value="15"> Sem montagem</label> 
             </section>
             <section class="escolha-montag">
-                <label><input type="radio" name="escolha" value="scontagem"> Com montagem</label>
+                <label><input type="radio" name="escolha" value="25"> Com montagem</label>
             </section>
             <section class="quanti">
                 <label>Quantidade:</label>
-                <input type="number" min="1" value="1">
+                <input type="number" id="meuInput" min="1" value="1">
                 <button class="preco-btn">preço</button>
-            </section>  
+            </section>
+            <p id="preco">Preço: <spam id="textvalor"></spam></p>  
             <button class="submit-btn" onclick="goTelaPg()">Finalizar Compra</button>     
         </article>
         
     </article>
-    <footer>
-        <section class="justify-content-around">
-            <img src="/img/logoWhat.png" id="logoW">
-            <p>27 99201-0821</p>
+    <footer style="position: relative;">
+        <section id="cnpj">
+            
         </section>
-        <section class="justify-content-around">
-            <img src="/img/logoInst.png" id="logoI">
-            <p>@omundodaluaservicosdigitais</p>
+        <section id="rodape">
+            <section>
+                <h3>Fale conosco</h3>
+                <p>Tell: (27) 99201-0821</p>
+                <p>E-mail: omundodaluaservicosdigitais@gmail.com</p>
+            </section>
+            <section>
+                <h3>Redes sociais</h3>
+                <section class="redessociais">
+                    <img src="/img/instagram.png" alt="">
+                    <p>@omundodaluaservicosdigitais</p>
+                </section>
+            </section>
+            <section>
+                <h3>Área do Cliente</h3>
+                <a href="/paginas/login.html">Login</a><br>
+                <a href="cadastro.html">Meus pedidos</a><br>
+                <a href="telaPedidos.html">Meus pedidos</a>
+            </section>
         </section>
-        <section class="justify-content-around">
-            <img src="/img/logoLocaliza.png" id="logoL">
-            <p>R. Tuffi Salomão Borges, 91 - José de Anchieta II, Serra - ES, 29162-502</p>
-        </section>
-    </footer>  
+    </footer>
 </body>
 </html>
