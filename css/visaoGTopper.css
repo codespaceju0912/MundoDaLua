@@ -102,3 +102,52 @@ a:active{
 .usuario{
     display: inline-block;
 }
+.compra-btn{
+    width: 35%;
+    display: block;
+    margin: 0 auto;
+}
+nav{
+    height: 5vh;
+    width: 100vw;
+    padding-left: 10.0rem;
+    padding-right: 10.0rem;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 32.0rem;
+    border-bottom: 1.8px solid #8a2be2;
+    font-family: 1rem;
+    font-weight: 550;
+}
+#corCategoria{
+    color: #E28A2B;
+    font-family: montserrat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#corCategoria img{
+    height: 2rem;
+    padding: 0;
+    margin: 0;
+    
+}
+#corCategoria p{
+    padding: 0;
+    margin: 0;
+}
+.palavrasNav{
+    color: #8a2be2;
+    font-family: montserrat;
+}
+.quanti{
+    padding-top: 2rem;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+}
+.submit-btn{
+    margin-top: 1rem;
+}
