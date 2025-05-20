@@ -1,51 +1,137 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Tela de Pedidos</title>
-        <link rel="stylesheet" href="/css/style.css">
-        <link rel="stylesheet" href="/css/telaPedidos.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playball&display=swap" rel="stylesheet">
-    
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/telaPedidos.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Tela de Produtos</title>
+</head>
 
-</body>
-
-</html>
-<header>
-        <section id="bloco_nome">
+<body>
+    <header>
+        <section id="bloco_mundoDaLua">
             <h1 id="grafica">Gráfica</h1>
             <h1 id="mundodalua">MUNDO DA LUA</h1>
         </section>
-        <section class="search-bar">
-            <input type="text" placeholder="Encontre aqui o melhor produto para você">
-            <button>
-                <img src="/img/search.png" alt="Buscar">
-            </button>
-        </section>
-        <section class="usuario">
-            <img src="/img/usuario.png">
-            <p>Faça o <a href="/paginas/login.html">LOGIN</a> ou <a href="/paginas/cadastro.html">CADASTRE-SE</a></p>
-        </section>
-        <section class="carrinho">
-            <a href="/paginas/carrinho.html"><img src="/img/carrinho.png"></a>
-            <p><a href="/paginas/carrinho.html">Carrinho</a></p>
-        </section>
- </header>
-<nav >
-    <p>Categoria</p>
-    <p>Produtos</p>
-    <p>Acompanhar pedidos</p>
 
-</nav>
-<main>
-    <h2> Produtos </h2>
-</main>
+        <section id="bloco_pesquisa">
+            <input id="barradepesquisa" class="montserrat" type="text"
+                placeholder="Encontre aqui o melhor produto para você">
+            <button id="botaoPesquisar"><img src="/img/lupaBranca.png" alt="" id="imagemLupa"></button>
+        </section>
 
-    
-    </html>
-    </body>
+        <section id="bloco_perfil">
+            <img src="/img/perfil.png" alt="" id="imgperfil">
+            <h3>Faça <span id="avisoPerfil">LOGIN</span> <br>ou <br><span id="avisoPerfil">CADASTRE-SE</span></h3>
+        </section>
+        <section id="bloco_carrinho">
+            <img src="/img/Carrinho.png" alt="" id="imgcarrinho">
+            <h3>Carrinho</h3>
+        </section>
+    </header>
+    <nav>
+        <section id="corCategoria">
+            <p>Categorias</p>
+            <img src="/img/setaMenu.png" alt="">
+        </section>
+        <section class="palavrasNav">
+            <p>Produtos</p>
+        </section>
+        <section class="palavrasNav">
+            <p>Acompanhar Pedidos</p>
+        </section>
+    </nav>
+    <main>
+        <article>
+            <div>
+                <h4>Produtos</h4>
+                <p>1x Quadro MDF</p>
+                <p>2x Topper de bolo</p>
+                <p>1x Edição de foto</p>
+            </div>
+            <div id="statusPronto">
+                <h4>Status do pedido</h4>
+                <h3>Pedido pronto para retirar</h3>
+                <div id="avisoPronto">
+                    <p>Isso significa que <br>seu pedido já está<br> pronto para retirar.</p>
+                </div>
+            </div>
+        </article>
+        <article>
+            <div>
+                <h4>Produtos</h4>
+                <p>1x Quadro MDF</p>
+                <p>2x Topper de bolo</p>
+                <p>1x Edição de foto</p>
+            </div>
+            <div id="statusAguardandoPagamento">
+                <h4>Status do pedido</h4>
+                <h3>Aguardando pagamento</h3>
+                <div id="avisoAguardando">
+                    <p>Isso significa que <br>seu pagamento ainda não<br> consta no nosso sistema.</p>
+                </div>
+            </div>
+        </article>
+        <article>
+            <div>
+                <h4>Produtos</h4>
+                <p>1x Quadro MDF</p>
+                <p>2x Topper de bolo</p>
+                <p>1x Edição de foto</p>
+            </div>
+            <div id="statusProducao">
+                <h4>Status do pedido</h4>
+                <h3>Em produção</h3>
+                <div id="avisoProducao">
+                    <p>Isso significa que seu pedido<br> esta sendo produzido,<br> e logo ficará pronto.</p>
+                </div>
+            </div>
+        </article>
+        <article>
+            <div>
+                <h4>Produtos</h4>
+                <p>1x Quadro MDF</p>
+                <p>2x Topper de bolo</p>
+                <p>1x Edição de foto</p>
+            </div>
+            <div id="statusFinalizado">
+                <h4>Status do pedido</h4>
+                <h3>Finalizado</h3>
+                <div id="avisoFinalizado">
+                    <p>Isso significa que seu pedido<br>já foi retirado. <br> Agradecemos pela preferência.</p>
+                </div>
+            </div>
+        </article>
+
+
+    </main>
+    <footer>
+        <div id="cnpj">
+
+        </div>
+        <div id="rodape">
+            <div>
+                <h3>Fale conosco</h3>
+                <p>Tell: (27) 99201-0821</p>
+                <p>E-mail: omundodaluaservicosdigitais@gmail.com</p>
+            </div>
+            <div>
+                <h3>Redes sociais</h3>
+                <div class="redessociais">
+                    <img src="/img/instagram.png" alt="">
+                    <p>@omundodaluaservicosdigitais</p>
+                </div>
+            </div>
+            <div>
+                <h3>Área do Cliente</h3>
+                <a href="/paginas/login.html">Login</a><br>
+                <a href="cadastro.html">Meus pedidos</a><br>
+                <a href="telaPedidos.html">Meus pedidos</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
