@@ -22,8 +22,6 @@ body {
     font-family: monteserrat;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     overflow-x: hidden;
 }
@@ -76,7 +74,7 @@ header button{
 button:hover{
     background-color: #a34cf5;
 }
-.container{
+.main{
     width: 100%;
     max-width: 1200px;
     background-color: #fff;
@@ -85,6 +83,7 @@ button:hover{
     display: flex;
     gap: 1.25rem;
     padding: 1.25rem;
+    flex: 1;
 }
 .personaliza{
     background-color: #c7c5c53b;
@@ -149,7 +148,7 @@ textarea{
 
 .submit-btn {
     font-size: 1.125rem;
-    margin-top: 2.6rem;
+    margin-top: 1.3rem;
     width: 50%;
     background-color: #0fa40f;
     border: 0;
@@ -198,7 +197,7 @@ textarea{
 #espaco{
     margin-top: 1.5rem;
 }
-#cnpj{
+#preRodape{
     height: 3rem;
     width: 100vw;
     background-color: #A45AE8;
@@ -210,9 +209,9 @@ textarea{
     background-color: #8a2be2;
     display: flex;
     flex-wrap: wrap;
-    padding-left: 10.0rem;
-    padding-right: 10.0rem;
-    gap: 8.0rem;
+    padding-left: 5.0rem;
+    padding-right: 5.0rem;
+    gap: 3.5rem;
     justify-content: center;
     align-items: center;
 }
@@ -254,4 +253,8 @@ footer section a{
     height: 2.5rem;
     margin: 0;
     padding: 0;
+}
+footer{
+    justify-content: center;
+    align-items: center;
 }
