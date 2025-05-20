@@ -13,13 +13,14 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    
 
 }
 
 
 header {
     width: 100vw;
-    height: 12.0rem;
+    min-height: 12.0rem;
     background-color: #8a2be2;
     padding-left: 20.0rem;
     padding-right: 20.0rem;
@@ -134,9 +135,7 @@ header {
 #imgcarrinho {
     width: 7.0rem;
     height: 7.0rem;
-    display: block;
     margin: 0;
-    padding-top: 1.0rem;
 
 }
 
@@ -200,6 +199,7 @@ main {
     flex-direction: column;
     align-items: center;
     flex: 1;
+    
 
 
 }
