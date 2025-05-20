@@ -256,3 +256,9 @@ nav{
     color: #8a2be2;
     font-family: montserrat;
 }
+li:hover{
+    background-color: #bb8be747;
+}
+p:hover{
+    background-color: #bb8be747;
+}
