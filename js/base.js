@@ -10,3 +10,9 @@ function goTelaPg(){
 function goCarrinho(){
     window.location.href = '/paginas/telaCarrinho.html';
 }
+function goTela(){
+    window.location.href = '/index.html';
+}
+function goTelaLogin(){
+    window.location.href = '/paginas/login.html';
+}
