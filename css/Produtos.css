@@ -323,3 +323,11 @@ footer{
     background-color: #f1e7ff;
     color: #8a2be2;
 }
+a{
+    color: black;
+    text-decoration: none;
+
+}
+a:visited {
+    color: black; /* Cor do link após ser visitado */
+}
