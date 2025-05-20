@@ -229,27 +229,42 @@ footer div a{
     padding: 0;
 }
 
+/* estilização da página*/
+
+/* Reset básico e configurações globais */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body{
     background-color: #ffffff; 
     color: #333;
     min-height: 100vh;
     padding: 20px;
+    font-family: montserrat;
+    line-height: 1.6; /* Melhora a legibilidade */
 }
 
+/* Container principal responsivo */
 main{
     max-width: 900px;
     margin: 40px auto;
     padding: 0 20px;
+    width: 100%; /* Garante que ocupe toda a largura disponível */
 }
 
+/* Títulos */
 h2{
     color: #8a2be2;
     margin-bottom: 15px;
     text-align: center;
     font-family: montserrat;
-    font-size: medium;
+    font-size: 1.5rem;
 }
 
+/* Formulário de cadastro */
 .form-usu{
     background-color: #ffffff;
     padding: 20px;
@@ -261,23 +276,25 @@ h2{
 .form-usu form{
     display: flex;
     flex-direction: column;
+    gap: 15px; /* Substitui margens individuais por gap */
 }
 
 .form-usu label{
-    margin: 10px 0 5px;
     color: #333;
-    margin-bottom: 15px;
-    font-family: montserrat;
-    font-size: medium;
+    font-size: 1rem;
+    font-weight: 500; /* Melhora a hierarquia visual */
     
 }
 
 .form-usu input{
-    padding: 10px;
+    padding: 12px; /* Aumentado para melhor toque em mobile */
     border: 1px solid #ccc;
     border-radius: 8px;
+    font-size: 1rem;
+    width: 100%; /* Garante que ocupe toda a largura */
 }
 
+/* Botões */
 .form-usu button{
     margin-top: 20px;
     padding: 12px;
@@ -287,48 +304,99 @@ h2{
     font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease; /* Transição suave para todos os estados */
+    font-size: 1rem;
 }
 
-.form-usu button:hover{
+.form-usu button:hover {
     background-color: #6c1fb8;
+    transform: translateY(-2px); /* Efeito sutil de elevação */
 }
 
+/* Listagem de usuários */
 .list-Usu{
     background-color: #ffffff;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    font-family: montserrat;
+    overflow-x: auto; /* Permite scroll horizontal em telas pequenas */
 }
 
 
 table{
     width: 100%;
     border-collapse: collapse;
+    min-width: 600px; /* Garante boa legibilidade em telas pequenas */
 }
 
 table thead{
     background-color: #6c1fb8;
     color:#fff;
-    font-size: small;
 }
 
 table th, table td{
     padding: 12px;
     text-align: left;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #ddd;
 }
 
-table button{
+table td {
+    vertical-align: middle; /* Alinha conteúdo verticalmente */
+}
+
+table button {
     background-color: #8a2be2;
     color: #fff;
     border: none;
     padding: 8px 12px;
     border-radius: 6px;
     cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Evita quebra de linha no texto do botão */
 }
 
-table button:hover{
-    background-color: #8a2be2;
+table button:hover {
+    background-color: #6c1fb8;
+    transform: scale(1.05); /* Efeito de zoom sutil */
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    main {
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+    
+    .form-usu, .list-Usu {
+        padding: 15px;
+    }
+    
+    table th, table td {
+        padding: 8px 10px;
+        font-size: 0.9rem; /* Reduz tamanho da fonte em telas pequenas */
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-usu button {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    
+    table {
+        font-size: 0.8rem;
+    }
+    
+    table button {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
 }

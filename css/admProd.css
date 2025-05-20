@@ -236,7 +236,7 @@ body{
     font-family: montserrat;
 }
 
-/* estiliza a caixa que contém o formulário, o título e os botões*/
+/* estiliza do container que envolve tod conteúdo*/
 .container{
     max-width: 900px;
     margin: 0 auto;
@@ -253,17 +253,18 @@ h3{
     margin-bottom: 1.5rem;
     text-align: center;
     font-family: montserrat;
-    font-size: medium;
+    font-size: 2.4rem;
 }
 
-/* estiliza o nome acima dos espaços para preencher no formulário */
+/* estiliza os rótulos dos campos do formulário */
 label{
     color: #333;
     margin-bottom: 5px;
     font-family: montserrat;
-    font-size: medium;
+    font-size: 1.6rem;
 }
-/* estiliza o formulário todo*/
+
+/* estiliza o conatiner do formulário*/
 form{
     display: flex;
     flex-direction: column;
@@ -279,10 +280,11 @@ select {
     padding: 12px;
     border-radius: 8px;
     border: 1px solid #ccc;
-    font-size: 16px;
+    font-size: 1.6rem;
     transition: border 0.3s;
 }
 
+/* efeito ao focar nos campos */
 input:focus,
 select:focus{
     outline: none;
@@ -296,17 +298,19 @@ input[type="button"]{
     padding: 12px;
     border: none;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 1.6rem;
     cursor: pointer;
     transition: background-color 0.3s;
     align-items: center;
 }
 
+/* Efeito hover nos botões */
 input[type="button"]:hover{
     background-color: #8a2be2;
 }
 
-/* estiliza a lista de produtos cadastrados*/
+/*LISTA DE PRODUTOS*/
+/* Container da lista de produtos */
 .prod-lista{
     display: flex;
     flex-direction: column;
@@ -317,6 +321,7 @@ input[type="button"]:hover{
     justify-content: center;
 }
 
+/* Item individual de produto */
 .prod-item{
     display:grid;
     grid-template-columns: repeat(2, 1fr);
@@ -331,6 +336,7 @@ input[type="button"]:hover{
     text-align: center;
 }
 
+/* Imagem do produto */
 .prod-item img{
     width: 100%;
     max-height: 180px;
@@ -339,10 +345,12 @@ input[type="button"]:hover{
     margin-bottom: 10px;
 }
 
+/* Efeito hover no item */
 .prod-item:hover{
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.01);
 }
 
+/* Informações do produto */
 .prod-info h4{
     color: #8a2be2;
     margin-bottom: 5px;
@@ -352,21 +360,24 @@ input[type="button"]:hover{
     margin-bottom: 5px;
 }
 
+/* Container dos botões de ação */
 .prod-acoes{
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
 }
 
+/* Estilo base para botões de ação */
 .prod-acoes button{
     padding: 8px 12px;
     border: none;
     border-radius: 6px;
-    font-size: 14px;
+    font-size: 1.4rem;
     cursor: pointer;
     transition: 0.3s;
 }
 
+/* Botão Editar */
 .edit{
     background-color: #8a2be2;
     color: #ffffff;
@@ -376,6 +387,7 @@ input[type="button"]:hover{
     background-color: #6c1fb8;
 }
 
+/* Botão Excluir */
 .exc{
     background-color: #8a2be2;
     color: #ffffff;
@@ -385,20 +397,6 @@ input[type="button"]:hover{
     background-color: #6c1fb8;
 }
 
-
-
-/*@media (max-width: 768px){
-    .prod-item{
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .prod-acoes{
-        flex-direction: row;
-        margin-top: 10px;
-    }
-}
-*/
 
 /*formulário resposivo*/
 @media (max-width: 768px) {
@@ -423,13 +421,88 @@ input[type="button"]:hover{
         padding: 2rem;
     }*/
 
+    /* Transforma o grid de 2 para 1 coluna */
     .prod-item {
         grid-template-columns: 1fr;
         width: 100%;
     }
 
+    /* Alinha os botões verticalmente em telas pequenas */
     .prod-acoes {
         flex-direction: column;
         width: 100%;
     }
 }
+
+
+
+/*@media (max-width: 768px) {
+    header {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        gap: 2rem;
+        height: auto;
+        flex-wrap: wrap;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    nav {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        gap: 2rem;
+        height: auto;
+        flex-wrap: wrap;
+    }
+
+    #barradepesquisa {
+        width: 100%;
+        max-width: 30rem;
+    }
+
+    #rodape {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        gap: 2rem;
+        height: auto;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .prod-item {
+        grid-template-columns: 1fr;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .prod-acoes {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    #bloco_mundoDaLua, #bloco_pesquisa, #bloco_perfil, #bloco_carrinho {
+        flex: 1 1 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .palavrasNav {
+        font-size: 1.4rem;
+    }
+
+    footer div h3 {
+        font-size: 2.0rem;
+    }
+
+    footer div p, footer div a {
+        font-size: 1.6rem;
+    }
+}
+
+*/
