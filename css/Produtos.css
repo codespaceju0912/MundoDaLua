@@ -331,5 +331,12 @@ a{
 a:visited {
     color: black; /* Cor do link após ser visitado */
 }
+#rodape a{
+    color: white;
+    text-decoration: none;
+}
+#rodape a:visited {
+    color: white; /* Cor do link após ser visitado */
+}
 
 
