@@ -221,6 +221,8 @@ main article {
 
 }
 
+
+
 main article p {
     text-align: center;
     font-family: montserrat;
@@ -359,4 +361,39 @@ footer div a {
     height: 3.0rem;
     margin: 0;
     padding: 0;
+}
+/* Estilos padronizados para os artigos do carrinho */
+main article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    padding: 2rem;
+    height: auto;
+    flex-wrap: nowrap;
+}
+
+.produto-info,
+.produto-preco,
+.produto-excluir {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.produto-info img {
+    width: 24.0rem;
+    height: 24.0rem;
+    margin-bottom: 2.0rem;
+}
+
+.produto-preco h3 {
+    color: green;
+}
+
+.produto-excluir img {
+    width: 5.0rem;
+    height: 5.0rem;
 }
