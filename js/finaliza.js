@@ -1,23 +1,22 @@
+function goTelaPg(){
+    window.location.href = '/paginas/opcaopg.html';
+}
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('btVoltaPVisaoGTopper').addEventListener('click', function () {
-        window.location.href = "visaoGTopper.html";
-    });
-    document.querySelector('.submit-btn').addEventListener('click', function () {
-        const paymentMethods = document.getElementsByName('payment');
-        let selectedPayment = '';
+    document.querySelector('.preco-btn').addEventListener('click', function () {
+        const escolhaMontag = document.getElementsByName('escolha');
+        let escolha = '';
 
-        paymentMethods.forEach(method => {
+        escolhaMontag.forEach(method => {
             if (method.checked) {
-                selectedPayment = method.value;
+                escolha = method.value;
             }
         });
 
-        if (selectedPayment === 'pix') {
-            window.location.href = '/paginas/pagamentoPix.html';
-        } else if (selectedPayment === 'local') {
+        if (escolha === 'sMontagem') {
+        } else if (escolha === 'cMontagem') {
             window.location.href = '/paginas/pagamentoLocal.html';
         } else {
-            alert('Por favor, selecione um método de pagamento.');
+            alert('Por favor, selecione se quer com montagem ou não');
         }
     });
 });
