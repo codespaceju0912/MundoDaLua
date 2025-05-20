@@ -158,7 +158,20 @@ textarea{
     font-size: 1.2rem;
     cursor: pointer;
 }
+.preco-btn{
+    font-size: 1.125rem;
+    width: 40%;
+    margin-left: 4rem;
+    background-color: #13a913;
+    border: 0;
+    padding: 0.625rem;
+    border-radius: 1rem;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
 .quanti{
+    width: 40%;
     margin-top: 1.6rem;
     display: flex;
     align-items: center;
@@ -166,6 +179,7 @@ textarea{
     margin-bottom: 0.938rem;
 }
 .quanti input{
+    margin-left: 0.5rem;
     width: 3.75rem;
     padding: 0.2rem;
     border: 0.1rem solid #ccc;

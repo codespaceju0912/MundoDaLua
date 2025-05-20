@@ -6,11 +6,12 @@
     <title>Finalizar pedido do Topper de bolo</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/finalizaTopper.css">
+    <script src="/js/base.js"></script>
     <script src="/js/finaliza.js"></script>
 </head>
 <body>
     <header>
-        <button id="btVoltaPVisaoGTopper">Voltar</button>
+        <button onclick="goBack()">Voltar</button>
         <section id="bloco_nome">
             <h1 id="grafica">Gráfica</h1>
             <h1 id="mundodalua">MUNDO DA LUA</h1>
@@ -37,8 +38,9 @@
             <section class="quanti">
                 <label>Quantidade:</label>
                 <input type="number" min="1" value="1">
+                <button class="preco-btn">preço</button>
             </section>  
-            <button class="submit-btn">Finalizar Compra</button>     
+            <button class="submit-btn" onclick="goTelaPg()">Finalizar Compra</button>     
         </article>
         
     </article>
