@@ -43,7 +43,7 @@
     </nav>
 
     <main>
-            <section class="container">
+            <section id="container">
                 <h3> Painel do Administrador - Produtos</h3>
                 
                 <form id="form-prod">
@@ -56,12 +56,12 @@
                     <label for="imgProd">Imagem:</label>
                     <input type="file" id="imgProd"><br><br>
                     <label for="qtdEstq">Quantidade em Estoque:</label>
-                    <input type="number" min="1" value="1"><br><br>
+                    <input type="number" min="0" value="1"><br><br>
                     <select name="categoria" required>
                         <option value="">Selecione a Categoria</option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option>
+                        <option value="Fotos"> Fotos</option>
+                        <option value="Papelaria">Papelaria</option>
+                        <option value="Personalizados">Personalizados</option>
                     </select>
                 </form>
                 <input type="button" name="botCad" value="Cadastrar" size="20">
@@ -72,8 +72,7 @@
             
             <section class="prod-lista">
                 <h3>Produtos Cadastrados</h3>
-
-                <section class="prod-item">
+                <section class="prod-item" id="listaProdutos">
 
                     <div>
                     <img src="/img/marcaPg.png" alt="marca pagina">
@@ -144,5 +143,8 @@
             </div>
         </div>
     </footer>
+
+    <!--js para adicionar os produtos-->
+    <script src="/js/admProd.js"></script>
 </body>
 </html>
