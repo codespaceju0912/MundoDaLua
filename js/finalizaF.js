@@ -9,6 +9,7 @@ document.querySelector(".preco-btn").addEventListener("click", () => {
         if (e.checked) {
             alertar = false;
             valor = parseFloat(e.value);
+            
         }
     });
 
