@@ -1,3 +1,9 @@
 #espaco{
-    margin-top: 3.2rem;
+    margin-top: 4.6rem;
+}
+.escolha-montag {
+    margin-top: 0.5rem;
+    display: flex;
+    margin-bottom: 1rem;
+    gap: 1rem;
 }

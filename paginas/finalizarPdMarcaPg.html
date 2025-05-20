@@ -7,10 +7,13 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/finalizaTopper.css">
     <link rel="stylesheet" href="/css/finalizaMarcaPg.css">
+    <script src="/js/base.js" defer></script>
+    <script src="/js/finalizaT.js" defer></script>
+    
 </head>
 <body>
     <header>
-        <button>Voltar</button>
+        <button onclick="goBack()">Voltar</button>
         <section id="bloco_nome">
             <h1 id="grafica">Gráfica</h1>
             <h1 id="mundodalua">MUNDO DA LUA</h1>
@@ -29,18 +32,20 @@
         <article class="box personaliza">
             <h2>Personalização</h2>
             <textarea name="" id="" placeholder="Ex: Quero que o marca pagina seja da personagem do filme moana..."></textarea>
-            <h3>Pagamento:</h3>
-            <section class="payment-methods">
-                <label><input type="radio" name="payment" value="pix"> Pagar pelo pix</label> 
+            <h3>Quantidade por pacote:</h3>
+            <section class="escolha-montag">
+                <label><input type="radio" name="escolha" value="1.5"> Com 1 marcador</label> 
             </section>
-            <section class="payment-methods">
-                <label><input type="radio" name="payment" value="local"> Pagar no local</label>
+            <section class="escolha-montag">
+                <label><input type="radio" name="escolha" value="3"> Com 2 marcadores</label>
             </section>
             <section class="quanti">
                 <label>Quantidade:</label>
-                <input type="number" min="1" value="1">
-            </section>  
-            <button class="submit-btn">Finalizar Compra</button>     
+                <input type="number" id="meuInput" min="1" value="1">
+                <button class="preco-btn">preço</button>
+            </section>
+            <p id="preco">Preço: <spam id="textvalor"></spam></p>  
+            <button class="submit-btn" onclick="goTelaPg()">Finalizar Compra</button>      
         </article>
         
     </article>
@@ -65,6 +70,10 @@
                 <a href="/paginas/login.html">Login</a><br>
                 <a href="/paginas/cadastro.html">Cadastra-se</a><br>
                 <a href="/paginas/telaPedidos.html">Meus pedidos</a>
+            </section>
+            <section>
+                <h3>Sobre Nós</h3>
+                <a href="/paginas/sobreaEmpresa.html">Sobre a Empresa</a>
             </section>
         </section>
     </footer>  
