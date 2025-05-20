@@ -310,6 +310,8 @@ input[type="button"]:hover{
 
 .prod-lista{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     flex-wrap: wrap;
     gap: 20px;
     margin-top: 30px;
@@ -317,14 +319,15 @@ input[type="button"]:hover{
 }
 
 .prod-item{
-    width: 280px;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 600px;
+    gap: 50px;
     background-color: #fefefe;
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 15px;
     transition: box-shadow 0.3s;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     text-align: center;
 }
@@ -352,8 +355,8 @@ input[type="button"]:hover{
 
 .prod-acoes{
     display: flex;
-    flex-direction: column;
     gap: 10px;
+    margin-bottom: 20px;
 }
 
 .prod-acoes button{
@@ -396,3 +399,4 @@ input[type="button"]:hover{
         margin-top: 10px;
     }
 }
+

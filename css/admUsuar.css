@@ -245,6 +245,9 @@ main{
 h2{
     color: #8a2be2;
     margin-bottom: 15px;
+    text-align: center;
+    font-family: montserrat;
+    font-size: medium;
 }
 
 .form-usu{
@@ -262,6 +265,11 @@ h2{
 
 .form-usu label{
     margin: 10px 0 5px;
+    color: #333;
+    margin-bottom: 15px;
+    font-family: montserrat;
+    font-size: medium;
+    
 }
 
 .form-usu input{
@@ -291,7 +299,9 @@ h2{
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-family: montserrat;
 }
+
 
 table{
     width: 100%;
@@ -301,6 +311,7 @@ table{
 table thead{
     background-color: #6c1fb8;
     color:#fff;
+    font-size: small;
 }
 
 table th, table td{
