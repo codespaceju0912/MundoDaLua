@@ -5,110 +5,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar/Alterar/Excluir Produto</title>
     <link rel="stylesheet" href="/css/admProd.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <header>
-        <section id="bloco_nome">
+        <section id="bloco_mundoDaLua">
             <h1 id="grafica">Gráfica</h1>
             <h1 id="mundodalua">MUNDO DA LUA</h1>
         </section>
-        <section class="search-bar">
-            <input type="text" placeholder="Encontre aqui o melhor produto para você">
-            <button>
-                <img src="/img/search.png" alt="Buscar">
-            </button>
-        </section>
-        <section class="usuario">
-            <img src="/img/usuario.png">
-            <p>Faça o <a href="/paginas/login.html">LOGIN</a> ou <a href="/paginas/cadastro.html">CADASTRE-SE</a></p>
-        </section>
-        <section class="carrinho">
-            <a href="/paginas/carrinho.html"><img src="/img/carrinho.png"></a>
-            <p><a href="/paginas/carrinho.html">Carrinho</a></p>
-        </section>
- </header>
 
-    <article>
-        <div class="container">
-            <h3> Painel do Administrador - Produtos</h3>
+        <section id="bloco_pesquisa">
+            <input  id="barradepesquisa" class="montserrat" type="text" placeholder="Encontre aqui o melhor produto para você">
+            <button id="botaoPesquisar"><img src="/img/lupaBranca.png" alt="" id="imagemLupa"></button>
+        </section>
+
+        <section id="bloco_perfil">
+            <img src="/img/perfil.png" alt="" id="imgperfil">
+            <h3>Faça <span id="avisoPerfil">LOGIN</span> <br>ou <br><span id="avisoPerfil">CADASTRE-SE</span></h3>
+        </section>
+        <section id="bloco_carrinho">
+            <img src="/img/Carrinho.png" alt="" id="imgcarrinho">
+            <h3>Carrinho</h3>
+        </section>
+    </header>
+
+    <nav>
+        <section id="corCategoria">
+            <p>Categorias</p>
+            <img src="/img/setaMenu.png" alt="">
+        </section>
+        <section class="palavrasNav">
+            <p>Produtos</p>
+        </section>
+        <section class="palavrasNav">
+            <p>Acompanhar Pedidos</p>
+        </section>
+    </nav>
+
+    <main>
+            <section class="container">
+                <h3> Painel do Administrador - Produtos</h3>
+                
+                <form id="form-prod">
+                    <label for="nomeProd">Nome:</label>
+                    <input type="text" id="nomeProd" placeholder="Nome do Produto" required><br><br>
+                    <label for="precProd">Preço:</label>
+                    <input type="number" name="precoProd" placeholder="Preço (R$)" step="0.01" required><br><br>
+                    <label for="dscProd">Descrição:</label>
+                    <input type="text" id="dscProd" placeholder="Descrição do Produto" required><br><br>
+                    <label for="imgProd">Imagem:</label>
+                    <input type="file" id="imgProd"><br><br>
+                    <label for="qtdEstq">Quantidade em Estoque:</label>
+                    <input type="number" min="1" value="1"><br><br>
+                    <select name="categoria" required>
+                        <option value="">Selecione a Categoria</option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                    </select>
+                </form>
+                <input type="button" name="botCad" value="Cadastrar" size="20">
+                <input type="button" name="botAltr" value="Alterar" size="20">
+                <input type="button" name="botExc" value="Excluir" size="20">
             
-            <form id="form-prod">
-                <label for="nomeProd">Nome:</label>
-                <input type="text" id="nomeProd" placeholder="Nome do Produto" required><br><br>
-                <label for="precProd">Preço:</label>
-                <input type="number" name="precoProd" placeholder="Preço (R$)" step="0.01" required><br><br>
-                <label for="dscProd">Descrição:</label>
-                <input type="text" id="dscProd" placeholder="Descrição do Produto" required><br><br>
-                <label for="imgProd">Imagem:</label>
-                <input type="file" id="imgProd"><br><br>
-                <label for="qtdEstq">Quantidade em Estoque:</label>
-                <input type="number" min="1" value="1"><br><br>
-                <select name="categoria" required>
-                    <option value="">Selecione a Categoria</option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                </select>
-            </form>
-            <input type="button" name="botCad" value="Cadastrar" size="20">
-            <input type="button" name="botAltr" value="Alterar" size="20">
-            <input type="button" name="botExc" value="Excluir" size="20">
-        
-        </div>
-        
-        <div class="prod-lista">
-            <h3>Produtos Cadastrados</h3>
+            </section>
+            
+            <section class="prod-lista">
+                <h3>Produtos Cadastrados</h3>
 
-            <div class="prod-item">
-                <img src="/img/marcaPg.png" alt="marca pagina">
-                <div class="prod-info">
-                    <h4>Marca Páginas Magnéticos</h4>
-                    <p>Marca páginas personalizados do seu jeito para marcar suas páginas sem amassar ou rasgar páginas, ou deixar marcas ou com risco de cair do livro por causa dos ímas nas pontas.</p>
-                    <p><strong>R$ 1,50 - R$ 3,00</strong></p>
-                </div>
+                <section class="prod-item">
+                    <img src="/img/marcaPg.png" alt="marca pagina">
+                    <div class="prod-info">
+                        <h4>Marca Páginas Magnéticos</h4>
+                        <p>Marca páginas personalizados do seu jeito para marcar suas páginas sem amassar ou rasgar páginas, ou deixar marcas ou com risco de cair do livro por causa dos ímas nas pontas.</p>
+                        <p><strong>R$ 1,50 - R$ 3,00</strong></p>
+                    </div>
 
-                <img src="/img/foto.jpeg">
-                <div>
-                    <h4>Edição e impressão de fotos </h4>
-                    <p>Uma boa opção, para dar de presentes, guardar e eternizar memórias, podendo ser em vários tamanhos. 10x15: R$4,00; 13x18: R$4,50; 15x21: R$6,00; 18x24 e 20x29: R$10,80; acima de 100 unidades: R$1,75.</p>
-                    <p><strong>$1,75 - R$10,80</strong></p>
-                </div>
-                    
-                <img src="/img/mdf.jpeg">
-                <div>
-                    <h4>Quadro MDF com foto ou frase</h4>
-                    <p>Opção para guardar e eternizar suas fotos, impressas e molduradas em tamanho A4.</p>
-                    <p><strong>R$60,00</strong></p>
-                </div> 
+                    <img src="/img/foto.jpeg">
+                    <div>
+                        <h4>Edição e impressão de fotos </h4>
+                        <p>Uma boa opção, para dar de presentes, guardar e eternizar memórias, podendo ser em vários tamanhos. 10x15: R$4,00; 13x18: R$4,50; 15x21: R$6,00; 18x24 e 20x29: R$10,80; acima de 100 unidades: R$1,75.</p>
+                        <p><strong>$1,75 - R$10,80</strong></p>
+                    </div>
+                        
+                    <img src="/img/mdf.jpeg">
+                    <div>
+                        <h4>Quadro MDF com foto ou frase</h4>
+                        <p>Opção para guardar e eternizar suas fotos, impressas e molduradas em tamanho A4.</p>
+                        <p><strong>R$60,00</strong></p>
+                    </div> 
 
-                <img src="/img/caixa.jpg">
-                <div>
-                    <h4>Caixinhas Personalizadas</h4>
-                    <p>Uma boa opção para presentear alguém que você ama, seja com fotos, com doces ou até mesmo outra coisa, a caixinha é personalizada e pensada para você. Valor personalizável.</p>
-                    <p><strong>R$ 15,00 -</strong></p>
-                </div>
+                    <img src="/img/caixa.jpg">
+                    <div>
+                        <h4>Caixinhas Personalizadas</h4>
+                        <p>Uma boa opção para presentear alguém que você ama, seja com fotos, com doces ou até mesmo outra coisa, a caixinha é personalizada e pensada para você. Valor personalizável.</p>
+                        <p><strong>R$ 15,00 -</strong></p>
+                    </div>
+
+                </section>
 
                 <div class="prod-acoes">
                     <button class="edit">Editar</button>
                     <button class="exc">Excluir</button>
                 </div>
-            </div>
-        </div>  
-    </article>
+            </section>  
+    </main>
 
     <footer>
-        <section class="justify-content-around">
-            <img src="/img/logoWhat.png" id="logoW">
-            <p>27 99201-0821</p>
-        </section>
-        <section class="justify-content-around">
-            <img src="/img/logoInst.png" id="logoI">
-            <p>@omundodaluaservicosdigitais</p>
-        </section>
-        <section class="justify-content-around">
-            <img src="/img/logoLocaliza.png" id="logoL">
-            <p id="p">R. Tuffi Salomão Borges, 91 - José de Anchieta II, Serra - ES, 29162-502</p>
-        </section>
+        <div id="cnpj">
+            
+        </div>
+        <div id="rodape">
+            <div>
+                <h3>Fale conosco</h3>
+                <p>Tell: (27) 99201-0821</p>
+                <p>E-mail: omundodaluaservicosdigitais@gmail.com</p>
+            </div>
+            <div>
+                <h3>Redes sociais</h3>
+                <div class="redessociais">
+                    <img src="/img/instagram.png" alt="">
+                    <p>@omundodaluaservicosdigitais</p>
+                </div>
+            </div>
+            <div>
+                <h3>Área do Cliente</h3>
+                <a href="/paginas/login.html">Login</a><br>
+                <a href="cadastro.html">Meus pedidos</a><br>
+                <a href="telaPedidos.html">Meus pedidos</a>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
