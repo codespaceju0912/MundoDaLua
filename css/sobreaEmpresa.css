@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #8a2be2;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+.quem-somos {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.quem-somos h2 {
+    color: #8a2be2;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.quem-somos h3 {
+    color: #8a2be2;
+    margin-top: 20px;
+}
+
+.quem-somos ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #8a2be2;
+    color: white;
+    margin-top: 40px;
+}
