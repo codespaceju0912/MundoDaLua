@@ -10,9 +10,11 @@ function goTelaPg(){
 function goCarrinho(){
     window.location.href = '/paginas/telaCarrinho.html';
 }
+//função que vai pra tela inicial
 function goTela(){
     window.location.href = '/index.html';
 }
+//função que vai pra tela de login
 function goTelaLogin(){
     window.location.href = '/paginas/login.html';
 }
