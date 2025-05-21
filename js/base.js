@@ -18,3 +18,6 @@ function goTela(){
 function goTelaLogin(){
     window.location.href = '/paginas/login.html';
 }
+function goPedidos(){
+    window.location.href = '/paginas/telaPedidos.html';
+}
