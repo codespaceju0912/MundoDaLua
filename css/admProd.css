@@ -462,6 +462,11 @@ select:focus{
         flex-direction: column;
         width: 100%;
     }
+
+    .btn-group {
+        flex-direction: column;
+        width: 100%;
+    }
 }
 
 
