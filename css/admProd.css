@@ -292,22 +292,51 @@ select:focus{
     border-color:#8a2be2;
 }
 
-/* estiliza o botão*/
-input[type="button"]{
-    background-color: #8a2be2;
-    color: #fff;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.6rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    align-items: center;
+/* Container dos botões de ação */
+.btn-group{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
-/* Efeito hover nos botões */
-input[type="button"]:hover{
+/* Estilo base para o grupo de botões */
+.btn-group button{
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Botão Cadastrar */
+.btnCad{
     background-color: #8a2be2;
+    color: #ffffff;
+}
+
+.btnCad:hover{
+    background-color: #6c1fb8;
+}
+
+/* Botão Alterar */
+.btnAlt{
+    background-color: #8a2be2;
+    color: #ffffff;
+}
+
+.btnAlt:hover{
+    background-color: #6c1fb8;
+}
+
+/* Botão Excluir */
+.btnExc{
+    background-color: #8a2be2;
+    color: #ffffff;
+}
+
+.btnExc:hover{
+    background-color: #6c1fb8;
 }
 
 /*LISTA DE PRODUTOS*/
