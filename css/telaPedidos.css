@@ -7,6 +7,10 @@ html {
     height: 100vh;
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
     margin: 0;
     overflow-x: hidden;
@@ -119,6 +123,8 @@ header {
 
 #avisoPerfil {
     color: #E22BDE;
+    text-decoration: none;
+
 }
 
 #bloco_carrinho {
@@ -128,6 +134,7 @@ header {
     font-family: fredoka;
     color: #E22BDE;
     align-items: center;
+    text-decoration: none;
 
 
 }
@@ -187,6 +194,7 @@ nav {
     font-size: 1.7rem;
     color: #8a2be2;
     font-family: montserrat;
+    padding-top: 1.0rem;
 
 }
 
