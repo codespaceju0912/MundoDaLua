@@ -15,6 +15,10 @@ header, nav, main, footer{
     padding-right: var(--horiz-paddin);
 }
 
+nav{
+    gap: clamp(6rem, 20vw, 50rem);
+}
+
 body{
     margin: 0;
     overflow-x: hidden;
@@ -146,7 +150,6 @@ nav{
     align-items: center;
     flex-direction: row;
     justify-content: center;
-    gap: 50.0rem;
     border-bottom: 1.8px solid #8a2be2;
     
 }
