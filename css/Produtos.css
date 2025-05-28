@@ -5,6 +5,16 @@
 html{
     font-size: 62.5%;
 }
+
+:root{
+    --horiz-paddin: clamp(2rem, 5vw, 12rem);
+}
+
+header, nav, main, footer{
+    padding-left: var(--horiz-paddin);
+    padding-right: var(--horiz-paddin);
+}
+
 body{
     margin: 0;
     overflow-x: hidden;
@@ -20,8 +30,6 @@ header{
     width: 100vw;
     min-height: 12.0rem;
     background-color: #8a2be2;
-    padding-left: 20.0rem;
-    padding-right: 20.0rem;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -134,8 +142,6 @@ header{
 nav{
     height: 4.5vh;
     width: 100vw;
-    padding-left: 20.0rem;
-    padding-right: 20.0rem;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -173,8 +179,6 @@ nav{
 
 }
 main{
-    padding-left: 20.0rem;
-    padding-right: 20.0rem;
     padding-top: 4.0rem;
     padding-bottom: 4.0rem;
     display: flex;
@@ -242,8 +246,6 @@ main article button p{
     background-color: #8a2be2;
     display: flex;
     flex-wrap: wrap;
-    padding-left: 10.0rem;
-    padding-right: 10.0rem;
     gap: 2.0rem;
     justify-content: center;
     align-items: center;
