@@ -76,6 +76,8 @@ header{
     display: flex;
     flex-direction: column;
     width: fit-content;
+    cursor: pointer;
+
     
 }
 #bloco_pesquisa{
@@ -103,6 +105,7 @@ header{
     border-radius: 0.0rem 6.0rem 6.0rem 0.0rem;
     border: 0cap;
     background-color: #6F1ABD;
+    cursor: pointer;
 }
 #imagemLupa{
     width: 2.8rem;
@@ -117,6 +120,7 @@ header{
     font-family: fredoka;
     color: #ffffff;
     align-items: center;
+    cursor: pointer;
 }
 #imgperfil{
     width: 7.0rem;
@@ -133,6 +137,7 @@ header{
     font-family: fredoka;
     color: #E22BDE;
     align-items: center;
+    cursor: pointer;
 
     
 }
@@ -185,6 +190,7 @@ nav{
     color: #8a2be2;
     font-family: montserrat;
     padding-top: 1.0rem;
+    cursor: pointer;
 
 }
 main{
@@ -287,7 +293,7 @@ footer div a{
 footer div {
     height: 18rem;
     text-align: justify;
-    border: 2px solid black;
+   
 }
 
 footer{
