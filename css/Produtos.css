@@ -21,7 +21,7 @@ nav{
 }
 
 footer{
-    gap: clamp(0.5rem, 1.2vw, 2rem);
+    gap: clamp(4rem, 6rem, 12rem);
    
 }
 
@@ -287,6 +287,7 @@ footer div a{
 footer div {
     height: 18rem;
     text-align: justify;
+    border: 2px solid black;
 }
 
 footer{
