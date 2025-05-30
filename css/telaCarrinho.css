@@ -93,6 +93,7 @@ header {
     border-radius: 0.0rem 6.0rem 6.0rem 0.0rem;
     border: 0cap;
     background-color: #6F1ABD;
+    cursor: pointer;
 }
 
 #imagemLupa {
@@ -109,6 +110,7 @@ header {
     font-family: fredoka;
     color: #ffffff;
     align-items: center;
+    cursor: pointer;
 }
 
 #imgperfil {
@@ -128,6 +130,7 @@ header {
     font-family: fredoka;
     color: #E22BDE;
     align-items: center;
+    cursor: pointer;
 
 
 }
@@ -187,6 +190,7 @@ nav {
     font-size: 1.7rem;
     color: #8a2be2;
     font-family: montserrat;
+    cursor: pointer;
 
 }
 
