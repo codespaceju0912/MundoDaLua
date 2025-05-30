@@ -16,7 +16,13 @@ header, nav, main, footer{
 }
 
 nav{
-    gap: clamp(6rem, 20vw, 50rem);
+    gap: clamp(9rem, 14vw, 24rem);
+   
+}
+
+footer{
+    gap: clamp(4rem, 6rem, 12rem);
+   
 }
 
 body{
@@ -70,6 +76,8 @@ header{
     display: flex;
     flex-direction: column;
     width: fit-content;
+    cursor: pointer;
+
     
 }
 #bloco_pesquisa{
@@ -97,6 +105,7 @@ header{
     border-radius: 0.0rem 6.0rem 6.0rem 0.0rem;
     border: 0cap;
     background-color: #6F1ABD;
+    cursor: pointer;
 }
 #imagemLupa{
     width: 2.8rem;
@@ -111,6 +120,7 @@ header{
     font-family: fredoka;
     color: #ffffff;
     align-items: center;
+    cursor: pointer;
 }
 #imgperfil{
     width: 7.0rem;
@@ -127,6 +137,7 @@ header{
     font-family: fredoka;
     color: #E22BDE;
     align-items: center;
+    cursor: pointer;
 
     
 }
@@ -179,6 +190,7 @@ nav{
     color: #8a2be2;
     font-family: montserrat;
     padding-top: 1.0rem;
+    cursor: pointer;
 
 }
 main{
@@ -237,22 +249,7 @@ main article button p{
     font-weight: 500;
 }
 
-#cnpj{
-    height: 4.5rem;
-    width: 100vw;
-    background-color: #A45AE8;
-    
-}
-#rodape{
-    width: 100vw;
-    height: 22.0rem;
-    background-color: #8a2be2;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2.0rem;
-    justify-content: center;
-    align-items: center;
-}
+
 footer div h3 {
     font-family: fredoka;
     font-size: 2.5rem;
@@ -293,9 +290,21 @@ footer div a{
     padding: 0;
 }
 
+footer div {
+    height: 18rem;
+    text-align: justify;
+   
+}
+
 footer{
+    width: 100vw;
+    height: 22.0rem;
+    background-color: #8a2be2;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    
 }
 
 /* Estilo para o botão dropend */
@@ -330,12 +339,12 @@ footer{
     color: #8a2be2;
 }
 a{
-    color: black;
+    
     text-decoration: none;
 
 }
 a:visited {
-    color: black; /* Cor do link após ser visitado */
+    color: darkgrey; /* Cor do link após ser visitado */
 }
 #rodape a{
     color: white;
