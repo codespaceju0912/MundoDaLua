@@ -237,6 +237,24 @@ body{
     font-family: montserrat;
 }
 
+header button{
+    margin-top: 1rem;
+    font-size: 1.15rem;
+    padding: 1rem;
+    width: 15%;
+    height: 15%;
+    background-color: #8a2be2;
+    border: 0;
+    padding: 0.625rem;
+    border-radius: 1.5rem;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    align-items: center;
+    float: left;
+    font-size: 1.2rem;
+}
+
 /* estiliza do container que envolve todo conteúdo*/
 .container{
     max-width: 900px;
@@ -248,7 +266,26 @@ body{
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
 }
 
-/* estiliza o título */
+/* estiliza o título h1 */
+h1{
+    color: #8a2be2;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-family: montserrat;
+    font-size: 2.4rem;
+}
+
+/* estiliza o título h2 */
+h2{
+    color: #8a2be2;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-family: montserrat;
+    font-size: 1.5rem;
+}
+
+
+/* estiliza o título h3 */
 h3{
     color: #8a2be2;
     margin-bottom: 1.5rem;
@@ -354,8 +391,8 @@ select:focus{
 /* Item individual de produto */
 .prod-item{
     display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: 600px;
+    grid-template-columns: repeat(5, 1fr);
+    width: 1000px;
     gap: 50px;
     background-color: #fefefe;
     border: 1px solid #ddd;
@@ -364,6 +401,7 @@ select:focus{
     transition: box-shadow 0.3s;
     align-items: center;
     text-align: center;
+    
 }
 
 /* Imagem do produto */
@@ -395,6 +433,7 @@ select:focus{
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
+    margin-top: 15px;
 }
 
 /* Estilo base para botões de ação */
