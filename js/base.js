@@ -21,3 +21,6 @@ function goTelaLogin(){
 function goPedidos(){
     window.location.href = '/paginas/telaPedidos.html';
 }
+function goSobre(){
+    window.location.href = '/paginas/sobreaEmpresa.html';
+}
