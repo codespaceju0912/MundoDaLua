@@ -21,11 +21,14 @@ p{
     border-radius: 5px;
     margin-top: 0.5=rem; 
     padding: 1px;
-   
+    
+    
 }
 
 .mb{
     margin-bottom: 0.5rem;
+    text-align: center;
+    
 }
 
 img{
