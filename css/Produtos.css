@@ -252,21 +252,21 @@ main article button p{
 
 footer div h3 {
     font-family: fredoka;
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 2vw, 2.5rem);
     color: #ffffff;
     margin: 0;
 
 }
 footer div p{
     font-family: montserrat;
-    font-size: 2.0rem;
+    font-size: clamp(1.6rem, 1.8vw, 2rem);
     color: #ffffff;
     font-weight: 400;
     margin: 0.8rem;
 }
 footer div a{
     font-family: montserrat;
-    font-size: 2.0rem;
+    font-size: clamp(1.6rem, 1.8vw, 2rem);
     color: #ffffff;
     font-weight: 400;
     text-decoration: none;
@@ -278,9 +278,8 @@ footer div a{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 1.0rem;
     padding: 0;
-    margin-bottom: 1.0rem;
+    
 
 }
 .redessociais img{
@@ -291,21 +290,26 @@ footer div a{
 }
 
 footer div {
-    height: 18rem;
-    text-align: justify;
-   
+    flex: 1 1 20rem;   
+    max-width: 30rem;
+    min-height: 18rem;      
+    text-align: center;
+    
 }
 
 footer{
     width: 100vw;
-    height: 22.0rem;
+    min-height: 22rem;
     background-color: #8a2be2;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     
+    
 }
+
+
 
 /* Estilo para o botão dropend */
 #corCategoria .btn {
