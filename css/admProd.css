@@ -6,24 +6,49 @@ html{
     font-size: 62.5%;
 }
 
+:root{
+    --horiz-paddin: clamp(2rem, 5vw, 12rem);
+}
+
+header, nav, main, footer{
+    padding-left: var(--horiz-paddin);
+    padding-right: var(--horiz-paddin);
+}
+
+nav{
+    gap: clamp(9rem, 14vw, 24rem);
+   
+}
+
+footer{
+    gap: clamp(4rem, 6rem, 12rem);
+   
+}
+
+body{
+    margin: 0;
+    overflow-x: hidden;
+    min-width: 100vw;
+    
+    
+}
 figure{
     margin: 0;
     padding: 0;
 }
 header{
     width: 100vw;
-    height: 12.0rem;
+    min-height: 12.0rem;
     background-color: #8a2be2;
-    padding-left: 20.0rem;
-    padding-right: 20.0rem;
     display: flex;
     align-items: center;
     flex-direction: row;
     gap: 14.0rem;
     justify-content: center;
     
-}
 
+    
+}
 #grafica{
     font-family: playball;
     font-size: 2.5rem;
@@ -51,6 +76,8 @@ header{
     display: flex;
     flex-direction: column;
     width: fit-content;
+    cursor: pointer;
+
     
 }
 #bloco_pesquisa{
@@ -78,6 +105,7 @@ header{
     border-radius: 0.0rem 6.0rem 6.0rem 0.0rem;
     border: 0cap;
     background-color: #6F1ABD;
+    cursor: pointer;
 }
 #imagemLupa{
     width: 2.8rem;
@@ -92,6 +120,7 @@ header{
     font-family: fredoka;
     color: #ffffff;
     align-items: center;
+    cursor: pointer;
 }
 #imgperfil{
     width: 7.0rem;
@@ -108,13 +137,13 @@ header{
     font-family: fredoka;
     color: #E22BDE;
     align-items: center;
+    cursor: pointer;
 
     
 }
 #imgcarrinho{
     width: 7.0rem;
     height: 7.0rem;
-    display: block;
     margin: 0;
     
 }
@@ -128,13 +157,10 @@ header{
 nav{
     height: 4.5vh;
     width: 100vw;
-    padding-left: 20.0rem;
-    padding-right: 20.0rem;
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: center;
-    gap: 50.0rem;
     border-bottom: 1.8px solid #8a2be2;
     
 }
@@ -163,7 +189,8 @@ nav{
     font-size: 1.7rem;
     color: #8a2be2;
     font-family: montserrat;
-
+    padding-top: 1.0rem;
+    cursor: pointer;
 }
 
 #cnpj{
@@ -187,14 +214,14 @@ nav{
 }
 footer div h3 {
     font-family: fredoka;
-    font-size: 2.3rem;
+    font-size: 2.5rem;
     color: #ffffff;
     margin: 0;
 
 }
 footer div p{
     font-family: montserrat;
-    font-size: 1.5rem;
+    font-size: 2.0rem;
     color: #ffffff;
     font-weight: 400;
     margin: 0.8rem;
@@ -223,6 +250,23 @@ footer div a{
     height: 3.0rem;
     margin: 0;
     padding: 0;
+}
+
+footer div {
+    height: 18rem;
+    text-align: justify;
+   
+}
+
+footer{
+    width: 100vw;
+    height: 22.0rem;
+    background-color: #8a2be2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 /* Estilização do main */
@@ -266,33 +310,7 @@ header button{
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
 }
 
-/* estiliza o título h1 */
-h1{
-    color: #8a2be2;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    font-family: montserrat;
-    font-size: 2.4rem;
-}
 
-/* estiliza o título h2 */
-h2{
-    color: #8a2be2;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    font-family: montserrat;
-    font-size: 1.5rem;
-}
-
-
-/* estiliza o título h3 */
-h3{
-    color: #8a2be2;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    font-family: montserrat;
-    font-size: 2.4rem;
-}
 
 /* estiliza os rótulos dos campos do formulário */
 label{
@@ -506,6 +524,37 @@ select:focus{
         flex-direction: column;
         width: 100%;
     }
+}
+
+#corCategoria .btn {
+    color: #E28A2B;
+    font-family: montserrat;
+    font-size: 1.5rem;
+    font-weight: 550;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+#corCategoria .dropdown-menu {
+    font-size: 1.4rem;
+    font-family: montserrat;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+}
+
+#corCategoria .dropdown-item {
+    padding: 0.7rem 1.5rem;
+    color: #6F1ABD;
+}
+
+#corCategoria .dropdown-item:hover {
+    background-color: #f1e7ff;
+    color: #8a2be2;
 }
 
 
