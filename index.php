@@ -8,8 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/Produtos.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/root/css/Produtos.css">
+    <link rel="stylesheet" href="/root/css/style.css">
     <script src="/js/base.js" defer></script>
     <title>Produtos</title>
 </head>
