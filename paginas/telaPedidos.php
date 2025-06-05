@@ -7,9 +7,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/telaPedidos.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/base.js" defer></script>
+    <link rel="stylesheet" href="/MundoDaLua/css/telaPedidos.css">
+    <link rel="stylesheet" href="/MundoDaLua/css/style.css">
+    <script src="/MundoDaLua/js/base.js" defer></script>
     <title>Pedidos</title>
 </head>
 
@@ -23,15 +23,15 @@
         <section id="bloco_pesquisa">
             <input id="barradepesquisa" class="montserrat" type="text"
                 placeholder="Encontre aqui o melhor produto para você">
-            <button id="botaoPesquisar"><img src="/img/lupaBranca.png" alt="" id="imagemLupa"></button>
+            <button id="botaoPesquisar"><img src="/MundoDaLua/img/lupaBranca.png" alt="" id="imagemLupa"></button>
         </section>
 
         <section id="bloco_perfil">
-            <img src="/img/perfil.png" alt="" id="imgperfil">
-            <h3>Faça <a href="/paginas/login.html"><span id="avisoPerfil">LOGIN</span></a> <br>ou <br><a href="/paginas/cadastro.html"><span id="avisoPerfil">CADASTRE-SE</span></a></h3>
+            <img src="/MundoDaLua/img/perfil.png" alt="" id="imgperfil">
+            <h3>Faça <a href="login.php"><span id="avisoPerfil">LOGIN</span></a> <br>ou <br><a href="cadastro.php"><span id="avisoPerfil">CADASTRE-SE</span></a></h3>
         </section>
         <section id="bloco_carrinho" onclick="goCarrinho()">
-            <img src="/img/Carrinho.png" alt="" id="imgcarrinho">
+            <img src="/MundoDaLua/img/Carrinho.png" alt="" id="imgcarrinho">
             <h3>Carrinho</h3>
         </section>
     </header>
@@ -133,19 +133,19 @@
             <div>
                 <h3>Redes sociais</h3>
                 <div class="redessociais">
-                    <img src="/img/instagram.png" alt="">
+                    <img src="/MundoDaLua/img/instagram.png" alt="">
                     <p>@omundodaluaservicosdigitais</p>
                 </div>
             </div>
             <div>
                 <h3>Área do Cliente</h3>
-                <a href="/paginas/login.html">Login</a><br>
-                <a href="cadastro.html">Meus pedidos</a><br>
-                <a href="telaPedidos.html">Meus pedidos</a>
+                <a href="login.php">Login</a><br>
+                <a href="cadastro.php">Meus pedidos</a><br>
+                <a href="telaPedidos.php">Meus pedidos</a>
             </div>
             <div>
                 <h3>Sobre Nós</h3>
-                <a href="/paginas/sobreaEmpresa.html">Sobre a Empresa</a>
+                <a href="sobreaEmpresa.php">Sobre a Empresa</a>
             </div>
         </div>
     </footer>
