@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/telaCarrinho.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../css/telaCarrinho.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
-    <script src="/js/base.js" defer></script>
+    <script src="../js/base.js" defer></script>
     <title>Carrinho</title>
 </head>
 
@@ -22,15 +22,15 @@
         <section id="bloco_pesquisa">
             <input id="barradepesquisa" class="montserrat" type="text"
                 placeholder="Encontre aqui o melhor produto para você">
-            <button id="botaoPesquisar"><img src="/img/lupaBranca.png" alt="" id="imagemLupa"></button>
+            <button id="botaoPesquisar"><img src="../img/lupaBranca.png" alt="" id="imagemLupa"></button>
         </section>
 
         <section id="bloco_perfil">
-            <img src="/img/perfil.png" alt="" id="imgperfil">
-            <h3>Faça <a href="/paginas/login.html"><span id="avisoPerfil">LOGIN</span></a> <br>ou <br><a href="/paginas/cadastro.html"><span id="avisoPerfil">CADASTRE-SE</span></a></h3>
+            <img src="../img/perfil.png" alt="" id="imgperfil">
+            <h3>Faça <a href="paginas/login.html"><span id="avisoPerfil">LOGIN</span></a> <br>ou <br><a href="paginas/cadastro.html"><span id="avisoPerfil">CADASTRE-SE</span></a></h3>
         </section>
         <section id="bloco_carrinho" onclick="goCarrinho()">
-            <img src="/img/Carrinho.png" alt="" id="imgcarrinho">
+            <img src="../img/Carrinho.png" alt="" id="imgcarrinho">
             <h3>Carrinho</h3>
         </section>
     </header>
@@ -56,7 +56,7 @@
     </nav>
     <main>
         <section id="carrinhoMain">
-            <div><img src="/img/Icon_Carrinho_main.png" alt="" id="imgcarrinho"></div>
+            <div><img src="../img/Icon_Carrinho_main.png" alt="" id="imgcarrinho"></div>
             <h3>Carrinho</h3>
 
         </section>
@@ -64,7 +64,7 @@
         <article>
             <div>
                 <h4>Quadro MDF</h4>
-                <img src="/img/mdf.jpeg" alt="">
+                <img src="../img/mdf.jpeg" alt="">
             </div>
             <div>
                 <p>Total:</p>
@@ -77,14 +77,14 @@
                 </div>
             </div>
             <div id="divLixeira">
-                <img src="/img/excluir.png" alt="" id="lixeira">
+                <img src="../img/excluir.png" alt="" id="lixeira">
             </div>
 
         </article>
         <article>
             <div>
                 <h4>Topper de bolo</h4>
-                <img src="/img/topper.png" alt="">
+                <img src="../img/topper.png" alt="">
             </div>
             <div>
                 <p>Total:</p>
@@ -97,13 +97,13 @@
                 </div>
             </div>
             <div id="divLixeira">
-                <img src="/img/excluir.png" alt="" id="lixeira">
+                <img src="../img/excluir.png" alt="" id="lixeira">
             </div>
         </article>
         <article>
             <div>
                 <h4>Marca páginas magnéticos</h4>
-                <img src="/img/marcaPg.png" alt="">
+                <img src="../img/marcaPg.png" alt="">
             </div>
             <div>
                 <p>Total:</p>
@@ -116,13 +116,13 @@
                 </div>
             </div>
             <div id="divLixeira">
-                <img src="/img/excluir.png" alt="" id="lixeira">
+                <img src="../img/excluir.png" alt="" id="lixeira">
             </div>
         </article>
         <article>
             <div>
                 <h4>Edição e impressão de fotos</h4>
-                <img src="/img/foto.jpeg" alt="">
+                <img src="../img/foto.jpeg" alt="">
             </div>
             <div>
                 <p>Total:</p>
@@ -135,13 +135,13 @@
                 </div>
             </div>
             <div id="divLixeira">
-                <img src="/img/excluir.png" alt="" id="lixeira">
+                <img src="../img/excluir.png" alt="" id="lixeira">
             </div>
         </article>
         <article>
             <div>
                 <h4>Caixinhas personalizadas</h4>
-                <img src="/img/caixa.jpg" alt="">
+                <img src="../img/caixa.jpg" alt="">
             </div>
             <div>
                 <p>Total:</p>
@@ -154,7 +154,7 @@
                 </div>
             </div>
             <div id="divLixeira">
-                <img src="/img/excluir.png" alt="" id="lixeira">
+                <img src="../img/excluir.png" alt="" id="lixeira">
             </div>
         </article>
 
@@ -162,33 +162,30 @@
 
     </main>
     <footer>
-        <div id="prerodape">
 
+        <div>
+            <h3>Fale conosco</h3>
+            <p>Tell: (27) 99201-0821</p>
+            <p>E-mail: omundodaluaservicos<br>digitais@gmail.com</p>
         </div>
-        <div id="rodape">
-            <div>
-                <h3>Fale conosco</h3>
-                <p>Tell: (27) 99201-0821</p>
-                <p>E-mail: omundodaluaservicosdigitais@gmail.com</p>
-            </div>
-            <div>
-                <h3>Redes sociais</h3>
-                <div class="redessociais">
-                    <img src="/img/instagram.png" alt="">
-                    <p>@omundodaluaservicosdigitais</p>
-                </div>
-            </div>
-            <div>
-                <h3>Área do Cliente</h3>
-                <a href="/paginas/login.html">Login</a><br>
-                <a href="cadastro.html">Meus pedidos</a><br>
-                <a href="telaPedidos.html">Meus pedidos</a>
-            </div>
-            <div>
-                <h3>Sobre Nós</h3>
-                <a href="/paginas/sobreaEmpresa.html">Sobre a Empresa</a>
-            </div>
+        <div>
+            <h3>Redes sociais</h3>
+            <section class="redessociais">
+                <a href="https://www.instagram.com/omundodaluaservicosdigitais?igsh=ZXlzZWdlbGE1ZWhq"><img src="../img/instagram.png" alt=""></a>
+                <a href="https://www.instagram.com/omundodaluaservicosdigitais?igsh=ZXlzZWdlbGE1ZWhq"><p>@omundodalua<br>servicosdigitais</p></a>
+            </section>
         </div>
+        <div>
+            <h3>Área do Cliente</h3>
+            <a href="paginas/login.php">Login</a><br>
+            <a href="paginas/cadastro.php">Cadastre-se</a><br>
+            <a href="paginas/telaPedidos.php">Meus pedidos</a>
+        </div>
+        <div>
+            <h3>Sobre Nós</h3>
+            <a href="paginas/sobreaEmpresa.php">Sobre a Empresa</a>
+        </div>
+
     </footer>
 </body>
 
