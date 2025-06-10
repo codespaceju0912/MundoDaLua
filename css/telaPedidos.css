@@ -7,6 +7,33 @@ html {
     height: 100vh;
 }
 
+:root {
+    --horiz-paddin: clamp(2rem, 5vw, 12rem);
+}
+
+header,
+nav,
+main,
+footer {
+    padding-left: var(--horiz-paddin);
+    padding-right: var(--horiz-paddin);
+}
+
+nav {
+    gap: clamp(9rem, 14vw, 24rem);
+
+}
+
+footer {
+    gap: clamp(4rem, 6rem, 12rem);
+
+}
+
+header {
+    gap: clamp(4rem, 6rem, 12rem);
+
+}
+
 a {
     text-decoration: none;
 }
@@ -26,16 +53,26 @@ header {
     width: 100vw;
     min-height: 12.0rem;
     background-color: #8a2be2;
-    padding-left: 20.0rem;
-    padding-right: 20.0rem;
     display: flex;
     align-items: center;
     flex-direction: row;
-    gap: 14.0rem;
     justify-content: center;
 
 
 
+}
+
+@media (max-width: 1200px) {
+    header section {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 900px) {
+    header section {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
 }
 
 #grafica {
@@ -67,6 +104,8 @@ header {
     display: flex;
     flex-direction: column;
     width: fit-content;
+    cursor: pointer;
+
 
 }
 
@@ -118,25 +157,22 @@ header {
 }
 
 #imgperfil {
-    width: 7.0rem;
-    height: 7.0rem;
+    width: clamp(3rem, 5rem, 7rem);
+    height: clamp(3rem, 5rem, 7rem);
 
 }
 
 #avisoPerfil {
     color: #E22BDE;
-    text-decoration: none;
-
 }
 
 #bloco_carrinho {
     height: fit-content;
     width: fit-content;
-    font-size: 2.0rem;
+    font-size: 4.0rem;
     font-family: fredoka;
     color: #E22BDE;
     align-items: center;
-    text-decoration: none;
     cursor: pointer;
 
 
@@ -158,13 +194,10 @@ header {
 nav {
     height: 4.5vh;
     width: 100vw;
-    padding-left: 20.0rem;
-    padding-right: 20.0rem;
     display: flex;
     align-items: center;
     flex-direction: row;
     justify-content: center;
-    gap: 50.0rem;
     border-bottom: 1.8px solid #8a2be2;
 
 }
@@ -198,6 +231,7 @@ nav {
     color: #8a2be2;
     font-family: montserrat;
     padding-top: 1.0rem;
+    cursor: pointer;
 
 }
 
@@ -348,7 +382,7 @@ main article button {
 
 footer div h3 {
     font-family: fredoka;
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 2vw, 2.5rem);
     color: #ffffff;
     margin: 0;
 
@@ -356,7 +390,7 @@ footer div h3 {
 
 footer div p {
     font-family: montserrat;
-    font-size: 2.0rem;
+    font-size: clamp(1.6rem, 1.8vw, 2rem);
     color: #ffffff;
     font-weight: 400;
     margin: 0.8rem;
@@ -364,7 +398,7 @@ footer div p {
 
 footer div a {
     font-family: montserrat;
-    font-size: 2.0rem;
+    font-size: clamp(1.6rem, 1.8vw, 2rem);
     color: #ffffff;
     font-weight: 400;
     text-decoration: none;
@@ -377,9 +411,8 @@ footer div a {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 1.0rem;
     padding: 0;
-    margin-bottom: 1.0rem;
+
 
 }
 
@@ -390,6 +423,38 @@ footer div a {
     padding: 0;
 }
 
+footer div {
+    flex: 1 1 20rem;
+    max-width: 30rem;
+    min-height: 18rem;
+    text-align: center;
+
+}
+
+footer {
+    width: 100vw;
+    min-height: 22rem;
+    background-color: #8a2be2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+@media (max-width: 1200px) {
+    footer div {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 900px) {
+    footer div {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
 
 #corCategoria .btn {
     color: #E28A2B;
