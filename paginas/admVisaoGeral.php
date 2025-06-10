@@ -52,6 +52,11 @@
             <p>Acompanhar Pedidos</p>
         </section>
     </nav>
+
+    <main>
+        
+
+    </main>
     
     <main>
         <h2>Painel de Visão Geral</h2>
