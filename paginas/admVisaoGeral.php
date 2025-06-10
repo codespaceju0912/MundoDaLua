@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visão Geral - ADM </title>
+    <link rel="stylesheet" href="/css/admVisaoGeral.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
@@ -55,6 +58,46 @@
 
     </main>
     
+    <main>
+        <h2>Painel de Visão Geral</h2>
+
+        <!-- Cards de resumo -->
+        <section id="dashboard-cards">
+            <div class="card">
+                <h3>Total de Usuários</h3>
+                <p id="totalUsusarios">0</p>
+            </div>
+            <div class="card">
+                <h3>Total de Produtos</h3>
+                <p id="totalProdutos">0</p>
+            </div>
+            <div class="card">
+                <h3>Total de Pedidos</h3>
+                <p id="totalPedidos">0</p>
+            </div>
+        </section>
+        
+        <!-- Gráficos -->
+        <section id="graficos">
+            <h3>Vendas Mensais</h3>
+            <canvas id="graficoVendas" width="400" height="200"></canvas>
+        </section>
+
+        <section id="graficos">
+            <h3>Produtos Mais Vendidos</h3>
+            <canvas id="graficoProdutos" width="400" height="200"></canvas>
+        </section>
+
+        <section id="acoesRapidas">
+            <h3>Ações Rápidas</h3>
+            <div class="buttons">
+                <a href="/paginas/admProd.html" class="btn">Gerenciar Produtos</a>
+                <a href="/paginas/admUsuar.html" class="btn">Gerenciar Usuários</a>
+                <a href="/paginas/admProd.html" class="btn">Gerenciar Produtos</a>    
+            <div>
+        </section>
+    </main>
+
     <footer>
 
         <div>
@@ -80,5 +123,7 @@
             <a href="/paginas/sobreaEmpresa.html">Sobre a Empresa</a>
         </div>
     </footer>
+
+    <script src="/js/admVisaoGeral.js"></script>
 </body>
 </html>

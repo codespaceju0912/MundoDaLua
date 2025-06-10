@@ -4,23 +4,23 @@ function goBack(){
 }
 //função que vai pra tela de escolha de pagamento
 function goTelaPg(){
-    window.location.href = '/paginas/opcaopg.html';
+    window.location.href = 'paginas/opcaopg.php';
 }
 //função que vai pra tela de carrinho
 function goCarrinho(){
-    window.location.href = '/paginas/telaCarrinho.html';
+    window.location.href = 'paginas/telaCarrinho.php';
 }
 //função que vai pra tela inicial
 function goTela(){
-    window.location.href = '/index.html';
+    window.location.href = '/MundoDaLua/index.php';
 }
 //função que vai pra tela de login
 function goTelaLogin(){
-    window.location.href = '/paginas/login.html';
+    window.location.href = 'paginas/login.php';
 }
 function goPedidos(){
-    window.location.href = '/paginas/telaPedidos.html';
+    window.location.href = 'paginas/telaPedidos.php';
 }
 function goSobre(){
-    window.location.href = '/paginas/sobreaEmpresa.html';
+    window.location.href = 'paginas/sobreaEmpresa.php';
 }

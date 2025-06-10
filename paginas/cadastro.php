@@ -5,9 +5,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tela de login</title>
-        <link rel="stylesheet" href="/css/style.css">
-        <link rel="stylesheet" href="/css/cadastro.css">
-        <script src="/js/base.js" defer></script>
+        <link rel="stylesheet" href="/MundoDaLua/css/style.css">
+        <link rel="stylesheet" href="/MundoDaLua/css/cadastro.css">
+        <script src="js/base.js" defer></script>
 
     </head>
 
@@ -56,7 +56,7 @@
             </form>
         </div>
         <aside class="bordadiv">
-        <img src="/img/logoMundoDaLua.jpeg" alt="">
+        <img src="/MundoDaLua/img/logoMundoDaLua.jpeg" alt="">
        
         </div>
     </div>
