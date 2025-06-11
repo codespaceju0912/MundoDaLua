@@ -51,7 +51,7 @@
         <section class="palavrasNav" onclick="goTela()">
             <p>Produtos</p>
         </section>
-        <section class="palavrasNav" onclick="goPedidos()">
+        <section class="palavrasNav">
             <p>Acompanhar Pedidos</p>
         </section>
     </nav>

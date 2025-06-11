@@ -12,7 +12,7 @@ function goCarrinho(){
 }
 //função que vai pra tela inicial
 function goTela(){
-    window.location.href = '/MundoDaLua/index.php';
+    window.location.href = '../index.php';
 }
 //função que vai pra tela de login
 function goTelaLogin(){

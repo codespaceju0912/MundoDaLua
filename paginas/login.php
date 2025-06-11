@@ -32,7 +32,7 @@
                 <button type="button" onclick="goTela()">Entrar</button>
             </div>
                 
-            <p>Não tem uma conta? <a href="/paginas/cadastro.html">Cadastre-se</a></p>
+            <p>Não tem uma conta? <a href="/paginas/cadastro.php">Cadastre-se</a></p>
 
             </form>
         </div>
