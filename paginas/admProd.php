@@ -24,12 +24,12 @@
         </section>
 
         <section id="bloco_perfil">
-            <img src="/img/perfil.png" alt="" id="imgperfil">
-            <h3>Faça <a href="/paginas/login.html"><span id="avisoPerfil">LOGIN</span></a> <br>ou <br><a
-                    href="/paginas/cadastro.html"><span id="avisoPerfil">CADASTRE-SE</span></a></h3>
+            <img src="../img/perfil.png" alt="" id="imgperfil">
+            <h3>Faça <a href="../paginas/login.html"><span id="avisoPerfil">LOGIN</span></a> <br>ou <br><a
+                    href="../paginas/cadastro.html"><span id="avisoPerfil">CADASTRE-SE</span></a></h3>
         </section>
         <section id="bloco_carrinho" onclick="goCarrinho()">
-            <img src="/img/Carrinho.png" alt="" id="imgcarrinho">
+            <img src="../img/Carrinho.png" alt="" id="imgcarrinho">
             <h3>Carrinho</h3>
         </section>
     </header>
@@ -122,7 +122,7 @@
                         <section class="prod-item" id="listaProdutos">
 
                         <div>
-                        <img src="/img/marcaPg.png" alt="marca pagina">
+                        <img src="../img/marcaPg.png" alt="marca pagina">
                         <div class="prod-info">
                             <h4>Marca Páginas Magnéticos</h4>
                             <p><strong>R$ 1,50 - R$ 3,00</strong></p>
@@ -130,15 +130,15 @@
                         </div>
 
                         <div>
-                        <img src="/img/foto.jpeg">
+                        <img src="../img/foto.jpeg">
                         <div class="prod-info">
                             <h4>Edição e impressão de fotos </h4>
-                            <p><strong>$1,75 - R$10,80</strong></p>
+                            <p><strong>R$1,75 - R$10,80</strong></p>
                         </div>
                         </div>
                         
                         <div>
-                            <img src="/img/mdf.jpeg">
+                            <img src="../img/mdf.jpeg">
                             <div class="prod-info">
                                 <h4>Quadro MDF com foto ou frase</h4>
                                 <p><strong>R$60,00</strong></p>
@@ -146,7 +146,7 @@
                         </div>
 
                         <div>
-                            <img src="/img/caixa.jpg">
+                            <img src="../img/caixa.jpg">
                             <div class="prod-info">
                                 <h4>Caixinhas Personalizadas</h4>
                                 <p><strong>R$ 15,00 -</strong></p>
@@ -177,19 +177,19 @@
         </div>
         <div>
             <h3>Área do Cliente</h3>
-            <a href="/paginas/login.html">Login</a><br>
+            <a href="../paginas/login.html">Login</a><br>
             <a href="cadastro.html">Cadastre-se</a><br>
             <a href="telaPedidos.html">Meus pedidos</a>
         </div>
         <div>
             <h3>Sobre Nós</h3>
-            <a href="/paginas/sobreaEmpresa.html">Sobre a Empresa</a>
+            <a href="../paginas/sobreaEmpresa.html">Sobre a Empresa</a>
         </div>
 
     </footer>
 
     <!--js para adicionar os produtos-->
-    <script src="/js/admProd.js"></script>
+    <script src="../js/admProd.js"></script>
 
     
     <!-- js para excluir os produtos

@@ -1,0 +1,57 @@
+.dashboard-cards{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 20px;
+    flex-wrap: wrap;
+}
+
+.card{
+    background-color: #8a2be2;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card h3{
+    margin-bottom: 10px;
+}
+
+.card p{
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.acoesRapidas{
+    margin: 40px;
+    text-align: center;
+}
+
+.acoesRapidas h3{
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn{
+    background-color: #8a2be2;
+    color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover{
+    background-color: #6c1fb8;
+}

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visão Geral - ADM </title>
-    <link rel="stylesheet" href="/css/admVisaoGeral.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/admVisaoGeral.css">
+    <link rel="stylesheet" href="../css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -22,12 +22,12 @@
         </section>
 
         <section id="bloco_perfil">
-            <img src="/img/perfil.png" alt="" id="imgperfil">
-            <h3>Faça <a href="/paginas/login.html"><span id="avisoPerfil">LOGIN</span></a> <br>ou <br><a
-                    href="/paginas/cadastro.html"><span id="avisoPerfil">CADASTRE-SE</span></a></h3>
+            <img src="../img/perfil.png" alt="" id="imgperfil">
+            <h3>Faça <a href="../paginas/login.html"><span id="avisoPerfil">LOGIN</span></a> <br>ou <br><a
+                    href="../paginas/cadastro.html"><span id="avisoPerfil">CADASTRE-SE</span></a></h3>
         </section>
         <section id="bloco_carrinho" onclick="goCarrinho()">
-            <img src="/img/Carrinho.png" alt="" id="imgcarrinho">
+            <img src="../img/Carrinho.png" alt="" id="imgcarrinho">
             <h3>Carrinho</h3>
         </section>
     </header>
@@ -86,9 +86,9 @@
         <section id="acoesRapidas">
             <h3>Ações Rápidas</h3>
             <div class="buttons">
-                <a href="/paginas/admProd.html" class="btn">Gerenciar Produtos</a>
-                <a href="/paginas/admUsuar.html" class="btn">Gerenciar Usuários</a>
-                <a href="/paginas/admProd.html" class="btn">Gerenciar Produtos</a>    
+                <a href="../paginas/admProd.html" class="btn">Gerenciar Produtos</a>
+                <a href="../paginas/admUsuar.html" class="btn">Gerenciar Usuários</a>
+                <a href="../paginas/admPedid.html" class="btn">Gerenciar Pedidos</a>    
             <div>
         </section>
     </main>
