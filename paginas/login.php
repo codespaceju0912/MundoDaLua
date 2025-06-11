@@ -5,9 +5,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tela de login</title>
-        <link rel="stylesheet" href="/css/style.css">
-        <link rel="stylesheet" href="/css/cadastro.css">
-        <link rel="stylesheet" href="/css/login.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/cadastro.css">
+        <link rel="stylesheet" href="../css/login.css">
         <script src="/js/base.js" defer></script>
     </head>
 
@@ -32,12 +32,12 @@
                 <button type="button" onclick="goTela()">Entrar</button>
             </div>
                 
-            <p>Não tem uma conta? <a href="/paginas/cadastro.php">Cadastre-se</a></p>
+            <p>Não tem uma conta? <a href="../paginas/cadastro.php">Cadastre-se</a></p>
 
             </form>
         </div>
         <aside>
-            <img src="/img/logoMundoDaLua.jpeg" alt="">
+            <img src="../img/logoMundoDaLua.jpeg" alt="">
         </aside>
     </div>
 
