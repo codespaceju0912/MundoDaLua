@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finalizar pedido do Topper de bolo</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/finalizaTopper.css">
-    <link rel="stylesheet" href="/css/visaoGTopper.css">
-    <script src="/js/base.js" defer></script>
-    <script src="/js/vgTopper.js" defer></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/finalizaTopper.css">
+    <link rel="stylesheet" href="../css/visaoGTopper.css">
+    <script src="../js/base.js" defer></script>
+    <script src="../js/vgTopper.js" defer></script>
 </head>
 <body>
     <header>
@@ -18,21 +18,21 @@
         </section>
         <section id="bloco_pesquisa">
             <input  id="barradepesquisa" class="montserrat" type="text" placeholder="Encontre aqui o melhor produto para você">
-            <button id="botaoPesquisar"><img src="/img/lupaBranca.png" alt="" id="imagemLupa"></button>
+            <button id="botaoPesquisar"><img src="../img/lupaBranca.png" alt="" id="imagemLupa"></button>
         </section>
         <section class="usuario">
-            <img src="/img/usuario.png">
-            <p>Faça o <a href="/paginas/login.html">LOGIN</a> ou <a href="/paginas/cadastro.html">CADASTRE-SE</a></p>
+            <img src="../img/usuario.png">
+            <p>Faça o <a href="../paginas/login.php">LOGIN</a> ou <a href="../paginas/cadastro.php">CADASTRE-SE</a></p>
         </section>
         <section class="carrinho" onclick="goCarrinho()">
-            <a href="/paginas/telaCarrinho.html"><img src="/img/carrinho.png"></a>
-            <p><a href="/paginas/telaCarrinho.html">Carrinho</a></p>
+            <a href="../paginas/telaCarrinho.php"><img src="../img/carrinho.png"></a>
+            <p><a href="..paginas/telaCarrinho.php">Carrinho</a></p>
         </section>
     </header> 
     <nav>
         <section id="corCategoria">
             <p>Categorias</p>
-            <img src="/img/setaMenu.png" alt="">
+            <img src="../img/setaMenu.png" alt="">
         </section>
         <section class="palavrasNav" onclick="goTela()">
             <p>Produtos</p>
@@ -44,7 +44,7 @@
     <article class="main">   
         <article class="box">
             <h2>Topper de bolo</h2>
-            <img src="/img/topper.png" alt="Topper de bolo">
+            <img src="../img/topper.png" alt="Topper de bolo">
             <h4>R$15,00 - R$25,00</h4>
             <h3>Descrição</h3>
             <p class="description">
@@ -57,7 +57,7 @@
                 <label>Quantidade:</label>
                 <input type="number" min="1" value="1">
             </section>  
-            <button class="submit-btn compra-btn">Compra</button>     
+            <a href="../paginas/FinalizarPedidoTopper.php" role="button"><button class="submit-btn compra-btn">Compra</button></a>  
             <button class="submit-btn carrinho-btn" onclick="goCarrinho()">Adicionar ao carrinho</button>    
         </article>
         
@@ -74,19 +74,19 @@
             <section>
                 <h3>Redes sociais</h3>
                 <section class="redessociais">
-                    <img src="/img/instagram.png" alt="">
+                    <img src="../img/instagram.png" alt="">
                     <p>@omundodaluaservicosdigitais</p>
                 </section>
             </section>
             <section>
                 <h3>Área do Cliente</h3>
-                <a href="/paginas/login.html">Login</a><br>
-                <a href="/paginas/cadastro.html">Cadastra-se</a><br>
-                <a href="/paginas/telaPedidos.html">Meus pedidos</a>
+                <a href="../paginas/login.php">Login</a><br>
+                <a href="../paginas/cadastro.php">Cadastra-se</a><br>
+                <a href="../paginas/telaPedidos.php">Meus pedidos</a>
             </section>
             <section>
                 <h3>Sobre Nós</h3>
-                <a href="/paginas/sobreaEmpresa.html">Sobre a Empresa</a>
+                <a href="../paginas/sobreaEmpresa.php">Sobre a Empresa</a>
             </section>
         </section>
     </footer> 

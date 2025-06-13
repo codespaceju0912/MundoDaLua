@@ -27,7 +27,7 @@
             <div class= "inputForm">
 
                 <label for="idTelefone"></label>
-                <input type="text" name="telefone" id="telefone" placeholder="Telefone" class="mb"><br>
+                <input type="tel" name="telefone" id="telefone" placeholder="Telefone" pattern="(\([0-9]{2}\))\s([0-9]{4})-([0-9]{4})" class="mb"><br>
             </div>
 
             <div class= "inputForm">

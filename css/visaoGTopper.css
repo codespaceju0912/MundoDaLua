@@ -8,6 +8,7 @@ header {
     padding: 2vw 5vw;
     background-color: #8a2be2;
 }
+
 #bloco_pesquisa{
     display: flex;
     width: fit-content;
