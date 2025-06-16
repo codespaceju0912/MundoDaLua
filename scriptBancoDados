@@ -1,0 +1,219 @@
+-- phpMyAdmin SQL Dump
+-- version 4.0.4.2
+-- http://www.phpmyadmin.net
+--
+-- Máquina: localhost
+-- Data de Criação: 16-Jun-2025 às 22:18
+-- Versão do servidor: 5.6.13
+-- versão do PHP: 5.4.17
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Base de Dados: `mundodalua`
+--
+CREATE DATABASE IF NOT EXISTS `mundodalua` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `mundodalua`;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `catprod`
+--
+
+CREATE TABLE IF NOT EXISTS `catprod` (
+  `idCatProd` int(11) NOT NULL,
+  `dscCatProd` varchar(80) NOT NULL,
+  PRIMARY KEY (`idCatProd`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `catprod`
+--
+
+INSERT INTO `catprod` (`idCatProd`, `dscCatProd`) VALUES
+(1, 'Papelaria'),
+(2, 'Personalizados'),
+(3, 'Fotos');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `marca`
+--
+
+CREATE TABLE IF NOT EXISTS `marca` (
+  `idMarca` int(11) NOT NULL,
+  `dscMarca` varchar(50) NOT NULL,
+  PRIMARY KEY (`idMarca`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `marca`
+--
+
+INSERT INTO `marca` (`idMarca`, `dscMarca`) VALUES
+(1, 'marca1');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `pagamento`
+--
+
+CREATE TABLE IF NOT EXISTS `pagamento` (
+  `idPagamento` int(11) NOT NULL,
+  `valor` decimal(10,2) NOT NULL,
+  `dataPagamento` datetime NOT NULL,
+  `idTpPag` int(11) NOT NULL,
+  PRIMARY KEY (`idPagamento`),
+  KEY `fk_Pagamento_TipoPagamento1_idx` (`idTpPag`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `pedido`
+--
+
+CREATE TABLE IF NOT EXISTS `pedido` (
+  `idPedido` int(11) NOT NULL,
+  `datPedido` datetime NOT NULL,
+  `dscStatusPedido` varchar(23) NOT NULL,
+  `idUsuario` int(11) NOT NULL,
+  `idPagamento` int(11) NOT NULL,
+  PRIMARY KEY (`idPedido`),
+  KEY `fk_Carrinho_Usuário1_idx` (`idUsuario`),
+  KEY `fk_Pedido_Pagamento1_idx` (`idPagamento`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `pedidoitem`
+--
+
+CREATE TABLE IF NOT EXISTS `pedidoitem` (
+  `idProdIt` int(11) NOT NULL,
+  `qtdProdIt` int(11) NOT NULL,
+  `valSubTotProdIt` decimal(10,2) NOT NULL,
+  `idProdutos` int(11) NOT NULL,
+  `idPedido` int(11) NOT NULL,
+  PRIMARY KEY (`idProdIt`),
+  KEY `fk_PedidosItens_Produtos1_idx` (`idProdutos`),
+  KEY `fk_PedidosItens_Pedido1_idx` (`idPedido`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `produto`
+--
+
+CREATE TABLE IF NOT EXISTS `produto` (
+  `idProdt` int(11) NOT NULL,
+  `dscProdt` varchar(100) NOT NULL,
+  `dscDetalProdt` text NOT NULL,
+  `qtdAtualEstqProdt` int(11) NOT NULL,
+  `urlImagemProdt` varchar(255) NOT NULL,
+  `datCadastProdt` datetime NOT NULL,
+  `qtdMinEstqProdt` int(11) NOT NULL,
+  `pctDescProdt` decimal(5,2) NOT NULL DEFAULT '0.00',
+  `valProdt` decimal(10,2) NOT NULL,
+  `idCatProd` int(11) NOT NULL,
+  `idMarca` int(11) NOT NULL,
+  PRIMARY KEY (`idProdt`),
+  UNIQUE KEY `nomeProd_UNIQUE` (`dscProdt`),
+  KEY `fk_Produtos_CatProd1_idx` (`idCatProd`),
+  KEY `fk_Produtos_Marca1_idx` (`idMarca`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `produto`
+--
+
+INSERT INTO `produto` (`idProdt`, `dscProdt`, `dscDetalProdt`, `qtdAtualEstqProdt`, `urlImagemProdt`, `datCadastProdt`, `qtdMinEstqProdt`, `pctDescProdt`, `valProdt`, `idCatProd`, `idMarca`) VALUES
+(1, 'Topo de bolo sem montagem', '', 0, '', '2025-06-03 00:00:00', 5, '0.05', '15.00', 1, 1),
+(2, 'Topo de bolo com montagem', '', 0, '', '2025-06-03 00:00:00', 5, '0.05', '25.00', 1, 1),
+(3, 'Polaroid de foto 6x7,5', '', 0, '', '2025-06-03 00:00:00', 5, '0.05', '1.00', 2, 1),
+(4, 'Polaroid de foto 9,5x8', '', 0, '', '2025-06-03 00:00:00', 5, '0.05', '1.50', 2, 1),
+(5, 'Polaroid de foto 10x7', '', 0, '', '2025-06-03 00:00:00', 5, '0.05', '1.80', 2, 1),
+(6, 'Polaroid de foto 10x8', '', 0, '', '2025-06-03 00:00:00', 5, '0.05', '2.90', 2, 1),
+(7, 'Polaroid de Mesa com QrCode 10x8', '', 0, '', '2025-06-03 00:00:00', 5, '0.05', '22.90', 2, 1),
+(8, 'Edição e impressão de fotos 10x15', '', 0, '', '2025-06-03 00:00:00', 5, '0.05', '4.00', 2, 1),
+(9, 'Edição e impressão de fotos 13x18', '', 0, '', '2025-06-03 00:00:00', 5, '0.05', '4.50', 2, 1),
+(10, 'Edição e impressão de fotos 15x21', '', 0, '', '2025-06-03 00:00:00', 5, '0.05', '6.00', 2, 1),
+(11, 'Edição e impressão de fotos 18x24', '', 0, '', '2025-06-03 00:00:00', 5, '0.05', '10.80', 2, 1),
+(12, 'Edição e impressão de fotos 20x29', '', 0, '', '2025-06-03 00:00:00', 5, '0.05', '10.80', 2, 1),
+(13, 'Caderneta de Vacina Personalizada', '', 0, '', '2025-06-03 00:00:00', 5, '0.05', '80.00', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tipopagamento`
+--
+
+CREATE TABLE IF NOT EXISTS `tipopagamento` (
+  `idTpPag` int(11) NOT NULL,
+  `dscTpPag` varchar(50) NOT NULL,
+  PRIMARY KEY (`idTpPag`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuario`
+--
+
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `idUsu` int(11) NOT NULL,
+  `nomUsu` varchar(60) NOT NULL,
+  `dscEmailUsu` varchar(60) NOT NULL,
+  `datNascUsu` varchar(45) NOT NULL,
+  `dscSenhaUsu` varchar(26) NOT NULL,
+  `numTelefUsu` varchar(10) NOT NULL,
+  `numcpfUsu` varchar(15) NOT NULL,
+  PRIMARY KEY (`idUsu`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Limitadores para a tabela `pagamento`
+--
+ALTER TABLE `pagamento`
+  ADD CONSTRAINT `fk_Pagamento_TipoPagamento1` FOREIGN KEY (`idTpPag`) REFERENCES `tipopagamento` (`idTpPag`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `pedido`
+--
+ALTER TABLE `pedido`
+  ADD CONSTRAINT `fk_Carrinho_Usuário1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsu`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Pedido_Pagamento1` FOREIGN KEY (`idPagamento`) REFERENCES `pagamento` (`idPagamento`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `pedidoitem`
+--
+ALTER TABLE `pedidoitem`
+  ADD CONSTRAINT `fk_PedidosItens_Produtos1` FOREIGN KEY (`idProdutos`) REFERENCES `produto` (`idProdt`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_PedidosItens_Pedido1` FOREIGN KEY (`idPedido`) REFERENCES `pedido` (`idPedido`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `produto`
+--
+ALTER TABLE `produto`
+  ADD CONSTRAINT `fk_Produtos_CatProd1` FOREIGN KEY (`idCatProd`) REFERENCES `catprod` (`idCatProd`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Produtos_Marca1` FOREIGN KEY (`idMarca`) REFERENCES `marca` (`idMarca`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
