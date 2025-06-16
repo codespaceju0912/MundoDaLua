@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/pagamentoPix.css">
-    <link rel="stylesheet" href="/css/pagamentoLocal.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pagamentoPix.css">
+    <link rel="stylesheet" href="../css/pagamentoLocal.css">
     <title>Pagamento</title>
 </head>
 
 <body>
     <article class="container">
         <aside>
-            <img id="logo" src="/img/logoMundoDaLua.jpeg" alt="">
+            <img id="logo" src="../img/logoMundoDaLua.jpeg" alt="">
         </aside>
         <h2 class="montserrat" id="voltar"><a href="/index.html">Tela Inicial</a></h2>
         <article class="pagamento">

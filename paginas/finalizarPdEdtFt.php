@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finalizar pedido de edição e impressão de fotos </title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/finalizaTopper.css">
-    <link rel="stylesheet" href="/css/finalizaEdicao.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/finalizaTopper.css">
+    <link rel="stylesheet" href="../css/finalizaEdicao.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
-    <script src="/js/base.js" defer></script>
+    <script src="../js/base.js" defer></script>
 </head>
 
 <body>
@@ -28,7 +28,7 @@
     <article class="main">
         <article class="box">
             <h2>Edição e impressão de fotos </h2>
-            <img src="/img/foto.jpeg">
+            <img src="../img/foto.jpeg">
             <h4>R$1,75 - R$10,80</h4>
             <h3>Descrição</h3>
             <p class="description">
@@ -128,19 +128,19 @@
             <section>
                 <h3>Redes sociais</h3>
                 <section class="redessociais">
-                    <img src="/img/instagram.png" alt="">
+                    <img src="../img/instagram.png" alt="">
                     <p>@omundodaluaservicosdigitais</p>
                 </section>
             </section>
             <section>
                 <h3>Área do Cliente</h3>
-                <a href="/paginas/login.html">Login</a><br>
-                <a href="/paginas/cadastro.html">Cadastra-se</a><br>
-                <a href="/paginas/telaPedidos.html">Meus pedidos</a>
+                <a href="../paginas/login.html">Login</a><br>
+                <a href="../paginas/cadastro.html">Cadastra-se</a><br>
+                <a href="../paginas/telaPedidos.html">Meus pedidos</a>
             </section>
             <section>
                 <h3>Sobre Nós</h3>
-                <a href="/paginas/sobreaEmpresa.html">Sobre a Empresa</a>
+                <a href="../paginas/sobreaEmpresa.html">Sobre a Empresa</a>
             </section>
         </section>
     </footer>

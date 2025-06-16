@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finalizar pedido do Topper de bolo</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/opcaopg.css">
-    <script src="/js/base.js"></script>
-    <script src="/js/opcaoPg.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/opcaopg.css">
+    <script src="../js/base.js"></script>
+    <script src="../js/opcaoPg.js"></script>
 </head>
 <body>
     <header>
@@ -33,15 +33,15 @@
     </article>
     <footer>
         <section class="justify-content-around">
-            <img src="/img/logoWhat.png" id="logoW">
+            <img src="../img/logoWhat.png" id="logoW">
             <p>27 99201-0821</p>
         </section>
         <section class="justify-content-around">
-            <img src="/img/logoInst.png" id="logoI">
+            <img src="../img/logoInst.png" id="logoI">
             <p>@omundodaluaservicosdigitais</p>
         </section>
         <section class="justify-content-around">
-            <img src="/img/logoLocaliza.png" id="logoL">
+            <img src="../img/logoLocaliza.png" id="logoL">
             <p>R. Tuffi Salomão Borges, 91 - José de Anchieta II, Serra - ES, 29162-502</p>
         </section>
     </footer>  
