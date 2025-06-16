@@ -57,7 +57,7 @@
                 <label>Quantidade:</label>
                 <input type="number" min="1" value="1">
             </section>  
-            <a href="../paginas/FinalizarPedidoTopper.php" role="button"><button class="submit-btn compra-btn">Compra</button></a>  
+            <button class="submit-btn compra-btn">Compra</button>  
             <button class="submit-btn carrinho-btn" onclick="goCarrinho()">Adicionar ao carrinho</button>    
         </article>
         

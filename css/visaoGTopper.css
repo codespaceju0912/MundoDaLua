@@ -8,7 +8,9 @@ header {
     padding: 2vw 5vw;
     background-color: #8a2be2;
 }
-
+.submit-btn a{
+    text-decoration: none;
+}
 #bloco_pesquisa{
     display: flex;
     width: fit-content;
