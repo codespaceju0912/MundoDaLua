@@ -20,7 +20,7 @@
     <article class="main">   
         <article class="box">
             <h2>Topper de bolo</h2>
-            <img src="/img/topper.png" alt="Topper de bolo">
+            <img src="../img/topper.png" alt="Topper de bolo">
             <h4>R$15,00 - R$25,00</h4>
             <h3>Descrição</h3>
             <p class="description">
@@ -57,7 +57,7 @@
             <section>
                 <h3>Redes sociais</h3>
                 <section class="redessociais">
-                    <img src="/img/instagram.png" alt="">
+                    <img src="../img/instagram.png" alt="">
                     <p>@omundodaluaservicosdigitais</p>
                 </section>
             </section>

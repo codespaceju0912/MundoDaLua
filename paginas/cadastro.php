@@ -5,9 +5,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tela de login</title>
-        <link rel="stylesheet" href="/MundoDaLua/css/style.css">
-        <link rel="stylesheet" href="/MundoDaLua/css/cadastro.css">
-        <script src="js/base.js" defer></script>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/cadastro.css">
+        <script src="../js/base.js" defer></script>
 
     </head>
 
@@ -27,7 +27,7 @@
             <div class= "inputForm">
 
                 <label for="idTelefone"></label>
-                <input type="text" name="telefone" id="telefone" placeholder="Telefone" class="mb"><br>
+                <input type="tel" name="telefone" id="telefone" placeholder="Telefone" pattern="(\([0-9]{2}\))\s([0-9]{4})-([0-9]{4})" class="mb"><br>
             </div>
 
             <div class= "inputForm">
@@ -56,7 +56,7 @@
             </form>
         </div>
         <aside class="bordadiv">
-        <img src="/MundoDaLua/img/logoMundoDaLua.jpeg" alt="">
+        <img src="../img/logoMundoDaLua.jpeg" alt="">
        
         </div>
     </div>

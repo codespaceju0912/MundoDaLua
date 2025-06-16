@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finalizar pedido da caixinha personalizada</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/finalizaTopper.css">
-    <link rel="stylesheet" href="/css/finalizarCx.css">
-    <script src="/js/base.js" defer></script>
-    <script src="/js/finalizarCx.js" defer></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/finalizaTopper.css">
+    <link rel="stylesheet" href="../css/finalizarCx.css">
+    <script src="../js/base.js" defer></script>
+    <script src="../js/finalizarCx.js" defer></script>
     
 </head>
 <body>
@@ -22,7 +22,7 @@
     <article class="main">   
         <article class="box">
             <h2>Caixinha Personalizada</h2>
-            <img src="/img/caixa.jpg" alt="caixinha personalizada">
+            <img src="../img/caixa.jpg" alt="caixinha personalizada">
             <h4>R$15,00 -</h4>
             <h3>Descrição</h3>
             <p class="description">
@@ -52,19 +52,19 @@
             <section>
                 <h3>Redes sociais</h3>
                 <section class="redessociais">
-                    <img src="/img/instagram.png" alt="">
+                    <img src="../img/instagram.png" alt="">
                     <p>@omundodaluaservicosdigitais</p>
                 </section>
             </section>
             <section>
                 <h3>Área do Cliente</h3>
-                <a href="/paginas/login.html">Login</a><br>
-                <a href="/paginas/cadastro.html">Cadastra-se</a><br>
-                <a href="/paginas/telaPedidos.html">Meus pedidos</a>
+                <a href="../paginas/login.html">Login</a><br>
+                <a href="../paginas/cadastro.html">Cadastra-se</a><br>
+                <a href="../paginas/telaPedidos.html">Meus pedidos</a>
             </section>
             <section>
                 <h3>Sobre Nós</h3>
-                <a href="/paginas/sobreaEmpresa.html">Sobre a Empresa</a>
+                <a href="../paginas/sobreaEmpresa.html">Sobre a Empresa</a>
             </section>
         </section>
     </footer>

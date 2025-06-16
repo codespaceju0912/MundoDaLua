@@ -70,9 +70,36 @@ button{
     border-radius: 15px;
     background-color: white;
     color: #8A2BE2;
-    cursor: pointer     
+    cursor: pointer    
+     
 }
 
 button:hover {
     background-color: lightblue
+}
+@media (max-width: 768px) {
+    #divprincipal {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bordadiv {
+        width: 90vw;
+    }
+
+    img {
+        width: 80vw;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    
+    .inputForm button {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    button {
+        margin-top: 10px;
+    }
 }

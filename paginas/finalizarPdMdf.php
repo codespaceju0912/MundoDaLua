@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finalizar pedido de Quadro MDF com foto ou frase</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/finalizaTopper.css">
-    <link rel="stylesheet" href="/css/finalizaMdf.css">
-    <script src="/js/base.js" defer></script>
-    <script src="/js/finalizaM.js" defer></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/finalizaTopper.css">
+    <link rel="stylesheet" href="../css/finalizaMdf.css">
+    <script src="../js/base.js" defer></script>
+    <script src="../js/finalizaM.js" defer></script>
 </head>
 <body>
     <header>
@@ -21,11 +21,12 @@
     <article class="main">   
         <article class="box">
             <h2>Quadro MDF com foto ou frase</h2>
-            <img src="/img/mdf.jpeg">
+            <img src="../img/mdf.jpeg">
             <h4>R$60,00</h4>
             <h3>Descrição</h3>
             <p class="description">
-                Quadro MDF com foto ou frase: Opção para guardar e eternizar suas fotos, impressas e molduradas em tamanho A4.            <p id="espaco"></p>
+                Quadro MDF com foto ou frase: Opção para guardar e eternizar suas fotos, impressas e molduradas em tamanho A4.           
+                <p id="espaco"></p>
         </article>
         <article class="box personaliza">
             <h2>Personalização</h2>
@@ -52,19 +53,19 @@
             <section>
                 <h3>Redes sociais</h3>
                 <section class="redessociais">
-                    <img src="/img/instagram.png" alt="">
+                    <img src="../img/instagram.png" alt="">
                     <p>@omundodaluaservicosdigitais</p>
                 </section>
             </section>
             <section>
                 <h3>Área do Cliente</h3>
-                <a href="/paginas/login.html">Login</a><br>
-                <a href="/paginas/cadastro.html">Cadastra-se</a><br>
-                <a href="/paginas/telaPedidos.html">Meus pedidos</a>
+                <a href="../paginas/login.html">Login</a><br>
+                <a href="../paginas/cadastro.html">Cadastra-se</a><br>
+                <a href="../paginas/telaPedidos.html">Meus pedidos</a>
             </section>
             <section>
                 <h3>Sobre Nós</h3>
-                <a href="/paginas/sobreaEmpresa.html">Sobre a Empresa</a>
+                <a href="../paginas/sobreaEmpresa.html">Sobre a Empresa</a>
             </section>
         </section>
     </footer>

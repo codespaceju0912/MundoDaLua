@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/cadastro.css">
         <link rel="stylesheet" href="../css/login.css">
-        <script src="/js/base.js" defer></script>
+        <script src="../js/base.js" defer></script>
     </head>
 
 </body>
