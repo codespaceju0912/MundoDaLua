@@ -40,9 +40,9 @@
                 Categorias
             </button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="topper.html">Personalizados</a></li>
-                <li><a class="dropdown-item" href="quadro.html">Fotos</a></li>
-                <li><a class="dropdown-item" href="marcadores.html">Papelaria</a></li>
+                <li><a class="dropdown-item" href="topper.php">Personalizados</a></li>
+                <li><a class="dropdown-item" href="quadro.php">Fotos</a></li>
+                <li><a class="dropdown-item" href="marcadores.php">Papelaria</a></li>
             </ul>
         </div>
 
@@ -105,13 +105,13 @@
         </div>
         <div>
             <h3>Área do Cliente</h3>
-            <a href="../paginas/login.html">Login</a><br>
-            <a href="cadastro.html">Cadastre-se</a><br>
-            <a href="telaPedidos.html">Meus pedidos</a>
+            <a href="../paginas/login.php">Login</a><br>
+            <a href="cadastro.php">Cadastre-se</a><br>
+            <a href="telaPedidos.php">Meus pedidos</a>
         </div>
         <div>
             <h3>Sobre Nós</h3>
-            <a href="../paginas/sobreaEmpresa.html">Sobre a Empresa</a>
+            <a href="../paginas/sobreaEmpresa.php">Sobre a Empresa</a>
         </div>
     </footer>
 

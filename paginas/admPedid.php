@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visão Geral - ADM </title>
-    <link rel="stylesheet" href="../css/admVisaoGeral.css">
+    <title>Gerenciar Pedidos - ADM</title>
     <link rel="stylesheet" href="../css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../css/admPedid.css">
 </head>
 <body>
     <header>
@@ -23,15 +22,14 @@
 
         <section id="bloco_perfil">
             <img src="../img/perfil.png" alt="" id="imgperfil">
-            <h3>Faça <a href="../paginas/login.html"><span id="avisoPerfil">LOGIN</span></a> <br>ou <br><a
-                    href="../paginas/cadastro.html"><span id="avisoPerfil">CADASTRE-SE</span></a></h3>
+            <h3>Faça <a href="../paginas/login.php"><span id="avisoPerfil">LOGIN</span></a> <br>ou <br><a
+                    href="../paginas/cadastro.php"><span id="avisoPerfil">CADASTRE-SE</span></a></h3>
         </section>
         <section id="bloco_carrinho" onclick="goCarrinho()">
             <img src="../img/Carrinho.png" alt="" id="imgcarrinho">
             <h3>Carrinho</h3>
         </section>
     </header>
-
     <nav>
 
         <div class="btn-group dropend" id="corCategoria">
@@ -52,49 +50,40 @@
             <p>Acompanhar Pedidos</p>
         </section>
     </nav>
-    
+
     <main>
-        <h2>Painel de Visão Geral</h2>
+        <h2 id="title"> Pedidos Recebidos</h2>
 
-        <!-- Cards de resumo -->
-        <section id="dashboard-cards">
-            <div class="card">
-                <h3>Total de Usuários</h3>
-                <p id="totalUsusarios">0</p>
-            </div>
-            <div class="card">
-                <h3>Total de Produtos</h3>
-                <p id="totalProdutos">0</p>
-            </div>
-            <div class="card">
-                <h3>Total de Pedidos</h3>
-                <p id="totalPedidos">0</p>
-            </div>
-        </section>
+        <!-- Campo de busca por cliente e filtro por status -->
+        <input type="text" id="buscarPedido" placeholder="Buscar por cliente ou produto...">
+
+        <select id="filtroStatus">
+            <option value="">Todos os Status</option>
+            <option value="Aguardando">Aguardando</option>
+            <option value="Em Produção">Em Produção</option>
+            <option value="Enviado">Enviado</option>
+            <option value="Entregue">Entregue</option>
+        </select>
         
-        <!-- Gráficos -->
-        <section id="graficos">
-            <h3>Vendas Mensais</h3>
-            <canvas id="graficoVendas" width="400" height="200"></canvas>
-        </section>
-
-        <section id="graficos">
-            <h3>Produtos Mais Vendidos</h3>
-            <canvas id="graficoProdutos" width="400" height="200"></canvas>
-        </section>
-
-        <section id="acoesRapidas">
-            <h3>Ações Rápidas</h3>
-            <div class="buttons">
-                <a href="../paginas/admProd.php" class="btn">Gerenciar Produtos</a>
-                <a href="../paginas/admUsuar.php" class="btn">Gerenciar Usuários</a>
-                <a href="../paginas/admPedid.php" class="btn">Gerenciar Pedidos</a>    
-            <div>
-        </section>
+        <!-- Tabela de pedidos-->
+        <table id="tabelaPedidos">
+            <thead>
+                <tr>
+                    <th>Cliente</th>
+                    <th>Produto</th>
+                    <th>Data</th>
+                    <th>Status</th>
+                    <th>Valor</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Pedidos serão inseridos aqui via JS -->
+            </tbody>
+        </table>
     </main>
 
     <footer>
-
         <div>
             <h3>Fale conosco</h3>
             <p>Tell: (27) 99201-0821</p>
@@ -119,6 +108,6 @@
         </div>
     </footer>
 
-    <script src="/js/admVisaoGeral.js"></script>
+    <script src="/js/admPedid.js"></script>
 </body>
 </html>
