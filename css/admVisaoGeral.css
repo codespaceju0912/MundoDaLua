@@ -1,4 +1,351 @@
-.dashboard-cards{
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    height: 100vh;
+}
+
+:root {
+    --horiz-paddin: clamp(2rem, 5vw, 12rem);
+}
+
+header,
+nav,
+main,
+footer {
+    padding-left: var(--horiz-paddin);
+    padding-right: var(--horiz-paddin);
+}
+
+nav {
+    gap: clamp(9rem, 14vw, 24rem);
+
+}
+
+footer {
+    gap: clamp(4rem, 6rem, 12rem);
+
+}
+
+header {
+    gap: clamp(4rem, 6rem, 12rem);
+
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+
+
+header {
+    width: 100vw;
+    min-height: 12.0rem;
+    background-color: #8a2be2;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+
+
+
+}
+
+@media (max-width: 1200px) {
+    header section {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 900px) {
+    header section {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+#grafica {
+    font-family: playball;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin: 0;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: -0.4rem 0.5rem 1.0rem #1379bd;
+    -webkit-text-stroke: 0.03rem #1379bd;
+
+}
+
+#mundodalua {
+    font-family: montserrat;
+    font-size: 2.7rem;
+    font-weight: 700;
+    margin: 0;
+    color: #ffffff;
+    text-shadow: -0.3rem 0.5rem 1.0rem #1379bd;
+    -webkit-text-stroke: 0.03rem #1379bd;
+
+
+}
+
+#bloco_mundoDaLua {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    cursor: pointer;
+
+
+}
+
+#bloco_pesquisa {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+
+
+}
+
+#barradepesquisa {
+    width: 42.0rem;
+    height: 3.9rem;
+    display: inline-block;
+    border-radius: 6.0rem 0.0rem 0.0rem 6.0rem;
+    border: 0cap;
+    padding-left: 1.5rem;
+    font-size: 1.5rem;
+    box-shadow: 0.4rem 0.4rem 1.0rem #6F1ABD;
+
+}
+
+#botaoPesquisar {
+    width: 5.2rem;
+    height: 3.9rem;
+    border-radius: 0.0rem 6.0rem 6.0rem 0.0rem;
+    border: 0cap;
+    background-color: #6F1ABD;
+    cursor: pointer;
+}
+
+#imagemLupa {
+    width: 2.8rem;
+    height: 2.7rem;
+}
+
+#bloco_perfil {
+    height: fit-content;
+    width: fit-content;
+    font-size: 1.5rem;
+    display: flex;
+    gap: 1.0rem;
+    font-family: fredoka;
+    color: #ffffff;
+    align-items: center;
+    cursor: pointer;
+}
+
+#imgperfil {
+    width: clamp(3rem, 5rem, 7rem);
+    height: clamp(3rem, 5rem, 7rem);
+
+}
+
+#avisoPerfil {
+    color: #E22BDE;
+}
+
+#bloco_carrinho {
+    height: fit-content;
+    width: fit-content;
+    font-size: 4.0rem;
+    font-family: fredoka;
+    color: #E22BDE;
+    align-items: center;
+    cursor: pointer;
+
+
+}
+
+#imgcarrinho {
+    width: 7.0rem;
+    height: 7.0rem;
+    margin: 0;
+
+}
+
+
+#bloco_carrinho h3 {
+    margin: 0;
+
+}
+
+nav {
+    height: 4.5vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    border-bottom: 1.8px solid #8a2be2;
+
+}
+
+#corCategoria {
+    color: #E28A2B;
+    font-family: montserrat;
+    font-size: 1.5rem;
+    font-weight: 550;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#corCategoria img {
+    height: 2.5rem;
+    padding: 0;
+    margin: 0;
+
+}
+
+#corCategoria p {
+    padding: 0;
+    margin: 0;
+}
+
+.palavrasNav {
+    font-weight: 550;
+    font-size: 1.7rem;
+    color: #8a2be2;
+    font-family: montserrat;
+    padding-top: 1.0rem;
+    cursor: pointer;
+
+}
+
+/* Footer */
+
+#cnpj {
+    height: 4.5rem;
+    width: 100vw;
+    background-color: #A45AE8;
+    padding: 0;
+    margin: 0;
+
+}
+
+#rodape {
+    width: 100vw;
+    height: 22.0rem;
+    background-color: #8a2be2;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 20.0rem;
+    padding-right: 20.0rem;
+    gap: 2.0rem;
+    justify-content: center;
+    align-items: center;
+}
+
+footer div h3 {
+    font-family: fredoka;
+    font-size: clamp(2rem, 2vw, 2.5rem);
+    color: #ffffff;
+    margin: 0;
+
+}
+
+footer div p {
+    font-family: montserrat;
+    font-size: clamp(1.6rem, 1.8vw, 2rem);
+    color: #ffffff;
+    font-weight: 400;
+    margin: 0.8rem;
+}
+
+footer div a {
+    font-family: montserrat;
+    font-size: clamp(1.6rem, 1.8vw, 2rem);
+    color: #ffffff;
+    font-weight: 400;
+    text-decoration: none;
+
+
+}
+
+.redessociais {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+
+
+}
+
+.redessociais img {
+    width: 3.0rem;
+    height: 3.0rem;
+    margin: 0;
+    padding: 0;
+}
+
+footer div {
+    flex: 1 1 20rem;
+    max-width: 30rem;
+    min-height: 18rem;
+    text-align: center;
+
+}
+
+footer {
+    width: 100vw;
+    min-height: 22rem;
+    background-color: #8a2be2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+@media (max-width: 1200px) {
+    footer div {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 900px) {
+    footer div {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+/* Estilização da main*/
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-family: montserrat;
+    text-align: center;
+
+}
+
+#dashboard-cards{
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -18,6 +365,7 @@
 
 .card h3{
     margin-bottom: 10px;
+    font-family: montserrat;
 }
 
 .card p{
@@ -25,14 +373,23 @@
     font-weight: bold;
 }
 
-.acoesRapidas{
-    margin: 40px;
+#graficos h3{
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-family: montserrat;
     text-align: center;
 }
 
-.acoesRapidas h3{
+#acoesRapidas{
+    margin: 40px;
+    text-align: center;
+
+}
+
+#acoesRapidas h3{
     font-size: 2rem;
     margin-bottom: 20px;
+    font-family: montserrat;
 }
 
 .buttons{
@@ -50,6 +407,7 @@
     text-decoration: none;
     font-size: 1.2rem;
     transition: background-color 0.3s ease;
+    font-family: montserrat;
 }
 
 .btn:hover{

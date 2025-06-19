@@ -1,94 +1,124 @@
-*{
+* {
     box-sizing: border-box;
-    
-}
-html{
-    font-size: 62.5%;
 }
 
-:root{
+html {
+    font-size: 62.5%;
+    height: 100vh;
+}
+
+:root {
     --horiz-paddin: clamp(2rem, 5vw, 12rem);
 }
 
-header, nav, main, footer{
+header,
+nav,
+main,
+footer {
     padding-left: var(--horiz-paddin);
     padding-right: var(--horiz-paddin);
 }
 
-nav{
+nav {
     gap: clamp(9rem, 14vw, 24rem);
-   
+
 }
 
-footer{
+footer {
     gap: clamp(4rem, 6rem, 12rem);
-   
+
 }
 
-body{
+header {
+    gap: clamp(4rem, 6rem, 12rem);
+
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
     margin: 0;
     overflow-x: hidden;
-    min-width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
     
-    
+
 }
-figure{
-    margin: 0;
-    padding: 0;
-}
-header{
+
+
+header {
     width: 100vw;
     min-height: 12.0rem;
     background-color: #8a2be2;
     display: flex;
     align-items: center;
     flex-direction: row;
-    gap: 14.0rem;
     justify-content: center;
-    
 
-    
+
+
 }
-#grafica{
+
+@media (max-width: 1200px) {
+    header section {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 900px) {
+    header section {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+#grafica {
     font-family: playball;
     font-size: 2.5rem;
     font-weight: 400;
     margin: 0;
     color: #ffffff;
     text-align: center;
-    text-shadow: -0.4rem 0.5rem 1.0rem #1379bd ;
+    text-shadow: -0.4rem 0.5rem 1.0rem #1379bd;
     -webkit-text-stroke: 0.03rem #1379bd;
-   
+
 }
-#mundodalua{
+
+#mundodalua {
     font-family: montserrat;
     font-size: 2.7rem;
     font-weight: 700;
     margin: 0;
     color: #ffffff;
-    text-shadow: -0.3rem 0.5rem 1.0rem #1379bd ;
+    text-shadow: -0.3rem 0.5rem 1.0rem #1379bd;
     -webkit-text-stroke: 0.03rem #1379bd;
 
 
 }
-#bloco_mundoDaLua{
+
+#bloco_mundoDaLua {
     width: auto;
     display: flex;
     flex-direction: column;
     width: fit-content;
     cursor: pointer;
 
-    
+
 }
-#bloco_pesquisa{
+
+#bloco_pesquisa {
     display: flex;
     width: fit-content;
     height: fit-content;
     align-items: center;
-    
-    
+
+
 }
-#barradepesquisa{
+
+#barradepesquisa {
     width: 42.0rem;
     height: 3.9rem;
     display: inline-block;
@@ -99,7 +129,8 @@ header{
     box-shadow: 0.4rem 0.4rem 1.0rem #6F1ABD;
 
 }
-#botaoPesquisar{
+
+#botaoPesquisar {
     width: 5.2rem;
     height: 3.9rem;
     border-radius: 0.0rem 6.0rem 6.0rem 0.0rem;
@@ -107,11 +138,13 @@ header{
     background-color: #6F1ABD;
     cursor: pointer;
 }
-#imagemLupa{
+
+#imagemLupa {
     width: 2.8rem;
     height: 2.7rem;
 }
-#bloco_perfil{
+
+#bloco_perfil {
     height: fit-content;
     width: fit-content;
     font-size: 1.5rem;
@@ -122,39 +155,43 @@ header{
     align-items: center;
     cursor: pointer;
 }
-#imgperfil{
-    width: 7.0rem;
-    height: 7.0rem;
-    
+
+#imgperfil {
+    width: clamp(3rem, 5rem, 7rem);
+    height: clamp(3rem, 5rem, 7rem);
+
 }
-#avisoPerfil{
+
+#avisoPerfil {
     color: #E22BDE;
 }
-#bloco_carrinho{
+
+#bloco_carrinho {
     height: fit-content;
     width: fit-content;
-    font-size: 2.0rem;
+    font-size: 4.0rem;
     font-family: fredoka;
     color: #E22BDE;
     align-items: center;
     cursor: pointer;
 
-    
+
 }
-#imgcarrinho{
+
+#imgcarrinho {
     width: 7.0rem;
     height: 7.0rem;
     margin: 0;
-    
+
 }
 
-  
+
 #bloco_carrinho h3 {
     margin: 0;
-  
+
 }
- 
-nav{
+
+nav {
     height: 4.5vh;
     width: 100vw;
     display: flex;
@@ -162,9 +199,10 @@ nav{
     flex-direction: row;
     justify-content: center;
     border-bottom: 1.8px solid #8a2be2;
-    
+
 }
-#corCategoria{
+
+#corCategoria {
     color: #E28A2B;
     font-family: montserrat;
     font-size: 1.5rem;
@@ -172,80 +210,92 @@ nav{
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
-#corCategoria img{
+
+#corCategoria img {
     height: 2.5rem;
     padding: 0;
     margin: 0;
-    
+
 }
-#corCategoria p{
+
+#corCategoria p {
     padding: 0;
     margin: 0;
 }
-.palavrasNav{
+
+.palavrasNav {
     font-weight: 550;
     font-size: 1.7rem;
     color: #8a2be2;
     font-family: montserrat;
     padding-top: 1.0rem;
     cursor: pointer;
+
 }
 
-#cnpj{
+/* Footer */
+
+#cnpj {
     height: 4.5rem;
     width: 100vw;
     background-color: #A45AE8;
-    
+    padding: 0;
+    margin: 0;
+
 }
-#rodape{
+
+#rodape {
     width: 100vw;
     height: 22.0rem;
     background-color: #8a2be2;
     display: flex;
     flex-wrap: wrap;
-    padding-left: 5.0rem;
-    padding-right: 5.0rem;
+    padding-left: 20.0rem;
+    padding-right: 20.0rem;
     gap: 2.0rem;
     justify-content: center;
     align-items: center;
-    
 }
+
 footer div h3 {
     font-family: fredoka;
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 2vw, 2.5rem);
     color: #ffffff;
     margin: 0;
 
 }
-footer div p{
+
+footer div p {
     font-family: montserrat;
-    font-size: 2.0rem;
+    font-size: clamp(1.6rem, 1.8vw, 2rem);
     color: #ffffff;
     font-weight: 400;
     margin: 0.8rem;
 }
-footer div a{
+
+footer div a {
     font-family: montserrat;
-    font-size: 2.0rem;
+    font-size: clamp(1.6rem, 1.8vw, 2rem);
     color: #ffffff;
     font-weight: 400;
     text-decoration: none;
-    
+
 
 }
-.redessociais{
+
+.redessociais {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 1.0rem;
     padding: 0;
-    margin-bottom: 1.0rem;
+
 
 }
-.redessociais img{
+
+.redessociais img {
     width: 3.0rem;
     height: 3.0rem;
     margin: 0;
@@ -253,31 +303,60 @@ footer div a{
 }
 
 footer div {
-    height: 18rem;
-    text-align: justify;
-   
+    flex: 1 1 20rem;
+    max-width: 30rem;
+    min-height: 18rem;
+    text-align: center;
+
 }
 
-footer{
+footer {
     width: 100vw;
-    height: 22.0rem;
+    min-height: 22rem;
     background-color: #8a2be2;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    
+
+
 }
 
-.title{
-    color: #8a2be2;
+@media (max-width: 1200px) {
+    footer div {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 900px) {
+    footer div {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+
+/*Estilização da main*/
+
+#title{
     margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-family: montserrat;
+    text-align: left;
 }
 
 #buscarPedido {
     padding: 10px;
     width: 300px;
     margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+#filtroStatus{
+    padding: 10px;
+    width: 150px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 6px;
 }
@@ -290,9 +369,11 @@ table{
 }
 
 table th, table td{
-    padding: 12px;
+    padding: 15px;
     text-align: left;
+    font-size: 1.3rem;
     border-bottom: 1px solid #ddd;
+    font-family: montserrat;
 }
 
 th{

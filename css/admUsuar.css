@@ -327,13 +327,12 @@ main{
     width: 100%; /* Garante que ocupe toda a largura disponível */
 }
 
-/* Títulos */
-h2{
-    color: #8a2be2;
+/* Título cadastro */
+.form-usu h2{
     margin-bottom: 15px;
     text-align: center;
     font-family: montserrat;
-    font-size: 1.5rem;
+    font-size: 1.9rem;
 }
 
 /* Formulário de cadastro */
@@ -353,7 +352,7 @@ h2{
 
 .form-usu label{
     color: #333;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 500; /* Melhora a hierarquia visual */
     
 }
@@ -362,7 +361,7 @@ h2{
     padding: 12px; /* Aumentado para melhor toque em mobile */
     border: 1px solid #ccc;
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: 1.3rem;
     width: 100%; /* Garante que ocupe toda a largura */
 }
 
@@ -377,12 +376,21 @@ h2{
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease; /* Transição suave para todos os estados */
-    font-size: 1rem;
+    font-size: 1.4rem;
 }
 
 .form-usu button:hover {
     background-color: #6c1fb8;
     transform: translateY(-2px); /* Efeito sutil de elevação */
+}
+
+/* Título tabela */
+
+.list-Usu h2{
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: montserrat;
+    font-size: 1.9rem;
 }
 
 /* Listagem de usuários */
@@ -410,6 +418,7 @@ table th, table td{
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+    font-size: 1.4rem;
 }
 
 table td {
@@ -425,6 +434,7 @@ table button {
     cursor: pointer;
     transition: all 0.3s ease;
     white-space: nowrap; /* Evita quebra de linha no texto do botão */
+    font-size: 1.4rem;
 }
 
 table button:hover {
