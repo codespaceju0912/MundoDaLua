@@ -6,7 +6,10 @@
     <title>Visão Geral - ADM </title>
     <link rel="stylesheet" href="../css/admVisaoGeral.css">
     <link rel="stylesheet" href="../css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="../js/base.js" defer></script>
 </head>
 <body>
     <header>
@@ -23,8 +26,8 @@
 
         <section id="bloco_perfil">
             <img src="../img/perfil.png" alt="" id="imgperfil">
-            <h3>Faça <a href="../paginas/login.html"><span id="avisoPerfil">LOGIN</span></a> <br>ou <br><a
-                    href="../paginas/cadastro.html"><span id="avisoPerfil">CADASTRE-SE</span></a></h3>
+            <h3>Faça <a href="../paginas/login.php"><span id="avisoPerfil">LOGIN</span></a> <br>ou <br><a
+                    href="../paginas/cadastro.php"><span id="avisoPerfil">CADASTRE-SE</span></a></h3>
         </section>
         <section id="bloco_carrinho" onclick="goCarrinho()">
             <img src="../img/Carrinho.png" alt="" id="imgcarrinho">
@@ -109,13 +112,13 @@
         </div>
         <div>
             <h3>Área do Cliente</h3>
-            <a href="/paginas/login.php">Login</a><br>
-            <a href="cadastro.php">Cadastre-se</a><br>
-            <a href="telaPedidos.php">Meus pedidos</a>
+            <a href="../paginas/login.php">Login</a><br>
+            <a href="../paginas/cadastro.php">Cadastre-se</a><br>
+            <a href="../paginas/telaPedidos.php">Meus pedidos</a>
         </div>
         <div>
             <h3>Sobre Nós</h3>
-            <a href="/paginas/sobreaEmpresa.php">Sobre a Empresa</a>
+            <a href="../paginas/sobreaEmpresa.php">Sobre a Empresa</a>
         </div>
     </footer>
 

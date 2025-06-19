@@ -25,8 +25,8 @@
 
         <section id="bloco_perfil">
             <img src="../img/perfil.png" alt="" id="imgperfil">
-            <h3>Faça <a href="../paginas/login.html"><span id="avisoPerfil">LOGIN</span></a> <br>ou <br><a
-                    href="../paginas/cadastro.html"><span id="avisoPerfil">CADASTRE-SE</span></a></h3>
+            <h3>Faça <a href="../paginas/login.php"><span id="avisoPerfil">LOGIN</span></a> <br>ou <br><a
+                    href="../paginas/cadastro.php"><span id="avisoPerfil">CADASTRE-SE</span></a></h3>
         </section>
         <section id="bloco_carrinho" onclick="goCarrinho()">
             <img src="../img/Carrinho.png" alt="" id="imgcarrinho">
@@ -106,8 +106,8 @@
         <div>
             <h3>Área do Cliente</h3>
             <a href="../paginas/login.php">Login</a><br>
-            <a href="cadastro.php">Cadastre-se</a><br>
-            <a href="telaPedidos.php">Meus pedidos</a>
+            <a href="..paginas/cadastro.php">Cadastre-se</a><br>
+            <a href="../paginas/telaPedidos.php">Meus pedidos</a>
         </div>
         <div>
             <h3>Sobre Nós</h3>

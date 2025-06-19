@@ -178,8 +178,8 @@
         <div>
             <h3>Área do Cliente</h3>
             <a href="../paginas/login.php">Login</a><br>
-            <a href="cadastro.php">Cadastre-se</a><br>
-            <a href="telaPedidos.php">Meus pedidos</a>
+            <a href="../paginas/cadastro.php">Cadastre-se</a><br>
+            <a href="..paginas/telaPedidos.php">Meus pedidos</a>
         </div>
         <div>
             <h3>Sobre Nós</h3>
@@ -191,23 +191,5 @@
     <!--js para adicionar os produtos-->
     <script src="../js/admProd.js"></script>
 
-    
-    <!-- js para excluir os produtos
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-          const botoesExcluir = document.querySelectorAll('.exc');
-    
-          botoesExcluir.forEach(botao => {
-            botao.addEventListener('click', () => {
-              const confirmar = confirm("Deseja realmente excluir este produto?");
-              if (confirmar) {
-                const itemProduto = botao.closest('.prod-item');
-                itemProduto.remove();
-              }
-            });
-          });
-        });
-      </script> -->
-    
 </body>
 </html>
