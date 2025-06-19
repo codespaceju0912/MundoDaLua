@@ -55,71 +55,46 @@
     </nav>
 
     <main>
-            <!--<section id="container">
-                <h3> Painel do Administrador - Produtos</h3>
-                
-                <form id="form-prod">
-                    <label for="nomeProd">Nome:</label>
-                    <input type="text" id="nomeProd" placeholder="Nome do Produto" required><br><br>
-                    <label for="precProd">Preço:</label>
-                    <input type="number" name="precoProd" placeholder="Preço (R$)" step="0.01" required><br><br>
-                    <label for="dscProd">Descrição:</label>
-                    <input type="text" id="dscProd" placeholder="Descrição do Produto" required><br><br>
-                    <label for="imgProd">Imagem:</label>
-                    <input type="file" id="imgProd"><br><br>
-                    <label for="qtdEstq">Quantidade em Estoque:</label>
-                    <input type="number" min="0" value="1"><br><br>
-                    <select name="categoria" required>
-                        <option value="">Selecione a Categoria</option>
-                        <option value="Fotos"> Fotos</option>
-                        <option value="Papelaria">Papelaria</option>
-                        <option value="Personalizados">Personalizados</option>
-                    </select>
-                </form>
-                <input type="button" name="botCad" value="Cadastrar" size="20">
-                <input type="button" name="botAltr" value="Alterar" size="20">
-                <input type="button" name="botExc" value="Excluir" size="20">
-            </section>-->
+        <div id="container">
+            <h1>Painel de Produtos</h1>
             
-            <div id="container">
-                <h1>Painel de Produtos</h1>
-                        
+            <section>
                 <form id="formProduto">
                     <h2>Cadastrar Novo Produto</h2>
                             
-                        <label for="nomeProd">Nome do Produto:</label>
-                        <input type="text" id="nomeProd" required>
+                    <label for="nomeProd">Nome do Produto:</label>
+                    <input type="text" id="nomeProd" required>
                             
-                        <label for="precoProd">Preço (R$):</label>
-                        <input type="number" id="precoProd" step="0.01" required>
+                    <label for="precoProd">Preço (R$):</label>
+                    <input type="number" id="precoProd" step="0.01" required>
                             
-                        <label for="descricaoProd">Descrição:</label>
-                        <input type="text" id="descricaoProd" required>
+                    <label for="descricaoProd">Descrição:</label>
+                    <input type="text" id="descricaoProd" required>
                             
-                        <label for="categoriaProd">Categoria:</label>
-                        <select id="categoriaProd" required>
-                            <option value="">Selecione...</option>
-                            <option value="Fotos">Fotos</option>
-                            <option value="Papelaria">Papelaria</option>
-                            <option value="Personalizados">Personalizados</option>
-                        </select>
+                    <label for="categoriaProd">Categoria:</label>
+                    <select id="categoriaProd" required>
+                        <option value="">Selecione...</option>
+                        <option value="Fotos">Fotos</option>
+                        <option value="Papelaria">Papelaria</option>
+                        <option value="Personalizados">Personalizados</option>
+                    </select>
                             
-                        <label for="estoqueProd">Quantidade em Estoque:</label>
-                        <input type="number" id="estoqueProd" min="0" value="1" required>
+                    <label for="estoqueProd">Quantidade em Estoque:</label>
+                    <input type="number" id="estoqueProd" min="0" value="1" required>
                             
-                        <label for="imagemProd">Imagem do Produto:</label>
-                        <input type="file" id="imagemProd" accept="image/*">
+                    <label for="imagemProd">Imagem do Produto:</label>
+                    <input type="file" id="imagemProd" accept="image/*">
                             
-                        <div class="btn-group">
-                            <button class="btnCad">Cadastrar</button>
-                            <button class="btnAlt">Alterar</button>
-                            <button class="btnExc">Excluir</button>
-                        </div>
-                    </form>
+                    <div class="btn-group">
+                        <button class="btnCad">Cadastrar</button>
+                        <button class="btnAlt">Alterar</button>
+                        <button class="btnExc">Excluir</button>
+                    </div>
+                </form>
 
-                    <section id="prod-lista">
-                        <h3>Produtos Cadastrados</h3>
-                        <section class="prod-item" id="listaProdutos">
+                <section id="prod-lista">
+                    <h3>Produtos Cadastrados</h3>
+                    <section class="prod-item" id="listaProdutos">
 
                         <div>
                         <img src="../img/marcaPg.png" alt="marca pagina">
@@ -158,7 +133,9 @@
                         <button class="edit">Editar</button>
                         <button class="exc">Excluir</button>
                     </div>
-                </section>  
+                </section> 
+            </section> 
+        </div>
     </main>
 
     <footer>
