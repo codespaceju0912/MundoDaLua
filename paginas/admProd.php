@@ -1,3 +1,5 @@
+<?php include("../php/verificaAdimin.php"); ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
