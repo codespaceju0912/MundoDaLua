@@ -170,5 +170,7 @@
     <!--js para adicionar os produtos-->
     <script src="../js/admProd.js"></script>
 
+    <script src="/js/produtos.js"></script>
+
 </body>
 </html>
