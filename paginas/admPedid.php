@@ -1,4 +1,4 @@
-<?php include("../php/loginBD.php"); ?>
+<?php include("../paginas/loginBD.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,47 +13,23 @@
     <script src="../js/base.js" defer></script>
 </head>
 <body>
-    <header>
+<header>
         <section id="bloco_mundoDaLua">
             <h1 id="grafica">Gráfica</h1>
             <h1 id="mundodalua">MUNDO DA LUA</h1>
         </section>
-
-        <section id="bloco_pesquisa">
-            <input id="barradepesquisa" class="montserrat" type="text"
-                placeholder="Encontre aqui o melhor produto para você">
-            <button id="botaoPesquisar"><img src="/img/lupaBranca.png" alt="" id="imagemLupa"></button>
-        </section>
-
-        <section id="bloco_perfil">
-            <img src="../img/perfil.png" alt="" id="imgperfil">
-            <h3>Faça <a href="../paginas/login.php"><span id="avisoPerfil">LOGIN</span></a> <br>ou <br><a
-                    href="../paginas/cadastro.php"><span id="avisoPerfil">CADASTRE-SE</span></a></h3>
-        </section>
-        <section id="bloco_carrinho" onclick="goCarrinho()">
-            <img src="../img/Carrinho.png" alt="" id="imgcarrinho">
-            <h3>Carrinho</h3>
-        </section>
     </header>
-    <nav>
 
-        <div class="btn-group dropend" id="corCategoria">
-            <button type="button" class="btn btn-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                Categorias
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="topper.php">Personalizados</a></li>
-                <li><a class="dropdown-item" href="quadro.php">Fotos</a></li>
-                <li><a class="dropdown-item" href="marcadores.php">Papelaria</a></li>
+    <nav>
+        <div class="admin-nav">
+            <ul>
+                <li><a href="../paginas/admVisaoGeral.php">Início</a></li>
+                <li><a href="../paginas/admProd.php">Produtos</a></li>
+                <li><a href="../paginasa/dmUsuar.php">Usuários</a></li>
+                <li><a href="../paginas/admPedid.php">Pedidos</a></li>
+                <li><a href="../paginas/logout.php">Sair</a></li>
             </ul>
         </div>
-
-        <section class="palavrasNav">
-            <p>Produtos</p>
-        </section>
-        <section class="palavrasNav" onclick="goPedidos()">
-            <p>Acompanhar Pedidos</p>
-        </section>
     </nav>
 
     <main>

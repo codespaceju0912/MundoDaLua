@@ -58,8 +58,6 @@ header {
     flex-direction: row;
     justify-content: center;
 
-
-
 }
 
 @media (max-width: 1200px) {
@@ -109,130 +107,42 @@ header {
 
 }
 
-#bloco_pesquisa {
-    display: flex;
-    width: fit-content;
-    height: fit-content;
-    align-items: center;
-
-
-}
-
-#barradepesquisa {
-    width: 42.0rem;
-    height: 3.9rem;
-    display: inline-block;
-    border-radius: 6.0rem 0.0rem 0.0rem 6.0rem;
-    border: 0cap;
-    padding-left: 1.5rem;
-    font-size: 1.5rem;
-    box-shadow: 0.4rem 0.4rem 1.0rem #6F1ABD;
-
-}
-
-#botaoPesquisar {
-    width: 5.2rem;
-    height: 3.9rem;
-    border-radius: 0.0rem 6.0rem 6.0rem 0.0rem;
-    border: 0cap;
-    background-color: #6F1ABD;
-    cursor: pointer;
-}
-
-#imagemLupa {
-    width: 2.8rem;
-    height: 2.7rem;
-}
-
-#bloco_perfil {
-    height: fit-content;
-    width: fit-content;
-    font-size: 1.5rem;
-    display: flex;
-    gap: 1.0rem;
-    font-family: fredoka;
-    color: #ffffff;
-    align-items: center;
-    cursor: pointer;
-}
-
-#imgperfil {
-    width: clamp(3rem, 5rem, 7rem);
-    height: clamp(3rem, 5rem, 7rem);
-
-}
-
-#avisoPerfil {
-    color: #E22BDE;
-}
-
-#bloco_carrinho {
-    height: fit-content;
-    width: fit-content;
-    font-size: 4.0rem;
-    font-family: fredoka;
-    color: #E22BDE;
-    align-items: center;
-    cursor: pointer;
-
-
-}
-
-#imgcarrinho {
-    width: 7.0rem;
-    height: 7.0rem;
-    margin: 0;
-
-}
-
-
-#bloco_carrinho h3 {
-    margin: 0;
-
-}
-
-nav {
-    height: 4.5vh;
+.admin-nav{
+    height: auto;
     width: 100vw;
+    background-color: #ffffff;
+    border-bottom: 2px solid #8a2be2;
     display: flex;
-    align-items: center;
-    flex-direction: row;
     justify-content: center;
-    border-bottom: 1.8px solid #8a2be2;
-
 }
 
-#corCategoria {
-    color: #E28A2B;
+.admin-nav ul{
+    list-style: none;
+    display: flex;
+    gap: 4rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.admin-nav ul li {
     font-family: montserrat;
-    font-size: 1.5rem;
-    font-weight: 550;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-#corCategoria img {
-    height: 2.5rem;
-    padding: 0;
-    margin: 0;
-
-}
-
-#corCategoria p {
-    padding: 0;
-    margin: 0;
-}
-
-.palavrasNav {
-    font-weight: 550;
     font-size: 1.7rem;
-    color: #8a2be2;
-    font-family: montserrat;
-    padding-top: 1.0rem;
-    cursor: pointer;
+    font-weight: 600;
+}
 
+
+.admin-nav ul li a {
+    text-decoration: none;
+    color: #8a2be2;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 8px;
+}
+
+.admin-nav ul li a:hover{
+    background-color: #bfff00;
+    color: #000;
 }
 
 /* Footer */

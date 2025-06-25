@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("conexao.php");
+include("../paginas/conexao.php");
 
 $email = $_POST['email'];
 $senha = $_POST['senha'];
@@ -17,7 +17,7 @@ if($usuario){
     $_SESSION['tipoUsu'] = $usuario['tipoUsu'];
 
     if($usuario['tipoUsu'] === 'admin'){
-        header("Location: /paginas/admVisaoGeral.php");
+        header("Location: ../paginas/admVisaoGeral.php");
     } 
     
     else{
@@ -28,7 +28,7 @@ if($usuario){
 } 
 
 else {
-    echo "<script>alert('Usuário ou Senha inválidos!'); window.location.href = '/paginas/login.php';</script>";
+    echo "<script>alert('Usuário ou Senha inválidos!'); window.location.href = '../paginas/login.php';</script>";
 }
 
 ?>

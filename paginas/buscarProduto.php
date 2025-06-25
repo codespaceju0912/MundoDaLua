@@ -1,5 +1,5 @@
 <?php
-include 'conexao.php';
+include("../php/conexao.php");
 
 $nome = $_GET['nome'] ?? '';
 
