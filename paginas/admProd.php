@@ -1,4 +1,4 @@
-<?php include("../php/verificaAdimin.php"); ?>
+<?php include("../php/loginBD.php"); ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
