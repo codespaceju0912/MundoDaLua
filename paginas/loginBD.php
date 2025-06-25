@@ -9,7 +9,7 @@ $sql = "SELECT * FROM usuario WHERE dscEmailUso = ? AND dscSenhaUsu = ?";
 $stmt = $conn->prepare($sql);
 $stmt->execute([$email, $senha]);
 
-$usuario = $stmt->fecth(PDO::FETCH_ASSOC);
+$usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if($usuario){
     $_SESSION['idUsu'] = $usuario['idUsu'];
