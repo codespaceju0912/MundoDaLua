@@ -147,6 +147,26 @@ header {
     color: #000;
 }
 
+@media (max-width: 768px) {
+    .admin-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 1.5rem 0;
+    }
+
+    .admin-nav ul li {
+        font-size: 1.6rem;
+    }
+
+    .admin-nav ul li a {
+        padding: 1rem 2rem;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
 /* Footer */
 
 #cnpj{
