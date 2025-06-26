@@ -11,9 +11,9 @@ document.querySelector('.submit-btn').addEventListener('click', function () {
         });
         //envia pra tela que foi a opção de pagamento escolhido
         if (selectedPayment === 'pix') {
-            window.location.href = '/paginas/pagamentoPix.html';
+            window.location.href = '../paginas/pagamentoPix.php';
         } else if (selectedPayment === 'local') {
-            window.location.href = '/paginas/pagamentoLocal.html';
+            window.location.href = '../paginas/pagamentoLocal.php';
         } else {//caso nn tenha escolido uma opçao
             alert('Por favor, selecione um método de pagamento.');
         }

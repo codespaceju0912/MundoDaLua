@@ -10,9 +10,9 @@
 <body>
     <article class="container">
         <aside>
-            <img id="logo" src="/img/logoMundoDaLua.jpeg" alt="">
+            <img id="logo" src="../img/logoMundoDaLua.jpeg" alt="">
         </aside>
-        <h2 class="montserrat" id="voltar"><a href="/index.html">Tela Inicial</a></h2>
+        <h2 class="montserrat" id="voltar"><a href="../index.php">Tela Inicial</a></h2>
         <article class="pagamento">
             <img src="../img/qrcode.jpg" alt="lannayitauana.c.caldas@gmail.com">
             <h4 class="montserrat">lannayitauana.c.caldas@gmail.com</h4>

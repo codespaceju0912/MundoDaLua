@@ -14,7 +14,7 @@
         <aside>
             <img id="logo" src="../img/logoMundoDaLua.jpeg" alt="">
         </aside>
-        <h2 class="montserrat" id="voltar"><a href="/index.html">Tela Inicial</a></h2>
+        <h2 class="montserrat" id="voltar"><a href="../index.php">Tela Inicial</a></h2>
         <article class="pagamento">
             <h3 class="fonte">Compra realizada com sucesso!</h3>
             <p class="montserrat texto">Ficamos felizes em ver que você se interessou pelos nossos produtos. Agradecemos pela preferência!</p>
