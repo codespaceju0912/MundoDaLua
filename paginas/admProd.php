@@ -37,31 +37,34 @@
             <h1>Painel de Produtos</h1>
             
             <section>
-                <form id="formProduto">
+                <form id="formProduto" method="POST" acticion="cadastrarProduto.php" enctype="multipart/form-data">
                     <h2>Cadastrar Novo Produto</h2>
                             
                     <label for="nomeProd">Nome do Produto:</label>
-                    <input type="text" id="nomeProd" required>
+                    <input type="text" id="nomeProd" name="nomeProd" required>
                             
-                    <label for="precoProd">Preço (R$):</label>
-                    <input type="number" id="precoProd" step="0.01" required>
+                    <label for="valProd">Preço (R$):</label>
+                    <input type="number" id="valProd" name="valProd" step="0.01" required>
                             
                     <label for="descricaoProd">Descrição:</label>
-                    <input type="text" id="descricaoProd" required>
+                    <input type="text" id="descricaoProd" name="descricaoProd" required>
+
+                    <label for="estoqueProd">Quantidade em Estoque:</label>
+                    <input type="number" id="estoqueProd" name="estoqueProd min="0" value="1" required>
+
+                    <label for="qtdMinEstqProd">Estoque Mínimo:</label>
+                    <input type="number" id="qtdMinEstqProd" name="qtdMinEstqProd" min="0" required>
                             
-                    <label for="categoriaProd">Categoria:</label>
+                    <label for="pctDescProd">Desconto (%):</label>
+                    <input type="number" step="0.01" id="pctDescProd" name="pctDescProd">
+                    
+                    <label for="idCatProd">Categoria (ID):</label>
                     <select id="categoriaProd" required>
                         <option value="">Selecione...</option>
                         <option value="Fotos">Fotos</option>
                         <option value="Papelaria">Papelaria</option>
                         <option value="Personalizados">Personalizados</option>
-                    </select>
-                            
-                    <label for="estoqueProd">Quantidade em Estoque:</label>
-                    <input type="number" id="estoqueProd" min="0" value="1" required>
-                            
-                    <label for="imagemProd">Imagem do Produto:</label>
-                    <input type="file" id="imagemProd" accept="image/*">
+                    </select> 
                             
                     <div class="btn-group">
                         <button class="btnCad">Cadastrar</button>
@@ -72,45 +75,7 @@
 
                 <section id="prod-lista">
                     <h3>Produtos Cadastrados</h3>
-                    <section class="prod-item" id="listaProdutos">
-
-                        <div>
-                        <img src="../img/marcaPg.png" alt="marca pagina">
-                        <div class="prod-info">
-                            <h4>Marca Páginas Magnéticos</h4>
-                            <p><strong>R$ 1,50 - R$ 3,00</strong></p>
-                        </div>
-                        </div>
-
-                        <div>
-                        <img src="../img/foto.jpeg">
-                        <div class="prod-info">
-                            <h4>Edição e impressão de fotos </h4>
-                            <p><strong>R$1,75 - R$10,80</strong></p>
-                        </div>
-                        </div>
-                        
-                        <div>
-                            <img src="../img/mdf.jpeg">
-                            <div class="prod-info">
-                                <h4>Quadro MDF com foto ou frase</h4>
-                                <p><strong>R$60,00</strong></p>
-                            </div>
-                        </div>
-
-                        <div>
-                            <img src="../img/caixa.jpg">
-                            <div class="prod-info">
-                                <h4>Caixinhas Personalizadas</h4>
-                                <p><strong>R$ 15,00 -</strong></p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <div class="prod-acoes">
-                        <button class="edit">Editar</button>
-                        <button class="exc">Excluir</button>
-                    </div>
+                    <?php include("../paginas/listarProd.php");?>
                 </section> 
             </section> 
         </div>
