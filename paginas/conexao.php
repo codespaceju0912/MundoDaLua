@@ -2,9 +2,9 @@
 $servername = "localhost";
 $username = "root";
 $password = "usbw";
-$dbname = "mundodalua";
+$database = "mundodalua";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $database);
 
 //Verifica a conexão
 
