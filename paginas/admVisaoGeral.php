@@ -34,7 +34,7 @@ if(!isset($_SESSION['idUsu'], $_SESSION['nomeUsu']) || $_SESSION['idUsu'] != 1){
                 <li><a href="../paginas/admProd.php">Produtos</a></li>
                 <li><a href="../paginasa/dmUsuar.php">Usuários</a></li>
                 <li><a href="../paginas/admPedid.php">Pedidos</a></li>
-                <li><a href="../paginas/logout.php">Sair</a></li>
+                <li><a href="../paginas/logout.php" action="logout.php">Sair</a></li>
             </ul>
         </div>
         
