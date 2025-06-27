@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -28,7 +31,15 @@
 
         <section id="bloco_perfil">
             <img src="/MundoDaLua/img/perfil.png" alt="" id="imgperfil">
-            <h3>Faça <a href="login.php"><span id="avisoPerfil">LOGIN</span></a> <br>ou <br><a href="cadastro.php"><span id="avisoPerfil">CADASTRE-SE</span></a></h3>
+            <?php
+            if(!isset($_SESSION['idUsu'], $_SESSION['nomeUsu'])){ ?>
+            <h3>Faça <a href="paginas/login.php"><span id="avisoPerfil">LOGIN</span></a> <br>ou <br><a
+                    href="paginas/cadastro.php"><span id="avisoPerfil">CADASTRE-SE</span></a></h3>
+
+            <?php } else {?>
+
+                <h3>Olá, <?= $_SESSION['nomeUsu']?> </h3>
+            <?php } ?>
         </section>
         <section id="bloco_carrinho" onclick="goCarrinho()">
             <img src="/MundoDaLua/img/Carrinho.png" alt="" id="imgcarrinho">

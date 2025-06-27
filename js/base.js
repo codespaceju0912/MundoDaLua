@@ -8,7 +8,7 @@ function goTelaPg(){
 }
 //função que vai pra tela de carrinho
 function goCarrinho(){
-    window.location.href = '../paginas/telaCarrinho.php';
+    window.location.href = 'paginas/telaCarrinho.php';
 }
 //função que vai pra tela inicial
 function goTela(){
