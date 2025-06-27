@@ -37,7 +37,7 @@ if(!isset($_SESSION['idUsu'], $_SESSION['nomeUsu']) || $_SESSION['idUsu'] != 1){
                 <li><a href="../paginas/logout.php">Sair</a></li>
             </ul>
         </div>
-        <?= print_r($_SESSION['nomeUsu'], $_SESSION['idUsu']);?>
+        
     </nav>
     
     <main>
