@@ -1,4 +1,6 @@
-<?php include("../paginas/loginBD.php"); ?>
+<?php include("../paginas/conexao.php"); 
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,13 +25,14 @@
     <nav>
         <div class="admin-nav">
             <ul>
-                <li><a href="../paginas/admVisaoGeral.php">Início</a></li>
-                <li><a href="../paginas/admProd.php">Produtos</a></li>
-                <li><a href="../paginas/admUsuar.php">Usuários</a></li>
-                <li><a href="../paginas/admPedid.php">Pedidos</a></li>
-                <li><a href="../paginas/logout.php">Sair</a></li>
+                <li><a href="/MundoDaLua/paginas/admVisaoGeral.php">Início</a></li>
+                <li><a href="/MundoDaLua/paginas/admProd.php">Produtos</a></li>
+                <li><a href="/MundoDaLua/paginas/admUsuar.php">Usuários</a></li>
+                <li><a href="/MundoDaLua/paginas/admPedid.php">Pedidos</a></li>
+                <li><a href="/MundoDaLua/paginas/logout.php" >Sair</a></li>
             </ul>
         </div>
+        
     </nav>
 
     <main>
