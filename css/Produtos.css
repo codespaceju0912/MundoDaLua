@@ -152,6 +152,13 @@ header {
     color: #ffffff;
     align-items: center;
     cursor: pointer;
+
+    
+
+}
+
+#sair_perfil{
+    color: #E28A2B;
 }
 
 #imgperfil {

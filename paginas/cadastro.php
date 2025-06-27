@@ -16,7 +16,7 @@
 </html>
     <div id="divprincipal" >
         <div class="bordadiv">
-            <form action="/action_page.php" method="get" class="montserrat">
+            <form action="cadastro_usuario.php" method="post" class="montserrat">
                 
             <div class="inputForm">
                     <h1>Cadastro</h1>
@@ -46,10 +46,10 @@
                     <div class= "inputForm">
 
                         <label for="idConfirmação"></label>
-                        <input type="password" name="confirmação" id="confirmação" placeholder="Confirme sua senha" class="mb"><br>
+                        <input type="password" name="confirmacao" id="confirmação" placeholder="Confirme sua senha" class="mb"><br>
                         
                     
-                <button type="button" onclick="goTelaLogin()">Entrar</button>
+                <button type="submit" >Entrar</button>
             </div>
         
                 

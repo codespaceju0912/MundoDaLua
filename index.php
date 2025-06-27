@@ -40,7 +40,9 @@ session_start();
 
             <?php } else {?>
 
-                <h3>Olá, <?= $_SESSION['nomeUsu']?> </h3>
+                <h3>Olá, <?= $_SESSION['nomeUsu']?><br> <a href="/MundoDaLua/paginas/logout.php" >SAIR</a></h3> 
+                
+                
             <?php } ?>
         </section>
         <section id="bloco_carrinho" onclick="goCarrinho()">
