@@ -4,12 +4,12 @@ $username = "root";
 $password = "usbw";
 $database = "mundodalua";
 
-$conn = new mysqli($servername, $username, $password, $database);
-
-//Verifica a conexão
-
-if ($conn->connect_error) {
-    die("Erro de conexão: " . $conn->connect_error);
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn->exec("SET NAMES utf8");
+} catch (PDOException $e) {
+    die("Erro de conexão: " . $e->getMessage());
 }
-
 ?>
+

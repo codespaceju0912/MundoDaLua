@@ -164,14 +164,14 @@ CREATE TABLE IF NOT EXISTS `tipopagamento` (
 --
 
 CREATE TABLE IF NOT EXISTS `usuario` (
-  `idUsu` int(11) NOT NULL,
+  `idUsu` int(11) NOT NULL ,
   `nomUsu` varchar(60) NOT NULL,
   `dscEmailUsu` varchar(60) NOT NULL,
   `datNascUsu` varchar(45) NOT NULL,
   `dscSenhaUsu` varchar(26) NOT NULL,
   `numTelefUsu` varchar(10) NOT NULL,
   `numcpfUsu` varchar(15) NOT NULL,
-  PRIMARY KEY (`idUsu`)
+  PRIMARY KEY (`idUsu`) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

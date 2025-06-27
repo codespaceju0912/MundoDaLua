@@ -1,4 +1,10 @@
-<?php include("../paginas/loginBD.php"); ?>
+<?php include("../paginas/conexao.php"); 
+session_start();
+if(!isset($_SESSION['idUsu'], $_SESSION['nomeUsu']) || $_SESSION['idUsu'] != 1){
+    echo "<script>alert('Usuário não tem permissão!'); window.location.href = '../paginas/login.php';</script>";
+}
+print_r($_SESSION['nomeUsu'], $_SESSION['idUsu']);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,6 +37,7 @@
                 <li><a href="../paginas/logout.php">Sair</a></li>
             </ul>
         </div>
+        <?= print_r($_SESSION['nomeUsu'], $_SESSION['idUsu']);?>
     </nav>
     
     <main>
@@ -43,6 +50,9 @@
                 <p id="totalUsusarios">0</p>
             </div>
             <div class="card">
+                <?= 
+                print_r($_SESSION['idUsu']);
+                ?>
                 <h3>Total de Produtos</h3>
                 <p id="totalProdutos">0</p>
             </div>

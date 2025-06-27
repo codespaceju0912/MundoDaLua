@@ -16,7 +16,7 @@
 </html>
     <div id="divprincipal" >
         <div class="bordadiv">
-            <form action="/action_page.php" method="get" class="montserrat" >
+            <form action="loginBD.php" method="post" class="montserrat" >
                 
             <div class="inputForm" c>
                     <h1>Login</h1>
@@ -29,7 +29,7 @@
                 <input type="password" name="senha" id="senha" placeholder="Digite sua senha" class="mb"><br>
 
                 
-                <button type="button" onclick="goTela()">Entrar</button>
+                <button type="submit" ">Entrar</button>
             </div>
                 
             <p>Não tem uma conta? <a href="../paginas/cadastro.php">Cadastre-se</a></p>
