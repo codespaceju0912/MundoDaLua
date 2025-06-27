@@ -8,7 +8,7 @@ function goTelaPg(){
 }
 //função que vai pra tela de carrinho
 function goCarrinho(){
-    window.location.href = 'paginas/telaCarrinho.php';
+    window.location.href = '/MundoDaLua/paginas/telaCarrinho.php';
 }
 //função que vai pra tela inicial
 function goTela(){
@@ -19,7 +19,7 @@ function goTelaLogin(){
     window.location.href = '../paginas/login.php';
 }
 function goPedidos(){
-    window.location.href = '../paginas/telaPedidos.php';
+    window.location.href = '/MundoDaLua/paginas/telaPedidos.php';
 }
 function goSobre(){
     window.location.href = '../paginas/sobreaEmpresa.php';
