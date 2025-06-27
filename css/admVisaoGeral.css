@@ -94,23 +94,29 @@ header {
     text-shadow: -0.3rem 0.5rem 1.0rem #1379bd;
     -webkit-text-stroke: 0.03rem #1379bd;
 
-
 }
 
 #bloco_mundoDaLua {
-    width: auto;
     display: flex;
     flex-direction: column;
-    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
     cursor: pointer;
+}
 
+nav {
+    margin-bottom: 2rem;
+    width: 100%;
+    padding: 0;
+    margin: 1rem;
 }
 
 .admin-nav{
-    height: auto;
-    width: 100vw;
+    width: 100%;
     background-color: #ffffff;
-    border-bottom: 2px solid #8a2be2;
+    border-bottom: 1px solid #8a2be2;
     display: flex;
     justify-content: center;
 }
@@ -245,8 +251,9 @@ footer {
 /* Estilização da main*/
 
 h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    font-size: 2.4rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     font-family: montserrat;
     text-align: center;
 

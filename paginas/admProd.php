@@ -109,9 +109,9 @@
     </footer>
 
     <!--js para adicionar os produtos-->
-    <script src="../js/admProd.js"></script>
+    <script src="../js/admProd.js" defer></script>
 
-    <script src="/js/produtos.js"></script>
+    <script src="/js/produtos.js" defer></script>
 
 </body>
 </html>

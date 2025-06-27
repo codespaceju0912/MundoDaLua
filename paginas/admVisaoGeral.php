@@ -32,7 +32,7 @@ if(!isset($_SESSION['idUsu'], $_SESSION['nomeUsu']) || $_SESSION['idUsu'] != 1){
             <ul>
                 <li><a href="../paginas/admVisaoGeral.php">Início</a></li>
                 <li><a href="../paginas/admProd.php">Produtos</a></li>
-                <li><a href="../paginasa/dmUsuar.php">Usuários</a></li>
+                <li><a href="../paginas/admUsuar.php">Usuários</a></li>
                 <li><a href="../paginas/admPedid.php">Pedidos</a></li>
                 <li><a href="../paginas/logout.php" >Sair</a></li>
             </ul>
@@ -70,15 +70,6 @@ if(!isset($_SESSION['idUsu'], $_SESSION['nomeUsu']) || $_SESSION['idUsu'] != 1){
             <h3>Produtos Mais Vendidos</h3>
             <canvas id="graficoProdutos" width="400" height="200"></canvas>
         </section>
-
-        <section id="acoesRapidas">
-            <h3>Ações Rápidas</h3>
-            <div class="buttons">
-                <a href="../paginas/admProd.php" class="btn">Gerenciar Produtos</a>
-                <a href="../paginas/admUsuar.php" class="btn">Gerenciar Usuários</a>
-                <a href="../paginas/admPedid.php" class="btn">Gerenciar Pedidos</a>    
-            <div>
-        </section>
     </main>
 
     <footer>
@@ -107,6 +98,6 @@ if(!isset($_SESSION['idUsu'], $_SESSION['nomeUsu']) || $_SESSION['idUsu'] != 1){
         </div>
     </footer>
 
-    <script src="/js/admVisaoGeral.js"></script>
+    <script src="/js/admVisaoGeral.js" defer></script>
 </body>
 </html>
