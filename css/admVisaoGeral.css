@@ -1,10 +1,10 @@
 * {
     box-sizing: border-box;
+
 }
 
 html {
     font-size: 62.5%;
-    height: 100vh;
 }
 
 :root {
@@ -34,20 +34,18 @@ header {
 
 }
 
-a {
-    text-decoration: none;
-}
-
 body {
     margin: 0;
     overflow-x: hidden;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    
+    min-width: 100vw;
+
 
 }
 
+figure {
+    margin: 0;
+    padding: 0;
+}
 
 header {
     width: 100vw;
@@ -105,7 +103,6 @@ header {
     flex-direction: column;
     width: fit-content;
     cursor: pointer;
-
 
 }
 
@@ -168,28 +165,6 @@ header {
 }
 
 /* Footer */
-
-#cnpj {
-    height: 4.5rem;
-    width: 100vw;
-    background-color: #A45AE8;
-    padding: 0;
-    margin: 0;
-
-}
-
-#rodape {
-    width: 100vw;
-    height: 22.0rem;
-    background-color: #8a2be2;
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 20.0rem;
-    padding-right: 20.0rem;
-    gap: 2.0rem;
-    justify-content: center;
-    align-items: center;
-}
 
 footer div h3 {
     font-family: fredoka;
