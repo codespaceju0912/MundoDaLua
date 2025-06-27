@@ -78,8 +78,8 @@
             <section>
                 <h3>Redes sociais</h3>
                 <section class="redessociais">
-                    <img src="../img/instagram.png" alt="">
-                    <p>@omundodaluaservicosdigitais</p>
+                    <a href="https://www.instagram.com/omundodaluaservicosdigitais?igsh=ZXlzZWdlbGE1ZWhq"><img src="../img/instagram.png" alt=""></a>
+                    <a href="https://www.instagram.com/omundodaluaservicosdigitais?igsh=ZXlzZWdlbGE1ZWhq"><p>@omundodalua<br>servicosdigitais</p></a>
                 </section>
             </section>
             <section>
