@@ -33,12 +33,12 @@ session_start();
             <img src="/MundoDaLua/img/perfil.png" alt="" id="imgperfil">
             <?php
             if(!isset($_SESSION['idUsu'], $_SESSION['nomeUsu'])){ ?>
-            <h3>Faça <a href="paginas/login.php"><span id="avisoPerfil">LOGIN</span></a> <br>ou <br><a
-                    href="paginas/cadastro.php"><span id="avisoPerfil">CADASTRE-SE</span></a></h3>
+            <h3>Faça <a href="/MundoDaLua/paginas/login.php"><span id="avisoPerfil">LOGIN</span></a> <br>ou <br><a
+                    href="/MundoDaLua/paginas/cadastro.php"><span id="avisoPerfil">CADASTRE-SE</span></a></h3>
 
             <?php } else {?>
 
-                <h3>Olá, <?= $_SESSION['nomeUsu']?> </h3>
+                <h3>Olá, <?= $_SESSION['nomeUsu']?><br> <a href="/MundoDaLua/paginas/logout_usuario.php" >SAIR</a></h3> 
             <?php } ?>
         </section>
         <section id="bloco_carrinho" onclick="goCarrinho()">
