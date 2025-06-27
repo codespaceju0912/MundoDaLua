@@ -50,9 +50,7 @@ if(!isset($_SESSION['idUsu'], $_SESSION['nomeUsu']) || $_SESSION['idUsu'] != 1){
                 <p id="totalUsusarios">0</p>
             </div>
             <div class="card">
-                <?= 
-                print_r($_SESSION['idUsu']);
-                ?>
+               
                 <h3>Total de Produtos</h3>
                 <p id="totalProdutos">0</p>
             </div>
