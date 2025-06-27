@@ -3,7 +3,7 @@ session_start();
 if(!isset($_SESSION['idUsu'], $_SESSION['nomeUsu']) || $_SESSION['idUsu'] != 1){
     echo "<script>alert('Usuário não tem permissão!'); window.location.href = '../paginas/login.php';</script>";
 }
-print_r($_SESSION['nomeUsu'], $_SESSION['idUsu']);
+
 ?>
 
 <!DOCTYPE html>
