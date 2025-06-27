@@ -1,32 +1,39 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.3
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Generation Time: Jun 27, 2025 at 10:15 AM
+-- Server version: 5.7.36
+-- PHP Version: 8.1.3
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de Dados: `mundodalua`
+-- Database: `mundodalua`
 --
-CREATE DATABASE IF NOT EXISTS `mundodalua` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `mundodalua`;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `catprod`
+-- Table structure for table `catprod`
 --
 
-CREATE TABLE IF NOT EXISTS `catprod` (
+CREATE TABLE `catprod` (
   `idCatProd` int(11) NOT NULL,
-  `dscCatProd` varchar(80) NOT NULL,
-  PRIMARY KEY (`idCatProd`)
+  `dscCatProd` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `catprod`
+-- Dumping data for table `catprod`
 --
 
 INSERT INTO `catprod` (`idCatProd`, `dscCatProd`) VALUES
@@ -37,17 +44,16 @@ INSERT INTO `catprod` (`idCatProd`, `dscCatProd`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `marca`
+-- Table structure for table `marca`
 --
 
-CREATE TABLE IF NOT EXISTS `marca` (
+CREATE TABLE `marca` (
   `idMarca` int(11) NOT NULL,
-  `dscMarca` varchar(50) NOT NULL,
-  PRIMARY KEY (`idMarca`)
+  `dscMarca` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `marca`
+-- Dumping data for table `marca`
 --
 
 INSERT INTO `marca` (`idMarca`, `dscMarca`) VALUES
@@ -56,59 +62,51 @@ INSERT INTO `marca` (`idMarca`, `dscMarca`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pagamento`
+-- Table structure for table `pagamento`
 --
 
-CREATE TABLE IF NOT EXISTS `pagamento` (
+CREATE TABLE `pagamento` (
   `idPagamento` int(11) NOT NULL,
   `valor` decimal(10,2) NOT NULL,
   `dataPagamento` datetime NOT NULL,
-  `idTpPag` int(11) NOT NULL,
-  PRIMARY KEY (`idPagamento`),
-  KEY `fk_Pagamento_TipoPagamento1_idx` (`idTpPag`)
+  `idTpPag` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pedido`
+-- Table structure for table `pedido`
 --
 
-CREATE TABLE IF NOT EXISTS `pedido` (
+CREATE TABLE `pedido` (
   `idPedido` int(11) NOT NULL,
   `datPedido` datetime NOT NULL,
   `dscStatusPedido` varchar(23) NOT NULL,
   `idUsuario` int(11) NOT NULL,
-  `idPagamento` int(11) NOT NULL,
-  PRIMARY KEY (`idPedido`),
-  KEY `fk_Carrinho_Usuário1_idx` (`idUsuario`),
-  KEY `fk_Pedido_Pagamento1_idx` (`idPagamento`)
+  `idPagamento` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `pedidoitem`
+-- Table structure for table `pedidoitem`
 --
 
-CREATE TABLE IF NOT EXISTS `pedidoitem` (
+CREATE TABLE `pedidoitem` (
   `idProdIt` int(11) NOT NULL,
   `qtdProdIt` int(11) NOT NULL,
   `valSubTotProdIt` decimal(10,2) NOT NULL,
   `idProdutos` int(11) NOT NULL,
-  `idPedido` int(11) NOT NULL,
-  PRIMARY KEY (`idProdIt`),
-  KEY `fk_PedidosItens_Produtos1_idx` (`idProdutos`),
-  KEY `fk_PedidosItens_Pedido1_idx` (`idPedido`)
+  `idPedido` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `produto`
+-- Table structure for table `produto`
 --
 
-CREATE TABLE IF NOT EXISTS `produto` (
+CREATE TABLE `produto` (
   `idProdt` int(11) NOT NULL,
   `dscProdt` varchar(100) NOT NULL,
   `dscDetalProdt` text NOT NULL,
@@ -119,15 +117,11 @@ CREATE TABLE IF NOT EXISTS `produto` (
   `pctDescProdt` decimal(5,2) NOT NULL DEFAULT '0.00',
   `valProdt` decimal(10,2) NOT NULL,
   `idCatProd` int(11) NOT NULL,
-  `idMarca` int(11) NOT NULL,
-  PRIMARY KEY (`idProdt`),
-  UNIQUE KEY `nomeProd_UNIQUE` (`dscProdt`),
-  KEY `fk_Produtos_CatProd1_idx` (`idCatProd`),
-  KEY `fk_Produtos_Marca1_idx` (`idMarca`)
+  `idMarca` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Extraindo dados da tabela `produto`
+-- Dumping data for table `produto`
 --
 
 INSERT INTO `produto` (`idProdt`, `dscProdt`, `dscDetalProdt`, `qtdAtualEstqProdt`, `urlImagemProdt`, `datCadastProdt`, `qtdMinEstqProdt`, `pctDescProdt`, `valProdt`, `idCatProd`, `idMarca`) VALUES
@@ -148,62 +142,140 @@ INSERT INTO `produto` (`idProdt`, `dscProdt`, `dscDetalProdt`, `qtdAtualEstqProd
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `tipopagamento`
+-- Table structure for table `tipopagamento`
 --
 
-CREATE TABLE IF NOT EXISTS `tipopagamento` (
+CREATE TABLE `tipopagamento` (
   `idTpPag` int(11) NOT NULL,
-  `dscTpPag` varchar(50) NOT NULL,
-  PRIMARY KEY (`idTpPag`)
+  `dscTpPag` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuario`
+-- Table structure for table `usuario`
 --
 
-CREATE TABLE IF NOT EXISTS `usuario` (
-  `idUsu` int(11) NOT NULL ,
+CREATE TABLE `usuario` (
+  `idUsu` int(11) NOT NULL,
   `nomUsu` varchar(60) NOT NULL,
   `dscEmailUsu` varchar(60) NOT NULL,
   `datNascUsu` varchar(45) NOT NULL,
   `dscSenhaUsu` varchar(26) NOT NULL,
   `numTelefUsu` varchar(10) NOT NULL,
-  `numcpfUsu` varchar(15) NOT NULL,
-  PRIMARY KEY (`idUsu`) 
+  `numcpfUsu` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `usuario`
+--
+
+INSERT INTO `usuario` (`idUsu`, `nomUsu`, `dscEmailUsu`, `datNascUsu`, `dscSenhaUsu`, `numTelefUsu`, `numcpfUsu`) VALUES
+(1, 'lannay', 'lannayitauana.c.caldas@gmail.com', '20/05/2002', '10206', '99999-9999', '111.111.111-00'),
+(2, 'Murilo', 'murilobatistadocarmo25081@gmail.com', '06-06-2005', '123', '99999-0000', '111.222.333-44'),
+(3, 'lannay', 'teste@gmail.com', '01-01-1950', '123', '99999-9999', '111.111.112-21');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `catprod`
+--
+ALTER TABLE `catprod`
+  ADD PRIMARY KEY (`idCatProd`);
+
+--
+-- Indexes for table `marca`
+--
+ALTER TABLE `marca`
+  ADD PRIMARY KEY (`idMarca`);
+
+--
+-- Indexes for table `pagamento`
+--
+ALTER TABLE `pagamento`
+  ADD PRIMARY KEY (`idPagamento`),
+  ADD KEY `fk_Pagamento_TipoPagamento1_idx` (`idTpPag`);
+
+--
+-- Indexes for table `pedido`
+--
+ALTER TABLE `pedido`
+  ADD PRIMARY KEY (`idPedido`),
+  ADD KEY `fk_Carrinho_Usuário1_idx` (`idUsuario`),
+  ADD KEY `fk_Pedido_Pagamento1_idx` (`idPagamento`);
+
+--
+-- Indexes for table `pedidoitem`
+--
+ALTER TABLE `pedidoitem`
+  ADD PRIMARY KEY (`idProdIt`),
+  ADD KEY `fk_PedidosItens_Produtos1_idx` (`idProdutos`),
+  ADD KEY `fk_PedidosItens_Pedido1_idx` (`idPedido`);
+
+--
+-- Indexes for table `produto`
+--
+ALTER TABLE `produto`
+  ADD PRIMARY KEY (`idProdt`),
+  ADD UNIQUE KEY `nomeProd_UNIQUE` (`dscProdt`),
+  ADD KEY `fk_Produtos_CatProd1_idx` (`idCatProd`),
+  ADD KEY `fk_Produtos_Marca1_idx` (`idMarca`);
+
+--
+-- Indexes for table `tipopagamento`
+--
+ALTER TABLE `tipopagamento`
+  ADD PRIMARY KEY (`idTpPag`);
+
+--
+-- Indexes for table `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`idUsu`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `idUsu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Limitadores para a tabela `pagamento`
+-- Constraints for table `pagamento`
 --
 ALTER TABLE `pagamento`
   ADD CONSTRAINT `fk_Pagamento_TipoPagamento1` FOREIGN KEY (`idTpPag`) REFERENCES `tipopagamento` (`idTpPag`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `pedido`
+-- Constraints for table `pedido`
 --
 ALTER TABLE `pedido`
   ADD CONSTRAINT `fk_Carrinho_Usuário1` FOREIGN KEY (`idUsuario`) REFERENCES `usuario` (`idUsu`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Pedido_Pagamento1` FOREIGN KEY (`idPagamento`) REFERENCES `pagamento` (`idPagamento`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `pedidoitem`
+-- Constraints for table `pedidoitem`
 --
 ALTER TABLE `pedidoitem`
-  ADD CONSTRAINT `fk_PedidosItens_Produtos1` FOREIGN KEY (`idProdutos`) REFERENCES `produto` (`idProdt`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_PedidosItens_Pedido1` FOREIGN KEY (`idPedido`) REFERENCES `pedido` (`idPedido`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_PedidosItens_Pedido1` FOREIGN KEY (`idPedido`) REFERENCES `pedido` (`idPedido`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_PedidosItens_Produtos1` FOREIGN KEY (`idProdutos`) REFERENCES `produto` (`idProdt`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Limitadores para a tabela `produto`
+-- Constraints for table `produto`
 --
 ALTER TABLE `produto`
   ADD CONSTRAINT `fk_Produtos_CatProd1` FOREIGN KEY (`idCatProd`) REFERENCES `catprod` (`idCatProd`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Produtos_Marca1` FOREIGN KEY (`idMarca`) REFERENCES `marca` (`idMarca`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
