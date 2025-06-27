@@ -1,30 +1,23 @@
-if (window.location.pathname.includes('admUsuar.php')) {
-    document.addEventListener('DOMContentLoaded', function () {
-        // Elementos do DOM
+if (window.location.pathname.endsWith('admUsuar.php')) {
+    document.addEventListener('DOMContentLoaded', function() {
         const formCadastro = document.getElementById('form-cadUsu');
         const tabelaUsu = document.getElementById('tabelaUsu');
-      
-        // Verificação adicional de segurança
+        
+        // Se não encontrar os elementos específicos, não continua
         if (!formCadastro || !tabelaUsu) return;
-      
-        let usuarios = [];
-      
-        carregarUsuarios();
-      
-        formCadastro.addEventListener('submit', function (e) {
+        
+        // Restante do seu código de manipulação de usuários...
+        formCadastro.addEventListener('submit', function(e) {
             e.preventDefault();
-          
+            
             const nome = document.getElementById('nomeUsu').value.trim();
             const email = document.getElementById('emailUsu').value.trim();
             const senha = document.getElementById('senha').value.trim();
-          
+            
             if (!nome || !email || !senha) {
                 alert('Preencha todos os campos!');
                 return;
             }
-          
-            adicionarUsuario(nome, email, senha);
-            formCadastro.reset();
         });
   
         function adicionarUsuario(nome, email, senha) {
