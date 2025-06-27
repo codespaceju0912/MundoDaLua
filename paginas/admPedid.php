@@ -89,6 +89,6 @@
         </div>
     </footer>
 
-    <script src="/js/admPedid.js"></script>
+    <script src="/js/admPedid.js" defer></script>
 </body>
 </html>

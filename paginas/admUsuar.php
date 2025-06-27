@@ -1,5 +1,7 @@
 <?php include("../paginas/loginBD.php"); ?>
 
+session_start();
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -94,6 +96,6 @@
     </footer>
 
     <!--js para excluir e cadastrar usuários-->
-    <script src="../js/admUsuar.js"></script>
+    <script src="../js/admUsuar.js" defer></script>
 </body>
 </html>
