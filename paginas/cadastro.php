@@ -57,33 +57,14 @@
                 <div class= "inputForm">
 
                             
-                <input type="password" name="confirmacao" id="confirmação" placeholder="Confirme sua senha" class="mb"><br>
+                <input type="password" name="confirmacao" id="confirmacao" placeholder="Confirme sua senha" class="mb"><br>
 
                 
                         
                     
                 <button type="submit" >Entrar</button>
                 </div>
-                <script>
-                const telInput = document.getElementById('telefone');
-
-                telInput.addEventListener('input', () => {
-                    let value = telInput.value.replace(/\D/g, ''); // Remove tudo que não for número
-
-                    if (value.length > 11) value = value.slice(0, 11); // Limita a 11 dígitos
-
-                    // Aplica a máscara: (99) 99999-9999
-                    if (value.length > 6) {
-                    value = value.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3');
-                    } else if (value.length > 2) {
-                    value = value.replace(/(\d{2})(\d{0,5})/, '($1) $2');
-                    } else {
-                    value = value.replace(/(\d{0,2})/, '($1');
-                    }
-
-                    telInput.value = value;
-                });
-                </script>
+                
                 
                 <script>
                 const cpfInput = document.getElementById('cpf');
