@@ -22,5 +22,5 @@ function goPedidos(){
     window.location.href = '/MundoDaLua/paginas/telaPedidos.php';
 }
 function goSobre(){
-    window.location.href = '../paginas/sobreaEmpresa.php';
+    window.location.href = '/MundoDaLua/paginas/sobreaEmpresa.php';
 }
