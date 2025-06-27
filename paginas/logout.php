@@ -9,6 +9,6 @@ session_unset();
 session_destroy();
 
 //Redireciona para a página de login
-header("Location: ../MundoDaLua/index.php");
+header("Location: ../index.php");
 exit;
 ?>
