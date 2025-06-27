@@ -29,6 +29,7 @@
         <article class="box">
             <h2>Edição e impressão de fotos </h2>
             <img src="../img/foto.jpeg">
+            <p id="valor"></p>
             <h4>R$1,75 - R$10,80</h4>
             <h3>Descrição</h3>
             <p class="description">
@@ -110,7 +111,7 @@
                     </div>
                 </div>
             </section>
-            <button class="preco-btn">preço</button>
+            <button class="preco-btn">Preço</button>
             <p id="preco">Preço: <spam id="textvalor"></spam></p>  
             <button class="submit-btn" onclick="goTelaPg()">Finalizar Compra</button>
         </article>

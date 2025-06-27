@@ -1,5 +1,5 @@
 #espaco{
-    margin-top: 13rem;
+    margin-top: 10rem;
 }
 .quanti{
     margin-top: 0rem;
@@ -19,10 +19,13 @@ h3{
     margin-top: 3rem;
 }
 .description{
-    margin-top: 2rem;
+    margin-top: 5rem;
 }
 .preco-btn{
     text-align: center;
     margin: 0 auto;
     display: block;
+}
+#valor{
+    margin-top: 2rem;
 }
