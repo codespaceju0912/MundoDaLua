@@ -111,7 +111,7 @@
     <!--js para adicionar os produtos-->
     <script src="../js/admProd.js" defer></script>
 
-    <script src="/js/produtos.js" defer></script>
+    <script src="../js/produtos.js" defer></script>
 
 </body>
 </html>

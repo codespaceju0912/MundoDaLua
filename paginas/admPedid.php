@@ -79,16 +79,16 @@
         </div>
         <div>
             <h3>Área do Cliente</h3>
-            <a href="/paginas/login.php">Login</a><br>
-            <a href="cadastro.php">Cadastre-se</a><br>
-            <a href="telaPedidos.php">Meus pedidos</a>
+            <a href="../paginas/login.php">Login</a><br>
+            <a href="../paginas/cadastro.php">Cadastre-se</a><br>
+            <a href="../paginas/telaPedidos.php">Meus pedidos</a>
         </div>
         <div>
             <h3>Sobre Nós</h3>
-            <a href="/paginas/sobreaEmpresa.php">Sobre a Empresa</a>
+            <a href="../paginas/sobreaEmpresa.php">Sobre a Empresa</a>
         </div>
     </footer>
 
-    <script src="/js/admPedid.js" defer></script>
+    <script src="../js/admPedid.js" defer></script>
 </body>
 </html>

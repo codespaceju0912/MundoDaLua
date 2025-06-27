@@ -1,6 +1,6 @@
-<?php include("../paginas/loginBD.php"); ?>
-
+<?php include("../paginas/loginBD.php"); 
 session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -27,7 +27,7 @@ session_start();
             <ul>
                 <li><a href="../paginas/admVisaoGeral.php">Início</a></li>
                 <li><a href="../paginas/admProd.php">Produtos</a></li>
-                <li><a href="../paginasa/dmUsuar.php">Usuários</a></li>
+                <li><a href="../paginas/admUsuar.php">Usuários</a></li>
                 <li><a href="../paginas/admPedid.php">Pedidos</a></li>
                 <li><a href="../paginas/logout.php">Sair</a></li>
             </ul>
@@ -86,7 +86,7 @@ session_start();
         <div>
             <h3>Área do Cliente</h3>
             <a href="../paginas/login.php">Login</a><br>
-            <a href="..paginas/cadastro.php">Cadastre-se</a><br>
+            <a href="../paginas/cadastro.php">Cadastre-se</a><br>
             <a href="../paginas/telaPedidos.php">Meus pedidos</a>
         </div>
         <div>
@@ -97,5 +97,8 @@ session_start();
 
     <!--js para excluir e cadastrar usuários-->
     <script src="../js/admUsuar.js" defer></script>
+
+    <!-- Navegação -->
+    <script src="../js/nav.js" defer></script>
 </body>
 </html>
