@@ -95,10 +95,12 @@ session_start();
         </div>
     </footer>
 
+    <!-- Navegação -->
+    <script src="../js/nav.js" defer></script>
+
     <!--js para excluir e cadastrar usuários-->
     <script src="../js/admUsuar.js" defer></script>
 
-    <!-- Navegação -->
-    <script src="../js/nav.js" defer></script>
+    
 </body>
 </html>
