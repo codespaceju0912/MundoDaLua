@@ -1,86 +1,51 @@
 <?php
-include("../paginas/loginBD.php");
-
-$acao = $_POST['acao'];
-
-$id = $_POST['idProdt'] ?? null;
-$nome = $_POST['nomeProd'];
-$preco = $_POST['valProd'];
-$descricao = $_POST['descricaoProd'];
-$estoque = $_POST['estoqueProd'];
-$minEstoque = $_POST['qtdMinEstqProd'];
-$desconto = $_POST['pctDescProd'];
-$categoria = $_POST['idCatProd'];
-$marca = $_POST['idMarca'];
-$dataCadastro = date("Y-m-d H:i:s");
-
-// imagem
-$urlImagem = "";
-if (isset($_FILES["imagemProd"]) && $_FILES["imagemProd"]["error"] == 0) {
-    $nomeImagem = basename($_FILES["imagemProd"]["name"]);
-    $destino = "../img/" . $nomeImagem;
-    if (move_uploaded_file($_FILES["imagemProd"]["tmp_name"], $destino)) {
-        $urlImagem = $nomeImagem;
-    }
+session_start();
+if (!isset($_SESSION['eh_admin'])) {
+    header("Location: ../paginas/login.php");
+    exit;
 }
 
-if ($acao === "cadastrar") {
-    $stmt = $conn->prepare("INSERT INTO produto (
-        dscProdt, dscDetalProdt, qtdAtualEstqProdt, urlImagemProdt,
-        datCadastProdt, qtdMinEstqProdt, pctDescProdt, valProdt,
-        idCatProd, idMarca
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+include("../conexao.php");
 
-    $stmt->bind_param(
-        "ssisssddii",
-        $nome,
-        $descricao,
-        $estoque,
-        $urlImagem,
-        $dataCadastro,
-        $minEstoque,
-        $desconto,
-        $preco,
-        $categoria,
-        $marca
-    );
-    $stmt->execute();
-    echo "Produto cadastrado com sucesso!";
-
-} elseif ($acao === "alterar" && $id) {
-    $sql = "UPDATE produto SET 
-        dscProdt = ?, dscDetalProdt = ?, qtdAtualEstqProdt = ?, 
-        qtdMinEstqProdt = ?, pctDescProdt = ?, valProdt = ?, 
-        idCatProd = ?, idMarca = ?" .
-        ($urlImagem ? ", urlImagemProdt = ?" : "") .
-        " WHERE idProdt = ?";
-
-    if ($urlImagem) {
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param(
-            "ssiiddiisi",
-            $nome, $descricao, $estoque, $minEstoque,
-            $desconto, $preco, $categoria, $marca,
-            $urlImagem, $id
-        );
-    } else {
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param(
-            "ssiiddiii",
-            $nome, $descricao, $estoque, $minEstoque,
-            $desconto, $preco, $categoria, $marca, $id
-        );
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['acao'])) {
+    $id = filter_input(INPUT_POST, "idProdt", FILTER_SANITIZE_NUMBER_INT);
+    
+    if ($_POST['acao'] == 'excluir') {
+        try {
+            // Primeiro obtém o caminho da imagem para excluir do servidor
+            $sql = "SELECT urlImagemProdt FROM produto WHERE idProdt = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("i", $id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $produto = $result->fetch_assoc();
+            
+            if ($produto && !empty($produto['urlImagemProdt'])) {
+                $caminhoImagem = "../img/" . $produto['urlImagemProdt'];
+                if (file_exists($caminhoImagem)) {
+                    unlink($caminhoImagem);
+                }
+            }
+            
+            // Agora exclui o produto do banco de dados
+            $sql = "DELETE FROM produto WHERE idProdt = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("i", $id);
+            
+            if ($stmt->execute()) {
+                header("Location: admProd.php?sucesso=2"); // Sucesso ao excluir
+                exit;
+            } else {
+                header("Location: admProd.php?erro=2");
+                exit;
+            }
+        } catch (Exception $e) {
+            header("Location: admProd.php?erro=2");
+            exit;
+        }
     }
-
-    $stmt->execute();
-    echo "Produto alterado com sucesso!";
-
-} elseif ($acao === "excluir" && $id) {
-    $stmt = $conn->prepare("DELETE FROM produto WHERE idProdt = ?");
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
-    echo "Produto excluído com sucesso!";
+} else {
+    header("Location: admProd.php");
+    exit;
 }
-
-$conn->close();
 ?>

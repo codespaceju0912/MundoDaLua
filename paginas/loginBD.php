@@ -11,7 +11,7 @@ if($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 // VERIFICA CAMPOS OBRIGATÓRIOS
 if(empty($_POST['email']) || empty($_POST['senha'])) {
-    die("Preencha email e senha, porra!");
+    die("");
 }
 
 // INICIA SESSÃO COM SEGURANÇA
