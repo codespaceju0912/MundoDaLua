@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "serra";
+$password = "usbw";
 $database = "mundodalua";
 
 try {
