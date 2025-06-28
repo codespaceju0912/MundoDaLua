@@ -16,10 +16,6 @@
             <h1 id="grafica">Gráfica</h1>
             <h1 id="mundodalua">MUNDO DA LUA</h1>
         </section>
-        <section id="bloco_pesquisa">
-            <input  id="barradepesquisa" class="montserrat" type="text" placeholder="Encontre aqui o melhor produto para você">
-            <button id="botaoPesquisar"><img src="../img/lupaBranca.png" alt="" id="imagemLupa"></button>
-        </section>
         <section class="usuario">
             <img src="../img/usuario.png">
             <p>Faça o <a href="../paginas/login.php">LOGIN</a> ou <a href="../paginas/cadastro.php">CADASTRE-SE</a></p>
@@ -62,33 +58,19 @@
         </article>
         
     </article>
-    <footer style="position: relative;">
-        <section id="preRodape">
+    <footer>
+        <section class="justify-content-around">
+            <img src="../img/logoWhat.png" id="logoW">
+            <p>27 99201-0821</p>
         </section>
-        <section id="rodape">
-            <section>
-                <h3>Fale conosco</h3>
-                <p>Tell: (27) 99201-0821</p>
-                <p>E-mail: omundodaluaservicosdigitais@gmail.com</p>
-            </section>
-            <section>
-                <h3>Redes sociais</h3>
-                <section class="redessociais">
-                    <a href="https://www.instagram.com/omundodaluaservicosdigitais?igsh=ZXlzZWdlbGE1ZWhq"><img src="../img/instagram.png" alt=""></a>
-                    <a href="https://www.instagram.com/omundodaluaservicosdigitais?igsh=ZXlzZWdlbGE1ZWhq"><p>@omundodalua<br>servicosdigitais</p></a>
-                </section>
-            </section>
-            <section>
-                <h3>Área do Cliente</h3>
-                <a href="../paginas/login.php">Login</a><br>
-                <a href="../paginas/cadastro.php">Cadastra-se</a><br>
-                <a href="../paginas/telaPedidos.php">Meus pedidos</a>
-            </section>
-            <section>
-                <h3>Sobre Nós</h3>
-                <a href="../paginas/sobreaEmpresa.php">Sobre a Empresa</a>
-            </section>
+        <section class="justify-content-around">
+            <a href="https://www.instagram.com/omundodaluaservicosdigitais?igsh=ZXlzZWdlbGE1ZWhq"><img src="../img/instagram.png" alt=""></a>
+            <a href="https://www.instagram.com/omundodaluaservicosdigitais?igsh=ZXlzZWdlbGE1ZWhq"><p>@omundodalua<br>servicosdigitais</p></a>
         </section>
-    </footer> 
+        <section class="justify-content-around">
+            <img src="../img/logoLocaliza.png" id="logoL">
+            <p>R. Tuffi Salomão Borges, 91 - José de Anchieta II, Serra - ES, 29162-502</p>
+        </section>
+    </footer>  
 </body>
 </html>

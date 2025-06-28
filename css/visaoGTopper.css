@@ -8,37 +8,18 @@ header {
     padding: 2vw 5vw;
     background-color: #8a2be2;
 }
+header, footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #8a2be2;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    font-weight: 700;
+}
 .submit-btn a{
     text-decoration: none;
-}
-#bloco_pesquisa{
-    display: flex;
-    width: fit-content;
-    height: fit-content;
-    align-items: center; 
-}
-#barradepesquisa{
-    width: 28rem;
-    height: 2.5rem;
-    display: inline-block;
-    border-radius: 6.0rem 0.0rem 0.0rem 6.0rem;
-    border: 0cap;
-    padding-left: 1.5rem;
-    font-size: 1.2rem;
-    box-shadow: 0.4rem 0.4rem 1.0rem #6F1ABD;
-
-}
-#botaoPesquisar{
-    width: 3.2rem;
-    height: 2.5rem;
-    padding-top: -2rem;
-    border-radius: 0.0rem 6.0rem 6.0rem 0.0rem;
-    border: 0cap;
-    background-color: #6F1ABD;
-}
-#imagemLupa{
-    width: 1.6rem;
-    height: 1.5rem;
 }
 
 #grafica{
@@ -153,4 +134,26 @@ nav{
 }
 .submit-btn{
     margin-top: 1rem;
+}
+#logoL{
+    width: 5%;
+    height:5%;
+}
+#logoW{
+    width: 14%;
+    height: 10%;
+}
+#logoI{
+    width: 5%;
+    height: 2%;
+}
+
+.justify-content-around{
+    display:inline-flex;
+    justify-content:space-around;
+
+}
+.justify-content-around p{
+    margin-left: -5rem;
+    margin-top: 0.6rem;
 }
