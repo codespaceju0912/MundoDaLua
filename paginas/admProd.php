@@ -73,6 +73,9 @@ include("conexao.php");
                         <option value="Papelaria">Papelaria</option>
                         <option value="Personalizados">Personalizados</option>
                     </select> 
+
+                    <label for="urlImagemProdt">Imagem:</label>
+                    <input type="file"  id="urlImagemProdt" name="urlImagemProdt" accept="image/*">
                             
                     <div class="btn-group">
                         <button class="btnCad">Cadastrar</button>
