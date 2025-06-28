@@ -85,16 +85,16 @@ if (!$produto) {
         <article>
             <h3 id="produto"><?= $produto['dscProdt'];?></h3>
             <figure >
-                <img src="../img/marcaPg.png" alt="" id="img">
+                <img src=<?= $produto['urlImagemProdt']?> alt="" id="img">
             </figure>
-            <h3 id="preco"><?= $produto['valProdt'];?></h3>
+            <h3 id="preco">R$<?= $produto['valProdt'];?></h3>
            <h2 id="h2_descricao">Descrição</h2>
            <p id="p_descricao"><?= $produto['dscDetalProdt'];?></p>
         </article>
         <article>
             <h3 id="personalizacao">Personalização</h3>
             <textarea name="personalizacao" id="personalizacao" placeholder="Quero que meu topo de bolo seja da Moana..." class="text_area"></textarea>
-            <h2 id="palavra_quantidade">Quantidade <input type="number" id="quantidade"></h2>
+            <h2 id="palavra_quantidade">Quantidade <input type="number" id="quantidade" min="1" max="100" required></h2>
             <button class="botoes">Compra</button>  
             <button class="botoes" onclick="goCarrinho()">Adicionar ao carrinho</button> 
 
