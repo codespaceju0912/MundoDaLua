@@ -1,5 +1,16 @@
-<?php include("../paginas/loginBD.php"); ?>
+<?php
+// Inicie a sessão primeiro
+session_start();
 
+// Verifique se o usuário está logado
+if(!isset($_SESSION['idUsu'])) {
+    header("Location: login.php");
+    exit;
+}
+
+// Só então inclua a conexão
+include("../paginas/conexao.php");
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -23,13 +34,14 @@
     <nav>
         <div class="admin-nav">
             <ul>
-                <li><a href="../paginas/admVisaoGeral.php">Início</a></li>
-                <li><a href="../paginas/admProd.php">Produtos</a></li>
-                <li><a href="../paginasa/dmUsuar.php">Usuários</a></li>
-                <li><a href="../paginas/admPedid.php">Pedidos</a></li>
-                <li><a href="../paginas/logout.php">Sair</a></li>
+                <li><a href="/MundoDaLua/paginas/admVisaoGeral.php">Início</a></li>
+                <li><a href="/MundoDaLua/paginas/admProd.php">Produtos</a></li>
+                <li><a href="/MundoDaLua/paginas/admUsuar.php">Usuários</a></li>
+                <li><a href="/MundoDaLua/paginas/admPedid.php">Pedidos</a></li>
+                <li><a href="/MundoDaLua/paginas/logout.php" >Sair</a></li>
             </ul>
         </div>
+        
     </nav>
 
     <main>
@@ -37,7 +49,7 @@
             <h1>Painel de Produtos</h1>
             
             <section>
-                <form id="formProduto" method="POST" acticion="cadastrarProduto.php" enctype="multipart/form-data">
+                <form id="formProduto" method="POST" action="cadastrarProduto.php" enctype="multipart/form-data">
                     <h2>Cadastrar Novo Produto</h2>
                             
                     <label for="nomeProd">Nome do Produto:</label>
@@ -50,7 +62,7 @@
                     <input type="text" id="descricaoProd" name="descricaoProd" required>
 
                     <label for="estoqueProd">Quantidade em Estoque:</label>
-                    <input type="number" id="estoqueProd" name="estoqueProd min="0" value="1" required>
+                    <input type="number" id="estoqueProd" name="estoqueProd" min="0" value="1" required>
 
                     <label for="qtdMinEstqProd">Estoque Mínimo:</label>
                     <input type="number" id="qtdMinEstqProd" name="qtdMinEstqProd" min="0" required>
@@ -81,37 +93,10 @@
         </div>
     </main>
 
-    <footer>
-
-        <div>
-            <h3>Fale conosco</h3>
-            <p>Tell: (27) 99201-0821</p>
-            <p>E-mail: omundodaluaservicos<br>digitais@gmail.com</p>
-        </div>
-        <div>
-            <h3>Redes sociais</h3>
-            <section class="redessociais">
-                <a href="https://www.instagram.com/omundodaluaservicosdigitais?igsh=ZXlzZWdlbGE1ZWhq"><img src="/img/instagram.png" alt=""></a>
-                <a href="https://www.instagram.com/omundodaluaservicosdigitais?igsh=ZXlzZWdlbGE1ZWhq"><p>@omundodalua<br>servicosdigitais</p></a>
-            </section>
-        </div>
-        <div>
-            <h3>Área do Cliente</h3>
-            <a href="../paginas/login.php">Login</a><br>
-            <a href="../paginas/cadastro.php">Cadastre-se</a><br>
-            <a href="..paginas/telaPedidos.php">Meus pedidos</a>
-        </div>
-        <div>
-            <h3>Sobre Nós</h3>
-            <a href="../paginas/sobreaEmpresa.php">Sobre a Empresa</a>
-        </div>
-
-    </footer>
-
     <!--js para adicionar os produtos-->
     <script src="../js/admProd.js" defer></script>
 
-    <script src="/js/produtos.js" defer></script>
+    <script src="../js/produtos.js" defer></script>
 
 </body>
 </html>

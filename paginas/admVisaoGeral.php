@@ -1,9 +1,15 @@
-<?php include("../paginas/conexao.php"); 
+<?php
+// Inicie a sessão primeiro
 session_start();
-if(!isset($_SESSION['idUsu'], $_SESSION['nomeUsu']) || $_SESSION['idUsu'] != 1){
-    echo "<script>alert('Usuário não tem permissão!'); window.location.href = '../paginas/login.php';</script>";
+
+// Verifique se o usuário está logado
+if(!isset($_SESSION['idUsu'])) {
+    header("Location: login.php");
+    exit;
 }
 
+// Só então inclua a conexão
+include("../paginas/conexao.php");
 ?>
 
 <!DOCTYPE html>
@@ -30,11 +36,11 @@ if(!isset($_SESSION['idUsu'], $_SESSION['nomeUsu']) || $_SESSION['idUsu'] != 1){
     <nav>
         <div class="admin-nav">
             <ul>
-                <li><a href="../paginas/admVisaoGeral.php">Início</a></li>
-                <li><a href="../paginas/admProd.php">Produtos</a></li>
-                <li><a href="../paginas/admUsuar.php">Usuários</a></li>
-                <li><a href="../paginas/admPedid.php">Pedidos</a></li>
-                <li><a href="../paginas/logout.php" >Sair</a></li>
+                <li><a href="/MundoDaLua/paginas/admVisaoGeral.php">Início</a></li>
+                <li><a href="/MundoDaLua/paginas/admProd.php">Produtos</a></li>
+                <li><a href="/MundoDaLua/paginas/admUsuar.php">Usuários</a></li>
+                <li><a href="/MundoDaLua/paginas/admPedid.php">Pedidos</a></li>
+                <li><a href="/MundoDaLua/paginas/logout.php" >Sair</a></li>
             </ul>
         </div>
         
@@ -72,32 +78,6 @@ if(!isset($_SESSION['idUsu'], $_SESSION['nomeUsu']) || $_SESSION['idUsu'] != 1){
         </section>
     </main>
 
-    <footer>
-
-        <div>
-            <h3>Fale conosco</h3>
-            <p>Tell: (27) 99201-0821</p>
-            <p>E-mail: omundodaluaservicos<br>digitais@gmail.com</p>
-        </div>
-        <div>
-            <h3>Redes sociais</h3>
-            <section class="redessociais">
-                <a href="https://www.instagram.com/omundodaluaservicosdigitais?igsh=ZXlzZWdlbGE1ZWhq"><img src="/img/instagram.png" alt=""></a>
-                <a href="https://www.instagram.com/omundodaluaservicosdigitais?igsh=ZXlzZWdlbGE1ZWhq"><p>@omundodalua<br>servicosdigitais</p></a>
-            </section>
-        </div>
-        <div>
-            <h3>Área do Cliente</h3>
-            <a href="../paginas/login.php">Login</a><br>
-            <a href="../paginas/cadastro.php">Cadastre-se</a><br>
-            <a href="../paginas/telaPedidos.php">Meus pedidos</a>
-        </div>
-        <div>
-            <h3>Sobre Nós</h3>
-            <a href="../paginas/sobreaEmpresa.php">Sobre a Empresa</a>
-        </div>
-    </footer>
-
-    <script src="/js/admVisaoGeral.js" defer></script>
+    <script src="../js/admVisaoGeral.js" defer></script>
 </body>
 </html>
