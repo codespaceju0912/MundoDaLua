@@ -1,34 +1,34 @@
 <?php
-include("paginas/conexao.php");
+include("conexao.php");
 session_start();
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
-$sql = "SELECT dscProdt, idProdt FROM produto";
+if (!isset($_GET['id'])) {
+    die("Produto não encontrado.");
+}
+
+$id = $_GET['id'];
+
+$sql = "SELECT * FROM produto WHERE idProdt = ?";
 $stmt = $conn->prepare($sql);
-$stmt->execute();
-$dados = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$stmt->execute([$id]);
+$produto = $stmt->fetch(PDO::FETCH_ASSOC);
 
-
-
+if (!$produto) {
+    die("Produto não encontrado.");
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/Produtos.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/base.js" defer></script>
-    <title>Produtos</title>
+    <title>Visão Geral</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/visaoGeral.css">
+    <script src="../js/base.js" defer></script>
+    <script src="../js/vgmdf.js" defer></script>
 </head>
-
 <body>
     <header>
         <section id="bloco_mundoDaLua" onclick="goSobre()">
@@ -39,11 +39,11 @@ $dados = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <section id="bloco_pesquisa">
             <input id="barradepesquisa" class="montserrat" type="text"
                 placeholder="Encontre aqui o melhor produto para você">
-            <button id="botaoPesquisar"><img src="img/lupaBranca.png" alt="" id="imagemLupa"></button>
+            <button id="botaoPesquisar"><img src="../img/lupaBranca.png" alt="" id="imagemLupa"></button>
         </section>
 
         <section id="bloco_perfil">
-            <img src="img/perfil.png" alt="" id="imgperfil">
+            <img src="../img/perfil.png" alt="" id="imgperfil">
             <?php
             if(!isset($_SESSION['idUsu'], $_SESSION['nomeUsu'])){ ?>
             <h3>Faça <a href="paginas/login.php"><span id="avisoPerfil">LOGIN</span></a> <br>ou <br><a
@@ -57,7 +57,7 @@ $dados = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php } ?>
         </section>
         <section id="bloco_carrinho" onclick="goCarrinho()">
-            <img src="img/Carrinho.png" alt="" id="imgcarrinho">
+            <img src="../img/Carrinho.png" alt="" id="imgcarrinho">
             <h3>Carrinho</h3>
         </section>
     </header>
@@ -82,22 +82,23 @@ $dados = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </section>
     </nav>
     <main>
-       <?php foreach($dados AS $linha){?>
         <article>
-            <figure>
-                <img src="img/logo.png" alt="">
+            <h3 id="produto"><?= $produto['dscProdt'];?></h3>
+            <figure >
+                <img src="../img/marcaPg.png" alt="" id="img">
             </figure>
-            <p><?=$linha['dscProdt'];?></p>
-            <a href="/MundoDaLua/paginas/visaoTeste.php?id=<?= $linha['idProdt'] ?>">
-            <button>
-                <p>Saiba mais</p>
-                
-            </button>
-            </a>
+            <h3 id="preco"><?= $produto['valProdt'];?></h3>
+           <h2 id="h2_descricao">Descrição</h2>
+           <p id="p_descricao"><?= $produto['dscDetalProdt'];?></p>
         </article>
-        <?php }?>
+        <article>
+            <h3 id="personalizacao">Personalização</h3>
+            <textarea name="personalizacao" id="personalizacao" placeholder="Quero que meu topo de bolo seja da Moana..." class="text_area"></textarea>
+            <h2 id="palavra_quantidade">Quantidade <input type="number" id="quantidade"></h2>
+            <button class="botoes">Compra</button>  
+            <button class="botoes" onclick="goCarrinho()">Adicionar ao carrinho</button> 
 
-
+        </article>
     </main>
     <footer>
 
@@ -109,7 +110,7 @@ $dados = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div>
             <h3>Redes sociais</h3>
             <section class="redessociais">
-                <a href="https://www.instagram.com/omundodaluaservicosdigitais?igsh=ZXlzZWdlbGE1ZWhq"><img src="img/instagram.png" alt=""></a>
+                <a href="https://www.instagram.com/omundodaluaservicosdigitais?igsh=ZXlzZWdlbGE1ZWhq"><img src="../img/instagram.png" alt=""></a>
                 <a href="https://www.instagram.com/omundodaluaservicosdigitais?igsh=ZXlzZWdlbGE1ZWhq"><p>@omundodalua<br>servicosdigitais</p></a>
             </section>
         </div>
@@ -126,5 +127,4 @@ $dados = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     </footer>
 </body>
-
 </html>

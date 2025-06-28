@@ -1,0 +1,455 @@
+* {
+    box-sizing: border-box;
+
+}
+
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    --horiz-paddin: clamp(2rem, 5vw, 12rem);
+}
+
+header,
+nav,
+main,
+footer {
+    padding-left: var(--horiz-paddin);
+    padding-right: var(--horiz-paddin);
+}
+
+nav {
+    gap: clamp(9rem, 14vw, 24rem);
+
+}
+
+footer {
+    gap: clamp(4rem, 6rem, 12rem);
+
+}
+
+header {
+    gap: clamp(4rem, 6rem, 12rem);
+
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100vw;
+    min-height: 12.0rem;
+    background-color: #8a2be2;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+
+
+
+}
+
+@media (max-width: 1200px) {
+    header section {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 900px) {
+    header section {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+#grafica {
+    font-family: playball;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin: 0;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: -0.4rem 0.5rem 1.0rem #1379bd;
+    -webkit-text-stroke: 0.03rem #1379bd;
+
+}
+
+#mundodalua {
+    font-family: montserrat;
+    font-size: 2.7rem;
+    font-weight: 700;
+    margin: 0;
+    color: #ffffff;
+    text-shadow: -0.3rem 0.5rem 1.0rem #1379bd;
+    -webkit-text-stroke: 0.03rem #1379bd;
+
+
+}
+
+#bloco_mundoDaLua {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    cursor: pointer;
+
+
+}
+
+#bloco_pesquisa {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+
+
+}
+
+#barradepesquisa {
+    width: 42.0rem;
+    height: 3.9rem;
+    display: inline-block;
+    border-radius: 6.0rem 0.0rem 0.0rem 6.0rem;
+    border: 0cap;
+    padding-left: 1.5rem;
+    font-size: 1.5rem;
+    box-shadow: 0.4rem 0.4rem 1.0rem #6F1ABD;
+
+}
+
+#botaoPesquisar {
+    width: 5.2rem;
+    height: 3.9rem;
+    border-radius: 0.0rem 6.0rem 6.0rem 0.0rem;
+    border: 0cap;
+    background-color: #6F1ABD;
+    cursor: pointer;
+}
+
+#imagemLupa {
+    width: 2.8rem;
+    height: 2.7rem;
+}
+
+#bloco_perfil {
+    height: fit-content;
+    width: fit-content;
+    font-size: 1.5rem;
+    display: flex;
+    gap: 1.0rem;
+    font-family: fredoka;
+    color: #ffffff;
+    align-items: center;
+    cursor: pointer;
+
+    
+
+}
+
+#sair_perfil{
+    color: #E28A2B;
+}
+
+#imgperfil {
+    width: clamp(3rem, 5rem, 7rem);
+    height: clamp(3rem, 5rem, 7rem);
+
+}
+
+#avisoPerfil {
+    color: #E22BDE;
+}
+
+#bloco_carrinho {
+    height: fit-content;
+    width: fit-content;
+    font-size: 4.0rem;
+    font-family: fredoka;
+    color: #E22BDE;
+    align-items: center;
+    cursor: pointer;
+
+
+}
+
+#imgcarrinho {
+    width: 7.0rem;
+    height: 7.0rem;
+    margin: 0;
+
+}
+
+
+#bloco_carrinho h3 {
+    margin: 0;
+
+}
+
+nav {
+    height: 4.5vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    border-bottom: 1.8px solid #8a2be2;
+
+}
+
+#corCategoria {
+    color: #E28A2B;
+    font-family: montserrat;
+    font-size: 1.5rem;
+    font-weight: 550;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#corCategoria img {
+    height: 2.5rem;
+    padding: 0;
+    margin: 0;
+
+}
+
+#corCategoria p {
+    padding: 0;
+    margin: 0;
+}
+
+#corCategoria .btn {
+    color: #E28A2B;
+    font-family: montserrat;
+    font-size: 1.5rem;
+    font-weight: 550;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+#corCategoria .dropdown-menu {
+    font-size: 1.4rem;
+    font-family: montserrat;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+}
+
+#corCategoria .dropdown-item {
+    padding: 0.7rem 1.5rem;
+    color: #6F1ABD;
+}
+
+#corCategoria .dropdown-item:hover {
+    background-color: #f1e7ff;
+    color: #8a2be2;
+}
+
+.palavrasNav {
+    font-weight: 550;
+    font-size: 1.7rem;
+    color: #8a2be2;
+    font-family: montserrat;
+    padding-top: 1.0rem;
+    cursor: pointer;
+
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    flex-shrink: 1;
+    
+}
+
+main article{
+    
+    border: solid black 0.5px;
+    border-radius: 1.5rem;
+    box-shadow: 4px 8px 15px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+
+}
+
+#img{
+    width: 20rem;
+    height: 20rem;
+    margin: 4rem;
+    box-shadow: 2px 4px 15px black;
+}
+@media(min-width: 1440px){
+    main article{
+        width: 55rem;
+        height: 65rem;
+        
+
+    }
+    main{
+        gap: 2rem;
+    }
+}
+
+#produto{
+    font-family: fredoka;
+    font-size: 2.5rem;
+}
+
+#linha{
+    height: 40rem;
+    width: 3rem;
+}
+
+#p_descricao{
+    font-size: 2rem;
+    font-family: montserrat;
+    font-weight: 500;
+}
+
+#h2_descricao{
+    font-size: 2.5rem;
+    font-family: montserrat;
+    font-weight: 700;
+}
+#preco{
+    color: rgb(12, 116, 12);
+    font-size: 2.8rem;
+    font-family: fredoka;
+    padding-bottom: 2rem;
+
+}
+
+#personalizacao{
+    font-family: fredoka;
+    font-size: 2.5rem;
+}
+
+.text_area{
+    height: 20rem;
+    width: 40rem;
+    border-radius: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+#quantidade{
+    border-radius: 1.5rem;
+    border: solid black 0.5px;
+    width: 5rem;
+    margin-bottom: 8rem;
+}
+
+#palavra_quantidade{
+    font-family: montserrat;
+}
+
+.botoes{
+    height: 6rem;
+    width: 22rem;
+    margin: 1rem;
+    font-family: montserrat;
+    font-size: 1.5rem;
+    font-weight: 550;
+    border-radius: 1rem;
+    border: solid black 0.5px;
+    background-color: yellowgreen;
+}
+
+footer div h3 {
+    font-family: fredoka;
+    font-size: clamp(2rem, 2vw, 2.5rem);
+    color: #ffffff;
+    margin: 0;
+
+}
+
+footer div p {
+    font-family: montserrat;
+    font-size: clamp(1.6rem, 1.8vw, 2rem);
+    color: #ffffff;
+    font-weight: 400;
+    margin: 0.8rem;
+}
+
+footer div a {
+    font-family: montserrat;
+    font-size: clamp(1.6rem, 1.8vw, 2rem);
+    color: #ffffff;
+    font-weight: 400;
+    text-decoration: none;
+
+
+}
+
+.redessociais {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+
+
+}
+
+.redessociais img {
+    width: 3.0rem;
+    height: 3.0rem;
+    margin: 0;
+    padding: 0;
+}
+
+footer div {
+    flex: 1 1 20rem;
+    max-width: 30rem;
+    min-height: 18rem;
+    text-align: center;
+
+}
+
+footer {
+    width: 100vw;
+    min-height: 22rem;
+    background-color: #8a2be2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+@media (max-width: 1200px) {
+    footer div {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 900px) {
+    footer div {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
