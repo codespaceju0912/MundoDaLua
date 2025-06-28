@@ -78,14 +78,14 @@ include("conexao.php");
                     <input type="file"  id="urlImagemProdt" name="urlImagemProdt" accept="image/*">
                             
                     <div class="btn-group">
-                        <button class="btnCad">Cadastrar</button>
-                        <button class="btnAlt">Alterar</button>
-                        <button class="btnExc">Excluir</button>
+                        <button type="submit" class="btnCad">Cadastrar</button>
+                        <button type="button" class="btnCan">Cancelar</button>
                     </div>
                 </form>
 
                 <section id="prod-lista">
                     <h3>Produtos Cadastrados</h3>
+                    
                     <?php include("../paginas/listarProd.php");?>
                 </section> 
             </section> 
