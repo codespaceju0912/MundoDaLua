@@ -1,56 +1,47 @@
 <?php
-// Só execute se for um POST do formulário de login
-if($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    exit;
-}
-
-// Ou mais especificamente:
-if(!isset($_POST['email']) || !isset($_POST['senha'])) {
-    exit;
-}
-
+// FORCE MOSTRAR TODOS OS ERROS
+error_reporting(E_ALL);
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
-session_start();
-include("../paginas/conexao.php");
-
-$email = $_POST['email'];
-$senha = $_POST['senha'];
-
-
-
-if (empty($email) || empty($senha)) {
-    echo "<script>alert('Preencha todos os campos!'); window.location.href = '../paginas/login.php';</script>";
-    exit;
+// VERIFICA MÉTODO POST
+if($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    die("Acesso inválido. Use o formulário de login.");
 }
 
-$sql = "SELECT * FROM usuario WHERE dscEmailUsu = ? AND dscSenhaUsu = ?";
-$stmt = $conn->prepare($sql);
-$stmt->execute([$email, $senha]);
+// VERIFICA CAMPOS OBRIGATÓRIOS
+if(empty($_POST['email']) || empty($_POST['senha'])) {
+    die("Preencha email e senha, porra!");
+}
 
-$usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+// INICIA SESSÃO COM SEGURANÇA
+if(session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
 
-if($usuario){
-    $_SESSION['idUsu'] = $usuario['idUsu'];
-    $_SESSION['nomeUsu'] = $usuario['nomUsu'];
-    
-    
+// CONEXÃO COM BANCO (AJUSTE O CAMINHO)
+require __DIR__ . '/../paginas/conexao.php';
 
-    if($usuario['idUsu'] == 1){
-        header("Location: ../paginas/admVisaoGeral.php");
-    } 
-    
-    else{
-        header("Location: ../index.php");
+try {
+    // BUSCA USUÁRIO
+    $stmt = $conn->prepare("SELECT idUsu, nomUsu, tipoUsu, dscSenhaUsu FROM usuario WHERE dscEmailUsu = ?");
+    $stmt->execute([$_POST['email']]);
+    $usuario = $stmt->fetch();
+
+    // VERIFICA SENHA (TROQUE POR password_verify() SE USAR HASH)
+    if($usuario && $usuario['dscSenhaUsu'] === $_POST['senha']) {
+        $_SESSION = [
+            'idUsu' => $usuario['idUsu'],
+            'nomeUsu' => $usuario['nomUsu'],
+            'eh_admin' => ($usuario['tipoUsu'] === 'admin' || $usuario['idUsu'] == 1)
+        ];
+        
+        header("Location: " . ($_SESSION['eh_admin'] ? 'admVisaoGeral.php' : 'index.php'));
+        exit;
+    } else {
+        die("Credenciais inválidas.");
     }
-
-    exit;
-} 
-
-else {
-    echo "<script>alert('Usuário ou Senha inválidos!'); window.location.href = '../paginas/login.php';</script>";
+} catch(PDOException $e) {
+    die("ERRO DE BANCO DE DADOS: " . $e->getMessage());
 }
-
 ?>

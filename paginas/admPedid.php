@@ -1,12 +1,5 @@
 <?php
-// Inicie a sessão primeiro
-session_start();
-
-// Verifique se o usuário está logado
-if(!isset($_SESSION['idUsu'])) {
-    header("Location: login.php");
-    exit;
-}
+require_once 'auth-admin.php';
 
 include("../paginas/conexao.php");
 ?>
