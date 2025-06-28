@@ -1,5 +1,15 @@
-<?php include("../paginas/conexao.php"); 
+<?php
+// Inicie a sessão primeiro
 session_start();
+
+// Verifique se o usuário está logado
+if(!isset($_SESSION['idUsu'])) {
+    header("Location: login.php");
+    exit;
+}
+
+// Só então inclua a conexão
+include("../paginas/conexao.php");
 ?>
 
 <!DOCTYPE html>
@@ -66,31 +76,6 @@ session_start();
             </tbody>
         </table>
     </main>
-
-    <footer>
-        <div>
-            <h3>Fale conosco</h3>
-            <p>Tell: (27) 99201-0821</p>
-            <p>E-mail: omundodaluaservicos<br>digitais@gmail.com</p>
-        </div>
-        <div>
-            <h3>Redes sociais</h3>
-            <section class="redessociais">
-                <a href="https://www.instagram.com/omundodaluaservicosdigitais?igsh=ZXlzZWdlbGE1ZWhq"><img src="/img/instagram.png" alt=""></a>
-                <a href="https://www.instagram.com/omundodaluaservicosdigitais?igsh=ZXlzZWdlbGE1ZWhq"><p>@omundodalua<br>servicosdigitais</p></a>
-            </section>
-        </div>
-        <div>
-            <h3>Área do Cliente</h3>
-            <a href="../paginas/login.php">Login</a><br>
-            <a href="../paginas/cadastro.php">Cadastre-se</a><br>
-            <a href="../paginas/telaPedidos.php">Meus pedidos</a>
-        </div>
-        <div>
-            <h3>Sobre Nós</h3>
-            <a href="../paginas/sobreaEmpresa.php">Sobre a Empresa</a>
-        </div>
-    </footer>
 
     <script src="../js/admPedid.js" defer></script>
 </body>

@@ -170,84 +170,6 @@ nav {
     }
 }
 
-/* Footer*/
-
-#cnpj{
-    height: 4.5rem;
-    width: 100vw;
-    background-color: #A45AE8;
-    
-}
-#rodape{
-    width: 100vw;
-    height: 22.0rem;
-    background-color: #8a2be2;
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 5.0rem;
-    padding-right: 5.0rem;
-    gap: 2.0rem;
-    justify-content: center;
-    align-items: center;
-    
-}
-footer div h3 {
-    font-family: fredoka;
-    font-size: 2.5rem;
-    color: #ffffff;
-    margin: 0;
-
-}
-footer div p{
-    font-family: montserrat;
-    font-size: 2.0rem;
-    color: #ffffff;
-    font-weight: 400;
-    margin: 0.8rem;
-}
-footer div a{
-    font-family: montserrat;
-    font-size: 2.0rem;
-    color: #ffffff;
-    font-weight: 400;
-    text-decoration: none;
-    
-
-}
-.redessociais{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 1.0rem;
-    padding: 0;
-    margin-bottom: 1.0rem;
-
-}
-.redessociais img{
-    width: 3.0rem;
-    height: 3.0rem;
-    margin: 0;
-    padding: 0;
-}
-
-footer div {
-    height: 18rem;
-    text-align: justify;
-   
-}
-
-footer{
-    width: 100vw;
-    height: 22.0rem;
-    background-color: #8a2be2;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    
-}
-
 /* Estilização do main */
 
 body{
@@ -276,6 +198,18 @@ header button{
     align-items: center;
     float: left;
     font-size: 1.2rem;
+}
+
+h2{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#formProduto h2{
+    word-break: keep-all;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 /* estiliza do container que envolve todo conteúdo*/

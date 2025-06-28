@@ -1,4 +1,14 @@
 <?php
+// Só execute se for um POST do formulário de login
+if($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    exit;
+}
+
+// Ou mais especificamente:
+if(!isset($_POST['email']) || !isset($_POST['senha'])) {
+    exit;
+}
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);

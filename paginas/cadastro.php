@@ -26,7 +26,7 @@
                 </div>
 
                 <div class= "inputForm">  
-                    <input type="tel" name="telefone" id="telefone" placeholder="Telefone"  class="mb"><br>
+                <input placeholder="Telefone" name="telefone" class="mb" type="text" maxlength="11" oninput="this.value = this.value.replace(/[^0-9]/g, '')"><br>
 
                     
 
