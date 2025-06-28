@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finalizar pedido do Topper de bolo</title>
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/finalizaTopper.css">
+    <link rel="stylesheet" href="../css/finalizaCompra.css">
     <script src="../js/base.js" defer></script>
     <script src="../js/finalizaT.js" defer></script>
 </head>
@@ -29,12 +29,7 @@
         <article class="box personaliza">
             <h2>Personalização</h2>
             <textarea name="" id="" placeholder="Ex: Quero que o topper de bolo seja da personagem do filme moana..."></textarea>
-            <section class="escolha-montag">
-                <label><input type="radio" name="escolha" value="15"> Sem montagem</label> 
-            </section>
-            <section class="escolha-montag">
-                <label><input type="radio" name="escolha" value="25"> Com montagem</label>
-            </section>
+            
             <section class="quanti">
                 <label>Quantidade:</label>
                 <input type="number" id="meuInput" min="1" value="1">
