@@ -8,7 +8,6 @@ if(!isset($_SESSION['idUsu'])) {
     exit;
 }
 
-// Só então inclua a conexão
 include("../paginas/conexao.php");
 ?>
 <!DOCTYPE html>
