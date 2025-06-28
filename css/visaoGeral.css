@@ -290,7 +290,7 @@ main article{
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
+    padding: 1.5rem;
     margin-top: 5rem;
     margin-bottom: 5rem;
     
@@ -468,3 +468,4 @@ footer {
         max-width: 100%;
     }
 }
+

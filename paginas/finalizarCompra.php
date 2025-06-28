@@ -1,3 +1,21 @@
+<?php
+include("conexao.php");
+session_start();
+
+if (!isset($_GET['id'])) {
+    die("Produto não encontrado.");
+}
+
+$id = $_GET['id'];
+$quantidade = $_POST['quantidade'];
+$personalizacao = $_POST['personalizacao'];
+
+
+$sql = "SELECT * FROM produto WHERE idProdt = ?";
+$stmt = $conn->prepare($sql);
+$stmt->execute([$id]);
+$produto = $stmt->fetch(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -19,23 +37,20 @@
     </header> 
     <article class="main">   
         <article class="box">
-            <h2>Topper de bolo</h2>
-            <img src="../img/topper.png" alt="Topper de bolo">
-            <h4>R$15,00 - R$25,00</h4>
+            <h3><?= $produto['dscProdt'];?></h3>
+            <img src=<?= $produto['urlImagemProdt'];?> alt="Topper de bolo">
+            <h4>Quantidade: <?= $quantidade?></h4>
+           
             <h3>Descrição</h3>
             <p class="description">
-                Topper de bolo : 15,00 sem a montagem e 25,00 com a montagem. Um lindo e criativo topo de bolo, personalizável do jeito que você quiser para decorar seu bolo e trazer lembranças bonitas para um momento especial.           </p>
+                <?= $produto['dscDetalProdt']?> </p>
         </article>
         <article class="box personaliza">
             <h2>Personalização</h2>
-            <textarea name="" id="" placeholder="Ex: Quero que o topper de bolo seja da personagem do filme moana..."></textarea>
+            <textarea name="" id="" placeholder="Ex: Quero que o topper de bolo seja da personagem do filme moana..."><?= $personalizacao?></textarea>
             
-            <section class="quanti">
-                <label>Quantidade:</label>
-                <input type="number" id="meuInput" min="1" value="1">
-                <button class="preco-btn">preço</button>
-            </section>
-            <p id="preco">Preço: <spam id="textvalor"></spam></p>  
+            
+            <p id="preco">Preço: R$<?= $quantidade*$produto['valProdt']; ?><spam id="textvalor"></spam></p>  
             <button class="submit-btn" onclick="goTelaPg()">Finalizar Compra</button>     
         </article>
         

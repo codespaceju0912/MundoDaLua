@@ -1,3 +1,13 @@
+<?php
+session_start();
+$nome = $_SESSION['nomeUsu'];
+$id = $_SESSION['idUsu'];
+
+if(empty($nome) || empty($id) ) {
+    echo "<script>alert('Paa comprar você precisa estar logado!'); window.location.href = '../paginas/login.php';</script>";
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -20,14 +30,28 @@
     <article class="container">   
         <article class="box personaliza">
             <h3>Pagamento:</h3>
-            <section class="payment-methods">
-                <label><input type="radio" name="payment" value="pix"> Pagar pelo pix</label> 
-            </section>
-            <section class="payment-methods">
-                <label><input type="radio" name="payment" value="local"> Pagar no local</label> 
-            </section> 
-            <p>R. Tuffi Salomão Borges, 91 - José de Anchieta II, Serra - ES, 29162-502</p>
-            <button class="submit-btn">Realizar pagamento</button>     
+            <form action="conexao_pagamento.php">
+            <section class="payment-methods" method="get" action="conexap_pagamento">
+                <select id="pagamento" onchange="irParaPagamento()">
+                    <option value="">Selecione</option>
+                    <option value="pix">PIX</option>
+                    <option value="local">Pagar no local</option>
+                    </select>
+
+                    <script>
+                    function irParaPagamento() {
+                    const opcao = document.getElementById("pagamento").value;
+
+                    if (opcao === "pix") {
+                        window.location.href = "pagamentoPix.php";
+                    } else if (opcao === "local") {
+                        window.location.href = "pagamentoLocal.php";
+                    }
+                    }
+                    </script>
+                <p>R. Tuffi Salomão Borges, 91 - José de Anchieta II, Serra - ES, 29162-502</p>
+                <button class="submit-btn" type="submit">Realizar pagamento</button>  
+            </form>   
         </article>
         
     </article>

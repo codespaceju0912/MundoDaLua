@@ -15,7 +15,10 @@ $produto = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if (!$produto) {
     die("Produto não encontrado.");
+
+
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -30,10 +33,11 @@ if (!$produto) {
     <script src="../js/vgmdf.js" defer></script>
 </head>
 <body>
+    
     <header>
         <section id="bloco_mundoDaLua" onclick="goSobre()">
             <h1 id="grafica">Gráfica</h1>
-            <h1 id="mundodalua">MUNDO DA LUA</h1>
+            <h1 id="mundodalua">MUNDO DA LUA </h1>
         </section>
 
         <section id="bloco_pesquisa">
@@ -92,11 +96,13 @@ if (!$produto) {
            <p id="p_descricao"><?= $produto['dscDetalProdt'];?></p>
         </article>
         <article>
+            <form action="finalizarCompra.php?id=<?= $produto['idProdt'] ?>" method="post" >
             <h3 id="personalizacao">Personalização</h3>
             <textarea name="personalizacao" id="personalizacao" placeholder="Quero que meu topo de bolo seja da Moana..." class="text_area"></textarea>
-            <h2 id="palavra_quantidade">Quantidade <input type="number" id="quantidade" min="1" max="100" required></h2>
-            <button class="botoes">Compra</button>  
-            <button class="botoes" onclick="goCarrinho()">Adicionar ao carrinho</button> 
+            <h2 id="palavra_quantidade">Quantidade <input type="number" name="quantidade" id="quantidade" min="1" max="100" required></h2>
+            <a href="finalizarCompra.php?id"><button class="botoes" type="submit">Compra</button></a>
+            <button class="botoes" onclick="goCarrinho()">Adicionar ao carrinho</button>
+            </form> 
 
         </article>
     </main>

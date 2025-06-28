@@ -142,3 +142,8 @@ h3, p{
     gap: 1rem;
     margin-bottom: 0.5rem;
 }
+
+#oppagamento{
+    height: 2rem;
+    width: 2rem;
+}
