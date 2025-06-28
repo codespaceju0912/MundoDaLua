@@ -49,14 +49,26 @@ include("../paginas/conexao.php");
         <section class="form-usu">
             <h2>Cadastrar Usuário</h2>
             <form id="form-cadUsu">
-                <label for="nomeUsu">Nome do Usuário: </label>
-                <input type="text" id="nomeUsu" name="nomeUsu" required>
+                <label for="nome">Nome: </label>
+                <input type="text" id="nome" name="nome" required>
 
-                <label for="emailUsu">Email do Usuário:</label>
-                <input type="email" id="emailUsu" name="emailUsu" required>
+                <label for="telefone">Telefone </label>
+                <input type="number" id="telefone" name="telefone" required>
+
+                <label for="emailUsu">Email:</label>
+                <input type="text" id="email" name="email" required>
+
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" required>
+
+                <label for="nascimento">Nascimento:</label>
+                <input type="tel" id="nascimento" name="nascimento" required>
 
                 <label for="senha">Senha:</label>
                 <input type="password" id="senha" name="senha" required />
+
+                <label for="senha">Confirmar Senha:</label>
+                <input type="password" id="confirmacao" name="confirmacao" required />
 
                 <button class="cad">Cadastrar</button>
 
