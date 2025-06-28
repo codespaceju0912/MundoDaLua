@@ -1,84 +1,53 @@
-if (window.location.pathname.endsWith('admUsuar.php')) {
-    document.addEventListener('DOMContentLoaded', function() {
-        const formCadastro = document.getElementById('form-cadUsu');
-        const tabelaUsu = document.getElementById('tabelaUsu');
-        
-        // Se não encontrar os elementos específicos, não continua
-        if (!formCadastro || !tabelaUsu) return;
-        
-        // Restante do seu código de manipulação de usuários...
-        formCadastro.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const nome = document.getElementById('nomeUsu').value.trim();
-            const email = document.getElementById('emailUsu').value.trim();
-            const senha = document.getElementById('senha').value.trim();
-            
-            if (!nome || !email || !senha) {
-                alert('Preencha todos os campos!');
-                return;
-            }
-        });
-  
-        function adicionarUsuario(nome, email, senha) {
-        const usuario = {
-            id: Date.now(),
-            nome,
-            email,
-            senha,
-        };
+document.getElementById('form-cadUsu').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    if(document.getElementById('senha').value !== document.getElementById('confirmacao').value) {
+        alert('As senhas não coincidem!');
+        return;
+    }
     
-        usuarios.push(usuario);
-        atualizarTabela();
-        salvarUsuarios();
+    const formData = new FormData(this);
+    
+    fetch('../paginas/cadastro_admin.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if(data.status === 'success') {
+            alert(data.message);
+            // Atualiza a lista de usuários após cadastro
+            carregarUsuarios();
+            // Limpa o formulário
+            this.reset();
+        } else {
+            alert(data.message);
         }
-    
-        function atualizarTabela() {
-        tabelaUsu.innerHTML = '';
-    
-        usuarios.forEach((usuario) => {
-            const tr = document.createElement('tr');
-    
-            tr.innerHTML = `
-            <td>${usuario.nome}</td>
-            <td>${usuario.email}</td>
-            <td>
-                <button class="btn-excluir" data-id="${usuario.id}">Excluir</button>
-            </td>
-            `;
-    
-            tabelaUsu.appendChild(tr);
-        });
-    
-        document.querySelectorAll('.btn-excluir').forEach((btn) => {
-            btn.addEventListener('click', function () {
-            const id = parseInt(this.getAttribute('data-id'));
-            excluirUsuario(id);
+    })
+    .catch(error => console.error('Erro:', error));
+});
+
+// Função para carregar usuários (já existente no seu código)
+function carregarUsuarios() {
+    fetch('../paginas/listar_usuarios.php')
+        .then(response => response.json())
+        .then(data => {
+            const tabela = document.getElementById('tabelaUsu');
+            tabela.innerHTML = '';
+            data.forEach(usuario => {
+                tabela.innerHTML += `
+                    <tr>
+                        <td>${usuario.nomUsu}</td>
+                        <td>${usuario.dscEmailUsu}</td>
+                        <td>
+                            <button class="editar" data-id="${usuario.id}">Editar</button>
+                            <button class="excluir" data-id="${usuario.id}">Excluir</button>
+                        </td>
+                    </tr>
+                `;
             });
         });
-        }
-    
-        function excluirUsuario(id) {
-        usuarios = usuarios.filter((usuario) => usuario.id !== id);
-        atualizarTabela();
-        salvarUsuarios();
-        }
-    
-        function salvarUsuarios() {
-        localStorage.setItem('usuarios', JSON.stringify(usuarios));
-        }
-    
-        function carregarUsuarios() {
-        const usuariosSalvos = localStorage.getItem('usuarios');
-        if (usuariosSalvos) {
-            usuarios = JSON.parse(usuariosSalvos);
-            atualizarTabela();
-        }
-        }
-    
-        const botaoExcluir = document.querySelector('.exc');
-        if (botaoExcluir) {
-        botaoExcluir.remove();
-        }
-    });
-};
+}
+
+// Carrega os usuários quando a página é aberta
+document.addEventListener('DOMContentLoaded', carregarUsuarios);

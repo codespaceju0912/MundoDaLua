@@ -1,14 +1,7 @@
 <?php
-// Inicie a sessão primeiro
-session_start();
+require '../paginas/auth_admin.php';
 
-// Verifique se o usuário está logado
-if(!isset($_SESSION['idUsu'])) {
-    header("Location: login.php");
-    exit;
-}
-
-include("../paginas/conexao.php");
+include("conexao.php");
 ?>
 
 <!DOCTYPE html>
@@ -69,7 +62,7 @@ include("../paginas/conexao.php");
                 <label for="senha">Confirmar Senha:</label>
                 <input type="password" id="confirmacao" name="confirmacao" required />
 
-                <button class="cad">Cadastrar</button>
+                <button type="submit" class="cad">Cadastrar</button>
 
             </form>
         </section>
