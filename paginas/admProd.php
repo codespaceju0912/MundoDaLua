@@ -1,7 +1,11 @@
 <?php
-require_once 'auth-admin.php';
+session_start();
+if (!isset($_SESSION['eh_admin'])) {
+    header("Location: ../paginas/login.php");
+    exit;
+}
 
-include("../paginas/conexao.php");
+include("conexao.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

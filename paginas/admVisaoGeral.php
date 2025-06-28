@@ -1,7 +1,10 @@
 <?php
-require_once 'auth-admin.php';
 
-include("../paginas/conexao.php");
+session_start();
+require '../paginas/auth_admin.php';
+
+include("paginas/conexao.php");
+
 ?>
 
 <!DOCTYPE html>

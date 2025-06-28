@@ -1,7 +1,7 @@
 <?php
-require_once 'auth-admin.php';
+require '../paginas/auth_admin.php';
 
-include("../paginas/conexao.php");
+include("conexao.php"); 
 ?>
 
 <!DOCTYPE html>
