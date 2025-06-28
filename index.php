@@ -1,5 +1,16 @@
 <?php
+include("paginas/conexao.php");
 session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+$sql = "SELECT dscProdt FROM produto";
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+$dados = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
 
 ?>
 <!DOCTYPE html>
@@ -71,60 +82,18 @@ session_start();
         </section>
     </nav>
     <main>
-        <article>
-            <figure>
-                <img src="img/topper.png" alt="">
-            </figure>
-            <p>Topper de bolo</p>
-            <a href="paginas/visaoGTopper.php"><button>
-                    <p>Saiba mais</p>
-                </button></a>
-        </article>
-        <article>
-            <figure>
-                <img src="img/mdf.jpeg" alt="">
-            </figure>
-            <p>Quadro MDF com foto ou frase</p>
-            <a href="paginas/visaoGMdf.php"><button>
-                    <p>Saiba mais</p>
-                </button></a>
-        </article>
-        <article>
-            <figure>
-                <img src="img/marcaPg.png" alt="">
-            </figure>
-            <p>Marcadores de página</p>
-            <a href="paginas/visaoGMarcaPg.php"><button>
-                    <p>Saiba mais</p>
-                </button></a>
-        </article>
-        <article>
-            <figure>
-                <img src="img/foto.jpeg" alt="">
-            </figure>
-            <p>Edição de fotos</p>
-            <a href="paginas/visaoGEdtFoto.php"><button>
-                    <p>Saiba mais</p>
-                </button></a>
-        </article>
-        <article>
-            <figure>
-                <img src="img/caixa.jpg" alt="">
-            </figure>
-            <p>Caixinha personalizada</p>
-            <a href="paginas/visaoGCaixa.php"><button>
-                    <p>Saiba mais</p>
-                </button></a>
-        </article>
+       <?php foreach($dados AS $linha){?>
         <article>
             <figure>
                 <img src="img/logo.png" alt="">
             </figure>
-            <p>Produto</p>
+            <p><?=$linha['dscProdt'];?></p>
             <button>
                 <p>Saiba mais</p>
             </button>
         </article>
+        <?php }?>
+
 
     </main>
     <footer>
