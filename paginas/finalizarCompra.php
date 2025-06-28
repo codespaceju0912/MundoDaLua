@@ -51,7 +51,7 @@ $produto = $stmt->fetch(PDO::FETCH_ASSOC);
             
             
             <p id="preco">Preço: R$<?= $quantidade*$produto['valProdt']; ?><spam id="textvalor"></spam></p>  
-            <button class="submit-btn" onclick="goTelaPg()">Finalizar Compra</button>     
+            <a href="opcaopg.php?id=<?= $produto['idProdt'] ?>&quantidade=<?= $quantidade ?>&valor=<?= $personalizacao ?>"><button class="submit-btn" >Finalizar Compra</button></a>     
         </article>
         
     </article>

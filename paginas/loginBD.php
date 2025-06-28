@@ -24,7 +24,7 @@ require __DIR__ . '/../paginas/conexao.php';
 
 try {
     // BUSCA USUÁRIO
-    $stmt = $conn->prepare("SELECT idUsu, nomUsu, tipoUsu, dscSenhaUsu FROM usuario WHERE dscEmailUsu = ?");
+    $stmt = $conn->prepare("SELECT idUsu, nomUsu, dscSenhaUsu FROM usuario WHERE dscEmailUsu = ?");
     $stmt->execute([$_POST['email']]);
     $usuario = $stmt->fetch();
 
@@ -36,7 +36,7 @@ try {
             'eh_admin' => ($usuario['tipoUsu'] === 'admin' || $usuario['idUsu'] == 1)
         ];
         
-        header("Location: " . ($_SESSION['eh_admin'] ? 'admVisaoGeral.php' : 'index.php'));
+        header("Location: " . ($_SESSION['eh_admin'] ? 'admVisaoGeral.php' : '/MundoDaLua/index.php'));
         exit;
     } else {
         die("Credenciais inválidas.");
