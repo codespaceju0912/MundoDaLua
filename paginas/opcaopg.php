@@ -37,8 +37,8 @@
             <p>27 99201-0821</p>
         </section>
         <section class="justify-content-around">
-            <img src="../img/logoInst.png" id="logoI">
-            <p>@omundodaluaservicosdigitais</p>
+            <a href="https://www.instagram.com/omundodaluaservicosdigitais?igsh=ZXlzZWdlbGE1ZWhq"><img src="../img/logoInstagramPreta.png" id="logoI"></a>
+            <a href="https://www.instagram.com/omundodaluaservicosdigitais?igsh=ZXlzZWdlbGE1ZWhq"><p>@omundodalua<br>servicosdigitais</p></a>
         </section>
         <section class="justify-content-around">
             <img src="../img/logoLocaliza.png" id="logoL">

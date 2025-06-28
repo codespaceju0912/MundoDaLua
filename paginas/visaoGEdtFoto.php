@@ -17,10 +17,6 @@
             <h1 id="grafica">Gráfica</h1>
             <h1 id="mundodalua">MUNDO DA LUA</h1>
         </section>
-        <section id="bloco_pesquisa">
-            <input  id="barradepesquisa" class="montserrat" type="text" placeholder="Encontre aqui o melhor produto para você">
-            <button id="botaoPesquisar"><img src="../img/lupaBranca.png" alt="" id="imagemLupa"></button>
-        </section>
         <section class="usuario">
             <img src="../img/usuario.png">
             <p>Faça o <a href="../paginas/login.html">LOGIN</a> ou <a href="../paginas/cadastro.html">CADASTRE-SE</a></p>
