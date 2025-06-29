@@ -38,49 +38,44 @@ include("conexao.php");
     </nav>
 
     <main>
-        <section class="form-usu">
-            <h2>Cadastrar Usuário</h2>
-            <form id="form-cadUsu">
-                <label for="nome">Nome: </label>
-                <input type="text" id="nome" name="nome" required>
+        <div id="">
+            <section>
+                <form id="form-CadUsu" method="POST" action="cadastro_admin.php">
+                    <h2><?= isset($_GET['editar']) ? 'Editar Usuário' : 'Cadastrar Novo Usuário' ?></h2>
+                    <input type="hidden" name="idUsu" value="<?=isset($_GET['editar']) ? $_GET['editar'] : '' ?>">
 
-                <label for="telefone">Telefone </label>
-                <input type="number" id="telefone" name="telefone" required>
+                    <label for="nome">Nome: </label>
+                    <input type="text" id="nome" name="nome" required>
 
-                <label for="emailUsu">Email:</label>
-                <input type="text" id="email" name="email" required>
+                    <label for="telefone">Telefone </label>
+                    <input type="number" id="telefone" name="telefone" required>
 
-                <label for="cpf">CPF:</label>
-                <input type="text" id="cpf" name="cpf" required>
+                    <label for="emailUsu">Email:</label>
+                    <input type="text" id="email" name="email" required>
 
-                <label for="nascimento">Nascimento:</label>
-                <input type="tel" id="nascimento" name="nascimento" required>
+                    <label for="cpf">CPF:</label>
+                    <input type="text" id="cpf" name="cpf" required>
 
-                <label for="senha">Senha:</label>
-                <input type="password" id="senha" name="senha" required />
+                    <label for="nascimento">Nascimento:</label>
+                    <input type="tel" id="nascimento" name="nascimento" required>
 
-                <label for="senha">Confirmar Senha:</label>
-                <input type="password" id="confirmacao" name="confirmacao" required />
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" required />
 
-                <button type="submit" class="cad">Cadastrar</button>
+                    <label for="senha">Confirmar Senha:</label>
+                    <input type="password" id="confirmacao" name="confirmacao" required />
 
-            </form>
-        </section>
+                    <button type="submit" class="cad">Cadastrar</button>
+
+                </form>
+            </section>
+        </div>
 
         <section class="list-Usu">
             <h2>Usuários Cadastrados</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Email</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody id="tabelaUsu">
-                    <!--Os usuários vão aparecer aqui-->
-                </tbody>
-            </table>
+            <div id="tabelaUsu">
+                <?php include("listar_usuar.php"); ?>
+            </div>
         </section>
     </main>
 

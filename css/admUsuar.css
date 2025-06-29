@@ -170,84 +170,6 @@ nav {
     }
 }
 
-/* Footer */
-
-#cnpj{
-    height: 4.5rem;
-    width: 100vw;
-    background-color: #A45AE8;
-    
-}
-#rodape{
-    width: 100vw;
-    height: 22.0rem;
-    background-color: #8a2be2;
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 5.0rem;
-    padding-right: 5.0rem;
-    gap: 2.0rem;
-    justify-content: center;
-    align-items: center;
-    
-}
-footer div h3 {
-    font-family: fredoka;
-    font-size: 2.5rem;
-    color: #ffffff;
-    margin: 0;
-
-}
-footer div p{
-    font-family: montserrat;
-    font-size: 2.0rem;
-    color: #ffffff;
-    font-weight: 400;
-    margin: 0.8rem;
-}
-footer div a{
-    font-family: montserrat;
-    font-size: 2.0rem;
-    color: #ffffff;
-    font-weight: 400;
-    text-decoration: none;
-    
-
-}
-.redessociais{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 1.0rem;
-    padding: 0;
-    margin-bottom: 1.0rem;
-
-}
-.redessociais img{
-    width: 3.0rem;
-    height: 3.0rem;
-    margin: 0;
-    padding: 0;
-}
-
-footer div {
-    height: 18rem;
-    text-align: justify;
-   
-}
-
-footer{
-    width: 100vw;
-    height: 22.0rem;
-    background-color: #8a2be2;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    
-}
-
 /* Estilo para o botão dropend */
 #corCategoria .btn {
     color: #E28A2B;
@@ -459,5 +381,83 @@ table button:hover {
     table button {
         padding: 6px 10px;
         font-size: 0.8rem;
+    }
+}
+
+/* Estilos para a formatação de campos específicos */
+
+.table td:nth-child(4) {
+    white-space: nowrap;
+}
+
+.table td:nth-child(5),
+.table td:nth-child(6) {
+    font-family: montserrat;
+    white-space: nowrap;
+}
+
+.table td:nth-child(7) {
+    text-transform: capitalize;
+}
+
+/* Ajuste para tabela com muitas colunas */
+@media (max-width: 1200px) {
+    .table-responsive {
+        font-size: 1.3rem;
+    }
+
+    .table th,
+    .table td {
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .table thead {
+        display: none;
+    }
+
+    .table, .table tbody, .table tr, .table td {
+        display: block;
+        width: 100%;
+    }
+
+    .table tr {
+        margin-bottom: 1.5rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 1rem;
+    }
+
+    .table td {
+        padding: 0.5rem;
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 1rem;
+        width: 45%;
+        padding-right: 1rem;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    /* Adciona labels para cada célula */
+    .table td:nth-child(1)::before { content: "ID:"; }
+    .table td:nth-child(2)::before { content: "Nome:"; }
+    .table td:nth-child(3)::before { content: "Email:"; }
+    .table td:nth-child(4)::before { content: "Nascimento:"; }
+    .table td:nth-child(5)::before { content: "Telefone:"; }
+    .table td:nth-child(6)::before { content: "CPF:"; }
+    .table td:nth-child(7)::before { content: "Tipo:"; }
+    .table td:nth-child(8)::before { content: "Ações"; }
+
+    .btn-group {
+        justify-content: flex-start;
     }
 }

@@ -11,8 +11,8 @@ $produtos = $stmt->fetchAll();
                     <th>ID</th>
                     <th>Imagem</th>
                     <th>Nome</th>
-                    <th>Preço</th>
-                    <th>Estoque</th>
+                    <th class="text-end">Preço</th>
+                    <th class="text-center">Estoque</th>
                     <th>Ações</th>
                 </tr>
             </thead>
@@ -23,11 +23,17 @@ $produtos = $stmt->fetchAll();
                         <td>
                             <?php if (!empty($row['urlImagemProdt'])): ?>
                                 <img src="../img/<?= htmlspecialchars($row['urlImagemProdt']) ?>" width="50" class="img-thumbnail">
+                            <?php else: ?>
+                                <div class="img-thumbnail d-flex align-items-center justify-content-center" style="width:50px;height:50px;background:#f5f5f5;color:#888;">
+                                    <i class="bi bi-image"></i>
+                                </div>
                             <?php endif; ?>
                         </td>
                         <td><?= htmlspecialchars($row['dscProdt']) ?></td>
-                        <td>R$ <?= number_format($row['valProdt'], 2, ',', '.') ?></td>
-                        <td><?= $row['qtdAtualEstqProdt'] ?></td>
+                        <td class="text-end">R$ <?= number_format($row['valProdt'], 2, ',', '.') ?></td>
+                        <td class="text-center"><?= $row['qtdAtualEstqProdt'] ?></td>
+                            
+                        </td>
                         <td>
                             <div class="btn-group">
                                 <a href="admProd.php?editar=<?= $row['idProdt'] ?>" class="btn btn-sm btn-primary">Editar</a>

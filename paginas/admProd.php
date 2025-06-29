@@ -130,8 +130,8 @@ if (isset($_GET['excluir'])) {
                     <input type="file"  id="urlImagemProdt" name="urlImagemProdt" accept="image/*">
                             
                     <div class="btn-group">
-                        <button type="submit" class="btnCad"><?= isset ($_GET['editar']) ? 'Autaulizar' : 'Cadastrar' ?></button>
-                        <a href="admProd.php" class="btnCan">Cancelar</a>
+                        <button type="submit" class="btnCad"><?= isset ($_GET['editar']) ? 'Atualizar' : 'Cadastrar' ?></button>
+                        <button><a href="admProd.php" class="btnCan">Cancelar</a></button>
                     </div>
                 </form>
 

@@ -200,6 +200,14 @@ header button{
     font-size: 1.2rem;
 }
 
+h1 {
+    word-break: keep-all;
+    text-align: center;
+    margin-bottom: 25px;
+    font-family: montserrat;
+
+}
+
 h2{
     white-space: nowrap;
     overflow: hidden;
@@ -210,6 +218,8 @@ h2{
     word-break: keep-all;
     text-align: center;
     margin-bottom: 20px;
+    font-family: montserrat;
+    font-size: 1.6rem;
 }
 
 /* estiliza do container que envolve todo conteúdo*/
@@ -400,26 +410,6 @@ select:focus{
 
 /*formulário resposivo*/
 @media (max-width: 768px) {
-    /*header {
-        flex-direction: column;
-        gap: 2rem;
-        height: auto;
-        padding: 2rem;
-    }
-
-    nav {
-        flex-direction: column;
-        gap: 2rem;
-        height: auto;
-        padding: 1rem;
-    }
-
-    #rodape {
-        flex-direction: column;
-        height: auto;
-        gap: 2rem;
-        padding: 2rem;
-    }*/
 
     /* Transforma o grid de 2 para 1 coluna */
     .prod-item {
@@ -470,75 +460,137 @@ select:focus{
     color: #8a2be2;
 }
 
-
-
-/*@media (max-width: 768px) {
-    header {
-        padding-left: 2rem;
-        padding-right: 2rem;
-        gap: 2rem;
-        height: auto;
-        flex-wrap: wrap;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-    }
-
-    nav {
-        padding-left: 2rem;
-        padding-right: 2rem;
-        gap: 2rem;
-        height: auto;
-        flex-wrap: wrap;
-    }
-
-    #barradepesquisa {
-        width: 100%;
-        max-width: 30rem;
-    }
-
-    #rodape {
-        padding-left: 2rem;
-        padding-right: 2rem;
-        gap: 2rem;
-        height: auto;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-    }
-
-    .container {
-        padding: 15px;
-    }
-
-    .prod-item {
-        grid-template-columns: 1fr;
-        width: 100%;
-        gap: 20px;
-    }
-
-    .prod-acoes {
-        flex-direction: row;
-        justify-content: center;
-    }
+.table-responsive{
+    overflow-x: auto;
+    margin-top: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0.05);
 }
 
-@media (max-width: 480px) {
-    #bloco_mundoDaLua, #bloco_pesquisa, #bloco_perfil, #bloco_carrinho {
-        flex: 1 1 100%;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .palavrasNav {
-        font-size: 1.4rem;
-    }
-
-    footer div h3 {
-        font-size: 2.0rem;
-    }
-
-    footer div p, footer div a {
-        font-size: 1.6rem;
-    }
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.5rem;
+    border-collapse: collapse;
 }
 
-*/
+.table-dark {
+    background-color: #8a2be2;
+    color: white;
+}
+
+.table-dark th {
+    border-bottom: none;
+    font-weight: 600;
+    padding: 1.2rem;
+    font-family: montserrat;
+}
+
+.table th, .table td {
+    padding: 1.2rem;
+    vertical-align: middle;
+    border-top: 1px solid #e9ecef;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(138, 43, 226, 0.05);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(138, 43, 226, 0.1);
+}
+
+/* Garante que os cabeçalhos e células tenham o mesmo alinhamento */
+.table thead th{
+    vertical-align: middle;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+/* Estilo para ações */
+.btn-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 1.3rem;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    background-color: #8a2be2;
+    border-color: #8a2be2;
+}
+
+.btn-primary:hover {
+    background-color: #6c1fb8;
+    border-color: #6c1fb8;
+}
+
+.btn-danger {
+    background-color: #c62828;
+    border-color: #c62828;
+}
+
+.btn-danger:hover {
+    background-color: #b71c1c;
+    border-color: #b71c1c;
+}
+
+/* Estilo para imagens */
+.img-thumbnail {
+    background-color: #f8f8fa;
+    border: 1px solid #e0e0e0;
+}
+
+/* Mensagem quando não há produtos */
+.alert-info {
+    background-color: #e9e1f9;
+    border-color: #d1c2e9;
+    color: #5e35b1;
+    font-size: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+/* Barra de busca */
+#buscaProduto {
+    font-size: 1.5rem;
+    padding: 0.8rem 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s;
+    max-width: 400px;
+    margin-bottom: 1.5rem;
+}
+
+#buscaProdutos:focus {
+    border-color: #8a2be2;
+    box-shadow: 0 0 0 0.2rem rgba(138, 43, 226, 0.25);
+    outline: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .table-responsive {
+        border: 1px solid #ddd;
+    }
+
+    .btn-group {
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .btn-sm {
+        width: 100%;
+    }
+
+    #buscaProduto {
+        max-width: 100%;
+    }
+}

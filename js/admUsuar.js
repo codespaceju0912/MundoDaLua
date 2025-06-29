@@ -27,27 +27,62 @@ document.getElementById('form-cadUsu').addEventListener('submit', function(e) {
     .catch(error => console.error('Erro:', error));
 });
 
-// Função para carregar usuários (já existente no seu código)
+// Função para carregar usuários 
 function carregarUsuarios() {
-    fetch('../paginas/listar_usuarios.php')
-        .then(response => response.json())
-        .then(data => {
-            const tabela = document.getElementById('tabelaUsu');
-            tabela.innerHTML = '';
-            data.forEach(usuario => {
-                tabela.innerHTML += `
-                    <tr>
-                        <td>${usuario.nomUsu}</td>
-                        <td>${usuario.dscEmailUsu}</td>
-                        <td>
-                            <button class="editar" data-id="${usuario.id}">Editar</button>
-                            <button class="excluir" data-id="${usuario.id}">Excluir</button>
-                        </td>
-                    </tr>
-                `;
-            });
+    fetch('../paginas/listar_usuar.php')
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById('.list-Usu').innerHTML = `
+                <h2>Usuários Cadastrados</h2>
+                ${html}
+            `;
+            
+            // Adiciona os event listeners para os novos botões
+            addEventListener();
+
+            // Adiciona responsividade para mobile
+            configurarResponsividade();
+        })
+        .catch(error => console.error('Erro', error))
+}
+
+// Função para adicionar event listeners aos botões
+function adicionarEventListeners() {
+    document.querySelectorAll('.btn-excluir').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            if(!confirm('Tem certeza que deseja excluir este usuário?')) {
+                e.preventDefault();
+            }
         });
+    });
+}
+
+// Função para configurar responsividade
+function configurarResponsividade() {
+    // Adiciona labels para as células em mobile
+    if (window.innerWidth < 992) {
+        const cells = document.querySelectorAll('.table td');
+        const headers = document.querySelectorAll('.table th');
+
+        cells.forEach((cell, index) => {
+            const headerIndex = index % headers.length;
+            if (headers[headerIndex]) {
+                cell.setAttribute('data-label', headers[headerIndex].textContent);
+            }
+        });
+    }
 }
 
 // Carrega os usuários quando a página é aberta
-document.addEventListener('DOMContentLoaded', carregarUsuarios);
+document.addEventListener('DOMContentLoaded', function() {
+    carregarUsuarios();
+
+    // Configura o redimensionamento da janela para mobile
+    window.addEventListener('resize', configurarResponsividade);
+}); 
+    
+// Função para abrir modal de edição
+
+function abrirModalEdicao(idUsuario){
+    
+}
