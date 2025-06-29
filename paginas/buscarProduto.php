@@ -1,14 +1,28 @@
 <?php
 include("../php/conexao.php");
 
-$nome = $_GET['nome'] ?? '';
+$nome = filter_input(INPUT_GET, 'nome', FILTER_SANITIZE_STRING);
 
-$sql = "SELECT * FROM produtos WHERE dscProdt LIKE ?";
+header('Content-Type: application/json');
+
+if (strlen($nome) < 2) {
+    echo json_encode([]);
+    exit;
+}
+
+$sql = "SELECT idProdt, dscProdt, valProdt, urlImagemProdt FROM produto WHERE dscProdt LIKE ? LIMIT 10";
 $stmt = $conn->prepare($sql);
-$stmt->execute(["%$nome%"]);
+$termoBusca = "%$nome%";
+$stmt->bind_param("s", $termoBusca);
+$stmt->execute();
+$result = $stmt->get_result();
 
-$produto = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$produtos = [];
+while ($row = $result->fetch_assoc()) {
+    $produtos[] = $row;
+}
 
-echo json_encode($produto);
+echo json_encode($produtos);
+$conn->close();
 
 ?>

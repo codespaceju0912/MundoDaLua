@@ -1,28 +1,18 @@
 <?php
-// Inclui apenas a conexão, não o loginBD
-include("../paginas/conexao.php");
-
-// Consulta SQL melhorada
-$sql = "SELECT * FROM produto ORDER BY dscProdt ASC";
+$sql = "SELECT * FROM produto ORDER BY idProdt DESC";
 $result = $conn->query($sql);
-
-// Verifica se há erros na consulta
-if (!$result) {
-    die("Erro na consulta: " . $conn->error);
-}
 ?>
 
 <div class="table-responsive">
     <?php if ($result->num_rows > 0): ?>
         <table class="table table-striped table-hover">
-            <thead class="thead-dark">
+            <thead class="table-dark">
                 <tr>
                     <th>ID</th>
-                    <th>Nome</th>
-                    <th>Descrição</th>
-                    <th>Estoque</th>
-                    <th>Valor</th>
                     <th>Imagem</th>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                    <th>Estoque</th>
                     <th>Ações</th>
                 </tr>
             </thead>
@@ -30,26 +20,18 @@ if (!$result) {
                 <?php while($row = $result->fetch_assoc()): ?>
                     <tr>
                         <td><?= htmlspecialchars($row['idProdt']) ?></td>
-                        <td><?= htmlspecialchars($row['dscProdt']) ?></td>
-                        <td><?= htmlspecialchars($row['dscDetalProdt']) ?></td>
-                        <td><?= $row['qtdAtualEstqProdt'] ?></td>
-                        <td>R$ <?= number_format($row['valProdt'], 2, ',', '.') ?></td>
                         <td>
                             <?php if (!empty($row['urlImagemProdt'])): ?>
-                                <img src="<?= htmlspecialchars($row['urlImagemProdt']) ?>" width="80" class="img-thumbnail">
-                            <?php else: ?>
-                                <span class="text-muted">Sem imagem</span>
+                                <img src="../img/<?= htmlspecialchars($row['urlImagemProdt']) ?>" width="50" class="img-thumbnail">
                             <?php endif; ?>
                         </td>
+                        <td><?= htmlspecialchars($row['dscProdt']) ?></td>
+                        <td>R$ <?= number_format($row['valProdt'], 2, ',', '.') ?></td>
+                        <td><?= $row['qtdAtualEstqProdt'] ?></td>
                         <td>
-                            <div class="btn-group" role="group">
-                                <a href="editarProduto.php?id=<?= $row['idProdt'] ?>" class="btn btn-sm btn-primary">Editar</a>
-                                <form action="produtoController.php" method="POST" class="d-inline">
-                                    <input type="hidden" name="idProdt" value="<?= $row['idProdt'] ?>">
-                                    <button type="submit" name="acao" value="excluir" class="btn btn-sm btn-danger" onclick="return confirm('Tem certeza que deseja excluir?')">
-                                        Excluir
-                                    </button>
-                                </form>
+                            <div class="btn-group">
+                                <a href="admProd.php?editar=<?= $row['idProdt'] ?>" class="btn btn-sm btn-primary">Editar</a>
+                                <a href="admProd.php?excluir=<?= $row['idProdt'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Tem certeza que deseja excluir este produto?')">Excluir</a>
                             </div>
                         </td>
                     </tr>
@@ -60,8 +42,3 @@ if (!$result) {
         <div class="alert alert-info">Nenhum produto cadastrado.</div>
     <?php endif; ?>
 </div>
-
-<?php
-// Fecha a conexão
-$conn->close();
-?>

@@ -6,13 +6,57 @@ if (!isset($_SESSION['eh_admin'])) {
 }
 
 include("conexao.php");
+
+$mensagem = '';
+if (isset($_GET['sucesso'])) {
+    switch($_GET['sucesso']){
+        case 1: $mensagem = '<div class="alert alert-success">Produto cadastrado com sucesso!</div>'; break;
+        case 2: $mensagem = '<div class="alert alert-success">Produto atualizado com sucesso!</div>'; break;
+        case 3: $mensagem = '<div class="alert alert-success">Produto excluído com sucesso!</div>'; break;
+    }
+} elseif (isset($_GET['erro'])) {
+    $mensagem = '<div class="alert alert-danger">Ocorreu um erro. Por favor, tente novamente.</div>';
+}
+
+//Processar exclusão de produto
+if (isset($_GET['excluir'])) {
+    $id = filter_input(INPUT_GET, 'excluir', FILTER_SANITIZE_NUMBER_INT);
+
+    //Primeiro obtém a imagem para remover do servidor
+    $sql = "SELECT urlImagemProdt FROM produto WHERE idProdt = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $produto = $result->fetch_assoc();
+
+    if($produto && !empty($produto['urlImagemProdt'])){
+        $caminhoImagem = "../img/" . $produto['urlImagemProdt'];
+        if(file_exists($caminhoImagem)) {
+            unlink($caminhoImagem);
+        }
+    }
+
+    //Exclui o produto
+    $sql = "DELETE FROM produto WHERE idProdt = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $id);
+
+    if ($stmt->execute()) {
+        header("Location: admProd.php?sucesso=3");
+        exit;
+    } else {
+        header("Location: admProd.php?erro=1");
+        exit;
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastrar/Alterar/Excluir Produto</title>
+    <title>Gerenciar Produto</title>
     <link rel="stylesheet" href="../css/admProd.css">
     <link rel="stylesheet" href="../css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -20,7 +64,7 @@ include("conexao.php");
     <script src="../js/base.js" defer></script>
 </head>
 <body>
-<header>
+    <header>
         <section id="bloco_mundoDaLua">
             <h1 id="grafica">Gráfica</h1>
             <h1 id="mundodalua">MUNDO DA LUA</h1>
@@ -37,16 +81,19 @@ include("conexao.php");
                 <li><a href="/MundoDaLua/paginas/logout.php" >Sair</a></li>
             </ul>
         </div>
-        
     </nav>
 
     <main>
         <div id="container">
             <h1>Painel de Produtos</h1>
+
+            <?php echo $mensagem; ?>
             
             <section>
-                <form id="formProduto" method="POST" action="cadastrarProduto.php" enctype="multipart/form-data">
-                    <h2>Cadastrar Novo Produto</h2>
+                <form id="formProduto" method="POST" action="processaProduto.php" enctype="multipart/form-data">
+                    <h2><?= isset($_GET['editar']) ? 'Editar Produto' : 'Cadastrar Novo Produto' ?></h2>
+                    <input tupe="hidden" name="idProdt" value="<?= isset($_GET['editar']) ? $_GET['editar'] : '' ?>">    
+
                             
                     <label for="nomeProd">Nome do Produto:</label>
                     <input type="text" id="nomeProd" name="nomeProd" required>
@@ -78,13 +125,20 @@ include("conexao.php");
                     <input type="file"  id="urlImagemProdt" name="urlImagemProdt" accept="image/*">
                             
                     <div class="btn-group">
-                        <button type="submit" class="btnCad">Cadastrar</button>
-                        <button type="button" class="btnCan">Cancelar</button>
+                        <button type="submit" class="btnCad"><?= isset ($_GET['editar']) ? 'Autaulizar' : 'Cadastrar' ?></button>
+                        <a href="admProd.php" class="btnCan">Cancelar</a>
                     </div>
                 </form>
 
                 <section id="prod-lista">
                     <h3>Produtos Cadastrados</h3>
+
+                    <!-- Barra de busca -->
+
+                    <div class="mb-3">
+                        <input type="text" id="buscaProduto" class="form-control" placeholder="Buscar produto...">
+                        <div id="resultadoBusca" class="mt-2"></div>
+                    </div>
                     
                     <?php include("../paginas/listarProd.php");?>
                 </section> 
@@ -92,6 +146,8 @@ include("conexao.php");
         </div>
     </main>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
     <!--js para adicionar os produtos-->
     <script src="../js/admProd.js" defer></script>
 
