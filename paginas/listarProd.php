@@ -1,10 +1,10 @@
 <?php
-$sql = "SELECT * FROM produto ORDER BY idProdt DESC";
-$result = $conn->query($sql);
+$stmt = $conn->query("SELECT * FROM produto ORDER BY idProdt DESC");
+$produtos = $stmt->fetchAll();
 ?>
 
 <div class="table-responsive">
-    <?php if ($result->num_rows > 0): ?>
+    <?php if (count($produtos) > 0): ?>
         <table class="table table-striped table-hover">
             <thead class="table-dark">
                 <tr>
@@ -17,7 +17,7 @@ $result = $conn->query($sql);
                 </tr>
             </thead>
             <tbody>
-                <?php while($row = $result->fetch_assoc()): ?>
+                <?php foreach ($produtos as $row): ?>
                     <tr>
                         <td><?= htmlspecialchars($row['idProdt']) ?></td>
                         <td>
@@ -31,11 +31,11 @@ $result = $conn->query($sql);
                         <td>
                             <div class="btn-group">
                                 <a href="admProd.php?editar=<?= $row['idProdt'] ?>" class="btn btn-sm btn-primary">Editar</a>
-                                <a href="admProd.php?excluir=<?= $row['idProdt'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Tem certeza que deseja excluir este produto?')">Excluir</a>
+                                <a href="admProd.php?excluir=<?= $row['idProdt'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Tem certeza?')">Excluir</a>
                             </div>
                         </td>
                     </tr>
-                <?php endwhile; ?>
+                <?php endforeach; ?>
             </tbody>
         </table>
     <?php else: ?>

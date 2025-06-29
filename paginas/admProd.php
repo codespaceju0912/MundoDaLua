@@ -5,11 +5,11 @@ if (!isset($_SESSION['eh_admin'])) {
     exit;
 }
 
-include("conexao.php");
+require("conexao.php");
 
 $mensagem = '';
 if (isset($_GET['sucesso'])) {
-    switch($_GET['sucesso']){
+    switch($_GET['sucesso']) {
         case 1: $mensagem = '<div class="alert alert-success">Produto cadastrado com sucesso!</div>'; break;
         case 2: $mensagem = '<div class="alert alert-success">Produto atualizado com sucesso!</div>'; break;
         case 3: $mensagem = '<div class="alert alert-success">Produto excluído com sucesso!</div>'; break;
@@ -18,38 +18,43 @@ if (isset($_GET['sucesso'])) {
     $mensagem = '<div class="alert alert-danger">Ocorreu um erro. Por favor, tente novamente.</div>';
 }
 
-//Processar exclusão de produto
+// Processar exclusão
 if (isset($_GET['excluir'])) {
-    $id = filter_input(INPUT_GET, 'excluir', FILTER_SANITIZE_NUMBER_INT);
+    try {
+        $conn->beginTransaction();
 
-    //Primeiro obtém a imagem para remover do servidor
-    $sql = "SELECT urlImagemProdt FROM produto WHERE idProdt = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $produto = $result->fetch_assoc();
+        // Buscar informações da imagem
 
-    if($produto && !empty($produto['urlImagemProdt'])){
-        $caminhoImagem = "../img/" . $produto['urlImagemProdt'];
-        if(file_exists($caminhoImagem)) {
-            unlink($caminhoImagem);
+        $stmt = $conn->prepare("SELECT urlImagemProdt FROM produto WHERE idProdt = ?");
+        $stmt->execute([$_GET['excluir']]);
+        $produto = $stmt->fetch();
+
+        // Remover imagem se existir
+
+        if ($produto && !empty($produto['urlImagemProdt'])) {
+            $caminhoImagem = "../img/" . $produto['urlImagemProdt'];
+            if (file_exists($caminhoImagem) && is_file($caminhoImagem)) {
+                unlink($caminhoImagem);
+            }
         }
-    }
 
-    //Exclui o produto
-    $sql = "DELETE FROM produto WHERE idProdt = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $id);
+        // Excluir do banco
 
-    if ($stmt->execute()) {
+        $stmt = $conn->prepare("DELETE FROM produto WHERE idProdt = ?");
+        $stmt->execute([$_GET['excluir']]);
+        
+        $conn->commit();
         header("Location: admProd.php?sucesso=3");
         exit;
-    } else {
-        header("Location: admProd.php?erro=1");
+        
+    } catch (PDOException $e) {
+        $conn->rollBack();
+        error_log("Erro ao excluir: " . $e->getMessage());
+        header("Location: admProd.php?erro=2");
         exit;
     }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

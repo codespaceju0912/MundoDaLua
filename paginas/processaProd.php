@@ -5,91 +5,90 @@ if (!isset($_SESSION['eh_admin'])) {
     exit;
 }
 
+require("conexao.php");
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Sanitização dos dados
-    $id = filter_input(INPUT_POST, 'idProdt', FILTER_SANITIZE_NUMBER_INT);
-    $nome = $conn->real_escape_string($_POST['nomeProd']);
-    $preco = (float) str_replace(',', '.', $_POST['valProd']);
-    $descricao = $conn->real_escape_string($_POST['descricaoProd']);
-    $estoque = (int) $_POST['estoqueProd'];
-    $categoria = (int) $_POST['idcatProd'];
-    $marca = (int) $_POST['idMarca'];
-    $minEstoque = (int) $_POST['qtdMinEstqProd'];
-    $desconto = isset($_POST['pctDescProd']) ? (float) str_replace(',', '.', $_POST['pctDescProd']) : 0;
-    $dataCadastro = date('Y-m-d H:i:s');
-
-    // Processamento da imagem
-    $urlImagem = '';
-    if (!empty($id)) {
-        // Se for edição, mantém a imagem atual
-        $sql = "SELECT urlImagemProdt FROM produto WHERE idProdt = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("i", $id);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $produto = $result->fetch_assoc();
-        $urlImagem = $produto['urlImagemProdt'];
-    }
-
-    if (isset($_FILES['imagemProd']) && $_FILES['imagemProd']['error'] == UPLOAD_ERR_OK) {
-        $diretorio = "../img/produtos/";
-        if (!file_exists($diretorio)) {
-            mkdir($diretorio, 0755, true);
+    try {
+        $conn->beginTransaction();
+        
+        $dados = [
+            'nome' => $_POST['nomeProd'],
+            'preco' => str_replace(',', '.', $_POST['valProd']),
+            'descricao' => $_POST['descricaoProd'],
+            'estoque' => $_POST['estoqueProd'],
+            'categoria' => $_POST['idcatProd'],
+            'marca' => $_POST['idMarca'],
+            'minEstoque' => $_POST['qtdMinEstqProd'],
+            'desconto' => isset($_POST['pctDescProd']) ? str_replace(',', '.', $_POST['pctDescProd']) : 0,
+            'dataCadastro' => date('Y-m-d H:i:s')
+        ];
+        
+        // Processamento da imagem
+        if (isset($_FILES['imagemProd']) && $_FILES['imagemProd']['error'] == UPLOAD_ERR_OK) {
+            $diretorio = "../img/produtos/";
+            if (!file_exists($diretorio)) mkdir($diretorio, 0755, true);
+            
+            $ext = pathinfo($_FILES['imagemProd']['name'], PATHINFO_EXTENSION);
+            $nomeImagem = md5(uniqid()) . '.' . $ext;
+            $destino = $diretorio . $nomeImagem;
+            
+            if (move_uploaded_file($_FILES['imagemProd']['tmp_name'], $destino)) {
+                $dados['imagem'] = "produtos/" . $nomeImagem;
+            }
         }
-
-        $extensao = pathinfo($_FILES['imagemProd']['name'], PATHINFO_EXTENSION);
-        $nomeImagem = md5(uniqid()) . '.' . $extensao;
-        $destino = $diretorio . $nomeImagem;
-
-        // Verifica se é uma imagem válida
-        if (getimagesize($_FILES['imagemProd']['tmp_name']) !== false) {
-            // Remove a imagem antiga se existir
-            if (!empty($urlImagem)) {
-                $caminhoAntigo = "../img/" . $urlImagem;
-                if (file_exists($caminhoAntigo)) {
-                    unlink($caminhoAntigo);
+        
+        // Se for edição
+        if (!empty($_POST['idProdt'])) {
+            $dados['id'] = $_POST['idProdt'];
+            
+            // Se há nova imagem, remove a antiga
+            if (!empty($dados['imagem'])) {
+                $stmt = $conn->prepare("SELECT urlImagemProdt FROM produto WHERE idProdt = ?");
+                $stmt->execute([$dados['id']]);
+                $imagemAntiga = $stmt->fetchColumn();
+                
+                if ($imagemAntiga && file_exists("../img/" . $imagemAntiga)) {
+                    unlink("../img/" . $imagemAntiga);
                 }
             }
-
-            if (move_uploaded_file($_FILES['imagemProd']['tmp_name'], $destino)) {
-                $urlImagem = "produtos/" . $nomeImagem;
-            }
+            
+            $sql = "UPDATE produto SET
+                    dscProdt = :nome,
+                    dscDetalProdt = :descricao,
+                    qtdAtualEstqProdt = :estoque,
+                    urlImagemProdt = :imagem,
+                    qtdMinEstqProdt = :minEstoque,
+                    pctDescProdt = :desconto,
+                    valProdt = :preco,
+                    idCatProd = :categoria,
+                    idMarca = :marca
+                    WHERE idProdt = :id";
+        } else {
+            $sql = "INSERT INTO produto (
+                    dscProdt, dscDetalProdt, qtdAtualEstqProdt, urlImagemProdt,
+                    datCadastProdt, qtdMinEstqProdt, pctDescProdt, valProdt,
+                    idCatProd, idMarca
+                ) VALUES (
+                    :nome, :descricao, :estoque, :imagem,
+                    :dataCadastro, :minEstoque, :desconto, :preco,
+                    :categoria, :marca
+                )";
         }
-    }
-
-    // Determina se é inserção ou atualização
-    if (empty($id)) {
-        $sql = "INSERT INTO produto (
-                dscProdt, dscDetalProdt, qtdAtualEstqProdt, urlImagemProdt, 
-                datCadastProdt, qtdMinEstqProdt, pctDescProdt, valProdt, idCatProd, idMarca
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        $tipos = "ssisssddii";
-    } else {
-        $sql = "UPDATE produto SET
-                dscProdt = ?, dscDetalProdt = ?, qtdAtualEstqProdt = ?, urlImagemProdt = ?,
-                qtdMinEstqProdt = ?, pctDescProdt = ?, valProdt = ?, idCatProd = ?, idMarca = ?
-                WHERE idProdt = ?";
-        $tipos = "ssisssddii";
-    }
-
-    $stmt = $conn->prepare($sql);
-    if (empty($id)) {
-        $stmt->bind_param($tipos, $nome, $descricao, $estoque, $urlImagem, 
-                         $dataCadastro, $minEstoque, $desconto, $preco, $categoria, $marca);
-    } else {
-        $stmt->bind_param($tipos, $nome, $descricao, $estoque, $urlImagem,
-                         $minEstoque, $desconto, $preco, $categoria, $marca, $id);
-    }
-
-    if ($stmt->execute()) {
-        header("Location: admProd.php?sucesso=" . (empty($id) ? "1" : "2"));
+        
+        $stmt = $conn->prepare($sql);
+        $stmt->execute($dados);
+        
+        $conn->commit();
+        header("Location: admProd.php?sucesso=" . (!empty($_POST['idProdt']) ? "2" : "1"));
         exit;
-    } else {
+        
+    } catch (PDOException $e) {
+        $conn->rollBack();
+        error_log("Erro: " . $e->getMessage());
         header("Location: admProd.php?erro=1");
         exit;
     }
-} else {
-    header("Location: admProd.php");
-    exit;
 }
+
+header("Location: admProd.php");
 ?>
