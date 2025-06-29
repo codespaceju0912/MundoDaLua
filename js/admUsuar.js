@@ -81,8 +81,3 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', configurarResponsividade);
 }); 
     
-// Função para abrir modal de edição
-
-function abrirModalEdicao(idUsuario){
-    
-}
