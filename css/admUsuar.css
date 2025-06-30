@@ -107,7 +107,6 @@ header {
 }
 
 nav {
-    margin-bottom: 2rem;
     width: 100%;
     padding: 0;
     margin: 1rem;
@@ -215,7 +214,6 @@ body{
     background-color: #ffffff; 
     color: #333;
     min-height: 100vh;
-    padding: 20px;
     font-family: montserrat;
     line-height: 1.6; /* Melhora a legibilidade */
 }

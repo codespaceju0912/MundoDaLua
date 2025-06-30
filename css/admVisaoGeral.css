@@ -56,8 +56,6 @@ header {
     flex-direction: row;
     justify-content: center;
 
-
-
 }
 
 @media (max-width: 1200px) {
@@ -170,83 +168,6 @@ nav {
     }
 }
 
-/* Footer */
-
-footer div h3 {
-    font-family: fredoka;
-    font-size: clamp(2rem, 2vw, 2.5rem);
-    color: #ffffff;
-    margin: 0;
-
-}
-
-footer div p {
-    font-family: montserrat;
-    font-size: clamp(1.6rem, 1.8vw, 2rem);
-    color: #ffffff;
-    font-weight: 400;
-    margin: 0.8rem;
-}
-
-footer div a {
-    font-family: montserrat;
-    font-size: clamp(1.6rem, 1.8vw, 2rem);
-    color: #ffffff;
-    font-weight: 400;
-    text-decoration: none;
-
-
-}
-
-.redessociais {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-
-
-}
-
-.redessociais img {
-    width: 3.0rem;
-    height: 3.0rem;
-    margin: 0;
-    padding: 0;
-}
-
-footer div {
-    flex: 1 1 20rem;
-    max-width: 30rem;
-    min-height: 18rem;
-    text-align: center;
-
-}
-
-footer {
-    width: 100vw;
-    min-height: 22rem;
-    background-color: #8a2be2;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-
-
-}
-
-@media (max-width: 1200px) {
-    footer div {
-        flex: 1 1 45%;
-    }
-}
-
-@media (max-width: 900px) {
-    footer div {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-}
 
 /* Estilização da main*/
 
@@ -267,63 +188,46 @@ h2 {
     flex-wrap: wrap;
 }
 
-.card{
-    background-color: #8a2be2;
-    color: #ffffff;
-    padding: 20px;
+.card {
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Container dos gráficos */
+.grafico-container {
+    background: white;
     border-radius: 12px;
-    text-align: center;
-    width: 200px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 25px;
+    margin: 30px auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    max-width: 900px;
 }
 
-.card h3{
-    margin-bottom: 10px;
-    font-family: montserrat;
-}
-
-.card p{
-    font-size: 2.5rem;
-    font-weight: bold;
-}
-
-#graficos h3{
-    font-size: 2rem;
+/* Títulos dos gráficos */
+.grafico-titulo {
+    color: #8a2be2;
     margin-bottom: 20px;
-    font-family: montserrat;
+    font-size: 1.8rem;
     text-align: center;
 }
 
-#acoesRapidas{
-    margin: 40px;
-    text-align: center;
-
-}
-
-#acoesRapidas h3{
-    font-size: 2rem;
-    margin-bottom: 20px;
-    font-family: montserrat;
-}
-
-.buttons{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.btn{
-    background-color: #8a2be2;
-    color: #ffffff;
-    padding: 15px 25px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: background-color 0.3s ease;
-    font-family: montserrat;
-}
-
-.btn:hover{
-    background-color: #6c1fb8;
+/* Responsividade */
+@media (max-width: 768px) {
+    #dashboard-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .card {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .grafico-container {
+        padding: 15px;
+    }
 }

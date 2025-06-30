@@ -1,33 +1,44 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Atualizar números (exemplo)
-    document.getElementById("totalUsuarios").textContent = 15;
-    document.getElementById("totalProdutos").textContent = 42;
-    document.getElementById("totalPedidos").textContent = 27;
+    // Preenche os cards com dados reais
+    document.getElementById("totalUsuarios").textContent = dadosDashboard.totalUsuarios;
+    document.getElementById("totalProdutos").textContent = dadosDashboard.totalProdutos;
+    document.getElementById("totalPedidos").textContent = dadosDashboard.totalPedidos;
 
+
+
+    // Prepara dados para gráfico de vendas mensais
+    const meses = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
+    const dadosVendas = Array(12).fill(0);
+    
+    dadosDashboard.vendasMensais.forEach(venda => {
+        dadosVendas[venda.mes - 1] = venda.total || 0;
+    });
 
     // Gráfico de Vendas (Barra)
     const ctxVendas = document.getElementById('graficoVendas').getContext('2d');
-    const graficoVendas = new Chart(ctxVendas, {
+    new Chart(ctxVendas, {
         type: 'bar',
         data: {
-            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+            labels: meses,
             datasets: [{
                 label: 'Vendas (R$)',
-                data: [1200, 1900, 3000, 5000, 2200, 3400],
+                data: dadosVendas,
                 backgroundColor: '#8a2be2'
             }]
         },
         options: {
             responsive: true,
             plugins: {
-                legend: {
-                    display: false
-                }
+                legend: { display: false }
             },
             scales: {
-                y: {
-                    beginAtZero: true
+                y: { 
+                    beginAtZero: true,
+                    title: { display: true, text: 'Valor (R$)' }
+                },
+                x: {
+                    title: { display: true, text: 'Meses' }
                 }
             }
         }
@@ -35,22 +46,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Gráfico de Produtos mais vendidos (pizza)
     const ctxProdutos = document.getElementById('graficoProdutos').getContext('2d');
-    const graficoProdutos  = new Chart(ctxProdutos, {
-        type: 'pie',
+    new Chart(ctxProdutos, {
+        type: 'doughnut', // Alterado para rosca para melhor visualização
         data: {
-            labels: ['Marca Página', 'Quadro MDF', 'Caixinhas Personalizadas', 'Fotos Impressas'],
+            labels: dadosDashboard.produtosMaisVendidos.map(p => p.nomeProduto),
             datasets: [{
-                data: [10, 15, 5, 20],
+                data: dadosDashboard.produtosMaisVendidos.map(p => p.total_vendido),
                 backgroundColor: [
-                    '#8a2be2',
-                    '#ff6384',
-                    '#36a2eb',
-                    '#ffce56'
-                ]
+                    '#8a2be2', '#6c1fb8', '#bfff00', '#e28a2b', '#1379bd'
+                ],
+                borderWidth: 1
             }]
         },
         options: {
-            responsive: true
+            responsive: true,
+            plugins: {
+                legend: { 
+                    position: 'right',
+                    labels: {
+                        font: { size: 14 }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            return `${context.label}: ${context.raw} unidades`;
+                        }
+                    }
+                }
+            }
         }
     });
+
+    // Atualizar os dados periodicamente
+    setInterval(() => {
+        location.reload();
+    }, 300000);
+
+    // Adicione verificação para quando não houver dados
+    if (dadosDashboard.vendasMensais.length === 0) {
+        document.getElementById('graficoVendas').innerHTML = '<p>Nenhuma venda registrada este ano.</p>';
+    }
 });

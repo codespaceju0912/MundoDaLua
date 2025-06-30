@@ -1,9 +1,48 @@
 <?php
-
 session_start();
 require '../paginas/auth_admin.php';
 
 include("paginas/conexao.php");
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+if (!isset($conexao)) {
+    die("Erro: Conexão com o banco de dados não estabelecida");
+}
+
+// Consultas ao banco de dados
+$totalUsuarios = $conexao->query("SELECT COUNT(*) as total FROM usuario")->fetch_assoc()['total'];
+$totalProdutos = $conexao->query("SELECT COUNT(*) as total FROM produto")->fetch_assoc()['total'];
+$totalPedidos = $conexao->query("SELECT COUNT(*) as total FROM pedido")->fetch_assoc()['total'];
+
+// Vendas mensais (agrupadas por mês)
+//$vendasMensais = $conexao->query("
+//    SELECT 
+//        MONTH(datPedido) as mes, 
+//        COUNT(*) as total_pedidos,
+//        SUM(
+//           SELECT SUM(quantidade * preco) 
+//            FROM pedidoitem 
+//            WHERE pedidoitem.idPedido = pedido.idPedido
+//        ) as valor_total
+//    FROM pedido
+//    WHERE YEAR(datPedido) = YEAR(CURDATE())
+//    GROUP BY MONTH(datPedido)
+//")->fetch_all(MYSQLI_ASSOC);
+
+// Produtos mais vendidos (top 5)
+//$produtosMaisVendidos = $conexao->query("
+//    SELECT 
+//        p.idProduto,
+//        p.nomeProduto,
+//        SUM(pi.quantidade) as total_vendido
+//    FROM pedidoitem pi
+//    JOIN produto p ON pi.idProduto = p.idProduto
+//    GROUP BY p.idProduto, p.nomeProduto
+//    ORDER BY total_vendido DESC
+//    LIMIT 5
+//")->fetch_all(MYSQLI_ASSOC);
 
 ?>
 
@@ -44,14 +83,13 @@ include("paginas/conexao.php");
     <main>
         <h2>Painel de Visão Geral</h2>
 
-        <!-- Cards de resumo -->
+        <<!-- Cards de resumo -->
         <section id="dashboard-cards">
             <div class="card">
                 <h3>Total de Usuários</h3>
-                <p id="totalUsusarios">0</p>
+                <p id="totalUsuarios">0</p>
             </div>
             <div class="card">
-               
                 <h3>Total de Produtos</h3>
                 <p id="totalProdutos">0</p>
             </div>
@@ -60,19 +98,30 @@ include("paginas/conexao.php");
                 <p id="totalPedidos">0</p>
             </div>
         </section>
-        
+
         <!-- Gráficos -->
-        <section id="graficos">
-            <h3>Vendas Mensais</h3>
-            <canvas id="graficoVendas" width="400" height="200"></canvas>
+        <section class="grafico-container">
+            <h3 class="grafico-titulo">Vendas Mensais (R$)</h3>
+            <canvas id="graficoVendas"></canvas>
         </section>
 
-        <section id="graficos">
-            <h3>Produtos Mais Vendidos</h3>
-            <canvas id="graficoProdutos" width="400" height="200"></canvas>
+        <section class="grafico-container">
+            <h3 class="grafico-titulo">Produtos Mais Vendidos</h3>
+            <canvas id="graficoProdutos"></canvas>
         </section>
     </main>
 
     <script src="../js/admVisaoGeral.js" defer></script>
 </body>
+
+<script>
+    // Dados para os gráficos
+    const dadosDashboard = {
+        totalUsuarios: <?= $totalUsuarios ?>,
+        totalProdutos: <?= $totalProdutos ?>,
+        totalPedidos: <?= $totalPedidos ?>,
+        vendasMensais: <?= json_encode($vendasMensais) ?>,
+        produtosMaisVendidos: <?= json_encode($produtosMaisVendidos) ?>
+    };
+</script>
 </html>
