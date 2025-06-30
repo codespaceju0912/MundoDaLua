@@ -8,14 +8,39 @@ if(!isset($_SESSION['admin_logado'])) {
     exit;
 }
 
+// Processar exclusão
+if(isset($_GET['excluir'])) {
+    try {
+        $stmt = $conn->prepare("DELETE FROM usuario WHERE idUsu = ?");
+        $stmt->execute([$_GET['excluir']]);
+        header("Location: admUsuar.php?sucesso=3"); // 3 para sucesso de exclusão
+        exit;
+    } catch(PDOException $e) {
+        header("Location: admUsuar.php?erro=1");
+        exit;
+    }
+}
+
 $sql = "SELECT idUsu, nomUsu, dscEmailUsu, datNascUsu, numTelefUsu, numCpfUsu FROM usuario";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+// Mensagens de sucesso/erro
+$mensagem = '';
+if(isset($_GET['sucesso'])) {
+    switch($_GET['sucesso']) {
+        case 1: $mensagem = '<div class="alert alert-success">Usuário cadastrado com sucesso!</div>'; break;
+        case 2: $mensagem = '<div class="alert alert-success">Usuário atualizado com sucesso!</div>'; break;
+        case 3: $mensagem = '<div class="alert alert-success">Usuário excluído com sucesso!</div>'; break;
+    }
+} elseif(isset($_GET['erro'])) {
+    $mensagem = '<div class="alert alert-danger">Ocorreu um erro. Por favor, tente novamente.</div>';
+}
 ?>
 
 <div class="table-respondive">
+    <?php echo $mensagem; ?>
     <table class="table table-striped table-hover">
         <thead class="table-dark">
             <tr>
@@ -42,8 +67,8 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <td><?= htmlspecialchars($usuario['tipoUsu']) ?></td>
                     <td>
                         <div class="btn-group">
-                            <button class="btn-editar" data-id="<?= $usuario['idUsu'] ?>">Editar</button>
-                            <button class="btn-excluir" data-id="<?= $usuario['idUsu'] ?>">Excluir</button>
+                            <a href="admUsuar.php?editar=<?= $usuario['idUsu'] ?>" class="btn btn-primary btn-sm">Editar</a>
+                            <a href="listar_usuar.php?excluir=<?= $usuario['idUsu'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir este usuário?')">Excluir</a>
                         </div>
                     </td>
                 </tr>

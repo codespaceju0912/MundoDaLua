@@ -229,118 +229,127 @@ main{
 }
 
 /* Título cadastro */
-.form-usu h2{
+
+h1 {
+    word-break: keep-all;
+    text-align: center;
+    margin-bottom: 25px;
+    font-family: montserrat;
+
+}
+
+#form-CadUsu h2{
     margin-bottom: 15px;
     text-align: center;
     font-family: montserrat;
-    font-size: 1.9rem;
+    font-size: 1.7rem;
 }
 
 /* Formulário de cadastro */
-.form-usu{
+.form-usu {
     background-color: #ffffff;
-    padding: 20px;
+    padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
     margin-bottom: 40px;
 }
 
-.form-usu form{
+.form-usu form {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Substitui margens individuais por gap */
+    gap: 15px;
 }
 
-.form-usu label{
+.form-usu label {
     color: #333;
-    font-size: 1.5rem;
-    font-weight: 500; /* Melhora a hierarquia visual */
-    
-}
-
-.form-usu input{
-    padding: 12px; /* Aumentado para melhor toque em mobile */
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1.3rem;
-    width: 100%; /* Garante que ocupe toda a largura */
-}
-
-/* Botões */
-.form-usu button{
-    margin-top: 20px;
-    padding: 12px;
-    background-color: #8a2be2;
-    border: none;
-    color: #ffffff;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease; /* Transição suave para todos os estados */
-    font-size: 1.4rem;
-}
-
-.form-usu button:hover {
-    background-color: #6c1fb8;
-    transform: translateY(-2px); /* Efeito sutil de elevação */
-}
-
-/* Título tabela */
-
-.list-Usu h2{
-    margin-bottom: 15px;
-    text-align: center;
+    margin-bottom: 5px;
     font-family: montserrat;
-    font-size: 1.9rem;
+    font-size: 1.6rem;
+    display: block; /* Garante que cada label fique em sua própria linha */
 }
 
-/* Listagem de usuários */
-.list-Usu{
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    overflow-x: auto; /* Permite scroll horizontal em telas pequenas */
-}
-
-
-table{
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 600px; /* Garante boa legibilidade em telas pequenas */
-}
-
-table thead{
-    background-color: #6c1fb8;
-    color:#fff;
-}
-
-table th, table td{
+.form-usu input[type="text"],
+.form-usu input[type="number"],
+.form-usu input[type="password"],
+.form-usu input[type="tel"],
+.form-usu input[type="email"],
+.form-usu input[type="date"] {
     padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-    font-size: 1.4rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1.6rem;
+    width: 100%;
+    transition: border 0.3s;
 }
 
-table td {
-    vertical-align: middle; /* Alinha conteúdo verticalmente */
+#tipo_usuario {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1.6rem;
+    width: 100%;
+    transition: border 0.3s;
 }
 
-table button {
-    background-color: #8a2be2;
-    color: #fff;
-    border: none;
+.form-usu input:focus {
+    outline: none;
+    border-color: #8a2be2;
+}
+
+/* Estilo para grupos de campos que devem ficar lado a lado */
+.form-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    .form-group {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Botões com estilo igual ao de produtos */
+.btn-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btnCad, .btnAlt, .btnExc {
     padding: 8px 12px;
+    border: none;
     border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    white-space: nowrap; /* Evita quebra de linha no texto do botão */
     font-size: 1.4rem;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-table button:hover {
+.btnCad {
+    background-color: #8a2be2;
+    color: #ffffff;
+}
+
+.btnCad:hover {
     background-color: #6c1fb8;
-    transform: scale(1.05); /* Efeito de zoom sutil */
+}
+
+.btnAlt {
+    background-color: #8a2be2;
+    color: #ffffff;
+}
+
+.btnAlt:hover {
+    background-color: #6c1fb8;
+}
+
+.btnExc {
+    background-color: #c62828;
+    color: #ffffff;
+}
+
+.btnExc:hover {
+    background-color: #b71c1c;
 }
 
 /* Media Queries para responsividade */

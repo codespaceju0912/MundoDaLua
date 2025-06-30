@@ -8,6 +8,7 @@ if(!isset($_SESSION['admin_logado'])) {
     exit;
 }
 
+$id = $_POST['idUsu'] ?? null;
 $nome = $_POST['nome'] ?? '';
 $telefone = $_POST['telefone'] ?? '';
 $email = $_POST['email'] ?? '';
@@ -22,7 +23,7 @@ if(empty($nome) || empty($telefone) || empty($email) || empty($senha) || empty($
     exit;
 }
 
-if($senha != $confirmar_senha){
+if(!empty($senha) && $senha != $confirmar_senha) {
     echo json_encode(['status' => 'error', 'message' => 'As senhas estão diferentes!']);
     exit;
 }
@@ -40,13 +41,42 @@ if ($stmt->fetchColumn() > 0) {
 $telefone = preg_replace('/\D/', '', $telefone);
 $cpf = preg_replace('/\D/', '', $cpf);
 
-
-//Inserção dos dados
-$sql = "INSERT INTO usuario(nomUsu, dscEmailUsu, datNascUsu, dscSenhaUsu, numTelefUsu, numCpfUsu, tipo_usuario)
-        VALUES(?, ?, ?, ?, ?, ?, ?)";
-$stmt = $conn->prepare($sql);
-$stmt->execute([$nome, $email, $nascimento, password_hash($senha, PASSWORD_DEFAULT), $telefone, $cpf, 'usuario']);
-
-echo json_encode(['status' => 'success', 'message' => 'Usuário cadastrado com sucesso!']);
+try {
+    if($id) {
+        // Atualização
+        if(!empty($senha)) {
+            $sql = "UPDATE usuario SET nomUsu = ?, dscEmailUsu = ?, datNascUsu = ?, dscSenhaUsu = ?, 
+                    numTelefUsu = ?, numCpfUsu = ? WHERE idUsu = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([$nome, $email, $nascimento, password_hash($senha, PASSWORD_DEFAULT), 
+                          $telefone, $cpf, $id]);
+        } else {
+            $sql = "UPDATE usuario SET nomUsu = ?, dscEmailUsu = ?, datNascUsu = ?, 
+                    numTelefUsu = ?, numCpfUsu = ? WHERE idUsu = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->execute([$nome, $email, $nascimento, $telefone, $cpf, $id]);
+        }
+        echo json_encode(['status' => 'success', 'message' => 'Usuário atualizado com sucesso!']);
+    } else {
+        // Inserção
+        if(empty($senha)) {
+            echo json_encode(['status' => 'error', 'message' => 'Senha é obrigatória para novo usuário!']);
+            exit;
+        }
+        
+        $sql = "INSERT INTO usuario(nomUsu, dscEmailUsu, datNascUsu, dscSenhaUsu, numTelefUsu, numCpfUsu, tipo_usuario)
+                VALUES(?, ?, ?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$nome, $email, $nascimento, password_hash($senha, PASSWORD_DEFAULT), 
+                       $telefone, $cpf, 'usuario']);
+        echo json_encode(['status' => 'success', 'message' => 'Usuário cadastrado com sucesso!']);
+    }
+} catch(PDOException $e) {
+    if($e->getCode() == 23000) { // Código para violação de chave única (email duplicado)
+        echo json_encode(['status' => 'error', 'message' => 'E-mail já cadastrado!']);
+    } else {
+        echo json_encode(['status' => 'error', 'message' => 'Erro no banco de dados: ' . $e->getMessage()]);
+    }
+}
 
 ?>

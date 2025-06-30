@@ -2,6 +2,16 @@
 require '../paginas/auth_admin.php';
 
 include("conexao.php");
+
+if(isset($_GET['editar'])) {
+    $stmt = $conn->prepare("SELECT * FROM usuario WHERE idUsu = ?");
+    $stmt->execute([$_GET['editar']]);
+    $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    if($usuario) {
+        // Preencherá os campos do formulário automaticamente
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -39,34 +49,71 @@ include("conexao.php");
 
     <main>
         <div id="">
-            <section>
+            <h1>Painel de Produtos</h1>
+
+            <?php echo $mensagem; ?>
+            
+            <section class="form-usu">
                 <form id="form-CadUsu" method="POST" action="cadastro_admin.php">
                     <h2><?= isset($_GET['editar']) ? 'Editar Usuário' : 'Cadastrar Novo Usuário' ?></h2>
                     <input type="hidden" name="idUsu" value="<?=isset($_GET['editar']) ? $_GET['editar'] : '' ?>">
 
-                    <label for="nome">Nome: </label>
-                    <input type="text" id="nome" name="nome" required>
 
-                    <label for="telefone">Telefone </label>
-                    <input type="number" id="telefone" name="telefone" required>
-
-                    <label for="emailUsu">Email:</label>
-                    <input type="text" id="email" name="email" required>
-
-                    <label for="cpf">CPF:</label>
-                    <input type="text" id="cpf" name="cpf" required>
-
-                    <label for="nascimento">Nascimento:</label>
-                    <input type="tel" id="nascimento" name="nascimento" required>
-
-                    <label for="senha">Senha:</label>
-                    <input type="password" id="senha" name="senha" required />
-
-                    <label for="senha">Confirmar Senha:</label>
-                    <input type="password" id="confirmacao" name="confirmacao" required />
-
-                    <button type="submit" class="cad">Cadastrar</button>
-
+                    <div class="form-group">
+                        <div>
+                            <label for="nome">Nome:</label>
+                            <input type="text" id="nome" name="nome" required>
+                        </div>
+                        
+                        <div>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div>
+                            <label for="telefone">Telefone:</label>
+                            <input type="tel" id="telefone" name="telefone" required>
+                        </div>
+                        
+                        <div>
+                            <label for="cpf">CPF:</label>
+                            <input type="text" id="cpf" name="cpf" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div>
+                            <label for="nascimento">Nascimento:</label>
+                            <input type="date" id="nascimento" name="nascimento" required>
+                        </div>
+                        
+                        <div>
+                            <label for="tipo_usuario">Tipo de Usuário:</label>
+                            <select id="tipo_usuario" name="tipo_usuario" required>
+                                <option value="usuario">Usuário</option>
+                                <option value="admin">Administrador</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div>
+                            <label for="senha">Senha:</label>
+                            <input type="password" id="senha" name="senha" <?= !isset($_GET['editar']) ? 'required' : '' ?>>
+                        </div>
+                        
+                        <div>
+                            <label for="confirmacao">Confirmar Senha:</label>
+                            <input type="password" id="confirmacao" name="confirmacao" <?= !isset($_GET['editar']) ? 'required' : '' ?>>
+                        </div>
+                    </div>
+                    
+                    <div class="btn-group">
+                        <button type="submit" class="btnCad"><?= isset($_GET['editar']) ? 'Atualizar' : 'Cadastrar' ?></button>
+                        <a href="admUsuar.php" class="btnExc">Cancelar</a>
+                    </div>
                 </form>
             </section>
         </div>
