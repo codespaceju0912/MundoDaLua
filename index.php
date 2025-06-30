@@ -5,7 +5,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$sql = "SELECT dscProdt, idProdt FROM produto";
+$sql = "SELECT dscProdt, idProdt, urlImagemProdt FROM produto";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 $dados = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -85,7 +85,7 @@ $dados = $stmt->fetchAll(PDO::FETCH_ASSOC);
        <?php foreach($dados AS $linha){?>
         <article>
             <figure>
-                <img src="img/logo.png" alt="">
+                <img src=<?= $linha['urlImagemProdt']?> alt="">
             </figure>
             <p><?=$linha['dscProdt'];?></p>
             <a href="/MundoDaLua/paginas/visaoTeste.php?id=<?= $linha['idProdt'] ?>">
