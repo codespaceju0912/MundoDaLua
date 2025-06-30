@@ -1,7 +1,12 @@
 <?php
 session_start();
+include("conexao.php");
 
 
+$sql = "SELECT carrinho.idUsu, carrinho.valProdt, carrinho.idProdt, produto.dscProdt, produto.urlImagemProdt, produto.valProdt AS precoOriginal FROM carrinho JOIN produto ON carrinho.idProdt = produto.idProdt WHERE carrinho.idUsu = ?";
+$stmt = $conn->prepare($sql);
+$stmt->execute([$_SESSION['idUsu']]);
+$carrinho = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -73,16 +78,20 @@ session_start();
             <h3>Carrinho</h3>
 
         </section>
-
+        <?php
+         if ((!is_array($carrinho) || count($carrinho) === 0)) {
+    echo "<h1>Guarde aqui aquele produto que mais se parece com você!</h1>";
+} else {
+    foreach ($carrinho as $item) { ?>
         <article>
             <div>
-                <h4>Quadro MDF</h4>
-                <img src="../img/mdf.jpeg" alt="">
+                <h4><?= $item['dscProdt']?></h4>
+                <img src="<?= $item['urlImagemProdt']?>" alt="">
             </div>
             <div>
-                <p>Total:</p>
-                <h3>R$ 60,00</h3>
-                <p>Quantidade: 1</p>
+                <p>Preço:</p>
+                <h3>R$<?= $item['valProdt']?></h3>
+                
                 <div>
                     <button>
                         <p>Comprar</p>
@@ -94,84 +103,10 @@ session_start();
             </div>
 
         </article>
-        <article>
-            <div>
-                <h4>Topper de bolo</h4>
-                <img src="../img/topper.png" alt="">
-            </div>
-            <div>
-                <p>Total:</p>
-                <h3>R$ 15,00 - R$ 25,00</h3>
-                <p>Quantidade: 1</p>
-                <div>
-                    <button>
-                        <p>Comprar</p>
-                    </button>
-                </div>
-            </div>
-            <div id="divLixeira">
-                <img src="../img/excluir.png" alt="" id="lixeira">
-            </div>
-        </article>
-        <article>
-            <div>
-                <h4>Marca páginas magnéticos</h4>
-                <img src="../img/marcaPg.png" alt="">
-            </div>
-            <div>
-                <p>Total:</p>
-                <h3>R$ 1,50</h3>
-                <p>Quantidade: 1</p>
-                <div>
-                    <button>
-                        <p>Comprar</p>
-                    </button>
-                </div>
-            </div>
-            <div id="divLixeira">
-                <img src="../img/excluir.png" alt="" id="lixeira">
-            </div>
-        </article>
-        <article>
-            <div>
-                <h4>Edição e impressão de fotos</h4>
-                <img src="../img/foto.jpeg" alt="">
-            </div>
-            <div>
-                <p>Total:</p>
-                <h3>R$ 10,80</h3>
-                <p>Quantidade: 1</p>
-                <div>
-                    <button>
-                        <p>Comprar</p>
-                    </button>
-                </div>
-            </div>
-            <div id="divLixeira">
-                <img src="../img/excluir.png" alt="" id="lixeira">
-            </div>
-        </article>
-        <article>
-            <div>
-                <h4>Caixinhas personalizadas</h4>
-                <img src="../img/caixa.jpg" alt="">
-            </div>
-            <div>
-                <p>Total:</p>
-                <h3>Personalizar</h3>
-                <p>Quantidade: 1</p>
-                <div>
-                    <button>
-                        <p>Comprar</p>
-                    </button>
-                </div>
-            </div>
-            <div id="divLixeira">
-                <img src="../img/excluir.png" alt="" id="lixeira">
-            </div>
-        </article>
+            <?php
+        }}?>
 
-
+        
 
     </main>
     <footer>

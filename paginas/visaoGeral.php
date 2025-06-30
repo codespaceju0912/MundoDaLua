@@ -109,7 +109,7 @@ if (!$produto) {
             </form> 
             
                 
-            <a href="telaCarrinho.php?idProdt=<?php $produto['idProdt']?>"><button id="botaoCarrinho" class="botoes" type="submit">Adicionar ao carrinho</button></form>
+            <a href="addCarrinho.php?idProdt=<?= $produto['idProdt']?>"><button id="botaoCarrinho" class="botoes" type="submit">Adicionar ao carrinho</button></form>
            
         </article>
     </main>

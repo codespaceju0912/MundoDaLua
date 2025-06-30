@@ -100,8 +100,7 @@ if (!isset($_SESSION['idUsu'])) {
                 </div>
             </article>
             <?php
-        } else if ($pedido['dscStatusPedido'] == 'Pronto') {
-            ?>
+        } else if ($pedido['dscStatusPedido'] == 'Pronto') { ?>
             <article>
                 <div>
                     <h4>Produtos</h4>
