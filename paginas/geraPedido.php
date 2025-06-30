@@ -30,10 +30,10 @@ $stmt = $conn->prepare($sql1);
 $stmt->execute([$valor, $dataHoraAtual, $forma_pagamento, $idUsuario]);
 $dados_pagamento = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$sql = "INSERT INTO pedido(datPedido, dscStatusPedido, idUsuario, idPagamento, personalizacao, idProdt)
-        VALUES(?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO pedido(datPedido, dscStatusPedido, idUsuario, idPagamento, personalizacao, idProdt, qtdProdt)
+        VALUES(?, ?, ?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
-$stmt->execute([$dataHoraAtual, $statusPadrao, $idUsuario, $dados_pagamento['idPagamento'], $personalizacao, $idProduto]);
+$stmt->execute([$dataHoraAtual, $statusPadrao, $idUsuario, $dados_pagamento['idPagamento'], $personalizacao, $idProduto, $quantidade]);
 if($forma_pagamento == 1){
     header('location:pagamentoPIx.php');
 } else{

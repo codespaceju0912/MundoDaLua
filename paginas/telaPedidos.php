@@ -1,6 +1,15 @@
 <?php 
 session_start();
-$status = 'statusPronto'
+include('conexao.php');
+$sql = "SELECT p.idPedido, p.idProdt, prod.dscProdt, p.dscStatusPedido, p.qtdProdt 
+        FROM pedido p 
+        INNER JOIN produto prod ON p.idProdt = prod.idProdt 
+        WHERE p.idUsuario = ?";
+$stmt = $conn->prepare($sql);
+$stmt->execute([$_SESSION['idUsu']]);
+$pedidos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -68,69 +77,85 @@ $status = 'statusPronto'
         </section>
     </nav>
     <main>
-        <article>
-            <div>
-                <h4>Produtos</h4>
-                <p>1x Quadro MDF</p>
-                <p>2x Topper de bolo</p>
-                <p>1x Edição de foto</p>
-            </div>
-            <div id="<?= $status?>">
-                <h4>Status do pedido</h4>
-                <h3>Pedido pronto para retirar</h3>
-                <div id="avisoPronto">
-                    <p>Isso significa que <br>seu pedido já está<br> pronto para retirar.</p>
+        <?php
+if (!isset($_SESSION['idUsu'])) {
+    echo "<h1>Faça login para poder acompanhar seus pedidos!</h1>";
+} else if ((!is_array($pedidos) || count($pedidos) === 0)) {
+    echo "<h1>Essa tela serve para acompanhar pedidos, faça já o seu!</h1>";
+} else {
+    foreach ($pedidos as $pedido) {
+        if ($pedido['dscStatusPedido'] == 'Aguardando pagamento') {
+            ?>
+            <article>
+                <div>
+                    <h4>Produto</h4>
+                    <p><?= $pedido['qtdProdt']?>X <br><?=$pedido['dscProdt'] ?></p>
                 </div>
-            </div>
-        </article>
-        <article>
-            <div>
-                <h4>Produtos</h4>
-                <p>1x Quadro MDF</p>
-                <p>2x Topper de bolo</p>
-                <p>1x Edição de foto</p>
-                
-            </div>
-            <div id="statusAguardandoPagamento">
-                <h4>Status do pedido</h4>
-                <h3>Aguardando pagamento</h3>
-                <div id="avisoAguardando">
-                    <p>Isso significa que <br>seu pagamento ainda não<br> consta no nosso sistema.</p>
+                <div id="statusAguardandoPagamento">
+                    <h4>Status do pedido</h4>
+                    <h3><?= $pedido['dscStatusPedido'] ?></h3>
+                    <div id="avisoAguardando">
+                        <p>Isso significa que <br>seu pagamento ainda não<br> consta no nosso sistema.</p>
+                    </div>
                 </div>
-            </div>
-        </article>
-        <article>
-            <div>
-                <h4>Produtos</h4>
-                <p>1x Quadro MDF</p>
-                <p>2x Topper de bolo</p>
-                <p>1x Edição de foto</p>
-            </div>
-            <div id="statusProducao">
-                <h4>Status do pedido</h4>
-                <h3>Em produção</h3>
-                <div id="avisoProducao">
-                    <p>Isso significa que seu pedido<br> esta sendo produzido,<br> e logo ficará pronto.</p>
+            </article>
+            <?php
+        } else if ($pedido['dscStatusPedido'] == 'Pronto') {
+            ?>
+            <article>
+                <div>
+                    <h4>Produtos</h4>
+                    <p><?= $pedido['dscProdt'] ?></p>
                 </div>
-            </div>
-        </article>
-        
-        <article>
-            <div>
-                <h4>Produtos</h4>
-                <p>1x Quadro MDF</p>
-                <p>2x Topper de bolo</p>
-                <p>1x Edição de foto</p>
-            </div>
-            <div id="statusFinalizado">
-                <h4>Status do pedido</h4>
-                <h3>Finalizado</h3>
-                <div id="avisoFinalizado">
-                    <p>Isso significa que seu pedido<br>já foi retirado. <br> Agradecemos pela preferência.</p>
+                <div id="statusPronto">
+                    <h4>Status do pedido</h4>
+                    <h3><?= $pedido['dscStatusPedido'] ?></h3>
+                    <div id="avisoPronto">
+                        <p>Isso significa que <br>seu pedido já está<br> pronto para retirar.</p>
+                    </div>
                 </div>
-            </div>
-        </article>
+            </article>
+            <?php
+        } else if ($pedido['dscStatusPedido'] == 'Em produção') {
+            ?>
+            <article>
+                <div>
+                    <h4>Produtos</h4>
+                    <p><?= $pedido['dscProdt'] ?></p>
+                </div>
+                <div id="statusProducao">
+                    <h4>Status do pedido</h4>
+                    <h3><?= $pedido['dscStatusPedido'] ?></h3>
+                    <div id="avisoProducao">
+                        <p>Seu pedido está em produção.</p>
+                    </div>
+                </div>
+            </article>
+            <?php
+        } else if ($pedido['dscStatusPedido'] == 'Finalizado') {
+            ?>
+            <article>
+                <div>
+                    <h4>Produtos</h4>
+                    <p><?= $pedido['dscProdt'] ?></p>
+                </div>
+                <div id="statusFinalizado">
+                    <h4>Status do pedido</h4>
+                    <h3><?= $pedido['dscStatusPedido'] ?></h3>
+                    <div id="avisoFinalizado">
+                        <p>Pedido finalizado e pronto.</p>
+                    </div>
+                </div>
+            </article>
+            <?php
+        }
+    }
+}
+?>
 
+            
+        
+        
 
     </main>
     <footer>
