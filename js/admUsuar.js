@@ -81,3 +81,63 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', configurarResponsividade);
 }); 
     
+document.addEventListener('DOMContentLoaded', function() {
+    // Busca em tempo real
+    const buscaInput = document.getElementById('buscaUsuario');
+    if (buscaInput) {
+        buscaInput.addEventListener('input', function() {
+            const termo = this.value.trim();
+            fetch(`listar_usuar.php?busca=${encodeURIComponent(termo)}`)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('tabelaUsu').innerHTML = html;
+                });
+        });
+    }
+
+    // Formatação automática de CPF e Telefone
+    const cpfInput = document.getElementById('cpf');
+    const telefoneInput = document.getElementById('telefone');
+
+    if (cpfInput) {
+        cpfInput.addEventListener('input', function() {
+            this.value = formatarCPF(this.value);
+        });
+    }
+
+    if (telefoneInput) {
+        telefoneInput.addEventListener('input', function() {
+            this.value = formatarTelefone(this.value);
+        });
+    }
+});
+
+function formatarCPF(cpf) {
+    cpf = cpf.replace(/\D/g, '');
+    if (cpf.length > 11) cpf = cpf.substring(0, 11);
+    
+    if (cpf.length > 9) {
+        cpf = cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+    } else if (cpf.length > 6) {
+        cpf = cpf.replace(/(\d{3})(\d{3})(\d{1,3})/, '$1.$2.$3');
+    } else if (cpf.length > 3) {
+        cpf = cpf.replace(/(\d{3})(\d{1,3})/, '$1.$2');
+    }
+    
+    return cpf;
+}
+
+function formatarTelefone(telefone) {
+    telefone = telefone.replace(/\D/g, '');
+    if (telefone.length > 11) telefone = telefone.substring(0, 11);
+    
+    if (telefone.length > 10) {
+        telefone = telefone.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+    } else if (telefone.length > 6) {
+        telefone = telefone.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+    } else if (telefone.length > 2) {
+        telefone = telefone.replace(/(\d{2})(\d{0,5})/, '($1) $2');
+    }
+    
+    return telefone;
+}

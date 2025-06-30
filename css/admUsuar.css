@@ -470,3 +470,89 @@ h1 {
         justify-content: flex-start;
     }
 }
+
+/* Barra de busca */
+#buscaUsuario {
+    font-size: 1.5rem;
+    padding: 0.8rem 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s;
+    max-width: 400px;
+    margin-bottom: 1.5rem;
+}
+
+#buscaUsuario:focus {
+    border-color: #8a2be2;
+    box-shadow: 0 0 0 0.2rem rgba(138, 43, 226, 0.25);
+    outline: none;
+}
+
+/* Tabela */
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.table-dark {
+    background-color: #8a2be2;
+    color: white;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(138, 43, 226, 0.05);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(138, 43, 226, 0.1);
+}
+
+/* Botões */
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 1.3rem;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    background-color: #8a2be2;
+    border-color: #8a2be2;
+}
+
+.btn-primary:hover {
+    background-color: #6c1fb8;
+    border-color: #6c1fb8;
+}
+
+.btn-danger {
+    background-color: #c62828;
+    border-color: #c62828;
+}
+
+.btn-danger:hover {
+    background-color: #b71c1c;
+    border-color: #b71c1c;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .table-responsive {
+        border: 1px solid #ddd;
+    }
+
+    .btn-group {
+        flex-direction: column;
+        gap: 0.3rem;
+        text-align: center;
+    }
+
+    .btn-sm {
+        width: 100%;
+    }
+
+    #buscaUsuario {
+        max-width: 100%;
+    }
+}

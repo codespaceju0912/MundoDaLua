@@ -48,8 +48,8 @@ if(isset($_GET['editar'])) {
     </nav>
 
     <main>
-        <div id="">
-            <h1>Painel de Produtos</h1>
+        <div id="container">
+            <h1>Painel de Usuários</h1>
 
             <?php echo $mensagem; ?>
             
@@ -120,6 +120,10 @@ if(isset($_GET['editar'])) {
 
         <section class="list-Usu">
             <h2>Usuários Cadastrados</h2>
+            <div class="mb-3">
+                <input type="text" id="buscaUsuario" class="form-control" placeholder="Buscar usuário...">
+            </div>
+
             <div id="tabelaUsu">
                 <?php include("listar_usuar.php"); ?>
             </div>

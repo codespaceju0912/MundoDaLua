@@ -3,7 +3,7 @@ session_start();
 include("../paginas/conexao.php");
 
 // Verifica se é admin
-if(!isset($_SESSION['admin_logado'])) {
+if(!isset($_SESSION['eh_admin'])) {
     header("Location: ../paginas/login.php");
     exit;
 }
@@ -39,8 +39,8 @@ if(isset($_GET['sucesso'])) {
 }
 ?>
 
-<div class="table-respondive">
-    <?php echo $mensagem; ?>
+<div class="table-responsive">
+
     <table class="table table-striped table-hover">
         <thead class="table-dark">
             <tr>
@@ -92,7 +92,7 @@ function formatarTelefone($telefone) {
 function formatarCPF($cpf){
     $cpf = preg_replace('/\D/', '', $cpf);
     if (strlen($cpf) === 11) {
-        return preg_replace('/(\s{3})(\d{3})(\d{3})(\d{2})/', '$1.$2.$3-$4', $cpf);
+        return preg_replace('/(\d{3})(\d{3})(\d{3})(\d{2})/', '$1.$2.$3-$4', $cpf);
     }
     return $cpf;
 }
