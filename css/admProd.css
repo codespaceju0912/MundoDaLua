@@ -208,77 +208,81 @@ h1 {
 
 }
 
-h2{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-#formProduto h2{
-    word-break: keep-all;
-    text-align: center;
-    margin-bottom: 20px;
-    font-family: montserrat;
-    font-size: 1.6rem;
-}
-
-/* estiliza do container que envolve todo conteúdo*/
-.container{
+/* Container principal (igual ao de usuários) */
+#container {
     max-width: 900px;
-    margin: 0 auto;
-    margin-top: 20px;
-    background-color:#ffffff;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+    margin: 40px auto;
+    padding: 0 20px;
+    width: 100%;
 }
 
+/* Títulos (igual ao de usuários) */
+#formProduto h2 {
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: montserrat;
+    font-size: 1.7rem;
+    color: #333;
+}
 
+/* Formulário (ESTILO IDÊNTICO ao de usuários) */
+#formProduto {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+}
 
-/* estiliza os rótulos dos campos do formulário */
-label{
+#formProduto form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#formProduto label {
     color: #333;
     margin-bottom: 5px;
     font-family: montserrat;
     font-size: 1.6rem;
+    display: block;
 }
 
-/* estiliza o conatiner do formulário*/
-form{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 40px;
-}
-
-/* estiliza as descrições dentro do formulário */
-input[type="text"],
-input[type="number"],
-input[type="file"],
-select {
+#formProduto input[type="text"],
+#formProduto input[type="number"],
+#formProduto input[type="file"],
+#formProduto select {
     padding: 12px;
     border-radius: 8px;
     border: 1px solid #ccc;
     font-size: 1.6rem;
+    width: 100%;
     transition: border 0.3s;
 }
 
-/* efeito ao focar nos campos */
-input:focus,
-select:focus{
+#formProduto input:focus,
+#formProduto select:focus {
     outline: none;
-    border-color:#8a2be2;
+    border-color: #8a2be2;
 }
 
-/* Container dos botões de ação */
-.btn-group{
+/* Grupos de campos lado a lado (igual ao de usuários) */
+.form-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* Botões (MESMO ESTILO do formulário de usuários) */
+.btn-group {
     display: flex;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
-/* Estilo base para o grupo de botões */
-.btn-group button{
+.btnCad {
+    background-color: #8a2be2;
+    color: #ffffff;
     padding: 8px 12px;
     border: none;
     border-radius: 6px;
@@ -287,34 +291,40 @@ select:focus{
     transition: 0.3s;
 }
 
-/* Botão Cadastrar */
-.btnCad{
-    background-color: #8a2be2;
-    color: #ffffff;
-}
-
-.btnCad:hover{
+.btnCad:hover {
     background-color: #6c1fb8;
 }
 
-/* Botão Alterar */
-.btnAlt{
-    background-color: #8a2be2;
+.btnExc {
+    background-color: #c62828;
     color: #ffffff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    text-align: center;
 }
 
-.btnAlt:hover{
-    background-color: #6c1fb8;
+.btnExc:hover {
+    background-color: #b71c1c;
 }
 
-/* Botão Excluir */
-.btnExc{
-    background-color: #8a2be2;
-    color: #ffffff;
-}
-
-.btnExc:hover{
-    background-color: #6c1fb8;
+/* Responsividade (igual ao de usuários) */
+@media (max-width: 768px) {
+    .form-group {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn-group {
+        flex-direction: column;
+    }
+    
+    #formProduto {
+        padding: 15px;
+    }
 }
 
 /*LISTA DE PRODUTOS*/

@@ -94,60 +94,85 @@ if (isset($_GET['excluir'])) {
 
             <?php echo $mensagem; ?>
             
-            <section>
+           <section class="form-usu">
                 <form id="formProduto" method="POST" action="processaProduto.php" enctype="multipart/form-data">
                     <h2><?= isset($_GET['editar']) ? 'Editar Produto' : 'Cadastrar Novo Produto' ?></h2>
-                    <input tupe="hidden" name="idProdt" value="<?= isset($_GET['editar']) ? $_GET['editar'] : '' ?>">    
+                    <input type="hidden" name="idProdt" value="<?= isset($_GET['editar']) ? $_GET['editar'] : '' ?>">
 
-                            
-                    <label for="nomeProd">Nome do Produto:</label>
-                    <input type="text" id="nomeProd" name="nomeProd" required>
-                            
-                    <label for="valProd">Preço (R$):</label>
-                    <input type="number" id="valProd" name="valProd" step="0.01" required>
-                            
-                    <label for="descricaoProd">Descrição:</label>
-                    <input type="text" id="descricaoProd" name="descricaoProd" required>
+                    <!-- Linha 1: Nome e Preço -->
+                    <div class="form-group">
+                        <div>
+                            <label for="nomeProd">Nome do Produto:</label>
+                            <input type="text" id="nomeProd" name="nomeProd" required>
+                        </div>
+                        <div>
+                            <label for="valProd">Preço (R$):</label>
+                            <input type="number" id="valProd" name="valProd" step="0.01" required>
+                        </div>
+                    </div>
 
-                    <label for="estoqueProd">Quantidade em Estoque:</label>
-                    <input type="number" id="estoqueProd" name="estoqueProd" min="0" value="1" required>
+                    <!-- Linha 2: Descrição e Estoque -->
+                    <div class="form-group">
+                        <div>
+                            <label for="descricaoProd">Descrição:</label>
+                            <input type="text" id="descricaoProd" name="descricaoProd" required>
+                        </div>
+                        <div>
+                            <label for="estoqueProd">Estoque:</label>
+                            <input type="number" id="estoqueProd" name="estoqueProd" min="0" value="1" required>
+                        </div>
+                    </div>
 
-                    <label for="qtdMinEstqProd">Estoque Mínimo:</label>
-                    <input type="number" id="qtdMinEstqProd" name="qtdMinEstqProd" min="0" required>
-                            
-                    <label for="pctDescProd">Desconto (%):</label>
-                    <input type="number" step="0.01" id="pctDescProd" name="pctDescProd">
-                    
-                    <label for="idCatProd">Categoria (ID):</label>
-                    <select id="categoriaProd" required>
-                        <option value="">Selecione...</option>
-                        <option value="Fotos">Fotos</option>
-                        <option value="Papelaria">Papelaria</option>
-                        <option value="Personalizados">Personalizados</option>
-                    </select> 
+                    <!-- Linha 3: Estoque Mínimo e Desconto -->
+                    <div class="form-group">
+                        <div>
+                            <label for="qtdMinEstqProd">Estoque Mínimo:</label>
+                            <input type="number" id="qtdMinEstqProd" name="qtdMinEstqProd" min="0" required>
+                        </div>
+                        <div>
+                            <label for="pctDescProd">Desconto (%):</label>
+                            <input type="number" id="pctDescProd" name="pctDescProd" step="0.01">
+                        </div>
+                    </div>
 
-                    <label for="urlImagemProdt">Imagem:</label>
-                    <input type="file"  id="urlImagemProdt" name="urlImagemProdt" accept="image/*">
-                            
+                    <!-- Linha 4: Categoria e Imagem -->
+                    <div class="form-group">
+                        <div>
+                            <label for="categoriaProd">Categoria:</label>
+                            <select id="categoriaProd" name="idCatProd" required>
+                                <option value="">Selecione...</option>
+                                <option value="Fotos">Fotos</option>
+                                <option value="Papelaria">Papelaria</option>
+                                <option value="Personalizados">Personalizados</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="urlImagemProdt">Imagem:</label>
+                            <input type="file" id="urlImagemProdt" name="urlImagemProdt" accept="image/*">
+                        </div>
+                    </div>
+
+                    <!-- Botões (MESMO ESTILO DO USUÁRIO) -->
                     <div class="btn-group">
-                        <button type="submit" class="btnCad"><?= isset ($_GET['editar']) ? 'Atualizar' : 'Cadastrar' ?></button>
-                        <button><a href="admProd.php" class="btnCan">Cancelar</a></button>
+                        <button type="submit" class="btnCad"><?= isset($_GET['editar']) ? 'Atualizar' : 'Cadastrar' ?></button>
+                        <a href="admProd.php" class="btnExc">Cancelar</a>
                     </div>
                 </form>
+            </section>
 
-                <section id="prod-lista">
-                    <h3>Produtos Cadastrados</h3>
+            <section id="prod-lista">
+                <h3>Produtos Cadastrados</h3>
 
-                    <!-- Barra de busca -->
+                <!-- Barra de busca -->
 
-                    <div class="mb-3">
-                        <input type="text" id="buscaProduto" class="form-control" placeholder="Buscar produto...">
-                        <div id="resultadoBusca" class="mt-2"></div>
-                    </div>
+                <div class="mb-3">
+                    <input type="text" id="buscaProduto" class="form-control" placeholder="Buscar produto...">
+                    <div id="resultadoBusca" class="mt-2"></div>
+                </div>
                     
-                    <?php include("../paginas/listarProd.php");?>
-                </section> 
+                <?php include("../paginas/listarProd.php");?>
             </section> 
+            
         </div>
     </main>
 
