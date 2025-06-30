@@ -34,6 +34,14 @@ if ($stmt->fetchColumn() > 0) {
     exit;
 }
 
+$sql = "SELECT COUNT(*) FROM usuario WHERE numTelefUsu = ?";
+$stmt = $conn->prepare($sql);
+$stmt->execute([$telefone]);
+if ($stmt->fetchColumn() > 0) {
+    echo "<script>alert('Número já cadastrado!'); window.location.href = '../paginas/cadastro.php';</script>";
+    exit;
+}
+
 $telefone = preg_replace('/\D/', '', $telefone);
 $cpf = preg_replace('/\D/', '', $cpf);
 // Inserir no banco

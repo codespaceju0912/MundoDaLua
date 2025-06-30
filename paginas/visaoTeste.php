@@ -96,8 +96,9 @@ if (!$produto) {
            <p id="p_descricao"><?= $produto['dscDetalProdt'];?></p>
         </article>
         <article>
-            <form action="finalizarCompra.php?id=<?= $produto['idProdt'] ?>" method="post" >
+            <form action="finalizarCompra.php?" method="post" >
             <h3 id="personalizacao">Personalização</h3>
+            <input type="hidden" name="idProduto" value="<?= $produto['idProdt']?>">
             <textarea name="personalizacao" id="personalizacao" placeholder="Quero que meu topo de bolo seja da Moana..." class="text_area"></textarea>
             <h2 id="palavra_quantidade">Quantidade <input type="number" name="quantidade" id="quantidade" min="1" max="100" required></h2>
             <a href="finalizarCompra.php?id"><button class="botoes" type="submit">Compra</button></a>

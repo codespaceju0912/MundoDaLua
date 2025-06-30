@@ -2,19 +2,23 @@
 include("conexao.php");
 session_start();
 
-if (!isset($_GET['id'])) {
+if (!isset($_POST['idProduto'])) {
     die("Produto não encontrado.");
 }
 
-$id = $_GET['id'];
+
+
+$idProduto = $_POST['idProduto'];
 $quantidade = $_POST['quantidade'];
 $personalizacao = $_POST['personalizacao'];
+$valor = $quantidade*$valor;
 
 
 $sql = "SELECT * FROM produto WHERE idProdt = ?";
 $stmt = $conn->prepare($sql);
-$stmt->execute([$id]);
+$stmt->execute([$idProduto]);
 $produto = $stmt->fetch(PDO::FETCH_ASSOC);
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -51,7 +55,13 @@ $produto = $stmt->fetch(PDO::FETCH_ASSOC);
             
             
             <p id="preco">Preço: R$<?= $quantidade*$produto['valProdt']; ?><spam id="textvalor"></spam></p>  
-            <a href="opcaopg.php?id=<?= $produto['idProdt'] ?>&quantidade=<?= $quantidade ?>&valor=<?= $personalizacao ?>"><button class="submit-btn" >Finalizar Compra</button></a>     
+            <form action="opcaopg.php" method="post">
+                <input type="hidden" name="idProduto" value="<?= $produto['idProdt'] ?>">
+                <input type="hidden" name="quantidade" value="<?= $quantidade ?>">
+                <input type="hidden" name="valor" value="<?= $quantidade*$produto['valProdt'] ?>">
+                <input type="hidden" name="personalizacao" value="<?= $personalizacao ?>" >
+                <button class="submit-btn" type="submit" >Finalizar Compra</button></a>
+            </form>     
         </article>
         
     </article>

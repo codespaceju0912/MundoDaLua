@@ -37,6 +37,7 @@ try {
         ];
         
         header("Location: " . ($_SESSION['eh_admin'] ? 'admVisaoGeral.php' : '/MundoDaLua/index.php'));
+        
         exit;
     } else {
         die("Credenciais inválidas.");

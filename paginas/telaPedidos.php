@@ -1,5 +1,6 @@
 <?php 
 session_start();
+$status = 'statusPronto'
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -74,7 +75,7 @@ session_start();
                 <p>2x Topper de bolo</p>
                 <p>1x Edição de foto</p>
             </div>
-            <div id="statusPronto">
+            <div id="<?= $status?>">
                 <h4>Status do pedido</h4>
                 <h3>Pedido pronto para retirar</h3>
                 <div id="avisoPronto">
@@ -88,6 +89,7 @@ session_start();
                 <p>1x Quadro MDF</p>
                 <p>2x Topper de bolo</p>
                 <p>1x Edição de foto</p>
+                
             </div>
             <div id="statusAguardandoPagamento">
                 <h4>Status do pedido</h4>

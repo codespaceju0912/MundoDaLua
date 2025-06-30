@@ -7,6 +7,10 @@ if(empty($nome) || empty($id) ) {
     echo "<script>alert('Paa comprar você precisa estar logado!'); window.location.href = '../paginas/login.php';</script>";
     exit;
 }
+$idProduto = $_POST['idProduto'];
+$quantidade = $_POST['quantidade'];
+$valor = $POST['valor'];
+$personalizacao = $_POST['personalizacao']
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -30,25 +34,20 @@ if(empty($nome) || empty($id) ) {
     <article class="container">   
         <article class="box personaliza">
             <h3>Pagamento:</h3>
-            <form action="conexao_pagamento.php">
-            <section class="payment-methods" method="get" action="conexap_pagamento">
-                <select id="pagamento" onchange="irParaPagamento()">
-                    <option value="">Selecione</option>
-                    <option value="pix">PIX</option>
-                    <option value="local">Pagar no local</option>
+            <form action="geraPedido.php" method="post">
+                <input type="hidden" name="idProduto" value="<?=$idProduto ?>">
+                <input type="hidden" name="quantidade" value="<?=$quantidade ?>">
+                <input type="hidden" name="valor" value="<?=$valor ?>">
+                <input type="hidden" name="personalizacao" value="<?= $personalizacao ?>">
+
+            
+                <select name="forma_pagamento">
+                    <option value="1">PIX</option>
+                    <option value="2">Pagar no local</option>
                     </select>
 
-                    <script>
-                    function irParaPagamento() {
-                    const opcao = document.getElementById("pagamento").value;
-
-                    if (opcao === "pix") {
-                        window.location.href = "pagamentoPix.php";
-                    } else if (opcao === "local") {
-                        window.location.href = "pagamentoLocal.php";
-                    }
-                    }
-                    </script>
+                
+               
                 <p>R. Tuffi Salomão Borges, 91 - José de Anchieta II, Serra - ES, 29162-502</p>
                 <button class="submit-btn" type="submit">Realizar pagamento</button>  
             </form>   

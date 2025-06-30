@@ -12,6 +12,7 @@ $dados = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
