@@ -50,8 +50,8 @@ if (!$produto) {
             <img src="../img/perfil.png" alt="" id="imgperfil">
             <?php
             if(!isset($_SESSION['idUsu'], $_SESSION['nomeUsu'])){ ?>
-            <h3>Faça <a href="paginas/login.php"><span id="avisoPerfil">LOGIN</span></a> <br>ou <br><a
-                    href="paginas/cadastro.php"><span id="avisoPerfil">CADASTRE-SE</span></a></h3>
+            <h3>Faça <a href="login.php"><span id="avisoPerfil">LOGIN</span></a> <br>ou <br><a
+                    href="cadastro.php"><span id="avisoPerfil">CADASTRE-SE</span></a></h3>
 
             <?php } else {?>
 

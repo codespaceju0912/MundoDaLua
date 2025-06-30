@@ -7,15 +7,14 @@ include("paginas/conexao.php");
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-if (!isset($conexao)) {
+if (!isset($conn)) {
     die("Erro: Conexão com o banco de dados não estabelecida");
 }
 
 // Consultas ao banco de dados
-$totalUsuarios = $conexao->query("SELECT COUNT(*) as total FROM usuario")->fetch_assoc()['total'];
-$totalProdutos = $conexao->query("SELECT COUNT(*) as total FROM produto")->fetch_assoc()['total'];
-$totalPedidos = $conexao->query("SELECT COUNT(*) as total FROM pedido")->fetch_assoc()['total'];
-
+$totalUsuarios = $conn->query("SELECT COUNT(*) as total FROM usuario")->fetch(PDO::FETCH_ASSOC)['total'];
+$totalProdutos = $conn->query("SELECT COUNT(*) as total FROM produto")->fetch(PDO::FETCH_ASSOC)['total'];
+$totalPedidos = $conn->query("SELECT COUNT(*) as total FROM pedido")->fetch(PDO::FETCH_ASSOC)['total'];
 // Vendas mensais (agrupadas por mês)
 //$vendasMensais = $conexao->query("
 //    SELECT 
