@@ -15,34 +15,120 @@ if (!isset($conn)) {
 $totalUsuarios = $conn->query("SELECT COUNT(*) as total FROM usuario")->fetch(PDO::FETCH_ASSOC)['total'];
 $totalProdutos = $conn->query("SELECT COUNT(*) as total FROM produto")->fetch(PDO::FETCH_ASSOC)['total'];
 $totalPedidos = $conn->query("SELECT COUNT(*) as total FROM pedido")->fetch(PDO::FETCH_ASSOC)['total'];
-// Vendas mensais (agrupadas por mês)
-//$vendasMensais = $conexao->query("
-//    SELECT 
-//        MONTH(datPedido) as mes, 
-//        COUNT(*) as total_pedidos,
-//        SUM(
-//           SELECT SUM(quantidade * preco) 
-//            FROM pedidoitem 
-//            WHERE pedidoitem.idPedido = pedido.idPedido
-//        ) as valor_total
-//    FROM pedido
-//    WHERE YEAR(datPedido) = YEAR(CURDATE())
-//    GROUP BY MONTH(datPedido)
-//")->fetch_all(MYSQLI_ASSOC);
 
-// Produtos mais vendidos (top 5)
-//$produtosMaisVendidos = $conexao->query("
-//    SELECT 
-//        p.idProduto,
-//        p.nomeProduto,
-//        SUM(pi.quantidade) as total_vendido
-//    FROM pedidoitem pi
-//    JOIN produto p ON pi.idProduto = p.idProduto
-//    GROUP BY p.idProduto, p.nomeProduto
-//    ORDER BY total_vendido DESC
-//    LIMIT 5
-//")->fetch_all(MYSQLI_ASSOC);
 
+// Vendas mensais (agora com dados reais)
+$vendasMensais = $conn->query("
+    SELECT 
+        MONTH(datPedido) as mes, 
+        COUNT(*) as total_pedidos, 
+        SUM(valProdt * qtdProdt) as valor_total
+    FROM pedido p
+    JOIN produto pr ON p.idProdt = pr.idProdt
+    GROUP BY MONTH(datPedido)
+    ORDER BY mes
+")->fetchAll(PDO::FETCH_ASSOC);
+
+// Produtos mais vendidos (com dados reais)
+$produtosMaisVendidos = $conn->query("
+    SELECT 
+        p.idProdt, 
+        p.dscProdt, 
+        SUM(pe.qtdProdt) as total_vendido,
+        SUM(pe.qtdProdt * p.valProdt) as valor_total
+    FROM pedido pe
+    JOIN produto p ON pe.idProdt = p.idProdt
+    GROUP BY p.idProdt, p.dscProdt
+    ORDER BY total_vendido DESC
+    LIMIT 5
+")->fetchAll(PDO::FETCH_ASSOC);
+// Produtos com estoque baixo (alerta importante)
+$estoqueBaixo = $conn->query("
+    SELECT 
+        idProdt, 
+        dscProdt, 
+        qtdAtualEstqProdt, 
+        qtdMinEstqProdt
+    FROM produto
+    WHERE qtdAtualEstqProdt < qtdMinEstqProdt
+")->fetchAll(PDO::FETCH_ASSOC);
+
+// Pedidos pendentes (status importante)
+$pedidosPendentes = $conn->query("
+    SELECT 
+        pe.idPedido, 
+        pe.datPedido, 
+        pe.dscStatusPedido, 
+        u.nomUsu as nome_cliente, 
+        p.dscProdt,
+        pe.qtdProdt,
+        p.valProdt
+    FROM pedido pe
+    JOIN produto p ON pe.idProdt = p.idProdt
+    JOIN usuario u ON pe.idUsuario = u.idUsu
+    WHERE pe.dscStatusPedido = 'Aguardando pagamento'
+    ORDER BY pe.datPedido DESC
+    LIMIT 5
+")->fetchAll(PDO::FETCH_ASSOC);
+
+foreach ($pedidosPendentes as &$pedido) {
+    try {
+        // Formatação da data
+        if (!empty($pedido['datPedido'])) {
+            $pedido['datPedido_formatada'] = date('d/m/Y H:i', strtotime($pedido['datPedido']));
+        } else {
+            $pedido['datPedido_formatada'] = 'Data não disponível';
+        }
+        
+        // Cálculo do valor total
+        $quantidade = $pedido['qtdProdt'] ?? 0;
+        $valorUnitario = $pedido['valProdt'] ?? 0;
+        $pedido['valor_total'] = number_format($quantidade * $valorUnitario, 2, ',', '.');
+        
+        // Formatação adicional
+        $pedido['produto_info'] = htmlspecialchars($pedido['dscProdt'] ?? 'Produto não especificado') . 
+                                 ' (Quantidade: ' . ($quantidade) . ')';
+        
+    } catch (Exception $e) {
+        error_log("Erro ao formatar pedido ID {$pedido['idPedido']}: " . $e->getMessage());
+        continue;
+    }
+}
+
+$pedidos = [
+    // Janeiro
+    ['2025-01-05', 'Concluído', 1, 1, 2],
+    ['2025-01-12', 'Concluído', 2, 3, 1],
+    ['2025-01-18', 'Concluído', 3, 2, 3],
+
+    //Fevereiro
+    ['2025-02-03', 'Concluído', 4, 1, 1],
+    ['2025-02-15', 'Concluído', 5, 4, 2],
+
+    // Março
+    ['2025-03-10', 'Concluído', 1, 5, 1],
+    ['2025-03-22', 'Concluído', 2, 2, 4],
+
+];
+
+try {
+    $conn->beginTransaction(); // Inicia transação
+    
+    $sql = "INSERT INTO pedido (datPedido, dscStatusPedido, idUsuario, idProdt, qtdProdt) 
+            VALUES (?, ?, ?, ?, ?)";
+    
+    $stmt = $conn->prepare($sql);
+    
+    foreach ($pedidos as $pedido) {
+        $stmt->execute($pedido);
+    }
+    
+    $conn->commit(); // Confirma a transação
+    echo count($pedidos) . " pedidos inseridos com sucesso!";
+} catch (PDOException $e) {
+    $conn->rollBack(); // Em caso de erro, reverte a transação
+    echo "Erro: " . $e->getMessage();
+}
 ?>
 
 <!DOCTYPE html>
