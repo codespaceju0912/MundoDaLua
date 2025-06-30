@@ -28,7 +28,7 @@ if (!$produto) {
     <title>Visão Geral</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/visaoGeral.css">
+    <link rel="stylesheet" href="/MundoDaLua/css/visaoGeral.css?v=1.0">
     <script src="../js/base.js" defer></script>
     <script src="../js/vgmdf.js" defer></script>
 </head>
@@ -101,10 +101,16 @@ if (!$produto) {
             <input type="hidden" name="idProduto" value="<?= $produto['idProdt']?>">
             <textarea name="personalizacao" id="personalizacao" placeholder="Quero que meu topo de bolo seja da Moana..." class="text_area"></textarea>
             <h2 id="palavra_quantidade">Quantidade <input type="number" name="quantidade" id="quantidade" min="1" max="100" required></h2>
-            <a href="finalizarCompra.php?id"><button class="botoes" type="submit">Compra</button></a>
-            <button class="botoes" onclick="goCarrinho()">Adicionar ao carrinho</button>
-            </form> 
 
+            
+                <button class="botoes" type="submit">Compra</button>
+       
+         
+            </form> 
+            
+                
+            <a href="telaCarrinho.php?idProdt=<?php $produto['idProdt']?>"><button id="botaoCarrinho" class="botoes" type="submit">Adicionar ao carrinho</button></form>
+           
         </article>
     </main>
     <footer>
