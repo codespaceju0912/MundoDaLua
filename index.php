@@ -89,7 +89,7 @@ $dados = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <img src=<?= $linha['urlImagemProdt']?> alt="">
             </figure>
             <p><?=$linha['dscProdt'];?></p>
-            <a href="/MundoDaLua/paginas/visaoTeste.php?id=<?= $linha['idProdt'] ?>">
+            <a href="/MundoDaLua/paginas/visaoGeral.php?id=<?= $linha['idProdt'] ?>">
             <button>
                 <p>Saiba mais</p>
                 
