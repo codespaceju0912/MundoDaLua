@@ -289,6 +289,7 @@ main article{
     box-shadow: 4px 8px 15px black;
     display: flex;
     flex-direction: column;
+    
     align-items: center;
     padding: 1.5rem;
     margin-top: 5rem;
@@ -384,14 +385,23 @@ main article{
 .botoes{
     height: 6rem;
     width: 22rem;
-    margin: 1rem;
+    margin-left:9rem;
+    margin-bottom: 2rem;
     font-family: montserrat;
     font-size: 1.5rem;
     font-weight: 550;
     border-radius: 1rem;
     border: solid black 0.5px;
     background-color: yellowgreen;
+    
 }
+
+#botaoCarrinho{
+    margin-right: 9rem;
+}
+
+
+
 
 footer div h3 {
     font-family: fredoka;
