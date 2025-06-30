@@ -16,7 +16,7 @@
 </html>
     <div id="divprincipal" >
         <div class="bordadiv">
-            <h4>Voltar</h4>
+            <a href="/MundoDaLua/index.php"><h1>Voltar</h1></a>
             <form action="loginBD.php" method="post" class="montserrat" >
                 
             <div class="inputForm" c>

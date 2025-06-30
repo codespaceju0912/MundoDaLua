@@ -78,7 +78,7 @@ if (!$produto) {
             </ul>
         </div>
 
-        <section class="palavrasNav">
+        <section class="palavrasNav" onclick="goTela()">
             <p>Produtos</p>
         </section>
         <section class="palavrasNav" onclick="goPedidos()">
