@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
 $username = "root";
-$password = "usbw";
+$password = "casa";
 $database = "mundodalua";
 $charset = 'utf8mb4';
 
